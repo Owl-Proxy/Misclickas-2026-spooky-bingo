@@ -1,0 +1,528 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2420" viewBox="0 0 1600 2420" role="img" aria-labelledby="title desc">
+  <title id="title">OSRS October Spooky Bingo</title>
+  <desc id="desc">A 6 by 9 Old School RuneScape Halloween bingo board generated from october-bingo-ideas.json.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#152b32"/><stop offset=".28" stop-color="#1a1426"/><stop offset=".62" stop-color="#111b1a"/><stop offset="1" stop-color="#32151f"/></linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171626"/><stop offset=".5" stop-color="#0e1719"/><stop offset="1" stop-color="#24131d"/></linearGradient>
+    <linearGradient id="tile-haunted" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30243a"/><stop offset="1" stop-color="#17151f"/></linearGradient>
+    <linearGradient id="tile-crypt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#403046"/><stop offset="1" stop-color="#17151f"/></linearGradient>
+    <linearGradient id="tile-spectral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24404a"/><stop offset="1" stop-color="#151b2a"/></linearGradient>
+    <linearGradient id="tile-swamp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#33452c"/><stop offset="1" stop-color="#151c1b"/></linearGradient>
+    <linearGradient id="tile-frost" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30445d"/><stop offset="1" stop-color="#151b2a"/></linearGradient>
+    <linearGradient id="tile-infernal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54252d"/><stop offset="1" stop-color="#21151f"/></linearGradient>
+    <linearGradient id="tile-blood" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#61252f"/><stop offset="1" stop-color="#25131d"/></linearGradient>
+    <linearGradient id="tile-crystal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24505a"/><stop offset="1" stop-color="#182536"/></linearGradient>
+    <linearGradient id="tile-relic" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54402b"/><stop offset="1" stop-color="#211b1c"/></linearGradient>
+    <linearGradient id="tile-armory" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#51243e"/><stop offset="1" stop-color="#211525"/></linearGradient>
+    <linearGradient id="tile-leviathan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#667052"/><stop offset=".52" stop-color="#4b4530"/><stop offset="1" stop-color="#211f1a"/></linearGradient>
+    <linearGradient id="tile-free" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b3435"/><stop offset="1" stop-color="#421b28"/></linearGradient>
+    <linearGradient id="tile-open" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#252531"/><stop offset="1" stop-color="#161720"/></linearGradient>
+    <pattern id="grain" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="5" cy="8" r="1" fill="#f3c978" opacity=".08"/><circle cx="22" cy="26" r="1" fill="#f3c978" opacity=".06"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".6"/></filter>
+    <filter id="spriteGlow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#e27b38" flood-opacity=".6"/></filter>
+    <style>
+      .display { font-family: Georgia, 'Times New Roman', serif; letter-spacing: 2px; }
+      .body { font-family: 'Trebuchet MS', Arial, sans-serif; letter-spacing: 1px; }
+      .tile { cursor: help; }
+      .tile-backdrop { opacity: .18; pointer-events: none; }
+      .category { font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 11px; letter-spacing: 1px; fill: #e27b38; text-anchor: middle; }
+      .tile-label { font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #f7e9c6; text-anchor: middle; }
+      .tile-boss { font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 12px; font-style: italic; fill: #e27b38; text-anchor: middle; }
+      .tile-note { font-family: 'Trebuchet MS', Arial, sans-serif; font-size: 13px; fill: #d3b991; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="1600" height="2420" fill="url(#paper)"/><rect width="1600" height="2420" fill="url(#grain)"/>
+  <circle cx="1390" cy="92" r="34" fill="#9e3437" opacity=".8"/><circle cx="1390" cy="92" r="50" fill="none" stroke="#d15a43" stroke-width="2" opacity=".25"/>
+  <path d="M75 115 C300 45 460 90 620 55 S990 85 1160 50 S1400 70 1525 115" fill="none" stroke="#b13b35" stroke-width="5" opacity=".85"/>
+  <text x="800" y="92" class="body" font-size="17" fill="#e27b38" text-anchor="middle">A CLAN EVENT FOR THE SPOOKIEST SEASON</text>
+  <text x="800" y="154" class="display" font-size="54" font-weight="700" fill="#f7e9c6" text-anchor="middle">OSRS October Spooky Bingo</text>
+  <text x="800" y="193" class="body" font-size="17" fill="#d3b991" text-anchor="middle">MORYTANIA NIGHTS, CURSED LOOT, AND CONTROLLED CHAOS</text>
+  <g filter="url(#shadow)"><rect x="75" y="245" width="1450" height="2060" rx="8" fill="url(#board)" stroke="#c89449" stroke-width="3"/>    <g class="tile" tabindex="0">
+      <title>The Six Brothers: 10 qualifying drop(s) required</title>
+      <rect x="83" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Guthan's_warspear_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="323" class="tile-label"><tspan x="199.166666666667" dy="0">The Six Brothers</tspan></text>
+      <text x="199.166666666667" y="363" class="tile-boss">Barrows Brothers</text>
+      <text x="199.166666666667" y="388" class="tile-note"><tspan x="199.166666666667" dy="0">- 10x Barrows pieces</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Voice in the Dark: 1 qualifying drop(s) required</title>
+      <rect x="323.333333333333" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Whisperer.png?aedab" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Bellator_vestige_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="323" class="tile-label"><tspan x="439.5" dy="0">The Voice in the Dark</tspan></text>
+      <text x="439.5" y="363" class="tile-boss">The Whisperer</text>
+      <text x="439.5" y="388" class="tile-note"><tspan x="439.5" dy="0">- 1x Bellator vestige</tspan><tspan x="439.5" dy="17">- 1x Virtus mask</tspan><tspan x="439.5" dy="17">- 1x Siren&apos;s Staff</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Rat King Rumble: 5 qualifying drop(s) required</title>
+      <rect x="563.666666666667" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Scurrius.png?e66a5" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Scurrius'_spine_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="323" class="tile-label"><tspan x="679.833333333333" dy="0">Rat King Rumble</tspan></text>
+      <text x="679.833333333333" y="363" class="tile-boss">Scurrius &amp; Giant Mole</text>
+      <text x="679.833333333333" y="388" class="tile-note"><tspan x="679.833333333333" dy="0">- 5x Scurrius&apos; spine</tspan><tspan x="679.833333333333" dy="17">- 5x Immaculate mole skins</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Mad Scholar: 1 qualifying drop(s) required</title>
+      <rect x="804" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Crazy_archaeologist.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Fedora_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="323" class="tile-label"><tspan x="920.166666666667" dy="0">The Mad Scholar</tspan></text>
+      <text x="920.166666666667" y="363" class="tile-boss">Crazy Archaeologist</text>
+      <text x="920.166666666667" y="388" class="tile-note"><tspan x="920.166666666667" dy="0">- 1x Fedora</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Giants in the Green: 1 qualifying drop(s) required</title>
+      <rect x="1044.33333333333" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Obor.png?08bc8" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Hill_giant_club_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="323" class="tile-label"><tspan x="1160.5" dy="0">Giants in the Green</tspan></text>
+      <text x="1160.5" y="363" class="tile-boss">Obor / Bryophyta</text>
+      <text x="1160.5" y="388" class="tile-note"><tspan x="1160.5" dy="0">- 1x Hill giant club</tspan><tspan x="1160.5" dy="17">- 1x Bryophyta&apos;s essence</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Drowned Crown: 1 qualifying drop(s) required</title>
+      <rect x="1284.66666666667" y="253" width="232.333333333333" height="220" rx="4" fill="url(#tile-frost)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="253" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Fighting_Dagannoth_Kings.png?7a1a7" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="259" width="32" height="32" href="https://oldschool.runescape.wiki/images/Berserker_ring_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="323" class="tile-label"><tspan x="1400.83333333333" dy="0">The Drowned Crown</tspan></text>
+      <text x="1400.83333333333" y="363" class="tile-boss">Dagannoth Kings</text>
+      <text x="1400.83333333333" y="388" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Berserker ring</tspan><tspan x="1400.83333333333" dy="17">- 1x Seers ring</tspan><tspan x="1400.83333333333" dy="17">- 1x Archers ring</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Hive of Horrors: 1 qualifying drop(s) required</title>
+      <rect x="83" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Kalphite_Queen.png?a4955" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Kalphite_Queen_head_(mounted)_icon_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="551" class="tile-label"><tspan x="199.166666666667" dy="0">Hive of Horrors</tspan></text>
+      <text x="199.166666666667" y="591" class="tile-boss">Kalphite Queen</text>
+      <text x="199.166666666667" y="616" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x KQ Head</tspan><tspan x="199.166666666667" dy="17">- 1x Dragon chainbody</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Purple Portal: 1 qualifying drop(s) required</title>
+      <rect x="323.333333333333" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Dark_claw_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="551" class="tile-label"><tspan x="439.5" dy="0">The Purple Portal</tspan></text>
+      <text x="439.5" y="591" class="tile-boss">Skotizo</text>
+      <text x="439.5" y="616" class="tile-note"><tspan x="439.5" dy="0">- 1x Dark claw</tspan><tspan x="439.5" dy="17">- 1x Uncut onyx</tspan><tspan x="439.5" dy="17">- 1x Ancient shard</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Through the Vampire Mist: 1 qualifying drop(s) required</title>
+      <rect x="563.666666666667" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Vyrelady.png?ce470" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tome_of_experience_(1).png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="540" class="tile-label"><tspan x="679.833333333333" dy="0">Through the Vampire</tspan><tspan x="679.833333333333" dy="25">Mist</tspan></text>
+      <text x="679.833333333333" y="591" class="tile-boss">Temple Trekking Vampyres</text>
+      <text x="679.833333333333" y="616" class="tile-note"><tspan x="679.833333333333" dy="0">- 1x Tome of experience</tspan><tspan x="679.833333333333" dy="17">- 1x Silver sickle (b)</tspan><tspan x="679.833333333333" dy="17">- 1x Loar remains</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Hungry Chest: Complete one requirement</title>
+      <rect x="804" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Mimic.png?b45f4" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/3rd_Age_platebody_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="551" class="tile-label"><tspan x="920.166666666667" dy="0">The Hungry Chest</tspan></text>
+      <text x="920.166666666667" y="591" class="tile-boss">The Mimic</text>
+      <text x="920.166666666667" y="616" class="tile-note"><tspan x="920.166666666667" dy="0">- 10 Mimic completions</tspan><tspan x="920.166666666667" dy="17">- 1 rare reward from the clue</tspan><tspan x="920.166666666667" dy="17">reward table</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Wilderness Warlock: 1 qualifying drop(s) required</title>
+      <rect x="1044.33333333333" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Odium_shard_1_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="551" class="tile-label"><tspan x="1160.5" dy="0">The Wilderness Warlock</tspan></text>
+      <text x="1160.5" y="591" class="tile-boss">Chaos Fanatic</text>
+      <text x="1160.5" y="616" class="tile-note"><tspan x="1160.5" dy="0">- 1x Odium shard 1</tspan><tspan x="1160.5" dy="17">- 1x Malediction shard 1</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Dreams of Ashihama: 1 qualifying drop(s) required</title>
+      <rect x="1284.66666666667" y="481" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="481" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Nightmare_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="551" class="tile-label"><tspan x="1400.83333333333" dy="0">Dreams of Ashihama</tspan></text>
+      <text x="1400.83333333333" y="591" class="tile-boss">The Nightmare of Ashihama</text>
+      <text x="1400.83333333333" y="616" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Inquisitor armor piece</tspan><tspan x="1400.83333333333" dy="17">- 1x Nightmare staff</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Blood Theatre: 1 qualifying drop(s) required</title>
+      <rect x="83" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-blood)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Verzik_Vitur.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Scythe_of_Vitur_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="779" class="tile-label"><tspan x="199.166666666667" dy="0">The Blood Theatre</tspan></text>
+      <text x="199.166666666667" y="819" class="tile-boss">Theatre of Blood (ToB)</text>
+      <text x="199.166666666667" y="844" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x Scythe of vitur</tspan><tspan x="199.166666666667" dy="17">- 1x Ghrazi rapier</tspan><tspan x="199.166666666667" dy="17">- 1x Avernic defender hilt</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Heart of the Abyss: 1 qualifying drop(s) required</title>
+      <rect x="323.333333333333" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Abyssal_Sire_%28phase_1%29.png?0db8f" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Unsired_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="779" class="tile-label"><tspan x="439.5" dy="0">Heart of the Abyss</tspan></text>
+      <text x="439.5" y="819" class="tile-boss">Abyssal Sire</text>
+      <text x="439.5" y="844" class="tile-note"><tspan x="439.5" dy="0">- 1x Unsired</tspan><tspan x="439.5" dy="17">- 1x Abyssal whip</tspan><tspan x="439.5" dy="17">- 1x Abyssal dagger</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Hounds of Hell: 1 qualifying drop(s) required</title>
+      <rect x="563.666666666667" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Cerberus.png?47f4c" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Primordial_crystal_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="779" class="tile-label"><tspan x="679.833333333333" dy="0">Hounds of Hell</tspan></text>
+      <text x="679.833333333333" y="819" class="tile-boss">Cerberus</text>
+      <text x="679.833333333333" y="844" class="tile-note"><tspan x="679.833333333333" dy="0">- 1x Primordial crystal</tspan><tspan x="679.833333333333" dy="17">- 1x Pegasian crystal</tspan><tspan x="679.833333333333" dy="17">- 1x Eternal crystal</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Headless Harvest: 1 qualifying drop(s) required</title>
+      <rect x="804" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-blood)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Vardorvis.png?48af8" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ultor_vestige_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="779" class="tile-label"><tspan x="920.166666666667" dy="0">The Headless Harvest</tspan></text>
+      <text x="920.166666666667" y="819" class="tile-boss">Vardorvis</text>
+      <text x="920.166666666667" y="844" class="tile-note"><tspan x="920.166666666667" dy="0">- 1x Ultor vestige</tspan><tspan x="920.166666666667" dy="17">- 1x Executioner&apos;s axe head</tspan><tspan x="920.166666666667" dy="17">- 1x Virtus robes</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Frozen Feast: 1 qualifying drop(s) required</title>
+      <rect x="1044.33333333333" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-frost)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Duke_Sucellus.png?d588a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Magus_vestige_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="779" class="tile-label"><tspan x="1160.5" dy="0">The Frozen Feast</tspan></text>
+      <text x="1160.5" y="819" class="tile-boss">Duke Sucellus</text>
+      <text x="1160.5" y="844" class="tile-note"><tspan x="1160.5" dy="0">- 1x Magus vestige</tspan><tspan x="1160.5" dy="17">- 1x Ice quartz</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Web of Nightmares: 1 qualifying drop(s) required</title>
+      <rect x="1284.66666666667" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Araxxor.png?35d2e" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Noxious_pommel_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="779" class="tile-label"><tspan x="1400.83333333333" dy="0">Web of Nightmares</tspan></text>
+      <text x="1400.83333333333" y="819" class="tile-boss">Araxxor</text>
+      <text x="1400.83333333333" y="844" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Noxious pommel</tspan><tspan x="1400.83333333333" dy="17">- 1x Noxious point</tspan><tspan x="1400.83333333333" dy="17">- 1x Noxious blade</tspan><tspan x="1400.83333333333" dy="17">- 1x Araxxi&apos;s venom</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Crystal Prison: 1 qualifying drop(s) required</title>
+      <rect x="83" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-crystal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Corrupted_Gauntlet.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Enhanced_crystal_weapon_seed_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="1007" class="tile-label"><tspan x="199.166666666667" dy="0">The Crystal Prison</tspan></text>
+      <text x="199.166666666667" y="1047" class="tile-boss">Corrupted Gauntlet</text>
+      <text x="199.166666666667" y="1072" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x Enhanced crystal weapon</tspan><tspan x="199.166666666667" dy="17">seed</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Red Labyrinth: 5 qualifying drop(s) required</title>
+      <rect x="323.333333333333" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-crystal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Corrupted_Gauntlet.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Crystal_armor_seeds_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="1007" class="tile-label"><tspan x="439.5" dy="0">The Red Labyrinth</tspan></text>
+      <text x="439.5" y="1047" class="tile-boss">Corrupted Gauntlet</text>
+      <text x="439.5" y="1072" class="tile-note"><tspan x="439.5" dy="0">- 5x Crystal armor seeds</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Catacombs of Xeric: 1 qualifying drop(s) required</title>
+      <rect x="563.666666666667" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Great_Olm.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Twisted_bow_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="1007" class="tile-label"><tspan x="679.833333333333" dy="0">The Catacombs of Xeric</tspan></text>
+      <text x="679.833333333333" y="1047" class="tile-boss">Chambers of Xeric (CoX)</text>
+      <text x="679.833333333333" y="1072" class="tile-note"><tspan x="679.833333333333" dy="0">- 1x Dexterous prayer scroll</tspan><tspan x="679.833333333333" dy="17">- 1x Arcane prayer scroll</tspan><tspan x="679.833333333333" dy="17">- 1x Twisted bow</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Swamp Serpent: 1 qualifying drop(s) required</title>
+      <rect x="804" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Zulrah_%28serpentine%29.png?29a54" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tanzanite_fang_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="1007" class="tile-label"><tspan x="920.166666666667" dy="0">The Swamp Serpent</tspan></text>
+      <text x="920.166666666667" y="1047" class="tile-boss">Zulrah</text>
+      <text x="920.166666666667" y="1072" class="tile-note"><tspan x="920.166666666667" dy="0">- 1x Tanzanite fang</tspan><tspan x="920.166666666667" dy="17">- 1x Magic fang</tspan><tspan x="920.166666666667" dy="17">- 1x Serpentine visage</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Demon in the Snow: 1 qualifying drop(s) required</title>
+      <rect x="1044.33333333333" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-frost)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/K%27ril_Tsutsaroth.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Zamorakian_spear_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="1007" class="tile-label"><tspan x="1160.5" dy="0">Demon in the Snow</tspan></text>
+      <text x="1160.5" y="1047" class="tile-boss">Kril Tsutsaroth</text>
+      <text x="1160.5" y="1072" class="tile-note"><tspan x="1160.5" dy="0">- 1x Zamorak spear</tspan><tspan x="1160.5" dy="17">- 1x Staff of the dead</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Crypt Keeper: Complete 50 Barrows chests</title>
+      <rect x="1284.66666666667" y="937" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="937" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Chest_%28Barrows%29.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="943" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ahrim's_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="1007" class="tile-label"><tspan x="1400.83333333333" dy="0">The Crypt Keeper</tspan></text>
+      <text x="1400.83333333333" y="1047" class="tile-boss">Barrows chests</text>
+      <text x="1400.83333333333" y="1072" class="tile-note"><tspan x="1400.83333333333" dy="0">- Complete 50 Barrows chests</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Grave Robber: Obtain a Skull sceptre from the Stronghold of Security.</title>
+      <rect x="83" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Stronghold_of_Security.png?be13e" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Skull_sceptre_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="1235" class="tile-label"><tspan x="199.166666666667" dy="0">Grave Robber</tspan></text>
+      <text x="199.166666666667" y="1275" class="tile-boss">Stronghold of Security</text>
+      <text x="199.166666666667" y="1300" class="tile-note"><tspan x="199.166666666667" dy="0">- Obtain a Skull sceptre from</tspan><tspan x="199.166666666667" dy="17">the Stronghold of Security.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Spooky Wardrobe: Complete the Halloween Holiday Event, or equip 1 full Skeleton outfit and earn 1 qualifying drop.</title>
+      <rect x="323.333333333333" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ghostly_robes_equipped_male.png?bf960" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="1235" class="tile-label"><tspan x="439.5" dy="0">Spooky Wardrobe</tspan></text>
+      <text x="439.5" y="1275" class="tile-boss">Halloween event / Skeleton outfit</text>
+      <text x="439.5" y="1300" class="tile-note"><tspan x="439.5" dy="0">- Complete the Halloween</tspan><tspan x="439.5" dy="17">Holiday Event, or equip 1 full</tspan><tspan x="439.5" dy="17">Skeleton outfit and earn 1</tspan><tspan x="439.5" dy="17">qualifying drop.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Exorcist: Complete one requirement</title>
+      <rect x="563.666666666667" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Phantom_Muspah_%28ranged%29.png?9cf6a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Venator_shard_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="1235" class="tile-label"><tspan x="679.833333333333" dy="0">The Exorcist</tspan></text>
+      <text x="679.833333333333" y="1275" class="tile-boss">Phantom Muspah</text>
+      <text x="679.833333333333" y="1300" class="tile-note"><tspan x="679.833333333333" dy="0">- 5 Venator shards</tspan><tspan x="679.833333333333" dy="17">- 3 Ancient icons</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>FREE SPACE: BOO!</title>
+      <rect x="804" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-free)" stroke="#dca55a" stroke-width="3"/>
+      
+      
+      
+      <text x="920.166666666667" y="1217" class="tile-label"><tspan x="920.166666666667" dy="0">FREE SPACE</tspan></text>
+      
+      <text x="920.166666666667" y="1268" class="tile-note"><tspan x="920.166666666667" dy="0">BOO!</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Arachnophobia: Defeat Sarachnis and obtain 1 Sarachnis cudgel</title>
+      <rect x="1044.33333333333" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Sarachnis.png?8f040" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Sarachnis_cudgel_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="1235" class="tile-label"><tspan x="1160.5" dy="0">Arachnophobia</tspan></text>
+      <text x="1160.5" y="1275" class="tile-boss">Sarachnis</text>
+      <text x="1160.5" y="1300" class="tile-note"><tspan x="1160.5" dy="0">- Defeat Sarachnis and obtain</tspan><tspan x="1160.5" dy="17">1 Sarachnis cudgel</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Undertaker: Cremate 25 shades in Mort&apos;ton, or burn 25 Chewed bones to send their spirits onward.</title>
+      <rect x="1284.66666666667" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Pyre_logs_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="1235" class="tile-label"><tspan x="1400.83333333333" dy="0">The Undertaker</tspan></text>
+      <text x="1400.83333333333" y="1275" class="tile-boss">Mort&apos;ton pyre ships / shades</text>
+      <text x="1400.83333333333" y="1300" class="tile-note"><tspan x="1400.83333333333" dy="0">- Cremate 25 shades in</tspan><tspan x="1400.83333333333" dy="17">Mort&apos;ton, or burn 25 Chewed</tspan><tspan x="1400.83333333333" dy="17">bones to send their spirits</tspan><tspan x="1400.83333333333" dy="17">onward.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Revenant Hunter: Obtain 1 Ancient Emblem, 1 Ancient Totem, or 1 Ancient Statuette from the Revenants.</title>
+      <rect x="83" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_emblem_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="1463" class="tile-label"><tspan x="199.166666666667" dy="0">Revenant Hunter</tspan></text>
+      <text x="199.166666666667" y="1503" class="tile-boss">Revenants</text>
+      <text x="199.166666666667" y="1528" class="tile-note"><tspan x="199.166666666667" dy="0">- Obtain 1 Ancient Emblem, 1</tspan><tspan x="199.166666666667" dy="17">Ancient Totem, or 1 Ancient</tspan><tspan x="199.166666666667" dy="17">Statuette from the Revenants.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Bone Collector: Offer 100 dragon bones or better at the Chaos Altar.</title>
+      <rect x="323.333333333333" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Altar_%28chaos%29.png?58458" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Dragon_bones_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="1463" class="tile-label"><tspan x="439.5" dy="0">Bone Collector</tspan></text>
+      <text x="439.5" y="1503" class="tile-boss">Chaos Altar</text>
+      <text x="439.5" y="1528" class="tile-note"><tspan x="439.5" dy="0">- Offer 100 dragon bones or</tspan><tspan x="439.5" dy="17">better at the Chaos Altar.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Shades of Mort&apos;ton: Open a Gold Shade Chest using a gold key in the creepy, infected town of Morytania.</title>
+      <rect x="563.666666666667" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Gold_key_purple_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="1463" class="tile-label"><tspan x="679.833333333333" dy="0">Shades of Mort&apos;ton</tspan></text>
+      <text x="679.833333333333" y="1503" class="tile-boss">Gold Shade Chest</text>
+      <text x="679.833333333333" y="1528" class="tile-note"><tspan x="679.833333333333" dy="0">- Open a Gold Shade Chest</tspan><tspan x="679.833333333333" dy="17">using a gold key in the</tspan><tspan x="679.833333333333" dy="17">creepy, infected town of</tspan><tspan x="679.833333333333" dy="17">Morytania.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Grim Reaper: Teleport to Death&apos;s Office and successfully claim a Grave / Death reclaim while wearing a black cape.</title>
+      <rect x="804" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Dying_animation.gif?30e7c" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Black_cape_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="1463" class="tile-label"><tspan x="920.166666666667" dy="0">The Grim Reaper</tspan></text>
+      <text x="920.166666666667" y="1503" class="tile-boss">Death&apos;s Office</text>
+      <text x="920.166666666667" y="1528" class="tile-note"><tspan x="920.166666666667" dy="0">- Teleport to Death&apos;s Office</tspan><tspan x="920.166666666667" dy="17">and successfully claim a Grave</tspan><tspan x="920.166666666667" dy="17">/ Death reclaim while wearing</tspan><tspan x="920.166666666667" dy="17">a black cape.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Fists of Fury: As a team, complete 10 Barrows chests with no equipped weapons. Barrows damage may come from spells, prayers, or fists.</title>
+      <rect x="1044.33333333333" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Guthan%27s_warspear_detail.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ahrim's_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="1463" class="tile-label"><tspan x="1160.5" dy="0">Fists of Fury</tspan></text>
+      <text x="1160.5" y="1503" class="tile-boss">Barrows</text>
+      <text x="1160.5" y="1528" class="tile-note"><tspan x="1160.5" dy="0">- As a team, complete 10</tspan><tspan x="1160.5" dy="17">Barrows chests with no</tspan><tspan x="1160.5" dy="17">equipped weapons. Barrows</tspan><tspan x="1160.5" dy="17">damage may come from spells,</tspan><tspan x="1160.5" dy="17">prayers, or fists.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Ghostbusters: Complete a team Wilderness boss trip with every participant wearing at least one Ghostly robe piece.</title>
+      <rect x="1284.66666666667" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ghostly_robes_equipped_male.png?bf960" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ghostly_hood_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="1463" class="tile-label"><tspan x="1400.83333333333" dy="0">Ghostbusters</tspan></text>
+      <text x="1400.83333333333" y="1503" class="tile-boss">Wilderness boss trip</text>
+      <text x="1400.83333333333" y="1528" class="tile-note"><tspan x="1400.83333333333" dy="0">- Complete a team Wilderness</tspan><tspan x="1400.83333333333" dy="17">boss trip with every</tspan><tspan x="1400.83333333333" dy="17">participant wearing at least</tspan><tspan x="1400.83333333333" dy="17">one Ghostly robe piece.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Witching Hour: Award a bonus point for a unique or pet received between 12:00 AM and 1:00 AM local time. Record the game clock and screenshot.</title>
+      <rect x="83" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ring_of_shadows_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="1691" class="tile-label"><tspan x="199.166666666667" dy="0">The Witching Hour</tspan></text>
+      <text x="199.166666666667" y="1731" class="tile-boss">Boss / raid unique drop</text>
+      <text x="199.166666666667" y="1756" class="tile-note"><tspan x="199.166666666667" dy="0">- Award a bonus point for a</tspan><tspan x="199.166666666667" dy="17">unique or pet received between</tspan><tspan x="199.166666666667" dy="17">12:00 AM and 1:00 AM local</tspan><tspan x="199.166666666667" dy="17">time. Record the game clock</tspan><tspan x="199.166666666667" dy="17">and screenshot.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Zombie Apocalypse: Win a Pest Control game while every participant wears a zombie-themed outfit, or complete a raid room with everyone poisoned at the finish.</title>
+      <rect x="323.333333333333" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Pest_Control.png?ed7bb" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Zombie_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="1691" class="tile-label"><tspan x="439.5" dy="0">Zombie Apocalypse</tspan></text>
+      <text x="439.5" y="1731" class="tile-boss">Pest Control / raid room</text>
+      <text x="439.5" y="1756" class="tile-note"><tspan x="439.5" dy="0">- Win a Pest Control game</tspan><tspan x="439.5" dy="17">while every participant wears</tspan><tspan x="439.5" dy="17">a zombie-themed outfit, or</tspan><tspan x="439.5" dy="17">complete a raid room with</tspan><tspan x="439.5" dy="17">everyone poisoned at the</tspan><tspan x="439.5" dy="17">finish.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Spooky Scary Skeletons: Complete a Barrows chest or raid room while every participant wears a visible skeleton-themed item.</title>
+      <rect x="563.666666666667" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="1691" class="tile-label"><tspan x="679.833333333333" dy="0">Spooky Scary Skeletons</tspan></text>
+      <text x="679.833333333333" y="1731" class="tile-boss">Barrows / raid room</text>
+      <text x="679.833333333333" y="1756" class="tile-note"><tspan x="679.833333333333" dy="0">- Complete a Barrows chest or</tspan><tspan x="679.833333333333" dy="17">raid room while every</tspan><tspan x="679.833333333333" dy="17">participant wears a visible</tspan><tspan x="679.833333333333" dy="17">skeleton-themed item.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Necromancer: Defeat a Wilderness boss while every participant uses the Arceuus spellbook and summons a thrall during the kill.</title>
+      <rect x="804" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Book_of_the_Dead_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="1691" class="tile-label"><tspan x="920.166666666667" dy="0">The Necromancer</tspan></text>
+      <text x="920.166666666667" y="1731" class="tile-boss">Wilderness boss</text>
+      <text x="920.166666666667" y="1756" class="tile-note"><tspan x="920.166666666667" dy="0">- Defeat a Wilderness boss</tspan><tspan x="920.166666666667" dy="17">while every participant uses</tspan><tspan x="920.166666666667" dy="17">the Arceuus spellbook and</tspan><tspan x="920.166666666667" dy="17">summons a thrall during the</tspan><tspan x="920.166666666667" dy="17">kill.</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Ahrim&apos;s Haunted Staff: Barrows Brothers</title>
+      <rect x="1044.33333333333" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ahrim's_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="1691" class="tile-label"><tspan x="1160.5" dy="0">Ahrim&apos;s Haunted Staff</tspan></text>
+      <text x="1160.5" y="1731" class="tile-boss">Barrows Brothers</text>
+      <text x="1160.5" y="1756" class="tile-note"><tspan x="1160.5" dy="0">- 1x Ahrim&apos;s Staff</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Staff of the Old Ones: Chaos Fanatic / Mummies</title>
+      <rect x="1284.66666666667" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="1691" class="tile-label"><tspan x="1400.83333333333" dy="0">Staff of the Old Ones</tspan></text>
+      <text x="1400.83333333333" y="1731" class="tile-boss">Chaos Fanatic / Mummies</text>
+      <text x="1400.83333333333" y="1756" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Ancient Staff</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Totem of the Deep: Catacombs of Kourend</title>
+      <rect x="83" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Catacombs_of_Kourend.png?42e4e" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Dark_totem_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="1919" class="tile-label"><tspan x="199.166666666667" dy="0">Totem of the Deep</tspan></text>
+      <text x="199.166666666667" y="1959" class="tile-boss">Catacombs of Kourend</text>
+      <text x="199.166666666667" y="1984" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x Dark Totem</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The General&apos;s War Spoils: General Graardor</title>
+      <rect x="323.333333333333" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/General_Graardor.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Bandos_chestplate_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="1908" class="tile-label"><tspan x="439.5" dy="0">The General&apos;s War</tspan><tspan x="439.5" dy="25">Spoils</tspan></text>
+      <text x="439.5" y="1959" class="tile-boss">General Graardor</text>
+      <text x="439.5" y="1984" class="tile-note"><tspan x="439.5" dy="0">- 1x Bandos chestplate</tspan><tspan x="439.5" dy="17">- 1x Bandos tassets</tspan><tspan x="439.5" dy="17">- 1x Bandos Hilt</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Blood Drinker: Theatre of Blood (ToB)</title>
+      <rect x="563.666666666667" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-blood)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="1919" class="tile-label"><tspan x="679.833333333333" dy="0">The Blood Drinker</tspan></text>
+      <text x="679.833333333333" y="1959" class="tile-boss">Theatre of Blood (ToB)</text>
+      <text x="679.833333333333" y="1984" class="tile-note"><tspan x="679.833333333333" dy="0">- 1x Sanguinesti Staff</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Abyssal Spinecrusher: Abyssal Sire</title>
+      <rect x="804" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Abyssal_Sire_%28phase_1%29.png?0db8f" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Abyssal_bludgeon_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="1908" class="tile-label"><tspan x="920.166666666667" dy="0">The Abyssal</tspan><tspan x="920.166666666667" dy="25">Spinecrusher</tspan></text>
+      <text x="920.166666666667" y="1959" class="tile-boss">Abyssal Sire</text>
+      <text x="920.166666666667" y="1984" class="tile-note"><tspan x="920.166666666667" dy="0">- 1x Abyssal Bludgeon</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>Nightmare&apos;s Cursed Core: The Nightmare of Ashihama</title>
+      <rect x="1044.33333333333" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Volatile_orb_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="1919" class="tile-label"><tspan x="1160.5" dy="0">Nightmare&apos;s Cursed Core</tspan></text>
+      <text x="1160.5" y="1959" class="tile-boss">The Nightmare of Ashihama</text>
+      <text x="1160.5" y="1984" class="tile-note"><tspan x="1160.5" dy="0">- 1x Volatile orb</tspan><tspan x="1160.5" dy="17">- 1x Harmonised orb</tspan><tspan x="1160.5" dy="17">- 1x Eldritch orb</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Leviathan&apos;s Maw: The Leviathan</title>
+      <rect x="1284.66666666667" y="1849" width="232.333333333333" height="220" rx="4" fill="url(#tile-leviathan)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="1849" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Leviathan.png?d588a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="1855" width="32" height="32" href="https://oldschool.runescape.wiki/images/Venator_vestige_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="1919" class="tile-label"><tspan x="1400.83333333333" dy="0">The Leviathan&apos;s Maw</tspan></text>
+      <text x="1400.83333333333" y="1959" class="tile-boss">The Leviathan</text>
+      <text x="1400.83333333333" y="1984" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Venator vestige</tspan><tspan x="1400.83333333333" dy="17">- 1x Leviathan&apos;s lure</tspan><tspan x="1400.83333333333" dy="17">- 1x Virtus mask</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Witch&apos;s Face: Cave Horrors</title>
+      <rect x="83" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Black_mask_detail.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.166666666667" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Black_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="199.166666666667" y="2147" class="tile-label"><tspan x="199.166666666667" dy="0">The Witch&apos;s Face</tspan></text>
+      <text x="199.166666666667" y="2187" class="tile-boss">Cave Horrors</text>
+      <text x="199.166666666667" y="2212" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x Black Mask</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Grotesque Guardians: Grotesque Guardians</title>
+      <rect x="323.333333333333" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.333333333333" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Dawn.png?8b8ea" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.5" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Granite_hammer_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="439.5" y="2147" class="tile-label"><tspan x="439.5" dy="0">The Grotesque Guardians</tspan></text>
+      <text x="439.5" y="2187" class="tile-boss">Grotesque Guardians</text>
+      <text x="439.5" y="2212" class="tile-note"><tspan x="439.5" dy="0">- 1x Granite hammer</tspan><tspan x="439.5" dy="17">- 1x Black tourmaline core</tspan><tspan x="439.5" dy="17">- 1x Granite ring</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Pact Devil: Yama</title>
+      <rect x="563.666666666667" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="563.666666666667" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Yama.png?7653a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="663.833333333333" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Soulflame_horn_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="679.833333333333" y="2147" class="tile-label"><tspan x="679.833333333333" dy="0">The Pact Devil</tspan></text>
+      <text x="679.833333333333" y="2187" class="tile-boss">Yama</text>
+      <text x="679.833333333333" y="2212" class="tile-note"><tspan x="679.833333333333" dy="0">- 1x Soulflame horn</tspan><tspan x="679.833333333333" dy="17">- 1x Oathplate armour</tspan><tspan x="679.833333333333" dy="17">- 1x Yama dossier</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Corpse Eater: Maggot King</title>
+      <rect x="804" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Maggot_King.png?a6790" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.166666666667" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Elder_venator_fang_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="920.166666666667" y="2147" class="tile-label"><tspan x="920.166666666667" dy="0">The Corpse Eater</tspan></text>
+      <text x="920.166666666667" y="2187" class="tile-boss">Maggot King</text>
+      <text x="920.166666666667" y="2212" class="tile-note"><tspan x="920.166666666667" dy="0">- 1x Elder venator fang</tspan><tspan x="920.166666666667" dy="17">- 1x Crimson kisten</tspan><tspan x="920.166666666667" dy="17">- 1x Maggot marquess</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Fallen Seraph: Mad Angel</title>
+      <rect x="1044.33333333333" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.33333333333" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Mad_Angel.webp?c7990" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Hallowfell_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1160.5" y="2147" class="tile-label"><tspan x="1160.5" dy="0">The Fallen Seraph</tspan></text>
+      <text x="1160.5" y="2187" class="tile-boss">Mad Angel</text>
+      <text x="1160.5" y="2212" class="tile-note"><tspan x="1160.5" dy="0">- 1x Hallowfell</tspan><tspan x="1160.5" dy="17">- 1x Jar of Light</tspan><tspan x="1160.5" dy="17">- 1x Aggy</tspan></text>
+    </g>    <g class="tile" tabindex="0">
+      <title>The Pharaoh&apos;s Curse: Akkha</title>
+      <rect x="1284.66666666667" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.66666666667" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Akkha.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.83333333333" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tumeken's_shadow_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      
+      <text x="1400.83333333333" y="2147" class="tile-label"><tspan x="1400.83333333333" dy="0">The Pharaoh&apos;s Curse</tspan></text>
+      <text x="1400.83333333333" y="2187" class="tile-boss">Akkha</text>
+      <text x="1400.83333333333" y="2212" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Tumeken&apos;s shadow</tspan><tspan x="1400.83333333333" dy="17">- 1x Osmumten&apos;s fang</tspan><tspan x="1400.83333333333" dy="17">- 1x Masori armour</tspan></text>
+    </g></g>
+  <text x="800" y="2382" class="body" font-size="15" fill="#d3b991" text-anchor="middle">GENERATED FROM OCTOBER-BINGO-IDEAS.JSON  -  CHECK PROOF WITH YOUR CLAN LEAD</text>
+</svg>
