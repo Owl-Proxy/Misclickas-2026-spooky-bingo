@@ -1,5 +1,5 @@
 {
-  "bingo_event": "OSRS October Spooky Bingo",
+  "bingo_event": "Misclickas Spooky Bingo",
   "theme": "Morytania nights, cursed loot, and controlled chaos",
   "recommended_board_size": "5x5",
   "scoring_notes": [
@@ -21,15 +21,16 @@
         "boss": "The Whisperer",
         "tile_name": "The Voice in the Dark",
         "target_quantity": 1,
+        "completion_mode": "any",
         "spooky_vibe": "A voice-stealing nightmare hiding beneath the haunted ruins of Stranglewood.",
-        "target_drops": ["Bellator vestige", "Virtus mask", "Siren's Staff"]
+        "target_drops": ["Bellator vestige", "Siren's staff", "Any Virtus armour piece"]
       },
       {
-        "boss": "Scurrius & Giant Mole",
+        "boss": "Scurrius",
         "tile_name": "Rat King Rumble",
         "target_quantity": 5,
         "spooky_vibe": "Infestations of giant vermin in pitch-black sewers and tunnels.",
-        "target_drops": ["Scurrius' spine", "Immaculate mole skins"]
+        "target_drops": ["Scurrius' spine"]
       },
       {
         "boss": "Crazy Archaeologist",
@@ -42,6 +43,7 @@
         "boss": "Obor / Bryophyta",
         "tile_name": "Giants in the Green",
         "target_quantity": 1,
+        "completion_mode": "any",
         "spooky_vibe": "Subterranean giants living in mossy, damp, claustrophobic dungeons.",
         "target_drops": ["Hill giant club", "Bryophyta's essence"]
       },
@@ -103,8 +105,12 @@
         "boss": "Theatre of Blood (ToB)",
         "tile_name": "The Blood Theatre",
         "target_quantity": 1,
+        "completion_paths": [
+          { "all_of": ["Scythe of vitur"] },
+          { "all_of": ["Ghrazi rapier", "Avernic defender hilt", "Sanguinesti staff"] }
+        ],
         "spooky_vibe": "Vampyres, rivers of blood, human experimentation, and arachnids.",
-        "target_drops": ["Scythe of vitur", "Ghrazi rapier", "Avernic defender hilt"]
+        "target_drops": ["Scythe of vitur", "Ghrazi rapier", "Avernic defender hilt", "Sanguinesti staff"]
       },
       {
         "boss": "Abyssal Sire",
@@ -124,22 +130,24 @@
         "boss": "Vardorvis",
         "tile_name": "The Headless Harvest",
         "target_quantity": 1,
+        "completion_mode": "any",
         "spooky_vibe": "A blood-thirsty, blind executioner trapped in an infected, bleeding forest.",
-        "target_drops": ["Ultor vestige", "Executioner's axe head", "Virtus robes"]
+        "target_drops": ["Ultor vestige", "Executioner's axe head", "Any Virtus armour piece"]
       },
       {
         "boss": "Duke Sucellus",
         "tile_name": "The Frozen Feast",
         "target_quantity": 1,
+        "completion_mode": "any",
         "spooky_vibe": "A giant, decaying, gluttonous demon sleeping in frozen, forgotten catacombs.",
-        "target_drops": ["Magus vestige", "Ice quartz"]
+        "target_drops": ["Magus vestige", "Eye of the duke", "Any Virtus armour piece"]
       },
       {
         "boss": "Araxxor",
         "tile_name": "Web of Nightmares",
         "target_quantity": 1,
         "spooky_vibe": "Delving deep into a web-choked nest to face a colossal, venom-spitting arachnid.",
-        "target_drops": ["Noxious pommel", "Noxious point", "Noxious blade", "Araxxi's venom"]
+        "target_drops": ["Noxious pommel", "Noxious point", "Noxious blade"]
       },
       {
         "boss": "Corrupted Gauntlet",
@@ -159,9 +167,17 @@
         "boss": "Chambers of Xeric (CoX)",
         "tile_name": "The Catacombs of Xeric",
         "target_quantity": 1,
+        "completion_paths": [
+          { "all_of": ["Twisted bow"] },
+          { "all_of": [
+            { "label": "Prayer scroll", "any_of": ["Dexterous prayer scroll", "Arcane prayer scroll"] },
+            { "label": "Ancestral piece", "any_of": ["Ancestral hat", "Ancestral robe top", "Ancestral robe bottom"] },
+            { "label": "CoX weapon", "any_of": ["Dragon claws", "Dragon hunter crossbow", "Dinh's bulwark", "Kodai insignia", "Elder maul"], "display_options": "Claws / DHCB / Dinh's / Kodai / Elder maul" }
+          ] }
+        ],
         "sprite_item": "Twisted bow",
         "spooky_vibe": "Delving into ancient catacombs filled with skeletal mutations, parasitic wasps, and dark sacrificial altars.",
-        "target_drops": ["Dexterous prayer scroll", "Arcane prayer scroll", "Twisted bow"]
+        "target_drops": ["Twisted bow", "Dexterous prayer scroll", "Arcane prayer scroll", "Ancestral hat", "Ancestral robe top", "Ancestral robe bottom", "Dragon claws", "Dragon hunter crossbow", "Dinh's bulwark", "Kodai insignia", "Elder maul"]
       },
       {
         "boss": "Zulrah",
@@ -255,9 +271,9 @@
       {
         "tile_name": "Fists of Fury",
         "subtitle": "Barrows",
-        "target_quantity": 10,
+        "target_quantity": 3,
         "sprite_item": "Ahrim's staff",
-        "rule": "As a team, complete 10 Barrows chests with no equipped weapons. Barrows damage may come from spells, prayers, or fists."
+        "rule": "As a team, complete 3 Barrows chests with no equipped weapons. Barrows damage may come from spells, prayers, or fists."
       },
       {
         "tile_name": "Ghostbusters",
@@ -300,11 +316,13 @@
   "description": "Optional bonus items with a dark, undead, or demonic aesthetic for extra points.",
   "items": [
     {
-      "item_name": "Ahrim's Staff",
+      "item_name": "Dual macuahuitl / Blue moon spear / Eclipse atlatl",
       "target_quantity": 1,
-      "tile_name": "Ahrim's Haunted Staff",
-      "source": "Barrows Brothers",
-      "spooky_lore": "A corrupted, ancient staff used by the dead brothers to cast malevolent shadow spells."
+      "target_items": ["Dual macuahuitl", "Blue moon spear", "Eclipse atlatl"],
+      "tile_name": "The Cursed Moons",
+      "sprite_item": "Dual macuahuitl",
+      "source": "Perilous Moons",
+      "spooky_lore": "Face the ancient lunar horrors sealed beneath Cam Torum and claim a weapon from the Lunar Chest."
     },
     {
       "item_name": "Ancient Staff",
@@ -314,11 +332,13 @@
       "spooky_lore": "A sinister, purple staff required to channel the dark magic of the Ancient Magicks spellbook."
     },
     {
-      "item_name": "Dark Totem",
+      "item_name": "Mokhaiotl cloth / Eye of ayak (uncharged) / Avernic treads",
       "target_quantity": 1,
-      "tile_name": "Totem of the Deep",
-      "source": "Catacombs of Kourend",
-      "spooky_lore": "A literal ritual icon used to open dark portals to demonic pocket dimensions."
+      "target_items": ["Mokhaiotl cloth", "Eye of ayak (uncharged)", "Avernic treads"],
+      "tile_name": "The Buried Doom",
+      "sprite_item": "Mokhaiotl cloth",
+      "source": "Doom of Mokhaiotl",
+      "spooky_lore": "Descend beneath Mokhaiotl and claim a relic from the ravenous demon waiting in the dark."
     },
     {
       "item_name": "Bandos chestplate / Bandos tassets / Bandos godsword",
@@ -330,22 +350,34 @@
       "spooky_lore": "War trophies taken from the hulking general of Bandos and his brutal God Wars camp."
     },
     {
-      "item_name": "Sanguinesti Staff",
+      "item_name": "Vorkath's head / Dragonbone necklace / Jar of decay / Vorki / Draconic visage / Skeletal visage",
       "target_quantity": 1,
-      "tile_name": "The Blood Drinker",
-      "source": "Theatre of Blood (ToB)",
-      "spooky_lore": "A terrifying, blood-fueled staff that siphons life force from your targets to heal you."
+      "completion_paths": [
+        { "all_of": [
+          { "label": "Vorkath's head", "quantity": 3 },
+          "Dragonbone necklace",
+          { "label": "Any one", "any_of": ["Jar of decay", "Vorki", "Draconic visage", "Skeletal visage"], "display_options": "Jar of decay / Vorki / Draconic visage / Skeletal visage" }
+        ] }
+      ],
+      "target_items": ["Vorkath's head", "Dragonbone necklace", "Jar of decay", "Vorki", "Draconic visage", "Skeletal visage"],
+      "tile_name": "The Reanimated Wyvern",
+      "sprite_item": "Vorkath's head",
+      "source": "Vorkath",
+      "spooky_lore": "Claim a grisly trophy from the undead guardian of Ungael's frozen shores."
     },
     {
-      "item_name": "Abyssal Bludgeon",
+      "item_name": "Fire element staff crown / Ice element staff crown / Deadeye prayer scroll / Mystic vigour prayer scroll",
       "target_quantity": 1,
-      "tile_name": "The Abyssal Spinecrusher",
-      "source": "Abyssal Sire",
-      "spooky_lore": "A weapon pieced together from the organic, pulsing limbs and spinal columns of an Eldritch horror."
+      "target_items": ["Fire element staff crown", "Ice element staff crown", "Deadeye prayer scroll", "Mystic vigour prayer scroll"],
+      "tile_name": "A Clash of Ice and Fire",
+      "sprite_item": "Fire element staff crown",
+      "source": "Royal Titans",
+      "spooky_lore": "Brave a frozen cavern where giant monarchs wield searing flames and grave-cold ice."
     },
     {
       "item_name": "Volatile / Harmonized / Eldritch Orb",
       "target_quantity": 1,
+      "completion_mode": "any",
       "tile_name": "Nightmare's Cursed Core",
       "target_items": ["Volatile orb", "Harmonised orb", "Eldritch orb"],
       "sprite_item": "Volatile orb",
@@ -353,9 +385,10 @@
       "spooky_lore": "Pulsing cores of pure magical energy used to empower raw nightmare curses."
     },
     {
-      "item_name": "Venator vestige / Leviathan's lure / Virtus mask",
+      "item_name": "Venator vestige / Leviathan's lure / Any Virtus armour piece",
       "target_quantity": 1,
-      "target_items": ["Venator vestige", "Leviathan's lure", "Virtus mask"],
+      "completion_mode": "any",
+      "target_items": ["Venator vestige", "Leviathan's lure", "Any Virtus armour piece"],
       "tile_name": "The Leviathan's Maw",
       "sprite_item": "Venator vestige",
       "source": "The Leviathan",
@@ -389,6 +422,10 @@
     {
       "item_name": "Elder venator fang / Crimson kisten / Maggot marquess",
       "target_quantity": 1,
+      "completion_paths": [
+        { "all_of": ["Maggot marquess"] },
+        { "all_of": ["Elder venator fang", "Crimson kisten"] }
+      ],
       "target_items": ["Elder venator fang", "Crimson kisten", "Maggot marquess"],
       "tile_name": "The Corpse Eater",
       "sprite_item": "Elder venator fang",
@@ -398,6 +435,10 @@
     {
       "item_name": "Hallowfell / Jar of Light / Aggy",
       "target_quantity": 1,
+      "completion_paths": [
+        { "all_of": ["Aggy"] },
+        { "all_of": ["Jar of Light", "Hallowfell"] }
+      ],
       "target_items": ["Hallowfell", "Jar of Light", "Aggy"],
       "tile_name": "The Fallen Seraph",
       "sprite_item": "Hallowfell",
@@ -405,9 +446,17 @@
       "spooky_lore": "A broken golem angel haunting the cathedral of Ardeaglais."
     },
     {
-      "item_name": "Tumeken's shadow / Osmumten's fang / Masori armour",
+      "item_name": "Tumeken's shadow / Lightbearer / Masori armour / Elidinis' ward / Osmumten's fang",
       "target_quantity": 1,
-      "target_items": ["Tumeken's shadow", "Osmumten's fang", "Masori armour"],
+      "completion_paths": [
+        { "all_of": ["Tumeken's shadow"] },
+        { "all_of": [
+          "Lightbearer",
+          { "label": "Masori piece", "any_of": ["Masori mask", "Masori body", "Masori chaps"] },
+          { "label": "Weapon", "any_of": ["Elidinis' ward", "Osmumten's fang"], "display_options": "Elidinis' ward / Fang" }
+        ] }
+      ],
+      "target_items": ["Tumeken's shadow", "Lightbearer", "Masori mask", "Masori body", "Masori chaps", "Elidinis' ward", "Osmumten's fang"],
       "tile_name": "The Pharaoh's Curse",
       "sprite_item": "Tumeken's shadow",
       "source": "Akkha",

@@ -8,11 +8,39 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+function Get-Completion-Paths($Entry) {
+  if ($Entry.psobject.Properties.Name -notcontains 'completion_paths') { return }
+  foreach ($completionPath in $Entry.completion_paths) {
+    $drops = @()
+    $details = @()
+    foreach ($drop in $completionPath.all_of) {
+      $quantity = $Entry.target_quantity
+      if ($drop -is [string]) { $label = $drop; $detail = $drop }
+      else {
+        $label = $drop.label
+        $detail = $drop.label
+        if ($drop.psobject.Properties.Name -contains 'quantity') { $quantity = $drop.quantity }
+        if ($drop.psobject.Properties.Name -contains 'display_options') { $label += " ($($drop.display_options))" }
+        if ($drop.psobject.Properties.Name -contains 'any_of') { $detail = 'any of (' + ($drop.any_of -join ' OR ') + ')' }
+      }
+      $drops += "${quantity}x $label"
+      $details += "${quantity}x $detail"
+    }
+    [pscustomobject]@{ drops = $drops; details = $details }
+  }
+}
+
 function Escape-Xml([string]$Value) {
   return [System.Security.SecurityElement]::Escape($Value)
 }
 
 function Get-Sprite-Url([string]$ItemName) {
+  if ($ItemName -eq "Vorkath's head") {
+    return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/vorkaths-head.png')))
+  }
+  if ($ItemName -eq 'Dual macuahuitl') {
+    return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/dual-macuahuitl.png')))
+  }
   $aliases = @{
     "Inquisitor armor piece" = "Inquisitor's_hauberk"
     "Virtus robes" = "Virtus_robe_top"
@@ -56,7 +84,7 @@ function Get-Boss-Image([string]$BossName) {
   $images = @{
     'Barrows Brothers' = 'https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092'
     'The Whisperer' = 'https://oldschool.runescape.wiki/images/The_Whisperer.png?aedab'
-    'Scurrius & Giant Mole' = 'https://oldschool.runescape.wiki/images/Scurrius.png?e66a5'
+    'Scurrius' = 'https://oldschool.runescape.wiki/images/Scurrius.png?e66a5'
     'Crazy Archaeologist' = 'https://oldschool.runescape.wiki/images/Crazy_archaeologist.png'
     'Obor / Bryophyta' = 'https://oldschool.runescape.wiki/images/Obor.png?08bc8'
     'Dagannoth Kings' = 'https://oldschool.runescape.wiki/images/Fighting_Dagannoth_Kings.png?7a1a7'
@@ -84,6 +112,7 @@ function Get-Boss-Image([string]$BossName) {
 
 function Get-Activity-Image([string]$Title, [string]$Subtitle, [string]$Source) {
   $images = @{
+    'Perilous Moons' = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/blood-moon.png')))
     'The Crypt Keeper' = 'https://oldschool.runescape.wiki/images/Chest_%28Barrows%29.png'
     "Ahrim's Haunted Wand" = 'https://oldschool.runescape.wiki/images/Ahrim%27s_staff_detail.png'
     'Grave Robber' = 'https://oldschool.runescape.wiki/images/Stronghold_of_Security.png?be13e'
@@ -101,13 +130,14 @@ function Get-Activity-Image([string]$Title, [string]$Subtitle, [string]$Source) 
     'Zombie Apocalypse' = 'https://oldschool.runescape.wiki/images/Pest_Control.png?ed7bb'
     'Spooky Scary Skeletons' = 'https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png'
     'The Necromancer' = 'https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1'
-    'Totem of the Deep' = 'https://oldschool.runescape.wiki/images/Catacombs_of_Kourend.png?42e4e'
+    'Doom of Mokhaiotl' = 'https://oldschool.runescape.wiki/images/Doom_of_Mokhaiotl.png'
+    'Royal Titans' = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/royal-titans.png')))
     'Barrows Brothers' = 'https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092'
     'Chaos Fanatic / Mummies' = 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d'
     'Catacombs of Kourend' = 'https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8'
     'Kril Tsutsaroth' = 'https://oldschool.runescape.wiki/images/K%27ril_Tsutsaroth.png'
     'Theatre of Blood (ToB)' = 'https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png'
-    'The Blood Drinker' = 'https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png'
+    'Vorkath' = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/vorkath.png')))
     'Abyssal Sire' = 'https://oldschool.runescape.wiki/images/Abyssal_Sire_%28phase_1%29.png?0db8f'
     'The Nightmare of Ashihama' = 'https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a'
     'Vardorvis / DT2 Bosses' = 'https://oldschool.runescape.wiki/images/Vardorvis.png?48af8'
@@ -131,6 +161,10 @@ function Get-Activity-Image([string]$Title, [string]$Subtitle, [string]$Source) 
 }
 
 function Get-Activity-Theme([string]$Title, [string]$Subtitle, [string]$Source) {
+  if ($Source -eq 'Vorkath') { return 'frost' }
+  if ($Source -eq 'Perilous Moons') { return 'blood' }
+  if ($Source -eq 'Doom of Mokhaiotl') { return 'infernal' }
+  if ($Source -eq 'Royal Titans') { return 'frost' }
   if ($Title -match 'Wardrobe|Ghostbusters|Witching|Exorcist' -or $Subtitle -match 'Ghost|Phantom|Nightmare') { return 'spectral' }
   if ($Title -match 'Arachnophobia|Zombie|Shades|Bone Collector|Witch''s Face' -or $Subtitle -match 'Sarachnis|Revenant|Cave Horrors') { return 'swamp' }
   if ($Title -match 'Necromancer|Grim Reaper|Totem|Old Ones|Abyssal' -or $Subtitle -match 'Death|Catacombs|Abyss') { return 'infernal' }
@@ -138,7 +172,7 @@ function Get-Activity-Theme([string]$Title, [string]$Subtitle, [string]$Source) 
   if ($Title -match 'General''s War Spoils|Gargoyle|Granite|Grotesque|Pact Devil|Pharaoh' -or $Source -match 'General Graardor|Gargoyles|Grotesque Guardians|Yama|Tombs of Amascut|Akkha') { return 'relic' }
   if ($Title -match 'Corpse Eater' -or $Source -match 'Maggot King') { return 'swamp' }
   if ($Title -match 'Fallen Seraph' -or $Source -match 'Mad Angel') { return 'spectral' }
-  if ($Title -match 'Blood Drinker' -or $Source -match 'Theatre of Blood') { return 'blood' }
+  if ($Source -match 'Theatre of Blood') { return 'blood' }
   return 'haunted'
 }
 
@@ -180,7 +214,18 @@ foreach ($tier in $event.tiers.psobject.Properties) {
       }
       $requirements = if ($entry.psobject.Properties.Name -contains 'target_requirements') { @($entry.target_requirements) } else { @($entry.target_drops | ForEach-Object { "$($entry.target_quantity)x $_" }) }
       $requirementNote = if ($entry.psobject.Properties.Name -contains 'target_requirements') { 'Complete one requirement' } else { "$($entry.target_quantity) qualifying drop(s) required" }
-      $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $entry.boss; note = $requirementNote; requirements = $requirements; sprite = $sprite; bossImage = Get-Boss-Image $entry.boss; theme = Get-Tile-Theme $entry.boss; category = $tierLabels[$tier.Name]; free = $false })
+      $requirementsHeading = ''
+      if ($entry.psobject.Properties.Name -contains 'completion_mode' -and $entry.completion_mode -eq 'any') {
+        $requirementNote = 'Obtain any one listed drop from this boss.'
+        if ($entry.target_drops -contains 'Any Virtus armour piece') { $requirementNote += ' Virtus: mask, robe top, or robe bottom.' }
+        $requirementsHeading = 'Any one of the following:'
+      }
+      $completionPaths = @()
+      if ($entry.psobject.Properties.Name -contains 'completion_paths') {
+        $completionPaths = @(Get-Completion-Paths $entry)
+        $requirementNote = ($completionPaths | ForEach-Object { '(' + ($_.details -join ' AND ') + ')' }) -join ' OR '
+      }
+      $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $entry.boss; note = $requirementNote; requirementsHeading = $requirementsHeading; requirements = $requirements; completionPaths = $completionPaths; sprite = $sprite; bossImage = Get-Boss-Image $entry.boss; theme = Get-Tile-Theme $entry.boss; category = $tierLabels[$tier.Name]; free = $false })
     } else {
       $note = if ($entry.psobject.Properties.Name -contains 'challenge') { $entry.challenge } else { $entry.rule }
       $sprite = if ($entry.psobject.Properties.Name -contains 'sprite_item') { Get-Sprite-Url $entry.sprite_item } else { $null }
@@ -196,7 +241,17 @@ foreach ($item in $event.items) {
   $spriteItem = if ($item.psobject.Properties.Name -contains 'sprite_item') { $item.sprite_item } else { $item.item_name }
   $targetItems = if ($item.psobject.Properties.Name -contains 'target_items') { $item.target_items } else { @($item.item_name) }
   $itemTheme = if ($item.source -eq 'The Leviathan') { 'leviathan' } else { Get-Activity-Theme $displayTitle '' $item.source }
-  $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $item.source; note = $item.source; requirements = @($targetItems | ForEach-Object { "$($item.target_quantity)x $_" }); sprite = Get-Sprite-Url $spriteItem; bossImage = Get-Activity-Image $displayTitle $item.source $item.source; theme = $itemTheme; category = $event.bonus_category.ToUpperInvariant(); free = $false })
+  $itemRequirements = @($targetItems | ForEach-Object { "$($item.target_quantity)x $_" })
+  $itemNote = $item.source
+  $requirementsHeading = ''
+  if ($item.psobject.Properties.Name -contains 'completion_mode' -and $item.completion_mode -eq 'any') {
+    $itemNote = "$($item.source): Obtain any one listed drop from this boss."
+    if ($targetItems -contains 'Any Virtus armour piece') { $itemNote += ' Virtus: mask, robe top, or robe bottom.' }
+    $requirementsHeading = 'Any one of the following:'
+  }
+  $completionPaths = @(Get-Completion-Paths $item)
+  if ($completionPaths.Count -gt 0) { $itemNote = ($completionPaths | ForEach-Object { '(' + ($_.details -join ' AND ') + ')' }) -join ' OR ' }
+  $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $item.source; note = $itemNote; requirementsHeading = $requirementsHeading; requirements = $itemRequirements; completionPaths = $completionPaths; sprite = Get-Sprite-Url $spriteItem; bossImage = Get-Activity-Image $displayTitle $item.source $item.source; theme = $itemTheme; category = $event.bonus_category.ToUpperInvariant(); free = $false })
 }
 
 $capacity = $Columns * $Rows
@@ -249,8 +304,39 @@ for ($index = 0; $index -lt $tiles.Count; $index++) {
     $titleText += "<tspan x=`"$centerX`" dy=`"$dy`">$titleLine</tspan>"
   }
   $noteText = ''
-  if ($tileRequirements.Count -gt 0) {
+  if ($tile.psobject.Properties.Name -contains 'completionPaths' -and $tile.completionPaths.Count -gt 0) {
+    $pathLineCount = 0
+    for ($pathIndex = 0; $pathIndex -lt $tile.completionPaths.Count; $pathIndex++) {
+      $drops = $tile.completionPaths[$pathIndex].drops
+      if ($pathIndex -gt 0 -or ($tile.completionPaths.Count -gt 1 -and $drops.Count -gt 1)) { $pathLineCount++ }
+      foreach ($drop in $drops) { $pathLineCount += (Wrap-Text "- $drop" $maxNote 6).Count }
+    }
+    $lineStep = [Math]::Min(17, [Math]::Floor(($y + $tileHeight - 12 - $noteStart) / [Math]::Max(1, $pathLineCount - 1)))
+    $compactFont = if ($lineStep -lt 17) { ' font-size="' + [Math]::Min(12, $lineStep - 1) + '"' } else { '' }
     $outputLine = 0
+    for ($pathIndex = 0; $pathIndex -lt $tile.completionPaths.Count; $pathIndex++) {
+      $drops = $tile.completionPaths[$pathIndex].drops
+      if ($pathIndex -gt 0 -or ($tile.completionPaths.Count -gt 1 -and $drops.Count -gt 1)) {
+        $pathHeading = if ($pathIndex -gt 0) { 'OR ' } else { '' }
+        if ($drops.Count -gt 1) { $pathHeading += if ($pathIndex -gt 0) { 'all of the following:' } else { 'All of the following:' } }
+        $dy = if ($outputLine -eq 0) { 0 } else { $lineStep }
+        $noteText += "<tspan x=`"$centerX`" dy=`"$dy`"$compactFont font-weight=`"700`" fill=`"#f7e9c6`">$(Escape-Xml $pathHeading.Trim())</tspan>"
+        $outputLine++
+      }
+      foreach ($drop in $drops) {
+        foreach ($line in (Wrap-Text "- $drop" $maxNote 6)) {
+          $dy = if ($outputLine -eq 0) { 0 } else { $lineStep }
+          $noteText += "<tspan x=`"$centerX`" dy=`"$dy`"$compactFont>$(Escape-Xml $line)</tspan>"
+          $outputLine++
+        }
+      }
+    }
+  } elseif ($tileRequirements.Count -gt 0) {
+    $outputLine = 0
+    if ($tile.psobject.Properties.Name -contains 'requirementsHeading' -and $tile.requirementsHeading) {
+      $noteText = "<tspan x=`"$centerX`" dy=`"0`" font-weight=`"700`" fill=`"#f7e9c6`">$(Escape-Xml $tile.requirementsHeading)</tspan>"
+      $outputLine = 1
+    }
     for ($requirementIndex = 0; $requirementIndex -lt [Math]::Min($tileRequirements.Count, 4); $requirementIndex++) {
       $requirementLines = Wrap-Text "- $($tileRequirements[$requirementIndex])" $maxNote 6
       foreach ($requirementLine in $requirementLines) {
@@ -269,7 +355,8 @@ for ($index = 0; $index -lt $tiles.Count; $index++) {
   $subtitleMarkup = if ($tile.subtitle) { "<text x=`"$centerX`" y=`"$($y + 110)`" class=`"tile-boss`">$(Escape-Xml $tile.subtitle)</text>" } else { '' }
   $tooltip = Escape-Xml "$($tile.title): $($tile.note)"
   $spriteMarkup = if ($hasSprite) { '<image x="' + ($centerX - 16) + '" y="' + ($y + 6) + '" width="32" height="32" href="' + $tile.sprite + '" preserveAspectRatio="xMidYMid meet"/>' } else { '' }
-  $bossImageMarkup = if ($tile.bossImage) { '<image class="tile-backdrop" x="' + $x + '" y="' + $y + '" width="' + $tileWidth + '" height="' + $tileHeight + '" href="' + $tile.bossImage + '" preserveAspectRatio="xMidYMid slice"/>' } else { '' }
+  $bossImageAlignment = if ($tile.subtitle -eq 'Vorkath') { 'xMinYMid' } else { 'xMidYMid' }
+  $bossImageMarkup = if ($tile.bossImage) { '<image class="tile-backdrop" x="' + $x + '" y="' + $y + '" width="' + $tileWidth + '" height="' + $tileHeight + '" href="' + $tile.bossImage + '" preserveAspectRatio="' + $bossImageAlignment + ' slice"/>' } else { '' }
   $tileMarkup.Add(@"
     <g class="tile" tabindex="0">
       <title>$tooltip</title>
@@ -285,14 +372,21 @@ for ($index = 0; $index -lt $tiles.Count; $index++) {
 }
 
 $tilesXml = $tileMarkup -join ''
-$inputName = (Split-Path $InputPath -Leaf).ToUpperInvariant()
+$halloweenFrame = Get-Content -Raw -LiteralPath (Join-Path $PSScriptRoot 'assets/halloween-frame.svg')
+$frameTokens = @{
+  LANTERN = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/spooky-pumpkin-lantern.png')))
+  PUMPKIN = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/pumpkin.png')))
+  WEB = 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/cobweb.png')))
+  MID_Y = $height / 2; LOW_WEB_Y = $height - 720; LOW_LANTERN_Y = $height - 600; FOOTER_Y = $height - 108
+}
+foreach ($key in $frameTokens.Keys) { $halloweenFrame = $halloweenFrame.Replace('{{' + $key + '}}', [string]$frameTokens[$key]) }
 $svg = @"
 <svg xmlns="http://www.w3.org/2000/svg" width="$width" height="$height" viewBox="0 0 $width $height" role="img" aria-labelledby="title desc">
   <title id="title">$title</title>
   <desc id="desc">A $Columns by $Rows Old School RuneScape Halloween bingo board generated from $(Escape-Xml (Split-Path $InputPath -Leaf)).</desc>
   <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#152b32"/><stop offset=".28" stop-color="#1a1426"/><stop offset=".62" stop-color="#111b1a"/><stop offset="1" stop-color="#32151f"/></linearGradient>
-    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171626"/><stop offset=".5" stop-color="#0e1719"/><stop offset="1" stop-color="#24131d"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#57230c"/><stop offset=".28" stop-color="#170c09"/><stop offset=".62" stop-color="#090708"/><stop offset="1" stop-color="#4b1114"/></linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b170e"/><stop offset=".5" stop-color="#100a09"/><stop offset="1" stop-color="#2c1013"/></linearGradient>
     <linearGradient id="tile-haunted" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30243a"/><stop offset="1" stop-color="#17151f"/></linearGradient>
     <linearGradient id="tile-crypt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#403046"/><stop offset="1" stop-color="#17151f"/></linearGradient>
     <linearGradient id="tile-spectral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24404a"/><stop offset="1" stop-color="#151b2a"/></linearGradient>
@@ -321,13 +415,13 @@ $svg = @"
     </style>
   </defs>
   <rect width="$width" height="$height" fill="url(#paper)"/><rect width="$width" height="$height" fill="url(#grain)"/>
+  $halloweenFrame
   <circle cx="1390" cy="92" r="34" fill="#9e3437" opacity=".8"/><circle cx="1390" cy="92" r="50" fill="none" stroke="#d15a43" stroke-width="2" opacity=".25"/>
   <path d="M75 115 C300 45 460 90 620 55 S990 85 1160 50 S1400 70 1525 115" fill="none" stroke="#b13b35" stroke-width="5" opacity=".85"/>
   <text x="800" y="92" class="body" font-size="17" fill="#e27b38" text-anchor="middle">A CLAN EVENT FOR THE SPOOKIEST SEASON</text>
   <text x="800" y="154" class="display" font-size="54" font-weight="700" fill="#f7e9c6" text-anchor="middle">$title</text>
   <text x="800" y="193" class="body" font-size="17" fill="#d3b991" text-anchor="middle">$subtitle</text>
   <g filter="url(#shadow)"><rect x="$margin" y="$boardTop" width="$boardWidth" height="$boardHeight" rx="8" fill="url(#board)" stroke="#c89449" stroke-width="3"/>$tilesXml</g>
-  <text x="800" y="$($height - 38)" class="body" font-size="15" fill="#d3b991" text-anchor="middle">GENERATED FROM $inputName  -  CHECK PROOF WITH YOUR CLAN LEAD</text>
 </svg>
 "@
 

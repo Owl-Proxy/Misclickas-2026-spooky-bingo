@@ -1,2 +1,31 @@
-# Misclickas-2026-spooky-bingo
-bingo config files for potential 2026 bingo
+# Misclickas Spooky Bingo
+
+An Old School RuneScape Halloween bingo board for the Misclickas clan.
+
+## Share the board
+
+The repository includes a responsive `index.html` viewer for GitHub Pages. It embeds the SVG as a document so boss backgrounds and tile hover descriptions work.
+
+To publish, commit and push the project to `main`, then open the repository's **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/ (root)**, and save.
+
+Once Pages is enabled and deployment completes, the sharing URL is:
+
+https://owl-proxy.github.io/Misclickas-2026-spooky-bingo/
+
+The SVG is also available at that address followed by `october-osrs-bingo.svg`.
+
+## Update the board
+
+Edit `october-bingo-ideas.json`, then regenerate the SVG with either:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\generate-bingo-board.ps1
+```
+
+```sh
+node generate-bingo-board.js
+```
+
+Commit and push the regenerated SVG and any changed assets to update the published board. The viewer's aspect ratio matches the default 6×9 board; update it if changing the board dimensions.
+
+OSRS image sources and credits are listed in [assets/README.md](assets/README.md). Decorative images are embedded in the SVG; some boss backgrounds and item icons still load from the OSRS Wiki.

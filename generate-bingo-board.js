@@ -28,7 +28,7 @@ const getTileTheme = (bossName) => {
 const bossImages = {
   'Barrows Brothers': 'https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092',
   'The Whisperer': 'https://oldschool.runescape.wiki/images/The_Whisperer.png?aedab',
-  'Scurrius & Giant Mole': 'https://oldschool.runescape.wiki/images/Scurrius.png?e66a5',
+  'Scurrius': 'https://oldschool.runescape.wiki/images/Scurrius.png?e66a5',
   'Crazy Archaeologist': 'https://oldschool.runescape.wiki/images/Crazy_archaeologist.png',
   'Obor / Bryophyta': 'https://oldschool.runescape.wiki/images/Obor.png?08bc8',
   'Dagannoth Kings': 'https://oldschool.runescape.wiki/images/Fighting_Dagannoth_Kings.png?7a1a7',
@@ -52,6 +52,7 @@ const bossImages = {
 };
 
 const activityImages = {
+  'Perilous Moons': `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'blood-moon.png')).toString('base64')}`,
   'The Crypt Keeper': 'https://oldschool.runescape.wiki/images/Chest_%28Barrows%29.png',
   "Ahrim's Haunted Wand": 'https://oldschool.runescape.wiki/images/Ahrim%27s_staff_detail.png',
   'Grave Robber': 'https://oldschool.runescape.wiki/images/Stronghold_of_Security.png?be13e',
@@ -69,13 +70,14 @@ const activityImages = {
   'Zombie Apocalypse': 'https://oldschool.runescape.wiki/images/Pest_Control.png?ed7bb',
   'Spooky Scary Skeletons': 'https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png',
   'The Necromancer': 'https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1',
-  'Totem of the Deep': 'https://oldschool.runescape.wiki/images/Catacombs_of_Kourend.png?42e4e',
+  'Doom of Mokhaiotl': 'https://oldschool.runescape.wiki/images/Doom_of_Mokhaiotl.png',
+  'Royal Titans': `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'royal-titans.png')).toString('base64')}`,
   'Barrows Brothers': 'https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092',
   'Chaos Fanatic / Mummies': 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d',
   'Catacombs of Kourend': 'https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8',
   'Kril Tsutsaroth': 'https://oldschool.runescape.wiki/images/K%27ril_Tsutsaroth.png',
   'Theatre of Blood (ToB)': 'https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png',
-  'The Blood Drinker': 'https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png',
+  Vorkath: `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'vorkath.png')).toString('base64')}`,
   'Abyssal Sire': 'https://oldschool.runescape.wiki/images/Abyssal_Sire_%28phase_1%29.png?0db8f',
   'The Nightmare of Ashihama': 'https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a',
   'Vardorvis / DT2 Bosses': 'https://oldschool.runescape.wiki/images/Vardorvis.png?48af8',
@@ -93,6 +95,10 @@ const activityImages = {
 };
 
 const getActivityTheme = (title, subtitle, source) => {
+  if (source === 'Vorkath') return 'frost';
+  if (source === 'Perilous Moons') return 'blood';
+  if (source === 'Doom of Mokhaiotl') return 'infernal';
+  if (source === 'Royal Titans') return 'frost';
   if (/Wardrobe|Ghostbusters|Witching|Exorcist/.test(title) || /Ghost|Phantom|Nightmare/.test(subtitle)) return 'spectral';
   if (/Arachnophobia|Zombie|Shades|Bone Collector|Witch's Face/.test(title) || /Sarachnis|Revenant|Cave Horrors/.test(subtitle)) return 'swamp';
   if (/Necromancer|Grim Reaper|Totem|Old Ones|Abyssal/.test(title) || /Death|Catacombs|Abyss/.test(subtitle)) return 'infernal';
@@ -100,7 +106,7 @@ const getActivityTheme = (title, subtitle, source) => {
   if (/General's War Spoils|Gargoyle|Granite|Grotesque|Pact Devil|Pharaoh/.test(title) || /General Graardor|Gargoyles|Grotesque Guardians|Yama|Tombs of Amascut|Akkha/.test(source)) return 'relic';
   if (/Corpse Eater/.test(title) || /Maggot King/.test(source)) return 'swamp';
   if (/Fallen Seraph/.test(title) || /Mad Angel/.test(source)) return 'spectral';
-  if (/Blood Drinker/.test(title) || /Theatre of Blood/.test(source)) return 'blood';
+  if (/Theatre of Blood/.test(source)) return 'blood';
   return 'haunted';
 };
 
@@ -120,6 +126,8 @@ const spriteAliases = {
 };
 
 const getSpriteUrl = (itemName) => {
+  if (itemName === "Vorkath's head") return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'vorkaths-head.png')).toString('base64')}`;
+  if (itemName === 'Dual macuahuitl') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'dual-macuahuitl.png')).toString('base64')}`;
   if (/^Any |piece$|robes$|^Any Orb$|Clue scroll/.test(itemName)) return null;
   const isAlias = Object.prototype.hasOwnProperty.call(spriteAliases, itemName);
   const fileName = isAlias ? spriteAliases[itemName] : itemName.replace(/ /g, '_');
@@ -138,14 +146,23 @@ const tierLabels = {
   dynamic_challenges: 'TEAM CHALLENGE'
 };
 
+const completionPathsFor = (entry, detailed = false) => entry.completion_paths?.map((completionPath) => completionPath.all_of.map((drop) => {
+  const name = typeof drop === 'string' ? drop : detailed && drop.any_of ? `any of (${drop.any_of.join(' OR ')})` : `${drop.label}${!detailed && drop.display_options ? ` (${drop.display_options})` : ''}`;
+  const quantity = typeof drop === 'string' ? entry.target_quantity : drop.quantity ?? entry.target_quantity;
+  return `${quantity}x ${name}`;
+}));
+
 for (const [tier, entries] of Object.entries(event.tiers)) {
   for (const entry of entries) {
     if (entry.boss) {
       tiles.push({
         title: entry.tile_name || entry.boss,
         subtitle: entry.boss,
-        note: entry.target_requirements ? 'Complete one requirement' : `${entry.target_quantity} qualifying drop(s) required`,
+        note: entry.completion_mode === 'any' ? `Obtain any one listed drop from this boss.${entry.target_drops.includes('Any Virtus armour piece') ? ' Virtus: mask, robe top, or robe bottom.' : ''}` : entry.target_requirements ? 'Complete one requirement' : `${entry.target_quantity} qualifying drop(s) required`,
+        requirementsHeading: entry.completion_mode === 'any' ? 'Any one of the following:' : '',
         requirements: entry.target_requirements || entry.target_drops.map((drop) => `${entry.target_quantity}x ${drop}`),
+        completionPaths: completionPathsFor(entry),
+        completionDetails: completionPathsFor(entry, true),
         sprite: (entry.sprite_item ? getSpriteUrl(entry.sprite_item) : null) || entry.target_drops.map(getSpriteUrl).find(Boolean) || null,
         bossImage: bossImages[entry.boss] || null,
         theme: getTileTheme(entry.boss),
@@ -170,8 +187,11 @@ for (const item of event.items) {
   tiles.push({
     title: item.tile_name || item.item_name,
     subtitle: item.source,
-    note: item.source,
+    note: item.completion_mode === 'any' ? `${item.source}: Obtain any one listed drop from this boss.${(item.target_items || []).includes('Any Virtus armour piece') ? ' Virtus: mask, robe top, or robe bottom.' : ''}` : item.source,
+    requirementsHeading: item.completion_mode === 'any' ? 'Any one of the following:' : '',
     requirements: (item.target_items || [item.item_name]).map((targetItem) => `${item.target_quantity}x ${targetItem}`),
+    completionPaths: completionPathsFor(item),
+    completionDetails: completionPathsFor(item, true),
     sprite: getSpriteUrl(item.sprite_item || item.item_name),
     theme: item.source === 'The Leviathan' ? 'leviathan' : getActivityTheme(item.tile_name || item.item_name, '', item.source),
     bossImage: activityImages[item.tile_name] || activityImages[item.source] || bossImages[item.source] || null,
@@ -252,11 +272,22 @@ const tileMarkup = tiles.map((tile, index) => {
   const visibleNotes = tile.requirements.length
     ? tile.requirements.slice(0, 4).flatMap((requirement) => wrap(`- ${requirement}`, tileWidth < 190 ? 24 : 30, 6))
     : noteLines;
-  const noteText = visibleNotes.map((line, lineIndex) => `<tspan x="${x + tileWidth / 2}" dy="${lineIndex === 0 ? 0 : 17}">${escapeXml(line)}</tspan>`).join('');
+  const headingMarkup = tile.requirementsHeading ? `<tspan x="${x + tileWidth / 2}" dy="0" font-weight="700" fill="#f7e9c6">${escapeXml(tile.requirementsHeading)}</tspan>` : '';
+  let noteText = headingMarkup + visibleNotes.map((line, lineIndex) => `<tspan x="${x + tileWidth / 2}" dy="${lineIndex === 0 && !tile.requirementsHeading ? 0 : 17}">${escapeXml(line)}</tspan>`).join('');
+  if (tile.completionPaths) {
+    const pathLines = tile.completionPaths.flatMap((drops, pathIndex) => [
+      ...(pathIndex > 0 || (tile.completionPaths.length > 1 && drops.length > 1) ? [{ text: `${pathIndex > 0 ? 'OR ' : ''}${drops.length > 1 ? (pathIndex > 0 ? 'all of the following:' : 'All of the following:') : ''}`.trim(), heading: true }] : []),
+      ...drops.flatMap((drop) => wrap(`- ${drop}`, tileWidth < 190 ? 24 : 30, 6).map((text) => ({ text, heading: false })))
+    ]);
+    const lineStep = Math.min(17, Math.floor((y + tileHeight - 12 - noteStart) / Math.max(1, pathLines.length - 1)));
+    const compactFont = lineStep < 17 ? ` font-size="${Math.min(12, lineStep - 1)}"` : '';
+    noteText = pathLines.map((line, lineIndex) => `<tspan x="${x + tileWidth / 2}" dy="${lineIndex === 0 ? 0 : lineStep}"${compactFont}${line.heading ? ' font-weight="700" fill="#f7e9c6"' : ''}>${escapeXml(line.text)}</tspan>`).join('');
+  }
   const subtitleMarkup = tile.subtitle ? `<text x="${x + tileWidth / 2}" y="${y + 110}" class="tile-boss">${escapeXml(tile.subtitle)}</text>` : '';
-  const tooltip = escapeXml(`${tile.title}: ${tile.note}`);
+  const tooltip = escapeXml(`${tile.title}: ${tile.completionPaths ? tile.completionDetails.map((drops) => `(${drops.join(' AND ')})`).join(' OR ') : tile.note}`);
   const spriteMarkup = hasSprite ? `<image x="${x + tileWidth / 2 - 16}" y="${y + 6}" width="32" height="32" href="${tile.sprite}" preserveAspectRatio="xMidYMid meet"/>` : '';
-  const bossImageMarkup = tile.bossImage ? `<image class="tile-backdrop" x="${x}" y="${y}" width="${tileWidth}" height="${tileHeight}" href="${tile.bossImage}" preserveAspectRatio="xMidYMid slice"/>` : '';
+  const bossImageAlignment = tile.subtitle === 'Vorkath' ? 'xMinYMid' : 'xMidYMid';
+  const bossImageMarkup = tile.bossImage ? `<image class="tile-backdrop" x="${x}" y="${y}" width="${tileWidth}" height="${tileHeight}" href="${tile.bossImage}" preserveAspectRatio="${bossImageAlignment} slice"/>` : '';
   return `
     <g class="tile" tabindex="0">
       <title>${tooltip}</title>
@@ -270,14 +301,22 @@ const tileMarkup = tiles.map((tile, index) => {
     </g>`;
 }).join('');
 
+const frameTokens = {
+  LANTERN: `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'spooky-pumpkin-lantern.png')).toString('base64')}`,
+  PUMPKIN: `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'pumpkin.png')).toString('base64')}`,
+  WEB: `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'cobweb.png')).toString('base64')}`,
+  MID_Y: height / 2, LOW_WEB_Y: height - 720, LOW_LANTERN_Y: height - 600, FOOTER_Y: height - 108
+};
+const halloweenFrame = fs.readFileSync(path.join(__dirname, 'assets', 'halloween-frame.svg'), 'utf8').replace(/\{\{([A-Z_]+)\}\}/g, (_, key) => frameTokens[key]);
+
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">${title}</title>
   <desc id="desc">A ${columns} by ${rows} Old School RuneScape Halloween bingo board generated from ${escapeXml(path.basename(inputPath))}.</desc>
   <defs>
     <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#152b32"/><stop offset=".28" stop-color="#1a1426"/><stop offset=".62" stop-color="#111b1a"/><stop offset="1" stop-color="#32151f"/>
+      <stop offset="0" stop-color="#57230c"/><stop offset=".28" stop-color="#170c09"/><stop offset=".62" stop-color="#090708"/><stop offset="1" stop-color="#4b1114"/>
     </linearGradient>
-    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171626"/><stop offset=".5" stop-color="#0e1719"/><stop offset="1" stop-color="#24131d"/></linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b170e"/><stop offset=".5" stop-color="#100a09"/><stop offset="1" stop-color="#2c1013"/></linearGradient>
     <linearGradient id="tile-haunted" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#30243a"/><stop offset="1" stop-color="#17151f"/></linearGradient>
     <linearGradient id="tile-crypt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#403046"/><stop offset="1" stop-color="#17151f"/></linearGradient>
     <linearGradient id="tile-spectral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24404a"/><stop offset="1" stop-color="#151b2a"/></linearGradient>
@@ -308,13 +347,13 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${
     </style>
   </defs>
   <rect width="${width}" height="${height}" fill="url(#paper)"/><rect width="${width}" height="${height}" fill="url(#grain)"/>
+  ${halloweenFrame}
   <circle cx="1390" cy="92" r="34" fill="#9e3437" opacity=".8"/><circle cx="1390" cy="92" r="50" fill="none" stroke="#d15a43" stroke-width="2" opacity=".25"/>
   <path d="M75 115 C300 45 460 90 620 55 S990 85 1160 50 S1400 70 1525 115" fill="none" stroke="#b13b35" stroke-width="5" opacity=".85"/>
   <text x="800" y="92" class="body" font-size="17" fill="#e27b38" text-anchor="middle">A CLAN EVENT FOR THE SPOOKIEST SEASON</text>
   <text x="800" y="154" class="display" font-size="54" font-weight="700" fill="#f7e9c6" text-anchor="middle">${title}</text>
   <text x="800" y="193" class="body" font-size="17" fill="#d3b991" text-anchor="middle">${subtitle}</text>
   <g filter="url(#shadow)"><rect x="${margin}" y="${boardTop}" width="${boardWidth}" height="${boardHeight}" rx="8" fill="url(#board)" stroke="#c89449" stroke-width="3"/>${tileMarkup}</g>
-  <text x="800" y="${height - 38}" class="body" font-size="15" fill="#d3b991" text-anchor="middle">GENERATED FROM ${escapeXml(path.basename(inputPath)).toUpperCase()}  -  CHECK PROOF WITH YOUR CLAN LEAD</text>
 </svg>
 `;
 
