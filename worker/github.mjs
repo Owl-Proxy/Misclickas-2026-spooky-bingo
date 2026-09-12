@@ -1,7 +1,9 @@
 export class GitHubStore {
   constructor(env, transport = fetch) {
     this.env = env;
-    this.transport = transport;
+    // Keep the native fetch call unbound: Cloudflare rejects a GitHubStore
+    // instance as its `this` receiver when fetch is called as a class property.
+    this.transport = (...args) => transport(...args);
     this.base = `https://api.github.com/repos/${encodeURIComponent(env.GITHUB_OWNER)}/${encodeURIComponent(env.GITHUB_REPO)}/contents/`;
   }
   async request(path, method = 'GET', body, raw = false) {

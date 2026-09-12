@@ -2,6 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { GitHubStore, toBase64 } from '../worker/github.mjs';
 
+test('network transport is called without the store as its receiver', async () => {
+  const store = new GitHubStore({ GITHUB_OWNER: 'o', GITHUB_REPO: 'r', GITHUB_BRANCH: 'submissions' }, async function () {
+    // Native fetch in Cloudflare throws "Illegal invocation" for a foreign this.
+    assert.equal(this, undefined);
+    return new Response('', { status: 404 });
+  });
+  assert.deepEqual((await store.readTeam('vampire')).data, { version: 1, teamId: 'vampire', submissions: [] });
+});
+
 test('SHA conflict retries against fresh data without losing another submission', async () => {
   let state = { version: 1, teamId: 'vampire', submissions: [] }, revision = 1, puts = 0;
   const store = new GitHubStore({ GITHUB_OWNER: 'owner', GITHUB_REPO: 'repo', GITHUB_BRANCH: 'submissions', GITHUB_TOKEN: 'private-token' }, async (url, options) => {
