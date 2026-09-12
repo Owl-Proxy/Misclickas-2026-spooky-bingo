@@ -35,6 +35,23 @@
           "at": "2026-09-12T17:34:18.729Z"
         }
       ]
+    },
+    {
+      "id": "65777bf8-b826-4e52-979e-7aa9fc70fe8d",
+      "teamId": "vampire",
+      "tileId": "the-blood-theatre",
+      "choiceId": "ghrazi-rapier",
+      "quantity": 1,
+      "player": "owl proxy",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-blood-theatre/65777bf8-b826-4e52-979e-7aa9fc70fe8d-95c8c5c4f0ddb0947bf983e7916eca10b759f8c2de2b7688c977144d2ba797ad.webp",
+      "imageHash": "95c8c5c4f0ddb0947bf983e7916eca10b759f8c2de2b7688c977144d2ba797ad",
+      "imageType": "image/webp",
+      "createdAt": "2026-09-12T20:24:45.265Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
