@@ -6,20 +6,68 @@
     <meta name="theme-color" content="#170c09">
     <meta name="description" content="Misclickas Spooky Bingo — an Old School RuneScape Halloween bingo board.">
     <title>Misclickas Spooky Bingo</title>
-    <style>
-      html { background: #090708; color-scheme: dark; }
-      body { margin: 0; }
-      main { max-width: 1600px; margin: 0 auto; }
-      object { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 2416; }
-      p { padding: 2rem; font: 1rem/1.5 system-ui, sans-serif; }
-      a { color: #f7e9c6; }
-    </style>
+    <link rel="stylesheet" href="web/style.css">
+    <script type="module" src="web/app.mjs"></script>
   </head>
   <body>
-    <main aria-label="Misclickas Spooky Bingo board">
-      <object data="october-osrs-bingo.svg" type="image/svg+xml" aria-label="Misclickas Spooky Bingo">
-        <p><a href="october-osrs-bingo.svg">Open the bingo board</a></p>
-      </object>
+    <header class="masthead">
+      <a class="brand" href="./">Misclickas <span>Spooky Bingo</span></a>
+      <button id="reviewer-login" class="quiet" disabled>Reviewer sign in</button>
+    </header>
+    <main>
+      <section class="team-panel" aria-labelledby="team-title">
+        <p class="eyebrow">October • Old School RuneScape</p>
+        <h1 id="team-title">Choose your team</h1>
+        <p>Two teams. One haunted hunt. Every drop has a story.</p>
+        <nav id="teams" aria-label="Team boards"></nav>
+        <div id="team-tools" class="toolbar" hidden>
+          <div id="score" class="score" aria-live="polite"></div>
+          <button id="copy-link" class="quiet">Copy team link</button>
+          <button id="team-login" disabled>Team sign in</button>
+        </div>
+        <p id="service-status" role="status">Loading the boards…</p>
+      </section>
+      <section id="team-board" hidden aria-label="Team bingo board">
+        <div class="board-help"><p>Select a tile to see its requirements or submit a screenshot.</p><p class="legend">✓ Complete &nbsp; ◐ Progress &nbsp; ⏳ Pending review</p></div>
+        <div class="board-scroll"><object id="board" data="october-osrs-bingo.svg" type="image/svg+xml" aria-label="Interactive team bingo board"><a href="october-osrs-bingo.svg">Open the bingo board</a></object></div>
+        <div class="tile-picker"><label for="tile-select">Jump to a tile</label><select id="tile-select"><option value="">Choose a tile…</option></select></div>
+        <section class="submissions" aria-labelledby="history-title">
+          <div class="toolbar"><h2 id="history-title">Team submissions</h2><label>Show <select id="history-filter"><option value="all">All submissions</option><option value="pending">Pending review</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></label><button id="refresh" class="quiet">Refresh</button></div>
+          <div id="history"></div>
+        </section>
+      </section>
+      <noscript><p>Enable JavaScript for team boards and submissions. <a href="october-osrs-bingo.svg">View the original board</a>.</p></noscript>
     </main>
+    <dialog id="tile-dialog" aria-labelledby="tile-title">
+      <button type="button" class="close" aria-label="Close tile">×</button>
+      <p id="tile-team" class="eyebrow"></p><h2 id="tile-title"></h2><p id="tile-source"></p>
+      <div id="requirements"></div>
+      <form id="upload-form">
+        <h3>Submit evidence</h3><p id="upload-hint"></p>
+        <fieldset id="upload-fields" disabled>
+          <label>Drop or activity<select name="choiceId" required></select></label>
+          <div class="form-row"><label>Quantity<input name="quantity" type="number" min="1" max="10000" value="1" required></label><label>RuneScape name<input name="player" maxlength="32" autocomplete="off" required></label></div>
+          <label>Notes <span class="muted">(optional)</span><textarea name="notes" maxlength="500" rows="2"></textarea></label>
+          <label>Screenshot<input name="screenshot" type="file" accept="image/png,image/jpeg,image/webp" required></label>
+          <img id="upload-preview" alt="Screenshot preview" hidden>
+          <p class="muted">Screenshots and RuneScape names are public. Include only the evidence you want to share.</p>
+          <button type="submit">Submit for review</button>
+        </fieldset>
+        <p id="upload-status" role="status"></p>
+      </form>
+      <h3>Evidence for this tile</h3><div id="tile-history"></div>
+    </dialog>
+    <dialog id="login-dialog" aria-labelledby="login-title">
+      <button type="button" class="close" aria-label="Close sign in">×</button>
+      <h2 id="login-title"></h2><p>Use the access code provided by your organiser. It stays in this browser tab.</p>
+      <form id="login-form"><label id="reviewer-id-label">Reviewer ID<input name="reviewerId" maxlength="64" autocomplete="username"></label><label>Access code<input name="code" type="password" required maxlength="256" autocomplete="current-password"></label><button type="submit">Sign in</button><p id="login-status" role="status"></p></form>
+    </dialog>
+    <dialog id="review-dialog" aria-labelledby="review-title">
+      <button type="button" class="close" aria-label="Close evidence">×</button>
+      <p id="review-team" class="eyebrow"></p><h2 id="review-title"></h2><div id="review-detail"></div>
+      <a id="full-image" target="_blank" rel="noopener"><img id="review-image" alt="Submitted screenshot"></a>
+      <form id="review-form"><fieldset id="review-fields"><label>Decision<select name="status"><option value="approved">Approve</option><option value="rejected">Reject</option><option value="pending">Return to pending</option></select></label><label id="manual-completion"><input type="checkbox" name="completesTile"> All requirements for this tile are now met</label><label>Review notes <span class="muted">(required for rejection)</span><textarea name="reason" maxlength="500" rows="2"></textarea></label><button type="submit">Save decision</button></fieldset><p id="review-status" role="status"></p></form>
+      <h3>Review history</h3><div id="review-audit"></div>
+    </dialog>
   </body>
 </html>

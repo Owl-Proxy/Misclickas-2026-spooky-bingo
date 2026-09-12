@@ -29,3 +29,7 @@ node generate-bingo-board.js
 Commit and push the regenerated SVG and any changed assets to update the published board. The viewer's aspect ratio matches the default 6×9 board; update it if changing the board dimensions.
 
 OSRS image sources and credits are listed in [assets/README.md](assets/README.md). Decorative images are embedded in the SVG; some boss backgrounds and item icons still load from the OSRS Wiki.
+
+## Interactive team boards
+
+Team Vampire and Team Werewolf have separate boards, shareable links, screenshot submissions, and organiser reviews. See [SETUP.md](SETUP.md) to connect the submission service and open uploads. The site remains browsable before that setup is complete.

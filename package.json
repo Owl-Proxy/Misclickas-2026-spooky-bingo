@@ -1,0 +1,11 @@
+{
+  "name": "misclickas-spooky-bingo",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "worker:dev": "npx wrangler@4 dev --config worker/wrangler.jsonc",
+    "worker:deploy": "npx wrangler@4 deploy --config worker/wrangler.jsonc"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "misclickas-bingo-submissions",
+  "main": "index.mjs",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": true,
+  "vars": {
+    "GITHUB_OWNER": "Owl-Proxy",
+    "GITHUB_REPO": "Misclickas-2026-spooky-bingo",
+    "GITHUB_BRANCH": "submissions",
+    "ALLOWED_ORIGINS": "https://owl-proxy.github.io,http://localhost:4173"
+  },
+  "ratelimits": [
+    { "name": "AUTH_RATE_LIMIT", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },
+    { "name": "UPLOAD_RATE_LIMIT", "namespace_id": "1002", "simple": { "limit": 20, "period": 60 } }
+  ]
+}

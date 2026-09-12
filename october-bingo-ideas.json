@@ -12,6 +12,7 @@
       {
         "boss": "Barrows Brothers",
         "tile_name": "The Six Brothers",
+        "tile_id": "the-six-brothers",
         "target_quantity": 10,
         "sprite_item": "Guthan's warspear",
         "spooky_vibe": "Graverobbing undead wights in a misty Morytania crypt.",
@@ -20,6 +21,7 @@
       {
         "boss": "The Whisperer",
         "tile_name": "The Voice in the Dark",
+        "tile_id": "the-voice-in-the-dark",
         "target_quantity": 1,
         "completion_mode": "any",
         "spooky_vibe": "A voice-stealing nightmare hiding beneath the haunted ruins of Stranglewood.",
@@ -28,6 +30,7 @@
       {
         "boss": "Scurrius",
         "tile_name": "Rat King Rumble",
+        "tile_id": "rat-king-rumble",
         "target_quantity": 5,
         "spooky_vibe": "Infestations of giant vermin in pitch-black sewers and tunnels.",
         "target_drops": ["Scurrius' spine"]
@@ -35,6 +38,7 @@
       {
         "boss": "Crazy Archaeologist",
         "tile_name": "The Mad Scholar",
+        "tile_id": "the-mad-scholar",
         "target_quantity": 1,
         "spooky_vibe": "A cursed scholar driven mad by ancient ruins in the desolate Wilderness.",
         "target_drops": ["Fedora"]
@@ -42,6 +46,7 @@
       {
         "boss": "Obor / Bryophyta",
         "tile_name": "Giants in the Green",
+        "tile_id": "giants-in-the-green",
         "target_quantity": 1,
         "completion_mode": "any",
         "spooky_vibe": "Subterranean giants living in mossy, damp, claustrophobic dungeons.",
@@ -50,6 +55,7 @@
       {
         "boss": "Dagannoth Kings",
         "tile_name": "The Drowned Crown",
+        "tile_id": "the-drowned-crown",
         "target_quantity": 1,
         "spooky_vibe": "Deep, pitch-black water caves teeming with ancient, mutated sea beasts.",
         "target_drops": ["Berserker ring", "Seers ring", "Archers ring"]
@@ -57,6 +63,7 @@
       {
         "boss": "Kalphite Queen",
         "tile_name": "Hive of Horrors",
+        "tile_id": "hive-of-horrors",
         "target_quantity": 1,
         "sprite_item": "Kalphite Queen head (mounted) icon",
         "spooky_vibe": "Entering a dark, swarming hive to fight a skittering insect that resurrects into a flying nightmare.",
@@ -65,6 +72,7 @@
       {
         "boss": "Skotizo",
         "tile_name": "The Purple Portal",
+        "tile_id": "the-purple-portal",
         "target_quantity": 1,
         "spooky_vibe": "A massive, purple demonic entity summoned deep within the dark, crystalline Catacombs of Kourend.",
         "target_drops": ["Dark claw", "Uncut onyx", "Ancient shard"]
@@ -72,6 +80,7 @@
       {
         "boss": "Temple Trekking Vampyres",
         "tile_name": "Through the Vampire Mist",
+        "tile_id": "through-the-vampire-mist",
         "target_quantity": 1,
         "spooky_vibe": "Escorting vulnerable citizens through the mist-shrouded swamps of Morytania while fighting off bloodsucking fiends.",
         "target_drops": ["Tome of experience", "Silver sickle (b)", "Loar remains"]
@@ -79,6 +88,7 @@
       {
         "boss": "The Mimic",
         "tile_name": "The Hungry Chest",
+        "tile_id": "the-hungry-chest",
         "target_quantity": 10,
         "target_requirements": ["10 Mimic completions", "1 rare reward from the clue reward table"],
         "sprite_item": "3rd age platebody",
@@ -88,6 +98,7 @@
       {
         "boss": "Chaos Fanatic",
         "tile_name": "The Wilderness Warlock",
+        "tile_id": "the-wilderness-warlock",
         "target_quantity": 1,
         "spooky_vibe": "A crazed, shouting occultist wandering the bleak, dangerous ruins of the Wilderness.",
         "target_drops": ["Odium shard 1", "Malediction shard 1"]
@@ -97,6 +108,7 @@
       {
         "boss": "The Nightmare of Ashihama",
         "tile_name": "Dreams of Ashihama",
+        "tile_id": "dreams-of-ashihama",
         "target_quantity": 1,
         "spooky_vibe": "Fighting a parasitic dream demon in a secluded Morytania town.",
         "target_drops": ["Inquisitor armor piece", "Nightmare staff"]
@@ -104,6 +116,7 @@
       {
         "boss": "Theatre of Blood (ToB)",
         "tile_name": "The Blood Theatre",
+        "tile_id": "the-blood-theatre",
         "target_quantity": 1,
         "completion_paths": [
           { "all_of": ["Scythe of vitur"] },
@@ -115,6 +128,7 @@
       {
         "boss": "Abyssal Sire",
         "tile_name": "Heart of the Abyss",
+        "tile_id": "heart-of-the-abyss",
         "target_quantity": 1,
         "spooky_vibe": "Creepy flesh-tentacles and Eldritch horrors from the Abyss.",
         "target_drops": ["Unsired", "Abyssal whip", "Abyssal dagger"]
@@ -122,6 +136,7 @@
       {
         "boss": "Cerberus",
         "tile_name": "Hounds of Hell",
+        "tile_id": "hounds-of-hell",
         "target_quantity": 1,
         "spooky_vibe": "The three-headed hound of hell guarding the underworld.",
         "target_drops": ["Primordial crystal", "Pegasian crystal", "Eternal crystal"]
@@ -129,6 +144,7 @@
       {
         "boss": "Vardorvis",
         "tile_name": "The Headless Harvest",
+        "tile_id": "the-headless-harvest",
         "target_quantity": 1,
         "completion_mode": "any",
         "spooky_vibe": "A blood-thirsty, blind executioner trapped in an infected, bleeding forest.",
@@ -137,6 +153,7 @@
       {
         "boss": "Duke Sucellus",
         "tile_name": "The Frozen Feast",
+        "tile_id": "the-frozen-feast",
         "target_quantity": 1,
         "completion_mode": "any",
         "spooky_vibe": "A giant, decaying, gluttonous demon sleeping in frozen, forgotten catacombs.",
@@ -145,6 +162,7 @@
       {
         "boss": "Araxxor",
         "tile_name": "Web of Nightmares",
+        "tile_id": "web-of-nightmares",
         "target_quantity": 1,
         "spooky_vibe": "Delving deep into a web-choked nest to face a colossal, venom-spitting arachnid.",
         "target_drops": ["Noxious pommel", "Noxious point", "Noxious blade"]
@@ -152,6 +170,7 @@
       {
         "boss": "Corrupted Gauntlet",
         "tile_name": "The Crystal Prison",
+        "tile_id": "the-crystal-prison",
         "target_quantity": 1,
         "spooky_vibe": "Trapped in a glowing, eerie digital purgatory against a terrifying, wolf-like crystalline entity.",
         "target_drops": ["Enhanced crystal weapon seed"]
@@ -159,6 +178,7 @@
       {
         "boss": "Corrupted Gauntlet",
         "tile_name": "The Red Labyrinth",
+        "tile_id": "the-red-labyrinth",
         "target_quantity": 5,
         "spooky_vibe": "A ghostly, crimson-glowing spectral beast trapped in an ever-shifting labyrinth that tests your sanity.",
         "target_drops": ["Crystal armor seeds"]
@@ -166,6 +186,7 @@
       {
         "boss": "Chambers of Xeric (CoX)",
         "tile_name": "The Catacombs of Xeric",
+        "tile_id": "the-catacombs-of-xeric",
         "target_quantity": 1,
         "completion_paths": [
           { "all_of": ["Twisted bow"] },
@@ -182,6 +203,7 @@
       {
         "boss": "Zulrah",
         "tile_name": "The Swamp Serpent",
+        "tile_id": "the-swamp-serpent",
         "target_quantity": 1,
         "spooky_vibe": "A giant, venomous swamp serpent worshipped by an eerie, isolated cult that sacrifices outsiders to it.",
         "target_drops": ["Tanzanite fang", "Magic fang", "Serpentine visage"]
@@ -189,6 +211,7 @@
       {
         "boss": "Kril Tsutsaroth",
         "tile_name": "Demon in the Snow",
+        "tile_id": "demon-in-the-snow",
         "target_quantity": 1,
         "spooky_vibe": "An enormous, towering demon of destruction wielding burning cleavers in a frozen underworld pocket dimension.",
         "target_drops": ["Zamorak spear", "Staff of the dead"]
@@ -197,6 +220,7 @@
     "sub_goals_and_skilling": [
       {
         "tile_name": "The Crypt Keeper",
+        "tile_id": "the-crypt-keeper",
         "subtitle": "Barrows chests",
         "target_quantity": 50,
         "sprite_item": "Ahrim's staff",
@@ -204,6 +228,7 @@
       },
       {
         "tile_name": "Grave Robber",
+        "tile_id": "grave-robber",
         "subtitle": "Stronghold of Security",
         "target_quantity": 1,
         "sprite_item": "Skull sceptre",
@@ -211,6 +236,7 @@
       },
       {
         "tile_name": "Spooky Wardrobe",
+        "tile_id": "spooky-wardrobe",
         "subtitle": "Halloween event / Skeleton outfit",
         "target_quantity": 1,
         "sprite_item": "Skeleton mask",
@@ -218,6 +244,7 @@
       },
       {
         "tile_name": "The Exorcist",
+        "tile_id": "the-exorcist",
         "subtitle": "Phantom Muspah",
         "target_quantity": 5,
           "target_requirements": ["5 Venator shards", "3 Ancient icons"],
@@ -226,6 +253,7 @@
       },
       {
         "tile_name": "Arachnophobia",
+        "tile_id": "arachnophobia",
         "subtitle": "Sarachnis",
         "target_quantity": 1,
         "sprite_item": "Sarachnis cudgel",
@@ -233,6 +261,7 @@
       },
       {
         "tile_name": "The Undertaker",
+        "tile_id": "the-undertaker",
         "subtitle": "Mort'ton pyre ships / shades",
         "target_quantity": 25,
         "sprite_item": "Pyre logs",
@@ -240,6 +269,7 @@
       },
       {
         "tile_name": "Revenant Hunter",
+        "tile_id": "revenant-hunter",
         "subtitle": "Revenants",
         "target_quantity": 1,
         "sprite_item": "Ancient emblem",
@@ -247,6 +277,7 @@
       },
       {
         "tile_name": "Bone Collector",
+        "tile_id": "bone-collector",
         "subtitle": "Chaos Altar",
         "target_quantity": 100,
         "sprite_item": "Dragon bones",
@@ -254,6 +285,7 @@
       },
       {
         "tile_name": "Shades of Mort'ton",
+        "tile_id": "shades-of-mort-ton",
         "subtitle": "Gold Shade Chest",
         "target_quantity": 1,
         "sprite_item": "Gold key",
@@ -261,6 +293,7 @@
       },
       {
         "tile_name": "The Grim Reaper",
+        "tile_id": "the-grim-reaper",
         "subtitle": "Death's Office",
         "target_quantity": 1,
         "sprite_item": "Black cape",
@@ -270,6 +303,7 @@
     "dynamic_challenges": [
       {
         "tile_name": "Fists of Fury",
+        "tile_id": "fists-of-fury",
         "subtitle": "Barrows",
         "target_quantity": 3,
         "sprite_item": "Ahrim's staff",
@@ -277,6 +311,7 @@
       },
       {
         "tile_name": "Ghostbusters",
+        "tile_id": "ghostbusters",
         "subtitle": "Wilderness boss trip",
         "target_quantity": 1,
         "sprite_item": "Ghostly hood",
@@ -284,6 +319,7 @@
       },
       {
         "tile_name": "The Witching Hour",
+        "tile_id": "the-witching-hour",
         "subtitle": "Boss / raid unique drop",
         "target_quantity": 1,
         "sprite_item": "Ring of shadows",
@@ -291,6 +327,7 @@
       },
       {
         "tile_name": "Zombie Apocalypse",
+        "tile_id": "zombie-apocalypse",
         "subtitle": "Pest Control / raid room",
         "target_quantity": 1,
         "sprite_item": "Zombie mask",
@@ -298,6 +335,7 @@
       },
       {
         "tile_name": "Spooky Scary Skeletons",
+        "tile_id": "spooky-scary-skeletons",
         "subtitle": "Barrows / raid room",
         "target_quantity": 1,
         "sprite_item": "Skeleton mask",
@@ -305,6 +343,7 @@
       },
       {
         "tile_name": "The Necromancer",
+        "tile_id": "the-necromancer",
         "subtitle": "Wilderness boss",
         "target_quantity": 1,
         "sprite_item": "Book of the dead",
@@ -320,6 +359,7 @@
       "target_quantity": 1,
       "target_items": ["Dual macuahuitl", "Blue moon spear", "Eclipse atlatl"],
       "tile_name": "The Cursed Moons",
+      "tile_id": "the-cursed-moons",
       "sprite_item": "Dual macuahuitl",
       "source": "Perilous Moons",
       "spooky_lore": "Face the ancient lunar horrors sealed beneath Cam Torum and claim a weapon from the Lunar Chest."
@@ -328,6 +368,7 @@
       "item_name": "Ancient Staff",
       "target_quantity": 1,
       "tile_name": "Staff of the Old Ones",
+      "tile_id": "staff-of-the-old-ones",
       "source": "Chaos Fanatic / Mummies",
       "spooky_lore": "A sinister, purple staff required to channel the dark magic of the Ancient Magicks spellbook."
     },
@@ -336,6 +377,7 @@
       "target_quantity": 1,
       "target_items": ["Mokhaiotl cloth", "Eye of ayak (uncharged)", "Avernic treads"],
       "tile_name": "The Buried Doom",
+      "tile_id": "the-buried-doom",
       "sprite_item": "Mokhaiotl cloth",
       "source": "Doom of Mokhaiotl",
       "spooky_lore": "Descend beneath Mokhaiotl and claim a relic from the ravenous demon waiting in the dark."
@@ -345,6 +387,7 @@
       "target_quantity": 1,
       "target_items": ["Bandos chestplate", "Bandos tassets", "Bandos Hilt"],
       "tile_name": "The General's War Spoils",
+      "tile_id": "the-general-s-war-spoils",
       "sprite_item": "Bandos chestplate",
       "source": "General Graardor",
       "spooky_lore": "War trophies taken from the hulking general of Bandos and his brutal God Wars camp."
@@ -361,6 +404,7 @@
       ],
       "target_items": ["Vorkath's head", "Dragonbone necklace", "Jar of decay", "Vorki", "Draconic visage", "Skeletal visage"],
       "tile_name": "The Reanimated Wyvern",
+      "tile_id": "the-reanimated-wyvern",
       "sprite_item": "Vorkath's head",
       "source": "Vorkath",
       "spooky_lore": "Claim a grisly trophy from the undead guardian of Ungael's frozen shores."
@@ -370,6 +414,7 @@
       "target_quantity": 1,
       "target_items": ["Fire element staff crown", "Ice element staff crown", "Deadeye prayer scroll", "Mystic vigour prayer scroll"],
       "tile_name": "A Clash of Ice and Fire",
+      "tile_id": "a-clash-of-ice-and-fire",
       "sprite_item": "Fire element staff crown",
       "source": "Royal Titans",
       "spooky_lore": "Brave a frozen cavern where giant monarchs wield searing flames and grave-cold ice."
@@ -379,6 +424,7 @@
       "target_quantity": 1,
       "completion_mode": "any",
       "tile_name": "Nightmare's Cursed Core",
+      "tile_id": "nightmare-s-cursed-core",
       "target_items": ["Volatile orb", "Harmonised orb", "Eldritch orb"],
       "sprite_item": "Volatile orb",
       "source": "The Nightmare of Ashihama",
@@ -390,6 +436,7 @@
       "completion_mode": "any",
       "target_items": ["Venator vestige", "Leviathan's lure", "Any Virtus armour piece"],
       "tile_name": "The Leviathan's Maw",
+      "tile_id": "the-leviathan-s-maw",
       "sprite_item": "Venator vestige",
       "source": "The Leviathan",
       "spooky_lore": "A cursed trophy taken from the abyssal sea monster lurking beneath the desert sands."
@@ -398,6 +445,7 @@
       "item_name": "Black Mask",
       "target_quantity": 1,
       "tile_name": "The Witch's Face",
+      "tile_id": "the-witch-s-face",
       "source": "Cave Horrors",
       "spooky_lore": "A terrifying, witch-doctor style tribal mask housing dark defensive spirits."
     },
@@ -406,6 +454,7 @@
       "target_quantity": 1,
       "target_items": ["Granite hammer", "Black tourmaline core", "Granite ring"],
       "tile_name": "The Grotesque Guardians",
+      "tile_id": "the-grotesque-guardians",
       "sprite_item": "Granite hammer",
       "source": "Grotesque Guardians",
       "spooky_lore": "Dusk and Dawn, the twin gargoyles guarding the haunted rooftop of Slayer Tower."
@@ -415,6 +464,7 @@
       "target_quantity": 1,
       "target_items": ["Soulflame horn", "Oathplate armour", "Yama dossier"],
       "tile_name": "The Pact Devil",
+      "tile_id": "the-pact-devil",
       "sprite_item": "Soulflame horn",
       "source": "Yama",
       "spooky_lore": "A demonic master of pacts waiting beneath the Chasm of Fire."
@@ -428,6 +478,7 @@
       ],
       "target_items": ["Elder venator fang", "Crimson kisten", "Maggot marquess"],
       "tile_name": "The Corpse Eater",
+      "tile_id": "the-corpse-eater",
       "sprite_item": "Elder venator fang",
       "source": "Maggot King",
       "spooky_lore": "A parasitic horror wearing the corpse of a powerful vampyric hunter."
@@ -441,6 +492,7 @@
       ],
       "target_items": ["Hallowfell", "Jar of Light", "Aggy"],
       "tile_name": "The Fallen Seraph",
+      "tile_id": "the-fallen-seraph",
       "sprite_item": "Hallowfell",
       "source": "Mad Angel",
       "spooky_lore": "A broken golem angel haunting the cathedral of Ardeaglais."
@@ -458,6 +510,7 @@
       ],
       "target_items": ["Tumeken's shadow", "Lightbearer", "Masori mask", "Masori body", "Masori chaps", "Elidinis' ward", "Osmumten's fang"],
       "tile_name": "The Pharaoh's Curse",
+      "tile_id": "the-pharaoh-s-curse",
       "sprite_item": "Tumeken's shadow",
       "source": "Akkha",
       "spooky_lore": "A cursed desert tomb filled with ancient guardians, scarabs, and the wrath of a forgotten god."

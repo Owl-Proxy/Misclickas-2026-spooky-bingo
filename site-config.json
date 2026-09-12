@@ -1,0 +1,7 @@
+{
+  "apiBaseUrl": "",
+  "teams": [
+    { "id": "vampire", "name": "Team Vampire", "color": "#d94a67", "symbol": "V" },
+    { "id": "werewolf", "name": "Team Werewolf", "color": "#d9a15c", "symbol": "W" }
+  ]
+}
