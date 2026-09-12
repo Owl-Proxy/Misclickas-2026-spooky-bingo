@@ -35,6 +35,9 @@ function Escape-Xml([string]$Value) {
 }
 
 function Get-Sprite-Url([string]$ItemName) {
+  if ($ItemName -eq 'Crystal armour seed') {
+    return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/crystal-armour-seed.png')))
+  }
   if ($ItemName -eq "Vorkath's head") {
     return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/vorkaths-head.png')))
   }
@@ -225,7 +228,9 @@ foreach ($tier in $event.tiers.psobject.Properties) {
         $completionPaths = @(Get-Completion-Paths $entry)
         $requirementNote = ($completionPaths | ForEach-Object { '(' + ($_.details -join ' AND ') + ')' }) -join ' OR '
       }
-      $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $entry.boss; note = $requirementNote; requirementsHeading = $requirementsHeading; requirements = $requirements; completionPaths = $completionPaths; sprite = $sprite; bossImage = Get-Boss-Image $entry.boss; theme = Get-Tile-Theme $entry.boss; category = $tierLabels[$tier.Name]; free = $false })
+      $bossImage = if ($entry.psobject.Properties.Name -contains 'background_asset') { 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path (Join-Path $PSScriptRoot 'assets') $entry.background_asset))) } else { Get-Boss-Image $entry.boss }
+      $tileTheme = if ($entry.psobject.Properties.Name -contains 'tile_theme') { $entry.tile_theme } else { Get-Tile-Theme $entry.boss }
+      $tiles.Add([pscustomobject]@{ title = $displayTitle; subtitle = $entry.boss; note = $requirementNote; requirementsHeading = $requirementsHeading; requirements = $requirements; completionPaths = $completionPaths; sprite = $sprite; bossImage = $bossImage; theme = $tileTheme; category = $tierLabels[$tier.Name]; free = $false })
     } else {
       $note = if ($entry.psobject.Properties.Name -contains 'challenge') { $entry.challenge } else { $entry.rule }
       $sprite = if ($entry.psobject.Properties.Name -contains 'sprite_item') { Get-Sprite-Url $entry.sprite_item } else { $null }

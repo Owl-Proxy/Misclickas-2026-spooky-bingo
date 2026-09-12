@@ -179,6 +179,9 @@
         "boss": "Corrupted Gauntlet",
         "tile_name": "The Red Labyrinth",
         "tile_id": "the-red-labyrinth",
+        "sprite_item": "Crystal armour seed",
+        "background_asset": "corrupted-hunllef.png",
+        "tile_theme": "blood",
         "target_quantity": 5,
         "spooky_vibe": "A ghostly, crimson-glowing spectral beast trapped in an ever-shifting labyrinth that tests your sanity.",
         "target_drops": ["Crystal armor seeds"]

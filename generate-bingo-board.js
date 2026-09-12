@@ -126,6 +126,7 @@ const spriteAliases = {
 };
 
 const getSpriteUrl = (itemName) => {
+  if (itemName === 'Crystal armour seed') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'crystal-armour-seed.png')).toString('base64')}`;
   if (itemName === "Vorkath's head") return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'vorkaths-head.png')).toString('base64')}`;
   if (itemName === 'Dual macuahuitl') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'dual-macuahuitl.png')).toString('base64')}`;
   if (/^Any |piece$|robes$|^Any Orb$|Clue scroll/.test(itemName)) return null;
@@ -164,8 +165,8 @@ for (const [tier, entries] of Object.entries(event.tiers)) {
         completionPaths: completionPathsFor(entry),
         completionDetails: completionPathsFor(entry, true),
         sprite: (entry.sprite_item ? getSpriteUrl(entry.sprite_item) : null) || entry.target_drops.map(getSpriteUrl).find(Boolean) || null,
-        bossImage: bossImages[entry.boss] || null,
-        theme: getTileTheme(entry.boss),
+        bossImage: entry.background_asset ? `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', entry.background_asset)).toString('base64')}` : bossImages[entry.boss] || null,
+        theme: entry.tile_theme || getTileTheme(entry.boss),
         category: tierLabels[tier]
       });
     } else {

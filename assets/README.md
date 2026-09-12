@@ -1,5 +1,9 @@
 # Image sources
 
+`corrupted-hunllef.png` is the OSRS Wiki's [Corrupted Hunllef](https://oldschool.runescape.wiki/w/File:Corrupted_Hunllef.png) image. It provides The Red Labyrinth's distinct boss background.
+
+`crystal-armour-seed.png` is the OSRS Wiki's [Crystal armour seed](https://oldschool.runescape.wiki/w/File:Crystal_armour_seed.png) inventory icon, used for The Red Labyrinth's sprite. Both images are embedded locally in the generated board.
+
 `royal-titans.png` is the OSRS Wiki's [Fighting Royal Titans](https://oldschool.runescape.wiki/w/File:Fighting_Royal_Titans.png) image, downloaded from https://oldschool.runescape.wiki/images/Fighting_Royal_Titans.png.
 
 `blood-moon.png` is the OSRS Wiki's [Fighting the Blood Moon](https://oldschool.runescape.wiki/w/File:Fighting_the_Blood_Moon.png) image, downloaded from https://oldschool.runescape.wiki/images/Fighting_the_Blood_Moon.png.
