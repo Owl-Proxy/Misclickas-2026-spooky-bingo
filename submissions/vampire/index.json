@@ -14,8 +14,8 @@
       "imageHash": "1f4526cf2cbb4a1387540579cba422f58a74a1352630c656d7ec69cc9a3504c3",
       "imageType": "image/webp",
       "createdAt": "2026-09-12T17:31:15.328Z",
-      "status": "approved",
-      "revision": 1,
+      "status": "rejected",
+      "revision": 2,
       "completesTile": false,
       "reviews": [
         {
@@ -25,6 +25,14 @@
           "to": "approved",
           "reason": "",
           "at": "2026-09-12T17:33:10.177Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "approved",
+          "to": "rejected",
+          "reason": "setup test - removing testing progress",
+          "at": "2026-09-12T17:34:18.729Z"
         }
       ]
     }
