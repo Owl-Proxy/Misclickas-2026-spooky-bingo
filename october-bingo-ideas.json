@@ -120,10 +120,14 @@
         "target_quantity": 1,
         "completion_paths": [
           { "all_of": ["Scythe of vitur"] },
-          { "all_of": ["Ghrazi rapier", "Avernic defender hilt", "Sanguinesti staff"] }
+          { "all_of": [
+            "Avernic defender hilt",
+            { "label": "Justiciar piece", "any_of": ["Justiciar faceguard", "Justiciar chestguard", "Justiciar legguards"] },
+            { "label": "ToB weapon", "any_of": ["Ghrazi rapier", "Sanguinesti staff"], "display_options": "Rapier / Sang staff" }
+          ] }
         ],
         "spooky_vibe": "Vampyres, rivers of blood, human experimentation, and arachnids.",
-        "target_drops": ["Scythe of vitur", "Ghrazi rapier", "Avernic defender hilt", "Sanguinesti staff"]
+        "target_drops": ["Scythe of vitur", "Avernic defender hilt", "Justiciar faceguard", "Justiciar chestguard", "Justiciar legguards", "Ghrazi rapier", "Sanguinesti staff"]
       },
       {
         "boss": "Abyssal Sire",

@@ -9,12 +9,24 @@ test('catalog preserves all 54 positions and stable unique IDs', () => {
   assert.equal(tiles.length, 54); assert.equal(new Set(tiles.map(t => t.id)).size, 54); assert.equal(tiles[27].free, true);
   for (const t of tiles.filter(t => !t.free)) { assert.ok(t.choices.length); assert.ok(t.legacyRequirements.every(Boolean)); for (const p of t.paths || []) for (const g of p) assert.ok(g.quantity > 0); }
 });
-test('ToB requires the mega rare OR all three alternatives, approved only', () => {
+test('ToB requires a scythe OR hilt, any Justiciar piece and either weapon, approved only', () => {
   const id = 'the-blood-theatre', t = tile(id);
   assert.equal(tileProgress(t, evidence(id, ['Scythe of vitur'], 'pending')).complete, false);
   assert.equal(tileProgress(t, evidence(id, ['Scythe of vitur'])).complete, true);
   assert.equal(tileProgress(t, evidence(id, ['Ghrazi rapier', 'Sanguinesti staff'])).complete, false);
-  assert.equal(tileProgress(t, evidence(id, ['Ghrazi rapier', 'Sanguinesti staff', 'Avernic defender hilt'])).complete, true);
+  assert.equal(tileProgress(t, evidence(id, ['Ghrazi rapier', 'Sanguinesti staff', 'Avernic defender hilt'])).complete, false);
+  for (const armour of ['Justiciar faceguard', 'Justiciar chestguard', 'Justiciar legguards']) {
+    for (const weapon of ['Ghrazi rapier', 'Sanguinesti staff']) {
+      const required = ['Avernic defender hilt', armour, weapon];
+      assert.equal(tileProgress(t, evidence(id, required)).complete, true);
+      for (let missing = 0; missing < required.length; missing++) {
+        const drops = evidence(id, required); drops[missing].status = 'pending';
+        assert.equal(tileProgress(t, drops).complete, false);
+        drops[missing].status = 'rejected';
+        assert.equal(tileProgress(t, drops).complete, false);
+      }
+    }
+  }
   assert.equal(tileProgress(t, evidence(id, ['Scythe of vitur'], 'rejected')).complete, false);
 });
 test('CoX and ToA count choices within each group without skipping a group', () => {

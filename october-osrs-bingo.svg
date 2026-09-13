@@ -191,14 +191,14 @@
       <text x="1400.83333333333" y="591" class="tile-boss">The Nightmare of Ashihama</text>
       <text x="1400.83333333333" y="616" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Inquisitor armor piece</tspan><tspan x="1400.83333333333" dy="17">- 1x Nightmare staff</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>The Blood Theatre: (1x Scythe of vitur) OR (1x Ghrazi rapier AND 1x Avernic defender hilt AND 1x Sanguinesti staff)</title>
-      <rect x="83" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-blood)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="83" y="709" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Verzik_Vitur.png" preserveAspectRatio="xMidYMid slice"/>
-      <image x="183.166666666667" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Scythe_of_Vitur_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="199.166666666667" y="779" class="tile-label"><tspan x="199.166666666667" dy="0">The Blood Theatre</tspan></text>
-      <text x="199.166666666667" y="819" class="tile-boss">Theatre of Blood (ToB)</text>
-      <text x="199.166666666667" y="844" class="tile-note"><tspan x="199.166666666667" dy="0">- 1x Scythe of vitur</tspan><tspan x="199.166666666667" dy="17" font-weight="700" fill="#f7e9c6">OR all of the following:</tspan><tspan x="199.166666666667" dy="17">- 1x Ghrazi rapier</tspan><tspan x="199.166666666667" dy="17">- 1x Avernic defender hilt</tspan><tspan x="199.166666666667" dy="17">- 1x Sanguinesti staff</tspan></text>
+      <title>The Blood Theatre: (1x Scythe of vitur) OR (1x Avernic defender hilt AND 1x any of (Justiciar faceguard OR Justiciar chestguard OR Justiciar legguards) AND 1x any of (Ghrazi rapier OR Sanguinesti staff))</title>
+      <rect x="83" y="709" width="232.33333333333334" height="220" rx="4" fill="url(#tile-blood)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="709" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Verzik_Vitur.png" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.16666666666669" y="715" width="32" height="32" href="https://oldschool.runescape.wiki/images/Scythe_of_Vitur_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="199.16666666666669" y="779" class="tile-label"><tspan x="199.16666666666669" dy="0">The Blood Theatre</tspan></text>
+      <text x="199.16666666666669" y="819" class="tile-boss">Theatre of Blood (ToB)</text>
+      <text x="199.16666666666669" y="844" class="tile-note"><tspan x="199.16666666666669" dy="0" font-size="12">- 1x Scythe of vitur</tspan><tspan x="199.16666666666669" dy="14" font-size="12" font-weight="700" fill="#f7e9c6">OR all of the following:</tspan><tspan x="199.16666666666669" dy="14" font-size="12">- 1x Avernic defender hilt</tspan><tspan x="199.16666666666669" dy="14" font-size="12">- 1x Justiciar piece</tspan><tspan x="199.16666666666669" dy="14" font-size="12">- 1x ToB weapon (Rapier / Sang</tspan><tspan x="199.16666666666669" dy="14" font-size="12">staff)</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Heart of the Abyss: 1 qualifying drop(s) required</title>
       <rect x="323.333333333333" y="709" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
