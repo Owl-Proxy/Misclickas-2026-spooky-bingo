@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2420" viewBox="0 0 1600 2420" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2420" viewBox="0 0 1600 2420" role="img" aria-labelledby="title desc">
   <title id="title">Misclickas Spooky Bingo</title>
   <desc id="desc">A 6 by 9 Old School RuneScape Halloween bingo board generated from october-bingo-ideas.json.</desc>
   <defs>
@@ -407,14 +407,14 @@
       <text x="1400.83333333333" y="1503" class="tile-boss">Wilderness boss trip</text>
       <text x="1400.83333333333" y="1528" class="tile-note"><tspan x="1400.83333333333" dy="0">- Complete a team Wilderness</tspan><tspan x="1400.83333333333" dy="17">boss trip with every</tspan><tspan x="1400.83333333333" dy="17">participant wearing at least</tspan><tspan x="1400.83333333333" dy="17">one Ghostly robe piece.</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>The Witching Hour: Award a bonus point for a unique or pet received between 12:00 AM and 1:00 AM local time. Record the game clock and screenshot.</title>
-      <rect x="83" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="83" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a" preserveAspectRatio="xMidYMid slice"/>
-      <image x="183.166666666667" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ring_of_shadows_detail.png" preserveAspectRatio="xMidYMid meet"/>
+      <title>The Witching Hour: Uncapped bonus points for approved midnight drops</title>
+      <rect x="83" y="1621" width="232.33333333333334" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1621" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.16666666666669" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ring_of_shadows_detail.png" preserveAspectRatio="xMidYMid meet"/>
       
-      <text x="199.166666666667" y="1691" class="tile-label"><tspan x="199.166666666667" dy="0">The Witching Hour</tspan></text>
-      <text x="199.166666666667" y="1731" class="tile-boss">Boss / raid unique drop</text>
-      <text x="199.166666666667" y="1756" class="tile-note"><tspan x="199.166666666667" dy="0">- Award a bonus point for a</tspan><tspan x="199.166666666667" dy="17">unique or pet received between</tspan><tspan x="199.166666666667" dy="17">12:00 AM and 1:00 AM local</tspan><tspan x="199.166666666667" dy="17">time. Record the game clock</tspan><tspan x="199.166666666667" dy="17">and screenshot.</tspan></text>
+      <text x="199.16666666666669" y="1691" class="tile-label"><tspan x="199.16666666666669" dy="0">The Witching Hour</tspan></text>
+      <text x="199.16666666666669" y="1731" class="tile-boss">Boss / raid unique drop</text>
+      <text x="199.16666666666669" y="1756" class="tile-note"><tspan x="199.16666666666669" dy="0">- 1 bonus point per unique</tspan><tspan x="199.16666666666669" dy="17">drop or pet</tspan><tspan x="199.16666666666669" dy="17">- 12:00 AM to 1:00 AM local</tspan><tspan x="199.16666666666669" dy="17">time</tspan><tspan x="199.16666666666669" dy="17">- Unlimited points; keep</tspan><tspan x="199.16666666666669" dy="17">submitting</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Zombie Apocalypse: Win a Pest Control game while every participant wears a zombie-themed outfit, or complete a raid room with everyone poisoned at the finish.</title>
       <rect x="323.333333333333" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>

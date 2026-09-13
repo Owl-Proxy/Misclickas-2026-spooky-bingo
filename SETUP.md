@@ -69,6 +69,18 @@ Access codes are kept in the current browser tab's session storage. Sign out on 
 
 ## Storage and operating limits
 
+### Witching Hour bonus scoring
+
+Witching Hour stays open and awards **1 bonus point for each approved unique drop or pet**, with no points cap. Submit the quantity shown in the screenshot and include the drop names, time received, and time zone in Notes. Reviewers check that the drop was received from midnight (inclusive) to 1 a.m. (exclusive), using the existing local-time rule; the upload time is not the drop time. Agree on the meaning of local time before the event begins.
+
+Approving evidence adds its quantity to that team's bonus total. Reopening or rejecting it removes those points. The completion checkbox is unavailable for this tile, and old completion flags are ignored. Existing approved Witching Hour submissions count automatically; review any earlier test evidence before the event.
+
+The tile badge and detail panel show bonus points, and the team score shows them separately from the **52 completable tiles**. All 54 board positions remain, including the free space and Witching Hour. Other tiles keep their existing completion rules. There is no scoring cap; the archive and upload limits below still apply.
+
+To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`) and publish the changed site files to GitHub Pages. The site reads its live tile catalog from the Worker, so both need the update. Existing secrets and stored submissions are retained.
+
+### Archive limits
+
 - Screenshots and metadata live under `submissions/<team-id>/` on the `submissions` branch. GitHub commits keep the history. Screenshots and names are public.
 - The browser accepts PNG, JPEG, and WebP files up to 20 MB, resizes the longest edge to at most 2560 pixels, and converts them to WebP. The saved image must be at most 3 MB. Check that evidence remains readable.
 - Uploads are limited to 20 per team per minute. Sign-in attempts and invalid credentials are rate-limited by IP. Cloudflare rate limits are best effort; platform/GitHub quotas also apply.

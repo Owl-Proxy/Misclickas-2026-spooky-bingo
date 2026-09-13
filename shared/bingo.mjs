@@ -23,6 +23,7 @@ export function buildTiles(event) {
       source: entry.boss ?? entry.source ?? entry.subtitle ?? '',
       description: entry.challenge ?? entry.rule ?? entry.spooky_vibe ?? entry.spooky_lore ?? '',
       quantity: entry.target_quantity, paths, choices,
+      bonus: entry.scoring_mode === 'bonus', pointsPerDrop: entry.points_per_drop ?? 1,
       legacyRequirements: entry.target_requirements ?? (entry.challenge || entry.rule ? [entry.challenge ?? entry.rule]
         : (entry.target_drops ?? entry.target_items ?? [entry.item_name]).map(item => `${entry.target_quantity}× ${item}`))
     };
@@ -32,7 +33,7 @@ export function buildTiles(event) {
 }
 
 export function tileProgress(tile, submissions) {
-  if (tile.free) return { complete: true, approved: 0, pending: 0, counts: {}, paths: [] };
+  if (tile.free) return { complete: true, approved: 0, pending: 0, counts: {}, paths: [], bonusPoints: 0 };
   const relevant = submissions.filter(s => s.tileId === tile.id);
   const accepted = relevant.filter(s => s.status === 'approved');
   const counts = {};
@@ -40,16 +41,18 @@ export function tileProgress(tile, submissions) {
   const paths = (tile.paths ?? []).map(path => path.map(group => ({ ...group,
     current: group.items.reduce((total, item) => total + (counts[slug(item)] ?? 0), 0)
   })));
-  const complete = tile.paths ? paths.some(path => path.every(group => group.current >= group.quantity))
-    : accepted.some(s => s.completesTile === true);
-  return { complete, counts, paths, approved: accepted.length, pending: relevant.filter(s => s.status === 'pending').length };
+  const complete = !tile.bonus && (tile.paths ? paths.some(path => path.every(group => group.current >= group.quantity))
+    : accepted.some(s => s.completesTile === true));
+  const bonusPoints = tile.bonus ? accepted.reduce((total, s) => total + s.quantity * tile.pointsPerDrop, 0) : 0;
+  return { complete, counts, paths, bonusPoints, approved: accepted.length, pending: relevant.filter(s => s.status === 'pending').length };
 }
 
 export function summary(tiles, submissions) {
-  const actual = tiles.filter(tile => !tile.free);
+  const actual = tiles.filter(tile => !tile.free && !tile.bonus);
   return {
     complete: actual.filter(tile => tileProgress(tile, submissions).complete).length,
     total: actual.length,
+    bonusPoints: tiles.filter(tile => tile.bonus).reduce((total, tile) => total + tileProgress(tile, submissions).bonusPoints, 0),
     pending: submissions.filter(s => s.status === 'pending').length
   };
 }

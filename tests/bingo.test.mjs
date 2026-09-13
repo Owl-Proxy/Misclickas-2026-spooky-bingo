@@ -43,5 +43,25 @@ test('organiser-confirmed activities require an approved completion decision', (
   assert.equal(tileProgress(t, drops).complete, false);
   drops[0].completesTile = true; assert.equal(tileProgress(t, drops).complete, true);
   drops[0].status = 'rejected'; assert.equal(tileProgress(t, drops).complete, false);
-  assert.deepEqual(summary(tiles, []), { complete: 0, total: 53, pending: 0 });
+  assert.deepEqual(summary(tiles, []), { complete: 0, total: 52, bonusPoints: 0, pending: 0 });
+});
+
+test('Witching Hour accumulates approved quantities without completing or capping points', () => {
+  const t = tile('the-witching-hour');
+  const drops = [
+    ...evidence(t.id, ['Activity progress']).map(s => ({ ...s, quantity: 3, completesTile: true })),
+    ...evidence(t.id, ['Activity progress']).map(s => ({ ...s, quantity: 10000 })),
+    ...evidence(t.id, ['Activity progress'], 'pending'),
+    ...evidence(t.id, ['Activity progress'], 'rejected'),
+    ...evidence('the-voice-in-the-dark', ['Bellator vestige'])
+  ];
+  assert.equal(t.bonus, true);
+  assert.equal(tileProgress(t, []).bonusPoints, 0);
+  assert.equal(tileProgress(t, drops).bonusPoints, 10003);
+  assert.equal(tileProgress(t, drops).complete, false);
+  assert.deepEqual(summary(tiles, drops), { complete: 1, total: 52, bonusPoints: 10003, pending: 1 });
+  drops[0].status = 'rejected';
+  assert.equal(tileProgress(t, drops).bonusPoints, 10000);
+  drops[1].status = 'pending';
+  assert.equal(tileProgress(t, drops).bonusPoints, 0);
 });

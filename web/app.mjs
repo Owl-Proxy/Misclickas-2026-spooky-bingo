@@ -13,6 +13,7 @@ let teamCodes = session.get('bingo-team-codes') || {}, reviewer = session.get('b
 const teamURL = id => { const url = new URL(location.href); url.searchParams.set('team', id); url.hash = ''; return url; };
 const field = (form, name) => $(form).elements.namedItem(name);
 const date = value => new Date(value).toLocaleString();
+const bonusLabel = points => `${points.toLocaleString()} bonus ${points === 1 ? 'point' : 'points'}`;
 
 async function api(path, body, auth) {
   const headers = {};
@@ -78,7 +79,7 @@ async function refresh() {
 function render() {
   if (!team) return;
   const score = summary(tiles, submissions);
-  $('#score').replaceChildren(node('strong', loaded ? `${score.complete} / ${score.total} tiles complete` : 'Progress unavailable'), node('span', loaded ? `${score.pending} pending review` : ''));
+  $('#score').replaceChildren(node('strong', loaded ? `${score.complete} / ${score.total} tiles complete` : 'Progress unavailable'), node('span', loaded ? bonusLabel(score.bonusPoints) : ''), node('span', loaded ? `${score.pending} pending review` : ''));
   $('#history-title').textContent = `${team.name} submissions`;
   $('#refresh').disabled = !ready;
   renderBoard(); renderHistory($('#history'), submissions.filter(s => $('#history-filter').value === 'all' || s.status === $('#history-filter').value));
@@ -92,7 +93,7 @@ function renderBoard() {
   groups.forEach((group, index) => {
     const tile = tiles[index], progress = tileProgress(tile, submissions);
     group.setAttribute('role', 'button'); group.setAttribute('tabindex', '0');
-    const state = tile.free || (loaded && progress.complete) ? 'Complete' : loaded && progress.pending ? 'Pending review' : loaded && progress.approved ? 'Progress' : '';
+    const state = tile.bonus ? (loaded ? bonusLabel(progress.bonusPoints) : 'Bonus points unavailable') : tile.free || (loaded && progress.complete) ? 'Complete' : loaded && progress.pending ? 'Pending review' : loaded && progress.approved ? 'Progress' : '';
     group.setAttribute('aria-label', `${team.name}: ${tile.title}${state ? ` — ${state}` : ''}. View tile.`);
     group.style.cursor = 'pointer';
     group.onclick = () => openTile(tile);
@@ -103,10 +104,11 @@ function renderBoard() {
       const badge = doc.createElementNS('http://www.w3.org/2000/svg', 'g'); badge.classList.add('progress-badge'); badge.setAttribute('pointer-events', 'none');
       const x = Number(rect.getAttribute('x')) + 7, y = Number(rect.getAttribute('y')) + 7;
       const background = doc.createElementNS(badge.namespaceURI, 'rect');
-      for (const [key, value] of Object.entries({ x, y, width: 83, height: 22, rx: 4, fill: '#100b0e', stroke: state === 'Complete' ? '#9ce1b1' : '#f5c979' })) background.setAttribute(key, value);
+      const badgeLabel = tile.bonus ? (loaded ? `+${bonusLabel(progress.bonusPoints)}` : 'Bonus points unavailable') : state === 'Complete' ? '✓ Complete' : state === 'Progress' ? '◐ Progress' : '⏳ Pending';
+      for (const [key, value] of Object.entries({ x, y, width: tile.bonus ? Math.max(110, badgeLabel.length * 7 + 12) : 83, height: 22, rx: 4, fill: '#100b0e', stroke: state === 'Complete' ? '#9ce1b1' : '#f5c979' })) background.setAttribute(key, value);
       const text = doc.createElementNS(badge.namespaceURI, 'text');
       for (const [key, value] of Object.entries({ x: x + 6, y: y + 15, fill: state === 'Complete' ? '#9ce1b1' : '#f5c979', 'font-size': 11, 'font-family': 'sans-serif', 'font-weight': 700 })) text.setAttribute(key, value);
-      text.textContent = state === 'Complete' ? '✓ Complete' : state === 'Progress' ? '◐ Progress' : '⏳ Pending';
+      text.textContent = badgeLabel;
       badge.append(background, text); group.append(badge);
     }
   });
@@ -115,6 +117,15 @@ function renderRequirements(target, tile) {
   target.replaceChildren();
   if (tile.free) { target.append(node('p', 'A free space for both teams. Happy haunting!')); return; }
   const progress = tileProgress(tile, submissions);
+  if (tile.bonus) {
+    target.append(node('h3', loaded ? bonusLabel(progress.bonusPoints) : 'Bonus points unavailable'));
+    const card = node('div', undefined, 'path');
+    tile.legacyRequirements.forEach(value => card.append(node('p', value)));
+    card.append(node('p', 'Only approved quantities earn points. Keep submitting qualifying drops throughout the event; this tile never completes.', 'muted'));
+    if (loaded) card.append(node('p', `${progress.approved} approved ${progress.approved === 1 ? 'entry' : 'entries'} · ${progress.pending} pending review`, 'muted'));
+    target.append(card);
+    return;
+  }
   target.append(node('h3', progress.complete && loaded ? '✓ Tile complete' : 'Completion requirements'));
   if (tile.paths) {
     progress.paths.forEach((path, index) => {
@@ -139,7 +150,7 @@ function openTile(tile) {
   selectedTile = tile; uploadId = null;
   $('#upload-form').reset(); message('#upload-status');
   if (previewURL) URL.revokeObjectURL(previewURL); previewURL = null; $('#upload-preview').hidden = true;
-  field('#upload-form', 'choiceId').replaceChildren(...tile.choices.map(choice => { const option = node('option', choice.label); option.value = choice.id; return option; }));
+  field('#upload-form', 'choiceId').replaceChildren(...tile.choices.map(choice => { const option = node('option', tile.bonus && choice.id === 'activity-progress' ? 'Qualifying unique drop or pet' : choice.label); option.value = choice.id; return option; }));
   renderTile(); $('#tile-dialog').showModal();
 }
 function renderTile() {
@@ -147,7 +158,7 @@ function renderTile() {
   renderRequirements($('#requirements'), selectedTile);
   $('#upload-form').hidden = Boolean(selectedTile.free);
   $('#upload-fields').disabled = !ready || !teamCodes[team.id] || uploading;
-  message('#upload-hint', !ready ? 'Submissions aren’t open yet.' : !teamCodes[team.id] ? 'Close this tile and use Team sign in to submit evidence.' : 'Submit one drop or activity per screenshot entry. An organiser will review it.');
+  message('#upload-hint', !ready ? 'Submissions aren’t open yet.' : !teamCodes[team.id] ? 'Close this tile and use Team sign in to submit evidence.' : selectedTile.bonus ? 'Enter the number of qualifying drops shown. In Notes, include the drop names, time received, and time zone. An organiser will verify the midnight–1 a.m. window before awarding points.' : 'Submit one drop or activity per screenshot entry. An organiser will review it.');
   renderHistory($('#tile-history'), submissions.filter(s => s.tileId === selectedTile.id));
 }
 function renderHistory(target, entries) {
@@ -158,6 +169,7 @@ function renderHistory(target, entries) {
     const tile = tiles.find(t => t.id === submission.tileId);
     const button = node('button', undefined, 'evidence'); button.type = 'button';
     button.append(node('span', submission.status, `badge ${submission.status}`), node('strong', tile?.title || submission.tileId), node('div', `${submission.quantity} × ${tile?.choices.find(c => c.id === submission.choiceId)?.label || submission.choiceId}`), node('div', `${submission.player} · ${date(submission.createdAt)}`, 'muted'));
+    if (tile?.bonus) button.append(node('div', submission.status === 'approved' ? `+${bonusLabel(submission.quantity * tile.pointsPerDrop)} awarded` : 'No bonus points awarded'));
     button.addEventListener('click', () => openReview(submission)); list.append(button);
   });
   target.append(list);
@@ -174,7 +186,9 @@ function openReview(submission) {
   $('#review-form').hidden = !reviewer; $('#review-fields').disabled = false; $('#review-form').reset();
   field('#review-form', 'status').value = submission.status === 'pending' ? 'approved' : submission.status;
   field('#review-form', 'completesTile').checked = submission.completesTile;
-  $('#manual-completion').hidden = Boolean(tile.paths);
+  $('#manual-completion').hidden = Boolean(tile.paths || tile.bonus);
+  field('#review-form', 'completesTile').disabled = Boolean(tile.paths || tile.bonus);
+  if (tile.bonus) $('#review-detail').append(node('p', `Verify the drop names, quantity, time received, and time zone in the screenshot and notes. Approval awards ${bonusLabel(submission.quantity * tile.pointsPerDrop)}; it never completes this tile.`, 'muted'));
   message('#review-status');
   $('#review-audit').replaceChildren(...submission.reviews.map(review => node('p', `${review.reviewer}: ${review.from} → ${review.to} · ${date(review.at)}${review.reason ? ` — ${review.reason}` : ''}`, 'audit')));
   if (!submission.reviews.length) $('#review-audit').append(node('p', 'Awaiting the first review.', 'muted'));

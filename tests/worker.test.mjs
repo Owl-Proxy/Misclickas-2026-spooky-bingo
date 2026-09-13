@@ -42,6 +42,32 @@ test('retries are idempotent, duplicate screenshots and changed retry payloads f
   assert.equal((await request('/teams/vampire/submissions', { ...body, id: crypto.randomUUID() }, codes.vampire)).status, 409);
   assert.equal((await request('/teams/vampire')).body.submissions.length, 1); assert.equal(store.images.size, 1);
 });
+
+test('bonus submissions stay open, ignore manual completion, and reverse points on review', async () => {
+  const { request } = fixture();
+  const tile = (await request('/config')).body.tiles.find(t => t.id === 'the-witching-hour');
+  const auth = { 'X-Reviewer-Id': 'organiser' };
+  const first = upload({ tileId: tile.id, choiceId: 'activity-progress', quantity: 2 });
+  assert.equal((await request('/teams/vampire/submissions', first, codes.vampire)).status, 201);
+  const route = `/teams/vampire/submissions/${first.id}/review`;
+  assert.equal((await request(route, { status: 'approved', revision: 0, completesTile: true }, codes.reviewer, auth)).status, 200);
+  let entries = (await request('/teams/vampire')).body.submissions;
+  assert.equal(entries[0].completesTile, false);
+  assert.equal(tileProgress(tile, entries).bonusPoints, 2);
+  // Distinct screenshot after approval must still be accepted.
+  const second = upload({ tileId: tile.id, choiceId: 'activity-progress', quantity: 3,
+    image: { ...first.image, base64: btoa(atob(first.image.base64) + '\0') } });
+  assert.equal((await request('/teams/vampire/submissions', second, codes.vampire)).status, 201);
+  assert.equal((await request(`/teams/vampire/submissions/${second.id}/review`, { status: 'approved', revision: 0 }, codes.reviewer, auth)).status, 200);
+  entries = (await request('/teams/vampire')).body.submissions;
+  assert.equal(tileProgress(tile, entries).bonusPoints, 5);
+  assert.equal(tileProgress(tile, entries).complete, false);
+  assert.equal(tileProgress(tile, (await request('/teams/werewolf')).body.submissions).bonusPoints, 0);
+  assert.equal((await request('/teams/vampire/submissions', { ...second, id: crypto.randomUUID() }, codes.vampire)).status, 409);
+  assert.equal((await request(route, { status: 'rejected', revision: 1, reason: 'Outside the time window' }, codes.reviewer, auth)).status, 200);
+  entries = (await request('/teams/vampire')).body.submissions;
+  assert.equal(tileProgress(tile, entries).bonusPoints, 3);
+});
 test('concurrent retry with changed payload cannot silently replace evidence', async () => {
   const { request } = fixture(), body = upload();
   const results = await Promise.all([request('/teams/vampire/submissions', body, codes.vampire), request('/teams/vampire/submissions', { ...body, quantity: 2 }, codes.vampire)]);

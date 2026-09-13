@@ -324,9 +324,11 @@
         "tile_name": "The Witching Hour",
         "tile_id": "the-witching-hour",
         "subtitle": "Boss / raid unique drop",
-        "target_quantity": 1,
+        "scoring_mode": "bonus",
+        "points_per_drop": 1,
+        "target_requirements": ["1 bonus point per unique drop or pet", "12:00 AM to 1:00 AM local time", "Unlimited points; keep submitting"],
         "sprite_item": "Ring of shadows",
-        "rule": "Award a bonus point for a unique or pet received between 12:00 AM and 1:00 AM local time. Record the game clock and screenshot."
+        "rule": "Earn 1 bonus point per unique drop or pet received between 12:00 AM and 1:00 AM local time. No points cap; this tile stays open. Screenshot the drop and clock, and note the drop time and time zone for review."
       },
       {
         "tile_name": "Zombie Apocalypse",

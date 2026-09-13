@@ -165,7 +165,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
               const tile = tiles.find(t => t.id === submission.tileId);
               submission.reviews.push({ reviewerId: reviewer.id, reviewer: reviewer.name, from: submission.status, to: body.status, reason, at: new Date().toISOString() });
               submission.status = body.status;
-              submission.completesTile = !tile?.paths && body.status === 'approved' && body.completesTile === true;
+              submission.completesTile = !tile?.bonus && !tile?.paths && body.status === 'approved' && body.completesTile === true;
               submission.revision++;
               return { id: submission.id, status: submission.status, revision: submission.revision };
             });
