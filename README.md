@@ -2,6 +2,9 @@
 
 An Old School RuneScape Halloween bingo board for the Misclickas clan.
 
+<img width="1122" height="1402" alt="image" src="https://github.com/user-attachments/assets/617e8d9f-f756-4fbd-8981-5dc99155ad6c" />
+
+
 ## Share the board
 
 The repository includes a responsive `index.html` viewer for GitHub Pages. It embeds the SVG as a document so boss backgrounds and tile hover descriptions work.
