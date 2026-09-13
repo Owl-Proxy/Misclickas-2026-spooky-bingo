@@ -1,0 +1,324 @@
+[
+  {
+    "index": 0,
+    "name": "Ahrim (Barrows)",
+    "file": "Ahrim_the_Blighted.png",
+    "url": "https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png",
+    "type": "image/png"
+  },
+  {
+    "index": 1,
+    "name": "Dharok (Barrows)",
+    "file": "Dharok_the_Wretched.png",
+    "url": "https://oldschool.runescape.wiki/images/Dharok_the_Wretched.png",
+    "type": "image/png"
+  },
+  {
+    "index": 2,
+    "name": "Guthan (Barrows)",
+    "file": "Guthan_the_Infested.png",
+    "url": "https://oldschool.runescape.wiki/images/Guthan_the_Infested.png",
+    "type": "image/png"
+  },
+  {
+    "index": 3,
+    "name": "Karil (Barrows)",
+    "file": "Karil_the_Tainted.png",
+    "url": "https://oldschool.runescape.wiki/images/Karil_the_Tainted.png",
+    "type": "image/png"
+  },
+  {
+    "index": 4,
+    "name": "Torag (Barrows)",
+    "file": "Torag_the_Corrupted.png",
+    "url": "https://oldschool.runescape.wiki/images/Torag_the_Corrupted.png",
+    "type": "image/png"
+  },
+  {
+    "index": 5,
+    "name": "Verac (Barrows)",
+    "file": "Verac_the_Defiled.png",
+    "url": "https://oldschool.runescape.wiki/images/Verac_the_Defiled.png",
+    "type": "image/png"
+  },
+  {
+    "index": 6,
+    "name": "The Whisperer",
+    "file": "The_Whisperer.png",
+    "url": "https://oldschool.runescape.wiki/images/The_Whisperer.png",
+    "type": "image/png"
+  },
+  {
+    "index": 7,
+    "name": "Scurrius",
+    "file": "Scurrius.png",
+    "url": "https://oldschool.runescape.wiki/images/Scurrius.png",
+    "type": "image/png"
+  },
+  {
+    "index": 8,
+    "name": "Crazy archaeologist",
+    "file": "Crazy_archaeologist.png",
+    "url": "https://oldschool.runescape.wiki/images/Crazy_archaeologist.png",
+    "type": "image/png"
+  },
+  {
+    "index": 9,
+    "name": "Obor",
+    "file": "Obor.png",
+    "url": "https://oldschool.runescape.wiki/images/Obor.png",
+    "type": "image/png"
+  },
+  {
+    "index": 10,
+    "name": "Bryophyta",
+    "file": "Bryophyta.png",
+    "url": "https://oldschool.runescape.wiki/images/Bryophyta.png",
+    "type": "image/png"
+  },
+  {
+    "index": 11,
+    "name": "Dagannoth Rex",
+    "file": "Dagannoth_Rex.png",
+    "url": "https://oldschool.runescape.wiki/images/Dagannoth_Rex.png",
+    "type": "image/png"
+  },
+  {
+    "index": 12,
+    "name": "Dagannoth Prime",
+    "file": "Dagannoth_Prime.png",
+    "url": "https://oldschool.runescape.wiki/images/Dagannoth_Prime.png",
+    "type": "image/png"
+  },
+  {
+    "index": 13,
+    "name": "Dagannoth Supreme",
+    "file": "Dagannoth_Supreme.png",
+    "url": "https://oldschool.runescape.wiki/images/Dagannoth_Supreme.png",
+    "type": "image/png"
+  },
+  {
+    "index": 14,
+    "name": "Kalphite Queen",
+    "file": "Kalphite_Queen.png",
+    "url": "https://oldschool.runescape.wiki/images/Kalphite_Queen.png",
+    "type": "image/png"
+  },
+  {
+    "index": 15,
+    "name": "Skotizo",
+    "file": "Skotizo.png",
+    "url": "https://oldschool.runescape.wiki/images/Skotizo.png",
+    "type": "image/png"
+  },
+  {
+    "index": 16,
+    "name": "The Mimic",
+    "file": "The_Mimic.png",
+    "url": "https://oldschool.runescape.wiki/images/The_Mimic.png",
+    "type": "image/png"
+  },
+  {
+    "index": 17,
+    "name": "Chaos Fanatic",
+    "file": "Chaos_Fanatic.png",
+    "url": "https://oldschool.runescape.wiki/images/Chaos_Fanatic.png",
+    "type": "image/png"
+  },
+  {
+    "index": 18,
+    "name": "The Nightmare",
+    "file": "The_Nightmare.png",
+    "url": "https://oldschool.runescape.wiki/images/The_Nightmare.png",
+    "type": "image/png"
+  },
+  {
+    "index": 19,
+    "name": "Verzik Vitur (ToB)",
+    "file": "Verzik_Vitur.png",
+    "url": "https://oldschool.runescape.wiki/images/Verzik_Vitur.png",
+    "type": "image/png"
+  },
+  {
+    "index": 20,
+    "name": "Abyssal Sire",
+    "file": "Abyssal_Sire_(phase_1).png",
+    "url": "https://oldschool.runescape.wiki/images/Abyssal_Sire_(phase_1).png",
+    "type": "image/png"
+  },
+  {
+    "index": 21,
+    "name": "Cerberus",
+    "file": "Cerberus.png",
+    "url": "https://oldschool.runescape.wiki/images/Cerberus.png",
+    "type": "image/png"
+  },
+  {
+    "index": 22,
+    "name": "Vardorvis",
+    "file": "Vardorvis.png",
+    "url": "https://oldschool.runescape.wiki/images/Vardorvis.png",
+    "type": "image/png"
+  },
+  {
+    "index": 23,
+    "name": "Duke Sucellus",
+    "file": "Duke_Sucellus.png",
+    "url": "https://oldschool.runescape.wiki/images/Duke_Sucellus.png",
+    "type": "image/png"
+  },
+  {
+    "index": 24,
+    "name": "Araxxor",
+    "file": "Araxxor.png",
+    "url": "https://oldschool.runescape.wiki/images/Araxxor.png",
+    "type": "image/png"
+  },
+  {
+    "index": 25,
+    "name": "Corrupted Hunllef",
+    "file": "Corrupted_Hunllef.png",
+    "url": "https://oldschool.runescape.wiki/images/Corrupted_Hunllef.png",
+    "type": "image/png"
+  },
+  {
+    "index": 26,
+    "name": "Great Olm (CoX)",
+    "file": "Great_Olm.png",
+    "url": "https://oldschool.runescape.wiki/images/Great_Olm.png",
+    "type": "image/png"
+  },
+  {
+    "index": 27,
+    "name": "Zulrah",
+    "file": "Zulrah_(serpentine).png",
+    "url": "https://oldschool.runescape.wiki/images/Zulrah_(serpentine).png",
+    "type": "image/png"
+  },
+  {
+    "index": 28,
+    "name": "Kril Tsutsaroth",
+    "file": "K'ril_Tsutsaroth.png",
+    "url": "https://oldschool.runescape.wiki/images/K'ril_Tsutsaroth.png",
+    "type": "image/png"
+  },
+  {
+    "index": 29,
+    "name": "Phantom Muspah",
+    "file": "Phantom_Muspah_(ranged).png",
+    "url": "https://oldschool.runescape.wiki/images/Phantom_Muspah_(ranged).png",
+    "type": "image/png"
+  },
+  {
+    "index": 30,
+    "name": "Sarachnis",
+    "file": "Sarachnis.png",
+    "url": "https://oldschool.runescape.wiki/images/Sarachnis.png",
+    "type": "image/png"
+  },
+  {
+    "index": 31,
+    "name": "Blood Moon",
+    "file": "Blood_Moon.png",
+    "url": "https://oldschool.runescape.wiki/images/Blood_Moon.png",
+    "type": "image/png"
+  },
+  {
+    "index": 32,
+    "name": "Blue Moon",
+    "file": "Blue_Moon.png",
+    "url": "https://oldschool.runescape.wiki/images/Blue_Moon.png",
+    "type": "image/png"
+  },
+  {
+    "index": 33,
+    "name": "Eclipse Moon",
+    "file": "Eclipse_Moon.png",
+    "url": "https://oldschool.runescape.wiki/images/Eclipse_Moon.png",
+    "type": "image/png"
+  },
+  {
+    "index": 34,
+    "name": "Doom of Mokhaiotl",
+    "file": "Doom_of_Mokhaiotl.png",
+    "url": "https://oldschool.runescape.wiki/images/Doom_of_Mokhaiotl.png",
+    "type": "image/png"
+  },
+  {
+    "index": 35,
+    "name": "General Graardor",
+    "file": "General_Graardor.png",
+    "url": "https://oldschool.runescape.wiki/images/General_Graardor.png",
+    "type": "image/png"
+  },
+  {
+    "index": 36,
+    "name": "The Leviathan",
+    "file": "The_Leviathan.png",
+    "url": "https://oldschool.runescape.wiki/images/The_Leviathan.png",
+    "type": "image/png"
+  },
+  {
+    "index": 37,
+    "name": "Dawn (Grotesque Guardians)",
+    "file": "Dawn.png",
+    "url": "https://oldschool.runescape.wiki/images/Dawn.png",
+    "type": "image/png"
+  },
+  {
+    "index": 38,
+    "name": "Dusk (Grotesque Guardians)",
+    "file": "Dusk.png",
+    "url": "https://oldschool.runescape.wiki/images/Dusk.png",
+    "type": "image/png"
+  },
+  {
+    "index": 39,
+    "name": "Yama",
+    "file": "Yama.png",
+    "url": "https://oldschool.runescape.wiki/images/Yama.png",
+    "type": "image/png"
+  },
+  {
+    "index": 40,
+    "name": "Maggot King",
+    "file": "Maggot_King.png",
+    "url": "https://oldschool.runescape.wiki/images/Maggot_King.png",
+    "type": "image/png"
+  },
+  {
+    "index": 41,
+    "name": "Mad Angel",
+    "file": "Mad_Angel.webp",
+    "url": "https://oldschool.runescape.wiki/images/Mad_Angel.webp",
+    "type": "image/webp"
+  },
+  {
+    "index": 42,
+    "name": "Akkha (ToA)",
+    "file": "Akkha.png",
+    "url": "https://oldschool.runescape.wiki/images/Akkha.png",
+    "type": "image/png"
+  },
+  {
+    "index": 43,
+    "name": "Vampyre",
+    "file": "Vyrelady.png",
+    "url": "https://oldschool.runescape.wiki/images/Vyrelady.png",
+    "type": "image/png"
+  },
+  {
+    "index": 144,
+    "name": "Vorkath",
+    "file": "vorkath.png",
+    "url": "local assets/vorkath.png",
+    "type": "image/png"
+  },
+  {
+    "index": 145,
+    "name": "Royal Titans (both bosses)",
+    "file": "royal-titans.png",
+    "url": "local assets/royal-titans.png",
+    "type": "image/png"
+  }
+]
