@@ -103,6 +103,23 @@
           "at": "2026-09-14T14:27:57.722Z"
         }
       ]
+    },
+    {
+      "id": "a05ab52d-f267-4e2c-895f-303c85bfc523",
+      "teamId": "vampire",
+      "tileId": "hive-of-horrors",
+      "choiceId": "kq-head",
+      "quantity": 1,
+      "player": "owl proxy",
+      "notes": "",
+      "imagePath": "submissions/vampire/hive-of-horrors/a05ab52d-f267-4e2c-895f-303c85bfc523-a32513766ca47202eb71ee58e20f4c7c29dee2b5d421f907bc7ad145c7b774ce.webp",
+      "imageHash": "a32513766ca47202eb71ee58e20f4c7c29dee2b5d421f907bc7ad145c7b774ce",
+      "imageType": "image/webp",
+      "createdAt": "2026-09-14T14:46:37.251Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
