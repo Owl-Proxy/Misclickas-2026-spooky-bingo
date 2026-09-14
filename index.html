@@ -45,6 +45,7 @@
       <form id="upload-form">
         <h3>Submit evidence</h3><p id="upload-hint"></p>
         <fieldset id="upload-fields" disabled>
+          <label id="bonus-source-label" hidden>Board tile<select name="bonusSource"></select></label>
           <label>Drop or activity<select name="choiceId" required></select></label>
           <div class="form-row"><label>Quantity<input name="quantity" type="number" min="1" max="10000" value="1" required></label><label>RuneScape name<input name="player" maxlength="32" autocomplete="off" required></label></div>
           <label>Notes <span class="muted">(optional)</span><textarea name="notes" maxlength="500" rows="2"></textarea></label>

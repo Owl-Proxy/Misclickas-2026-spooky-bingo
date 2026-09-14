@@ -71,11 +71,15 @@ Access codes are kept in the current browser tab's session storage. Sign out on 
 
 ### Witching Hour bonus scoring
 
-Witching Hour stays open and awards **1 bonus point for each approved unique drop or pet**, with no points cap. Submit the quantity shown in the screenshot and include the drop names, time received, and time zone in Notes. Reviewers check that the drop was received from midnight (inclusive) to 1 a.m. (exclusive), using the existing local-time rule; the upload time is not the drop time. Agree on the meaning of local time before the event begins.
+Witching Hour stays open and awards **at most 1 bonus point per eligible board tile per team**. The tile may be complete or incomplete. Choose the board tile, then one of its listed drops; quantity is fixed at one. The free space, Witching Hour itself, and activity-only tiles are excluded. Drops that are not listed on the selected tile do not qualify.
 
-Approving evidence adds its quantity to that team's bonus total. Reopening or rejecting it removes those points. The completion checkbox is unavailable for this tile, and old completion flags are ignored. Existing approved Witching Hour submissions count automatically; review any earlier test evidence before the event.
+Include the time received and time zone in Notes, with a screenshot showing the drop and clock. Reviewers verify that it was received from midnight (inclusive) to 1 a.m. (exclusive), under the existing local-time rule; upload time is not drop time. Agree on the meaning of local time before the event begins. The same screenshot may be submitted separately to the normal tile for completion progress and to Witching Hour for the bonus; each requires its own review.
 
-The tile badge and detail panel show bonus points, and the team score shows them separately from the **52 completable tiles**. All 54 board positions remain, including the free space and Witching Hour. Other tiles keep their existing completion rules. There is no scoring cap; the archive and upload limits below still apply.
+Pending and approved claims reserve the selected tile's bonus slot for that team. Another drop from that tile cannot earn another bonus. Approval awards one point; returning it to pending removes the point but keeps the slot reserved. Rejection removes the point and permits a replacement claim. Duplicate approvals are also capped defensively when calculating scores. The completion checkbox remains unavailable.
+
+Older Witching Hour submissions using the generic activity choice cannot be attributed to a board tile and no longer earn points. Their screenshots and review history are retained; resubmit eligible evidence with the correct tile and listed drop. The new rule does not guess which tile an old entry belongs to.
+
+The tile badge and detail panel show bonus points and credited tile names, and the team score shows points separately from the **52 completable tiles**. All 54 board positions remain. Other tiles keep their existing rules; bonus approval does not complete a normal tile. Archive and upload limits still apply.
 
 To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`) and publish the changed site files to GitHub Pages. The site reads its live tile catalog from the Worker, so both need the update. Existing secrets and stored submissions are retained.
 

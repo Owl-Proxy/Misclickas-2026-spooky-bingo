@@ -7,6 +7,16 @@ const MAX_IMAGE = 3 * 1024 * 1024;
 const MAX_BODY = Math.ceil(MAX_IMAGE * 4 / 3) + 16384;
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 const tiles = buildTiles(event);
+function checkBonusClaim(tile, submission, entries) {
+  if (!tile?.bonus) return;
+  const choice = tile.choices.find(choice => choice.id === submission.choiceId);
+  if (!choice?.sourceTileId || !tile.sources.some(source => source.id === choice.sourceTileId)) fail(400, 'Select a board tile and one of its listed drops. Older bonus entries must be resubmitted with a board tile.');
+  if (submission.quantity !== 1) fail(400, 'Witching Hour awards one bonus point per board tile. Submit one drop.');
+  if (entries.some(s => s.id !== submission.id && s.tileId === tile.id && s.status !== 'rejected'
+    && tile.choices.find(c => c.id === s.choiceId)?.sourceTileId === choice.sourceTileId)) {
+    fail(409, 'This board tile already has a pending or approved Witching Hour claim for your team.');
+  }
+}
 export class HttpError extends Error {
   constructor(status, message) { super(message); this.status = status; }
 }
@@ -121,6 +131,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
             const tile = tiles.find(tile => tile.id === body.tileId && !tile.free);
             if (!tile || !tile.choices.some(choice => choice.id === body.choiceId)) fail(400, 'Select a valid tile and drop.');
             if (!Number.isInteger(body.quantity) || body.quantity < 1 || body.quantity > 10000) fail(400, 'Quantity must be between 1 and 10,000.');
+            if (tile.bonus && body.quantity !== 1) fail(400, 'Witching Hour awards one bonus point per board tile. Submit one drop.');
             const player = text(body.player, 'RuneScape name', 32);
             const notes = text(body.notes ?? '', 'notes', 500, false);
             const { bytes, type, extension } = decodeImage(body.image);
@@ -129,6 +140,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
             const snapshot = (await store.readTeam(teamId)).data;
             const matches = s => s.imageHash === imageHash && s.tileId === tile.id && s.choiceId === body.choiceId && s.quantity === body.quantity && s.player === player && s.notes === notes;
             const checkNew = data => {
+              checkBonusClaim(tile, body, data.submissions);
               if (data.submissions.length >= 1500) fail(409, 'This team archive is full. Contact an organiser.');
               if (data.submissions.some(s => s.tileId === tile.id && s.choiceId === body.choiceId && s.imageHash === imageHash && s.status !== 'rejected')) fail(409, 'That screenshot is already submitted for this drop.');
             };
@@ -163,6 +175,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
               if (!submission) fail(404, 'Submission not found.');
               if (submission.revision !== body.revision) fail(409, 'Another reviewer changed this submission. Refresh before reviewing it.');
               const tile = tiles.find(t => t.id === submission.tileId);
+              if (body.status !== 'rejected') checkBonusClaim(tile, submission, data.submissions);
               submission.reviews.push({ reviewerId: reviewer.id, reviewer: reviewer.name, from: submission.status, to: body.status, reason, at: new Date().toISOString() });
               submission.status = body.status;
               submission.completesTile = !tile?.bonus && !tile?.paths && body.status === 'approved' && body.completesTile === true;

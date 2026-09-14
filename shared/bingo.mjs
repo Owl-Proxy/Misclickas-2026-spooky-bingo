@@ -28,6 +28,13 @@ export function buildTiles(event) {
         : (entry.target_drops ?? entry.target_items ?? [entry.item_name]).map(item => `${entry.target_quantity}× ${item}`))
     };
   });
+  for (const bonus of tiles.filter(tile => tile.bonus)) {
+    bonus.sources = tiles.filter(tile => !tile.bonus && tile.choices.some(choice => choice.id !== 'activity-progress'));
+    bonus.choices = bonus.sources.flatMap(source => source.choices.filter(choice => choice.id !== 'activity-progress').map(choice => ({
+      id: `${source.id}--${choice.id}`, label: `${source.title}: ${choice.label}`,
+      sourceTileId: source.id, sourceChoiceId: choice.id, dropLabel: choice.label
+    })));
+  }
   tiles.splice(27, 0, { id: 'free-space', title: 'FREE SPACE', free: true, choices: [], paths: null });
   return tiles;
 }
@@ -43,8 +50,15 @@ export function tileProgress(tile, submissions) {
   })));
   const complete = !tile.bonus && (tile.paths ? paths.some(path => path.every(group => group.current >= group.quantity))
     : accepted.some(s => s.completesTile === true));
-  const bonusPoints = tile.bonus ? accepted.reduce((total, s) => total + s.quantity * tile.pointsPerDrop, 0) : 0;
-  return { complete, counts, paths, bonusPoints, approved: accepted.length, pending: relevant.filter(s => s.status === 'pending').length };
+  const creditedTileIds = [], creditedSubmissionIds = [];
+  if (tile.bonus) for (const submission of accepted) {
+    const choice = tile.choices.find(choice => choice.id === submission.choiceId);
+    const source = tile.sources?.find(source => source.id === choice?.sourceTileId);
+    if (!source || submission.quantity !== 1 || creditedTileIds.includes(source.id)) continue;
+    creditedTileIds.push(source.id); creditedSubmissionIds.push(submission.id);
+  }
+  const bonusPoints = creditedTileIds.length;
+  return { complete, counts, paths, bonusPoints, creditedTileIds, creditedSubmissionIds, approved: accepted.length, pending: relevant.filter(s => s.status === 'pending').length };
 }
 
 export function summary(tiles, submissions) {

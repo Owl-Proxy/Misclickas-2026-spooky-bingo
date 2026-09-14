@@ -47,26 +47,43 @@ test('bonus submissions stay open, ignore manual completion, and reverse points 
   const { request } = fixture();
   const tile = (await request('/config')).body.tiles.find(t => t.id === 'the-witching-hour');
   const auth = { 'X-Reviewer-Id': 'organiser' };
-  const first = upload({ tileId: tile.id, choiceId: 'activity-progress', quantity: 2 });
+  const first = upload({ tileId: tile.id, choiceId: 'the-blood-theatre--scythe-of-vitur', quantity: 1 });
+  assert.equal((await request('/teams/vampire/submissions', { ...first, quantity: 2 }, codes.vampire)).status, 400);
+  assert.equal((await request('/teams/vampire/submissions', { ...first, choiceId: 'activity-progress' }, codes.vampire)).status, 400);
+  assert.equal((await request('/teams/vampire/submissions', { ...first, choiceId: 'fists-of-fury--activity-progress' }, codes.vampire)).status, 400);
   assert.equal((await request('/teams/vampire/submissions', first, codes.vampire)).status, 201);
+  const duplicate = { ...first, id: crypto.randomUUID(), choiceId: 'the-blood-theatre--justiciar-faceguard' };
+  assert.equal((await request('/teams/vampire/submissions', duplicate, codes.vampire)).status, 409);
   const route = `/teams/vampire/submissions/${first.id}/review`;
   assert.equal((await request(route, { status: 'approved', revision: 0, completesTile: true }, codes.reviewer, auth)).status, 200);
   let entries = (await request('/teams/vampire')).body.submissions;
   assert.equal(entries[0].completesTile, false);
-  assert.equal(tileProgress(tile, entries).bonusPoints, 2);
+  assert.equal(tileProgress(tile, entries).bonusPoints, 1);
+  assert.equal((await request('/teams/vampire/submissions', duplicate, codes.vampire)).status, 409);
   // Distinct screenshot after approval must still be accepted.
-  const second = upload({ tileId: tile.id, choiceId: 'activity-progress', quantity: 3,
+  const second = upload({ tileId: tile.id, choiceId: 'the-voice-in-the-dark--bellator-vestige', quantity: 1,
     image: { ...first.image, base64: btoa(atob(first.image.base64) + '\0') } });
   assert.equal((await request('/teams/vampire/submissions', second, codes.vampire)).status, 201);
   assert.equal((await request(`/teams/vampire/submissions/${second.id}/review`, { status: 'approved', revision: 0 }, codes.reviewer, auth)).status, 200);
   entries = (await request('/teams/vampire')).body.submissions;
-  assert.equal(tileProgress(tile, entries).bonusPoints, 5);
+  assert.equal(tileProgress(tile, entries).bonusPoints, 2);
   assert.equal(tileProgress(tile, entries).complete, false);
   assert.equal(tileProgress(tile, (await request('/teams/werewolf')).body.submissions).bonusPoints, 0);
   assert.equal((await request('/teams/vampire/submissions', { ...second, id: crypto.randomUUID() }, codes.vampire)).status, 409);
   assert.equal((await request(route, { status: 'rejected', revision: 1, reason: 'Outside the time window' }, codes.reviewer, auth)).status, 200);
   entries = (await request('/teams/vampire')).body.submissions;
-  assert.equal(tileProgress(tile, entries).bonusPoints, 3);
+  assert.equal(tileProgress(tile, entries).bonusPoints, 1);
+  assert.equal((await request('/teams/vampire/submissions', duplicate, codes.vampire)).status, 201);
+  assert.equal((await request(route, { status: 'approved', revision: 2 }, codes.reviewer, auth)).status, 409);
+  assert.equal((await request('/teams/werewolf/submissions', first, codes.werewolf)).status, 201);
+  // Normal progress and a bonus can share evidence, and remain separate decisions.
+  assert.equal((await request('/teams/vampire/submissions', upload({ image: first.image }), codes.vampire)).status, 201);
+});
+
+test('concurrent bonus claims for different drops on the same tile reserve one slot', async () => {
+  const { request } = fixture();
+  const requests = ['scythe-of-vitur', 'justiciar-faceguard'].map(drop => request('/teams/vampire/submissions', upload({ tileId: 'the-witching-hour', choiceId: `the-blood-theatre--${drop}` }), codes.vampire));
+  assert.deepEqual((await Promise.all(requests)).map(r => r.status).sort(), [201, 409]);
 });
 test('concurrent retry with changed payload cannot silently replace evidence', async () => {
   const { request } = fixture(), body = upload();

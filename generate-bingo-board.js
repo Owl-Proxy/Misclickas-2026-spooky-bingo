@@ -173,7 +173,7 @@ for (const [tier, entries] of Object.entries(event.tiers)) {
       tiles.push({
         title: entry.tile_name,
         subtitle: entry.subtitle || '',
-        note: entry.scoring_mode === 'bonus' ? 'Uncapped bonus points for approved midnight drops' : entry.target_requirements ? 'Complete one requirement' : entry.challenge || entry.rule,
+        note: entry.scoring_mode === 'bonus' ? 'One bonus point per board tile for a listed midnight drop' : entry.target_requirements ? 'Complete one requirement' : entry.challenge || entry.rule,
         requirements: entry.target_requirements || [entry.challenge || entry.rule],
         sprite: entry.sprite_item ? getSpriteUrl(entry.sprite_item) : null,
         bossImage: activityImages[entry.tile_name] || activityImages[entry.subtitle] || null,

@@ -121,8 +121,9 @@ function renderRequirements(target, tile) {
     target.append(node('h3', loaded ? bonusLabel(progress.bonusPoints) : 'Bonus points unavailable'));
     const card = node('div', undefined, 'path');
     tile.legacyRequirements.forEach(value => card.append(node('p', value)));
-    card.append(node('p', 'Only approved quantities earn points. Keep submitting qualifying drops throughout the event; this tile never completes.', 'muted'));
+    card.append(node('p', 'Only listed drops from board tiles qualify. Each team can earn one bonus point per tile, whether it is complete or incomplete. Submit the screenshot to the normal tile separately if it also counts toward completion.', 'muted'));
     if (loaded) card.append(node('p', `${progress.approved} approved ${progress.approved === 1 ? 'entry' : 'entries'} · ${progress.pending} pending review`, 'muted'));
+    if (progress.creditedTileIds.length) card.append(node('p', `Bonuses earned: ${progress.creditedTileIds.map(id => tile.sources.find(source => source.id === id).title).join(' · ')}`));
     target.append(card);
     return;
   }
@@ -157,10 +158,30 @@ function renderTile() {
   $('#tile-team').textContent = team.name; $('#tile-title').textContent = selectedTile.title; $('#tile-source').textContent = selectedTile.source;
   renderRequirements($('#requirements'), selectedTile);
   $('#upload-form').hidden = Boolean(selectedTile.free);
-  $('#upload-fields').disabled = !ready || !teamCodes[team.id] || uploading;
-  message('#upload-hint', !ready ? 'Submissions aren’t open yet.' : !teamCodes[team.id] ? 'Close this tile and use Team sign in to submit evidence.' : selectedTile.bonus ? 'Enter the number of qualifying drops shown. In Notes, include the drop names, time received, and time zone. An organiser will verify the midnight–1 a.m. window before awarding points.' : 'Submit one drop or activity per screenshot entry. An organiser will review it.');
+  $('#bonus-source-label').hidden = !selectedTile.bonus;
+  const quantity = field('#upload-form', 'quantity');
+  quantity.readOnly = Boolean(selectedTile.bonus); quantity.max = selectedTile.bonus ? '1' : '10000';
+  if (selectedTile.bonus) { quantity.value = '1'; renderBonusChoices(); }
+  const noBonusChoices = selectedTile.bonus && !field('#upload-form', 'choiceId').value;
+  $('#upload-fields').disabled = !ready || !teamCodes[team.id] || uploading || noBonusChoices;
+  message('#upload-hint', !ready ? 'Submissions aren’t open yet.' : !teamCodes[team.id] ? 'Close this tile and use Team sign in to submit evidence.' : noBonusChoices ? 'Every eligible tile has a pending or approved bonus claim.' : selectedTile.bonus ? 'Choose a board tile and its listed drop. Include the time received and time zone in Notes, with a screenshot showing the drop and clock. An organiser will verify the midnight–1 a.m. window. One bonus per tile per team.' : 'Submit one drop or activity per screenshot entry. An organiser will review it.');
   renderHistory($('#tile-history'), submissions.filter(s => s.tileId === selectedTile.id));
 }
+function renderBonusChoices() {
+  const sourceField = field('#upload-form', 'bonusSource'), dropField = field('#upload-form', 'choiceId');
+  const oldSource = sourceField.value, oldDrop = dropField.value;
+  const claimed = new Set(submissions.filter(s => s.tileId === selectedTile.id && s.status !== 'rejected').map(s => selectedTile.choices.find(c => c.id === s.choiceId)?.sourceTileId));
+  sourceField.replaceChildren(...(selectedTile.sources ?? []).map(source => {
+    const option = node('option', `${source.title}${claimed.has(source.id) ? ' — bonus claimed / pending' : ''}`);
+    option.value = source.id; option.disabled = claimed.has(source.id); return option;
+  }));
+  sourceField.value = [...sourceField.options].find(o => o.value === oldSource && !o.disabled)?.value || [...sourceField.options].find(o => !o.disabled)?.value || '';
+  dropField.replaceChildren(...selectedTile.choices.filter(c => c.sourceTileId === sourceField.value).map(choice => {
+    const option = node('option', choice.dropLabel); option.value = choice.id; return option;
+  }));
+  if ([...dropField.options].some(o => o.value === oldDrop)) dropField.value = oldDrop;
+}
+field('#upload-form', 'bonusSource').addEventListener('change', () => { uploadId = null; renderBonusChoices(); });
 function renderHistory(target, entries) {
   target.replaceChildren();
   if (!loaded || !entries.length) { target.append(node('p', !loaded ? 'Submission history is unavailable.' : 'No submissions yet.', 'empty')); return; }
@@ -169,7 +190,7 @@ function renderHistory(target, entries) {
     const tile = tiles.find(t => t.id === submission.tileId);
     const button = node('button', undefined, 'evidence'); button.type = 'button';
     button.append(node('span', submission.status, `badge ${submission.status}`), node('strong', tile?.title || submission.tileId), node('div', `${submission.quantity} × ${tile?.choices.find(c => c.id === submission.choiceId)?.label || submission.choiceId}`), node('div', `${submission.player} · ${date(submission.createdAt)}`, 'muted'));
-    if (tile?.bonus) button.append(node('div', submission.status === 'approved' ? `+${bonusLabel(submission.quantity * tile.pointsPerDrop)} awarded` : 'No bonus points awarded'));
+    if (tile?.bonus) button.append(node('div', tileProgress(tile, submissions).creditedSubmissionIds.includes(submission.id) ? '+1 bonus point awarded' : 'No bonus points awarded'));
     button.addEventListener('click', () => openReview(submission)); list.append(button);
   });
   target.append(list);
@@ -188,7 +209,7 @@ function openReview(submission) {
   field('#review-form', 'completesTile').checked = submission.completesTile;
   $('#manual-completion').hidden = Boolean(tile.paths || tile.bonus);
   field('#review-form', 'completesTile').disabled = Boolean(tile.paths || tile.bonus);
-  if (tile.bonus) $('#review-detail').append(node('p', `Verify the drop names, quantity, time received, and time zone in the screenshot and notes. Approval awards ${bonusLabel(submission.quantity * tile.pointsPerDrop)}; it never completes this tile.`, 'muted'));
+  if (tile.bonus) $('#review-detail').append(node('p', 'Verify this is a listed drop for the selected board tile, received between midnight and 1 a.m. in the stated time zone. Approval awards that tile’s one bonus point, regardless of completion. Older entries without a board tile must be rejected and resubmitted.', 'muted'));
   message('#review-status');
   $('#review-audit').replaceChildren(...submission.reviews.map(review => node('p', `${review.reviewer}: ${review.from} → ${review.to} · ${date(review.at)}${review.reason ? ` — ${review.reason}` : ''}`, 'audit')));
   if (!submission.reviews.length) $('#review-audit').append(node('p', 'Awaiting the first review.', 'muted'));

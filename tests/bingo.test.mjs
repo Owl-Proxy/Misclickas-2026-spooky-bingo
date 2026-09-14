@@ -58,22 +58,29 @@ test('organiser-confirmed activities require an approved completion decision', (
   assert.deepEqual(summary(tiles, []), { complete: 0, total: 52, bonusPoints: 0, pending: 0 });
 });
 
-test('Witching Hour accumulates approved quantities without completing or capping points', () => {
+test('Witching Hour credits each board tile once regardless of completion and ignores legacy entries', () => {
   const t = tile('the-witching-hour');
+  const claim = (source, drop, overrides = {}) => ({ id: crypto.randomUUID(), tileId: t.id, choiceId: `${source}--${slug(drop)}`, quantity: 1, status: 'approved', ...overrides });
   const drops = [
-    ...evidence(t.id, ['Activity progress']).map(s => ({ ...s, quantity: 3, completesTile: true })),
-    ...evidence(t.id, ['Activity progress']).map(s => ({ ...s, quantity: 10000 })),
-    ...evidence(t.id, ['Activity progress'], 'pending'),
-    ...evidence(t.id, ['Activity progress'], 'rejected'),
+    claim('the-voice-in-the-dark', 'Bellator vestige'),
+    claim('the-voice-in-the-dark', "Siren's staff"),
+    claim('the-blood-theatre', 'Justiciar faceguard'),
+    claim('the-blood-theatre', 'Scythe of vitur', { status: 'pending' }),
+    claim('the-frozen-feast', 'Magus vestige', { status: 'rejected' }),
+    claim('free-space', 'Activity progress'),
+    claim('fists-of-fury', 'Activity progress'),
+    claim('the-witching-hour', 'Activity progress'),
+    claim('the-frozen-feast', 'Magus vestige', { quantity: 10000 }),
+    ...evidence(t.id, ['Activity progress']),
     ...evidence('the-voice-in-the-dark', ['Bellator vestige'])
   ];
   assert.equal(t.bonus, true);
   assert.equal(tileProgress(t, []).bonusPoints, 0);
-  assert.equal(tileProgress(t, drops).bonusPoints, 10003);
+  assert.equal(tileProgress(t, drops).bonusPoints, 2);
   assert.equal(tileProgress(t, drops).complete, false);
-  assert.deepEqual(summary(tiles, drops), { complete: 1, total: 52, bonusPoints: 10003, pending: 1 });
+  assert.deepEqual(summary(tiles, drops), { complete: 1, total: 52, bonusPoints: 2, pending: 1 });
   drops[0].status = 'rejected';
-  assert.equal(tileProgress(t, drops).bonusPoints, 10000);
+  assert.equal(tileProgress(t, drops).bonusPoints, 2);
   drops[1].status = 'pending';
-  assert.equal(tileProgress(t, drops).bonusPoints, 0);
+  assert.equal(tileProgress(t, drops).bonusPoints, 1);
 });

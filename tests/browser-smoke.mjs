@@ -81,33 +81,37 @@ try {
   await evaluate(`document.querySelector('[data-team=vampire]').click()`);
   await until(`document.querySelector('#score').textContent.includes('1 / 52')`);
   assert.equal(await evaluate(`document.querySelector('#team-login').textContent`), 'Team sign out');
-  // Bonus quantities accumulate, stay open, and reverse after a reviewer correction.
+  // Each board tile earns one bonus regardless of completion; corrections reverse it.
   const bonusId = 'the-witching-hour';
-  for (const quantity of [3, 2]) {
-    const body = upload({ tileId: bonusId, choiceId: 'activity-progress', quantity,
+  for (const [index, choiceId] of ['the-voice-in-the-dark--bellator-vestige', 'the-blood-theatre--scythe-of-vitur'].entries()) {
+    const body = upload({ tileId: bonusId, choiceId, quantity: 1,
       notes: 'Unique obtained at 12:30 AM local time; local browser test.',
-      image: { ...upload().image, base64: btoa(atob(upload().image.base64) + String(quantity)) } });
+      image: { ...upload().image, base64: btoa(atob(upload().image.base64) + String(index)) } });
     const result = await fetch('http://127.0.0.1:4173/api/teams/vampire/submissions', {
       method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${codes.vampire}` }, body: JSON.stringify(body)
     });
     assert.equal(result.status, 201);
     await evaluate(`document.querySelector('#refresh').click()`);
-    await until(`document.querySelector('#history .evidence')?.textContent.includes('The Witching Hour') && document.querySelector('#history .evidence')?.textContent.includes('${quantity} ×')`);
+    await until(`document.querySelector('#history .evidence')?.textContent.includes('The Witching Hour') && document.querySelector('#history .evidence .badge')?.textContent === 'pending'`);
     await evaluate(`document.querySelector('#history .evidence').click()`);
     assert.equal(await evaluate(`document.querySelector('#manual-completion').hidden`), true);
     assert.equal(await evaluate(`document.querySelector('#review-form [name=completesTile]').disabled`), true);
     await evaluate(`document.querySelector('#review-form').requestSubmit()`);
-    await until(`document.querySelector('#score').textContent.includes('${quantity === 3 ? 3 : 5} bonus points')`);
+    await until(`document.querySelector('#score').textContent.includes('${index + 1} bonus point')`);
   }
   await evaluate(`document.querySelector('#tile-select').value='the-witching-hour'; document.querySelector('#tile-select').dispatchEvent(new Event('change'))`);
-  assert.equal(await evaluate(`document.querySelector('#requirements h3').textContent`), '5 bonus points');
+  assert.equal(await evaluate(`document.querySelector('#requirements h3').textContent`), '2 bonus points');
+  assert.equal(await evaluate(`document.querySelector('#upload-form [name=quantity]').readOnly`), true);
+  assert.equal(await evaluate(`document.querySelector('#upload-form [name=bonusSource] option[value="the-blood-theatre"]').disabled`), true);
+  await evaluate(`document.querySelector('#upload-form [name=bonusSource]').value='the-frozen-feast'; document.querySelector('#upload-form [name=bonusSource]').dispatchEvent(new Event('change'))`);
+  assert.ok((await evaluate(`document.querySelector('#upload-form [name=choiceId]').value`)).startsWith('the-frozen-feast--'));
   assert.equal(await evaluate(`document.querySelector('#upload-fields').disabled`), false);
   assert.equal(await evaluate(`document.querySelector('#requirements').textContent.includes('Tile complete')`), false);
   const bonusBadge = `Array.from(document.querySelector('#board').contentDocument.querySelectorAll('g.tile')).find(g => g.getAttribute('aria-label').includes('The Witching Hour')).querySelector('.progress-badge').textContent`;
-  assert.equal(await evaluate(bonusBadge), '+5 bonus points');
+  assert.equal(await evaluate(bonusBadge), '+2 bonus points');
   await screenshot('witching-hour-bonus');
   await evaluate(`document.querySelector('#tile-dialog').close(); document.querySelector('#history .evidence').click(); document.querySelector('#review-form [name=status]').value='rejected'; document.querySelector('#review-form [name=reason]').value='Drop was outside the time window'; document.querySelector('#review-form').requestSubmit()`);
-  await until(`document.querySelector('#score').textContent.includes('3 bonus points')`);
+  await until(`document.querySelector('#score').textContent.includes('1 bonus point')`);
   assert.ok((await evaluate(`document.querySelector('#score').textContent`)).includes('1 / 52'));
   await evaluate(`document.querySelector('[data-team=werewolf]').click()`);
   await until(`document.querySelector('#score').textContent.includes('0 / 52') && document.querySelector('#score').textContent.includes('0 bonus points')`);

@@ -330,9 +330,9 @@
         "subtitle": "Boss / raid unique drop",
         "scoring_mode": "bonus",
         "points_per_drop": 1,
-        "target_requirements": ["1 bonus point per unique drop or pet", "12:00 AM to 1:00 AM local time", "Unlimited points; keep submitting"],
+        "target_requirements": ["Listed board drop, 12 AM to 1 AM", "1 bonus point per board tile", "Complete or incomplete tiles count"],
         "sprite_item": "Ring of shadows",
-        "rule": "Earn 1 bonus point per unique drop or pet received between 12:00 AM and 1:00 AM local time. No points cap; this tile stays open. Screenshot the drop and clock, and note the drop time and time zone for review."
+        "rule": "Earn 1 bonus point per board tile for one of its listed drops received between 12:00 AM and 1:00 AM local time, whether the tile is complete or incomplete. Each team can earn that tile's bonus only once. Screenshot the drop and clock; note the time and time zone for review."
       },
       {
         "tile_name": "Zombie Apocalypse",

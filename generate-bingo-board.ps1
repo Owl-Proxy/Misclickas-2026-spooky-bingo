@@ -236,7 +236,7 @@ foreach ($tier in $event.tiers.psobject.Properties) {
       $sprite = if ($entry.psobject.Properties.Name -contains 'sprite_item') { Get-Sprite-Url $entry.sprite_item } else { $null }
       $entrySubtitle = if ($entry.psobject.Properties.Name -contains 'subtitle') { $entry.subtitle } else { '' }
       $requirements = if ($entry.psobject.Properties.Name -contains 'target_requirements') { @($entry.target_requirements) } else { @($note) }
-      $displayNote = if ($entry.psobject.Properties.Name -contains 'scoring_mode' -and $entry.scoring_mode -eq 'bonus') { 'Uncapped bonus points for approved midnight drops' } elseif ($entry.psobject.Properties.Name -contains 'target_requirements') { 'Complete one requirement' } else { $note }
+      $displayNote = if ($entry.psobject.Properties.Name -contains 'scoring_mode' -and $entry.scoring_mode -eq 'bonus') { 'One bonus point per board tile for a listed midnight drop' } elseif ($entry.psobject.Properties.Name -contains 'target_requirements') { 'Complete one requirement' } else { $note }
       $tiles.Add([pscustomobject]@{ title = $entry.tile_name; subtitle = $entrySubtitle; note = $displayNote; requirements = $requirements; sprite = $sprite; bossImage = Get-Activity-Image $entry.tile_name $entrySubtitle ''; theme = Get-Activity-Theme $entry.tile_name $entrySubtitle ''; category = $tierLabels[$tier.Name]; free = $false })
     }
   }
