@@ -147,7 +147,7 @@ const tierLabels = {
   dynamic_challenges: 'TEAM CHALLENGE'
 };
 
-const completionPathsFor = (entry, detailed = false) => entry.completion_paths?.map((completionPath) => completionPath.all_of.map((drop) => {
+const completionPathsFor = (entry, detailed = false) => (entry.board_summary_only ? undefined : entry.completion_paths)?.map((completionPath) => completionPath.all_of.map((drop) => {
   const name = typeof drop === 'string' ? drop : detailed && drop.any_of ? `any of (${drop.any_of.join(' OR ')})` : `${drop.label}${!detailed && drop.display_options ? ` (${drop.display_options})` : ''}`;
   const quantity = typeof drop === 'string' ? entry.target_quantity : drop.quantity ?? entry.target_quantity;
   return `${quantity}x ${name}`;

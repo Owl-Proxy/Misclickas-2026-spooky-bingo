@@ -71,6 +71,10 @@ Existing submissions with named drops automatically populate the new checklists.
 
 Access codes are kept in the current browser tab's session storage. Sign out on a shared computer. Review decisions record the organiser's server-verified identity and timestamp; stale decisions are refused if another reviewer has already changed the same submission.
 
+Grave Robber keeps its “Obtain a Skull sceptre” board description, with a detail checklist requiring one Right skull half, Left skull half, Top of sceptre, and Bottom of sceptre. Each approved piece crosses out separately. Older generic activity submissions need resubmitting under the correct piece choices; manual completion flags do not replace these requirements. These listed drops are eligible for the existing one-per-tile Witching Hour bonus.
+
+Arachnophobia likewise tracks **1 Sarachnis cudgel** as a named drop, with its original board description retained. Old generic activity evidence must be resubmitted using the cudgel choice to count toward its checklist.
+
 ## Storage and operating limits
 
 ### Witching Hour bonus scoring

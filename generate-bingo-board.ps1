@@ -9,6 +9,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 function Get-Completion-Paths($Entry) {
+  if ($Entry.psobject.Properties.Name -contains 'board_summary_only' -and $Entry.board_summary_only) { return }
   if ($Entry.psobject.Properties.Name -notcontains 'completion_paths') { return }
   foreach ($completionPath in $Entry.completion_paths) {
     $drops = @()

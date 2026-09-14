@@ -105,6 +105,42 @@ test('organiser-confirmed activities require an approved completion decision', (
   assert.deepEqual(summary(tiles, []), { complete: 0, total: 52, bonusPoints: 0, pending: 0 });
 });
 
+test('Grave Robber tracks one of each sceptre component while retaining its board description', () => {
+  const t = tile('grave-robber');
+  const pieces = ['Right skull half', 'Left skull half', 'Top of sceptre', 'Bottom of sceptre'];
+  assert.equal(t.description, 'Obtain a Skull sceptre from the Stronghold of Security.');
+  assert.deepEqual(t.choices.map(c => c.label), pieces);
+  assert.deepEqual(t.paths[0].map(g => g.quantity), [1, 1, 1, 1]);
+  const drops = evidence(t.id, pieces);
+  assert.equal(tileProgress(t, drops).complete, true);
+  for (let i = 0; i < pieces.length; i++) {
+    const partial = drops.map((s, index) => ({ ...s, status: index === i ? 'pending' : 'approved' }));
+    assert.equal(tileProgress(t, partial).complete, false);
+    assert.equal(tileProgress(t, partial).paths[0][i].current, 0);
+    partial[i].status = 'rejected';
+    assert.equal(tileProgress(t, partial).complete, false);
+  }
+  assert.equal(tileProgress(t, [{ ...drops[0], quantity: 4, completesTile: true }]).complete, false);
+  assert.equal(tileProgress(t, [{ tileId: t.id, choiceId: 'activity-progress', quantity: 1, status: 'approved', completesTile: true }]).complete, false);
+  const bonus = tile('the-witching-hour');
+  assert.ok(pieces.every(piece => bonus.choices.some(c => c.id === `grave-robber--${slug(piece)}`)));
+  const bonuses = pieces.map(piece => ({ tileId: bonus.id, choiceId: `grave-robber--${slug(piece)}`, quantity: 1, status: 'approved' }));
+  assert.equal(tileProgress(bonus, bonuses).bonusPoints, 1);
+});
+
+test('Arachnophobia tracks one approved Sarachnis cudgel', () => {
+  const t = tile('arachnophobia');
+  assert.equal(t.description, 'Defeat Sarachnis and obtain 1 Sarachnis cudgel');
+  assert.deepEqual(t.choices.map(c => c.label), ['Sarachnis cudgel']);
+  assert.equal(t.paths[0][0].quantity, 1);
+  const drops = evidence(t.id, ['Sarachnis cudgel']);
+  assert.equal(tileProgress(t, drops).complete, true);
+  assert.equal(tileProgress(t, drops).paths[0][0].current, 1);
+  for (const status of ['pending', 'rejected']) assert.equal(tileProgress(t, [{ ...drops[0], status }]).complete, false);
+  assert.equal(tileProgress(t, [{ ...drops[0], choiceId: 'activity-progress', completesTile: true }]).complete, false);
+  assert.ok(tile('the-witching-hour').choices.some(c => c.id === 'arachnophobia--sarachnis-cudgel'));
+});
+
 test('Witching Hour credits each board tile once regardless of completion and ignores legacy entries', () => {
   const t = tile('the-witching-hour');
   const claim = (source, drop, overrides = {}) => ({ id: crypto.randomUUID(), tileId: t.id, choiceId: `${source}--${slug(drop)}`, quantity: 1, status: 'approved', ...overrides });

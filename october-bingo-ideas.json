@@ -257,6 +257,10 @@
       {
         "tile_name": "Grave Robber",
         "tile_id": "grave-robber",
+        "board_summary_only": true,
+        "completion_paths": [
+          { "all_of": ["Right skull half", "Left skull half", "Top of sceptre", "Bottom of sceptre"] }
+        ],
         "subtitle": "Stronghold of Security",
         "target_quantity": 1,
         "sprite_item": "Skull sceptre",
@@ -285,6 +289,10 @@
       {
         "tile_name": "Arachnophobia",
         "tile_id": "arachnophobia",
+        "board_summary_only": true,
+        "completion_paths": [
+          { "all_of": ["Sarachnis cudgel"] }
+        ],
         "subtitle": "Sarachnis",
         "target_quantity": 1,
         "sprite_item": "Sarachnis cudgel",
