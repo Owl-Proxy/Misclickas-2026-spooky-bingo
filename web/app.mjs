@@ -134,7 +134,12 @@ function renderRequirements(target, tile) {
       const card = node('div', undefined, 'path');
       if (path.length > 1) card.append(node('p', 'All of the following:', 'path-heading'));
       path.forEach(group => {
-        card.append(node('p', `${group.quantity} × ${group.label}${group.items.length > 1 ? ` (${group.items.join(' / ')})` : ''}`));
+        const met = loaded && group.current >= group.quantity;
+        const label = `${group.quantity} × ${group.label}${group.items.length > 1 ? ` (${group.items.join(' / ')})` : ''}`;
+        const requirement = node('p', undefined, 'requirement-label');
+        if (met) requirement.append(node('span', '✓ ', 'met'), node('s', label, 'met'));
+        else requirement.textContent = label;
+        card.append(requirement);
         card.append(node('p', loaded ? `${Math.min(group.current, group.quantity)} / ${group.quantity} approved` : 'Approved progress unavailable', loaded && group.current >= group.quantity ? 'met' : 'muted'));
       });
       target.append(card);

@@ -12,12 +12,13 @@ export function buildTiles(event) {
         quantity: typeof drop === 'string' ? entry.target_quantity : (drop.quantity ?? entry.target_quantity),
         items: typeof drop === 'string' ? expand(drop) : (drop.any_of ?? [drop.label])
       })));
-    } else if (entry.completion_mode === 'any') {
-      paths = (entry.target_drops ?? entry.target_items).map(drop => [{ label: drop, quantity: entry.target_quantity, items: expand(drop) }]);
+    } else if (['any', 'all'].includes(entry.completion_mode)) {
+      const groups = (entry.target_drops ?? entry.target_items ?? [entry.item_name]).map(drop => ({ label: drop, quantity: entry.target_quantity, items: expand(drop) }));
+      paths = entry.completion_mode === 'any' ? groups.map(group => [group]) : [groups];
     }
     const rawChoices = paths ? paths.flatMap(path => path.flatMap(group => group.items))
       : (entry.target_drops ?? entry.target_items ?? (entry.item_name ? [entry.item_name] : ['Activity progress']));
-    const choices = [...new Set(rawChoices)].map(label => ({ id: slug(label), label }));
+    const choices = [...new Set(rawChoices)].map(label => ({ id: slug(label), label, bonusEligible: !(entry.bonus_excluded_choices ?? []).includes(label) }));
     return {
       id: entry.tile_id ?? slug(entry.tile_name), title: entry.tile_name,
       source: entry.boss ?? entry.source ?? entry.subtitle ?? '',
@@ -29,8 +30,8 @@ export function buildTiles(event) {
     };
   });
   for (const bonus of tiles.filter(tile => tile.bonus)) {
-    bonus.sources = tiles.filter(tile => !tile.bonus && tile.choices.some(choice => choice.id !== 'activity-progress'));
-    bonus.choices = bonus.sources.flatMap(source => source.choices.filter(choice => choice.id !== 'activity-progress').map(choice => ({
+    bonus.sources = tiles.filter(tile => !tile.bonus && tile.choices.some(choice => choice.id !== 'activity-progress' && choice.bonusEligible));
+    bonus.choices = bonus.sources.flatMap(source => source.choices.filter(choice => choice.id !== 'activity-progress' && choice.bonusEligible).map(choice => ({
       id: `${source.id}--${choice.id}`, label: `${source.title}: ${choice.label}`,
       sourceTileId: source.id, sourceChoiceId: choice.id, dropLabel: choice.label
     })));

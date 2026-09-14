@@ -115,6 +115,37 @@ try {
   assert.ok((await evaluate(`document.querySelector('#score').textContent`)).includes('1 / 52'));
   await evaluate(`document.querySelector('[data-team=werewolf]').click()`);
   await until(`document.querySelector('#score').textContent.includes('0 / 52') && document.querySelector('#score').textContent.includes('0 bonus points')`);
+  // A newly converted non-raid checklist crosses out individual approved items.
+  await evaluate(`document.querySelector('[data-team=vampire]').click()`);
+  await until(`document.querySelector('#team-title').textContent === "Team Vampire's board" && document.querySelector('#score').textContent.includes('1 / 52')`);
+  const checklistEntries = [];
+  async function localPost(path, body, reviewing = false) {
+    const response = await fetch('http://127.0.0.1:4173/api' + path, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${reviewing ? codes.reviewer : codes.vampire}`, ...(reviewing ? { 'X-Reviewer-Id': 'organiser' } : {}) }, body: JSON.stringify(body)
+    });
+    assert.ok(response.ok, await response.text());
+  }
+  for (const choiceId of ['berserker-ring', 'seers-ring', 'archers-ring']) {
+    const body = upload({ tileId: 'the-drowned-crown', choiceId }); checklistEntries.push(body);
+    await localPost('/teams/vampire/submissions', body);
+  }
+  await localPost(`/teams/vampire/submissions/${checklistEntries[0].id}/review`, { status: 'approved', revision: 0 }, true);
+  await evaluate(`document.querySelector('#refresh').click(); document.querySelector('#tile-select').value='the-drowned-crown'; document.querySelector('#tile-select').dispatchEvent(new Event('change'))`);
+  await until(`document.querySelectorAll('#requirements .requirement-label s').length === 1`);
+  assert.ok((await evaluate(`document.querySelector('#requirements .requirement-label s').textContent`)).includes('Berserker ring'));
+  assert.equal(await evaluate(`document.querySelector('#requirements h3').textContent`), 'Completion requirements');
+  await screenshot('drop-checklist-partial');
+  for (const body of checklistEntries.slice(1)) await localPost(`/teams/vampire/submissions/${body.id}/review`, { status: 'approved', revision: 0 }, true);
+  await evaluate(`document.querySelector('#refresh').click()`);
+  await until(`document.querySelectorAll('#requirements .requirement-label s').length === 3`);
+  assert.ok((await evaluate(`document.querySelector('#requirements h3').textContent`)).includes('Tile complete'));
+  await localPost(`/teams/vampire/submissions/${checklistEntries[2].id}/review`, { status: 'rejected', revision: 1, reason: 'Wrong event date' }, true);
+  await evaluate(`document.querySelector('#refresh').click()`);
+  await until(`document.querySelectorAll('#requirements .requirement-label s').length === 2`);
+  assert.equal(await evaluate(`document.querySelector('#requirements h3').textContent`), 'Completion requirements');
+  await evaluate(`document.querySelector('#tile-dialog').close(); document.querySelector('#history .evidence').click()`);
+  assert.equal(await evaluate(`document.querySelector('#manual-completion').hidden`), true);
+  await evaluate(`document.querySelector('#review-dialog').close()`);
   await command('Page.navigate', { url: 'http://localhost:4174/?team=werewolf' });
   await until(`document.querySelector('#team-title')?.textContent === "Team Werewolf's board" && document.querySelector('#service-status').textContent.includes('Submissions aren’t open yet')`);
   assert.equal(await evaluate(`document.querySelector('#team-login').disabled`), true);

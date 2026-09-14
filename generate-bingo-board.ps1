@@ -218,6 +218,7 @@ foreach ($tier in $event.tiers.psobject.Properties) {
       $requirements = if ($entry.psobject.Properties.Name -contains 'target_requirements') { @($entry.target_requirements) } else { @($entry.target_drops | ForEach-Object { "$($entry.target_quantity)x $_" }) }
       $requirementNote = if ($entry.psobject.Properties.Name -contains 'target_requirements') { 'Complete one requirement' } else { "$($entry.target_quantity) qualifying drop(s) required" }
       $requirementsHeading = ''
+      if ($entry.psobject.Properties.Name -contains 'completion_mode' -and $entry.completion_mode -eq 'all' -and @($requirements).Count -gt 1) { $requirementsHeading = 'All of the following:' }
       if ($entry.psobject.Properties.Name -contains 'completion_mode' -and $entry.completion_mode -eq 'any') {
         $requirementNote = 'Obtain any one listed drop from this boss.'
         if ($entry.target_drops -contains 'Any Virtus armour piece') { $requirementNote += ' Virtus: mask, robe top, or robe bottom.' }
@@ -237,7 +238,9 @@ foreach ($tier in $event.tiers.psobject.Properties) {
       $entrySubtitle = if ($entry.psobject.Properties.Name -contains 'subtitle') { $entry.subtitle } else { '' }
       $requirements = if ($entry.psobject.Properties.Name -contains 'target_requirements') { @($entry.target_requirements) } else { @($note) }
       $displayNote = if ($entry.psobject.Properties.Name -contains 'scoring_mode' -and $entry.scoring_mode -eq 'bonus') { 'One bonus point per board tile for a listed midnight drop' } elseif ($entry.psobject.Properties.Name -contains 'target_requirements') { 'Complete one requirement' } else { $note }
-      $tiles.Add([pscustomobject]@{ title = $entry.tile_name; subtitle = $entrySubtitle; note = $displayNote; requirements = $requirements; sprite = $sprite; bossImage = Get-Activity-Image $entry.tile_name $entrySubtitle ''; theme = Get-Activity-Theme $entry.tile_name $entrySubtitle ''; category = $tierLabels[$tier.Name]; free = $false })
+      $completionPaths = @(Get-Completion-Paths $entry)
+      if ($completionPaths.Count -gt 0) { $displayNote = ($completionPaths | ForEach-Object { '(' + ($_.details -join ' AND ') + ')' }) -join ' OR ' }
+      $tiles.Add([pscustomobject]@{ title = $entry.tile_name; subtitle = $entrySubtitle; note = $displayNote; requirements = $requirements; completionPaths = $completionPaths; sprite = $sprite; bossImage = Get-Activity-Image $entry.tile_name $entrySubtitle ''; theme = Get-Activity-Theme $entry.tile_name $entrySubtitle ''; category = $tierLabels[$tier.Name]; free = $false })
     }
   }
 }
@@ -249,6 +252,7 @@ foreach ($item in $event.items) {
   $itemRequirements = @($targetItems | ForEach-Object { "$($item.target_quantity)x $_" })
   $itemNote = $item.source
   $requirementsHeading = ''
+  if ($item.psobject.Properties.Name -contains 'completion_mode' -and $item.completion_mode -eq 'all' -and $itemRequirements.Count -gt 1) { $requirementsHeading = 'All of the following:' }
   if ($item.psobject.Properties.Name -contains 'completion_mode' -and $item.completion_mode -eq 'any') {
     $itemNote = "$($item.source): Obtain any one listed drop from this boss."
     if ($targetItems -contains 'Any Virtus armour piece') { $itemNote += ' Virtus: mask, robe top, or robe bottom.' }

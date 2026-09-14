@@ -50,6 +50,53 @@ test('any Virtus piece and either pet path complete their tiles', () => {
     const t = tile(id); assert.equal(tileProgress(t, evidence(id, [t.paths[0][0].items[0]])).complete, true);
   }
 });
+
+test('all listed-drop checklists require each approved quantity, not a manual flag or excess of one item', () => {
+  const entries = [...Object.values(event.tiers).flat(), ...event.items].filter(entry => entry.completion_mode === 'all');
+  assert.equal(entries.length, 24);
+  for (const entry of entries) {
+    const t = tile(entry.tile_id), groups = t.paths[0];
+    const drops = groups.map(g => ({ tileId: t.id, choiceId: slug(g.items[0]), quantity: g.quantity, status: 'approved' }));
+    assert.equal(tileProgress(t, drops).complete, true, t.title);
+    for (let missing = 0; missing < drops.length; missing++) {
+      const partial = drops.map(s => ({ ...s, completesTile: true }));
+      partial[missing].quantity--;
+      assert.equal(tileProgress(t, partial).complete, false, `${t.title}: missing quantity`);
+      partial[missing] = { ...drops[missing], status: 'pending' };
+      assert.equal(tileProgress(t, partial).complete, false, `${t.title}: pending`);
+      partial[missing].status = 'rejected';
+      assert.equal(tileProgress(t, partial).complete, false, `${t.title}: rejected`);
+    }
+    if (drops.length > 1) assert.equal(tileProgress(t, [{ ...drops[0], quantity: 100 }]).complete, false, t.title);
+  }
+});
+
+test('counted drops accumulate across screenshots and only finish at the threshold', () => {
+  for (const [id, label, needed] of [['the-six-brothers', 'Barrows pieces', 10], ['rat-king-rumble', "Scurrius' spine", 5], ['the-red-labyrinth', 'Crystal armor seeds', 5]]) {
+    const drops = evidence(id, Array(needed - 1).fill(label));
+    assert.equal(tileProgress(tile(id), drops).complete, false);
+    drops.push(...evidence(id, [label]));
+    assert.equal(tileProgress(tile(id), drops).complete, true);
+  }
+});
+
+test('Exorcist needs both sets; Hungry Chest accepts either ten completions or one rare reward', () => {
+  const t = tile('the-exorcist');
+  const shards = { tileId: t.id, choiceId: 'venator-shards', quantity: 5, status: 'approved' };
+  const icons = { tileId: t.id, choiceId: 'ancient-icons', quantity: 3, status: 'approved' };
+  assert.equal(tileProgress(t, [shards]).complete, false);
+  assert.equal(tileProgress(t, [icons]).complete, false);
+  assert.equal(tileProgress(t, [shards, { ...icons, quantity: 2 }]).complete, false);
+  assert.equal(tileProgress(t, [shards, icons]).complete, true);
+  assert.equal(tileProgress(t, [{ tileId: t.id, choiceId: 'activity-progress', quantity: 10, status: 'approved', completesTile: true }]).complete, false);
+  const mimic = tile('the-hungry-chest');
+  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 9, status: 'approved' }]).complete, false);
+  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 10, status: 'approved' }]).complete, true);
+  assert.equal(tileProgress(mimic, evidence(mimic.id, ['Rare clue-table reward'])).complete, true);
+  const bonus = tile('the-witching-hour');
+  assert.equal(bonus.choices.some(c => c.id === 'the-hungry-chest--mimic-completions'), false);
+  assert.equal(bonus.choices.some(c => c.id === 'the-hungry-chest--rare-clue-table-reward'), true);
+});
 test('organiser-confirmed activities require an approved completion decision', () => {
   const t = tile('fists-of-fury'), drops = evidence(t.id, ['Activity progress']);
   assert.equal(tileProgress(t, drops).complete, false);
