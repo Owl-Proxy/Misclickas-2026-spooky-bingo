@@ -147,11 +147,9 @@ try {
   assert.equal(await evaluate(`document.querySelector('#manual-completion').hidden`), true);
   await evaluate(`document.querySelector('#review-dialog').close()`);
   await command('Page.navigate', { url: 'http://localhost:4174/?team=werewolf' });
-  await until(`document.querySelector('#team-title')?.textContent === "Team Werewolf's board" && document.querySelector('#service-status').textContent.includes('Submissions aren’t open yet')`);
-  assert.equal(await evaluate(`document.querySelector('#team-login').disabled`), true);
-  await evaluate(`const picker = document.querySelector('#tile-select'); picker.value='the-blood-theatre'; picker.dispatchEvent(new Event('change'))`);
-  assert.equal(await evaluate(`document.querySelector('#upload-fields').disabled`), true);
-  assert.equal(await evaluate(`document.querySelector('#tile-title').textContent`), 'The Blood Theatre');
+  await until(`document.querySelector('#gate-status')?.textContent.includes('not available yet')`);
+  assert.equal(await evaluate(`document.querySelector('#board-app').hidden`), true);
+  assert.equal(await evaluate(`document.querySelector('#board').getAttribute('data')`), null);
   assert.deepEqual(errors, []);
-  console.log('Browser smoke passed: upload, pending state, reviewer approval, team isolation, deep link reload, tab sign-in, mobile layout, and browse-only mode.');
+  console.log('Browser smoke passed: upload, reviewer approval, team isolation, mobile layout, and unavailable API stays gated.');
 } finally { socket.close(); staticServer.close(); await fetch(`http://127.0.0.1:9333/json/close/${page.id}`); }

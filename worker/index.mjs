@@ -34,8 +34,8 @@ async function equalSecret(actual, expected) {
   for (let i = 0; i < a.length; i++) difference |= a[i] ^ b[i];
   return difference === 0;
 }
-async function authorize(request, env, role, id) {
-  const token = request.headers.get('Authorization')?.replace(/^Bearer /, '') ?? '';
+async function authorize(request, env, role, id, boardCode) {
+  const token = boardCode ?? request.headers.get('Authorization')?.replace(/^Bearer /, '') ?? '';
   const account = role === 'team' ? secrets(env, 'TEAM_CODES')[id] : secrets(env, 'REVIEWERS')[id]?.code;
   if (!await equalSecret(token, account)) {
     await limit(env.AUTH_RATE_LIMIT, request.headers.get('CF-Connecting-IP') || 'local');
@@ -103,11 +103,21 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
       else {
         const url = new URL(request.url);
         const path = url.pathname.replace(/\/$/, '');
+        const boardPublic = env.BOARD_PUBLIC === 'true';
+        // Signup endpoints and authentication stay available before the reveal.
+        if (!boardPublic && (path === '/config' || path === '/board.svg' || path.startsWith('/teams/') || path.startsWith('/images/'))) {
+          await authorize(request, env, 'reviewer', request.headers.get('X-Board-Reviewer-Id') || request.headers.get('X-Reviewer-Id') || '', request.headers.get('X-Board-Code'));
+        }
         const teamMatch = path.match(/^\/teams\/([a-z0-9-]+)(?:\/submissions(?:\/([a-f0-9-]+)\/review)?)?$/);
         const imageMatch = path.match(/^\/images\/([a-z0-9-]+)\/([a-f0-9-]+)$/);
         const teamId = teamMatch?.[1] ?? imageMatch?.[1];
         if (teamId && !config.teams.some(team => team.id === teamId)) fail(404, 'Team not found.');
-        if (path === '/config' && request.method === 'GET') response = json({ teams: config.teams, tiles, ready: ready(env), maxImageBytes: MAX_IMAGE });
+        if (path === '/board/status' && request.method === 'GET') response = json({ public: boardPublic });
+        else if (path === '/board.svg' && request.method === 'GET') {
+          if (!env.BOARD_SVG) fail(503, 'The board image is unavailable.');
+          response = new Response(env.BOARD_SVG, { headers: { 'Content-Type': 'image/svg+xml', 'Content-Security-Policy': "script-src 'none'" } });
+        }
+        else if (path === '/config' && request.method === 'GET') response = json({ teams: config.teams, tiles, ready: ready(env), maxImageBytes: MAX_IMAGE, boardPublic });
         else if (path === '/signups' || path.startsWith('/signups/')) {
           response = await handleSignups(request, env, path, config.teams, { authorize, limit, readJSON, text, json, fail });
         } else {
@@ -203,7 +213,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
     response.headers.set('Vary', 'Origin');
     if (origin && allowed.includes(origin)) response.headers.set('Access-Control-Allow-Origin', origin);
     response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Reviewer-Id');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Reviewer-Id, X-Board-Reviewer-Id, X-Board-Code');
     return response;
   } };
 }

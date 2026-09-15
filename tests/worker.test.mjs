@@ -103,7 +103,7 @@ test('reject invalid files, paths, quantities, JSON and website origins', async 
 });
 test('missing setup fails closed and rate limits are enforced', async () => {
   const { app } = fixture();
-  assert.equal((await app.fetch(new Request('http://localhost/teams/vampire'), {})).status, 503);
+  assert.equal((await app.fetch(new Request('http://localhost/teams/vampire'), { BOARD_PUBLIC: 'true' })).status, 503);
   const request = new Request('http://localhost/auth/team', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ teamId: 'vampire' }) });
   assert.equal((await app.fetch(request, { ...env, AUTH_RATE_LIMIT: { limit: async () => ({ success: false }) } })).status, 429);
 });

@@ -1,6 +1,6 @@
 # Open team submissions
 
-The site now has separate **Team Vampire** and **Team Werewolf** boards. Each team has its own shareable URL, submission history, and approved progress. GitHub Pages serves the site; a small Cloudflare Worker accepts screenshots and writes them to this repository. Until the Worker is connected, the site displays the boards with submissions disabled.
+The site now has separate **Team Vampire** and **Team Werewolf** boards. Each team has its own shareable URL, submission history, and approved progress. GitHub Pages serves the site; a small Cloudflare Worker accepts screenshots and writes them to this repository. The board stays locked until an organiser signs in or the Worker setting `BOARD_PUBLIC` is `"true"`. See [BOARD_ACCESS.md](BOARD_ACCESS.md) for gate deployment and the required GitHub Actions publishing setup.
 
 ## 1. Prepare repository storage
 
@@ -108,7 +108,7 @@ npm test
 npm run dev
 ```
 
-Open `http://localhost:4173`. With an empty API URL this is a browse-only preview. The automated suite covers completion paths, quantities, team permissions, review history, concurrency conflicts, duplicate uploads, and file validation.
+Open `http://localhost:4173`. With an empty or unavailable API URL the board stays locked. The automated suite covers completion paths, quantities, team permissions, review history, concurrency conflicts, duplicate uploads, file validation and board access.
 
 For a complete local upload/review preview, run `node tests/preview-server.mjs` instead of `npm run dev`. It uses temporary in-memory data and the clearly marked test codes in `tests/helpers.mjs`; stopping it discards every submission. This does not connect to GitHub. `tests/browser-smoke.mjs` exercises that preview through a separate headless Chrome instance with remote debugging on port 9333. Keep remote debugging bound to your own computer.
 

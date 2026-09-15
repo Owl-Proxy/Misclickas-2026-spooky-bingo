@@ -1,6 +1,7 @@
 import { createApp } from '../worker/index.mjs';
+import { readFileSync } from 'node:fs';
 export const codes = { vampire: 'test-vampire-code-123456789', werewolf: 'test-werewolf-code-123456789', reviewer: 'test-reviewer-code-123456789' };
-export const env = { GITHUB_TOKEN: 'test-only', TEAM_CODES: JSON.stringify({ vampire: codes.vampire, werewolf: codes.werewolf }), REVIEWERS: JSON.stringify({ organiser: { name: 'Test Organiser', code: codes.reviewer } }), ALLOWED_ORIGINS: 'http://localhost:4173' };
+export const env = { BOARD_PUBLIC: 'true', BOARD_SVG: readFileSync(new URL('../october-osrs-bingo.svg', import.meta.url), 'utf8'), GITHUB_TOKEN: 'test-only', TEAM_CODES: JSON.stringify({ vampire: codes.vampire, werewolf: codes.werewolf }), REVIEWERS: JSON.stringify({ organiser: { name: 'Test Organiser', code: codes.reviewer } }), ALLOWED_ORIGINS: 'http://localhost:4173' };
 export class MemoryStore {
   teams = new Map(); images = new Map();
   async readTeam(id) { return { sha: null, data: structuredClone(this.teams.get(id) || { version: 1, teamId: id, submissions: [] }) }; }

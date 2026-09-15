@@ -1,9 +1,11 @@
 {
 	"name": "misclickas-bingo-submissions",
-	"main": "index.mjs",
+	"main": "entry.mjs",
+	"rules": [{ "type": "Text", "globs": ["**/*.svg"], "fallthrough": true }],
 	"compatibility_date": "2026-09-12",
 	"workers_dev": true,
 	"vars": {
+		"BOARD_PUBLIC": "false",
 		"SIGNUPS_OPEN": "true",
 		"GITHUB_OWNER": "Owl-Proxy",
 		"GITHUB_REPO": "Misclickas-2026-spooky-bingo",

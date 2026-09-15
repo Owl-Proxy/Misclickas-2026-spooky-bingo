@@ -7,9 +7,24 @@
     <meta name="description" content="Misclickas Spooky Bingo — an Old School RuneScape Halloween bingo board.">
     <title>Misclickas Spooky Bingo</title>
     <link rel="stylesheet" href="web/style.css">
-    <script type="module" src="web/app.mjs"></script>
+    <script type="module" src="web/board-gate.mjs"></script>
   </head>
   <body>
+    <section id="board-gate" class="team-panel" style="max-width:520px;margin:8vh auto;padding:28px" aria-labelledby="gate-title">
+      <p class="eyebrow">Misclickas Spooky Bingo · October 2026</p>
+      <h1 id="gate-title">The board is under wraps</h1>
+      <p>The hunt will be revealed when the organisers open the board. You can sign up now without spoiling the surprises.</p>
+      <p><a href="signup.html">Sign up for the bingo</a></p>
+      <form id="gate-form" hidden>
+        <h2>Organiser preview</h2>
+        <label>Reviewer ID<input name="reviewerId" required maxlength="64" autocomplete="username"></label>
+        <label>Reviewer access code<input name="code" type="password" required maxlength="256" autocomplete="current-password"></label>
+        <button type="submit">Unlock board</button>
+      </form>
+      <p id="gate-status" role="status">Checking board access…</p>
+      <noscript>Enable JavaScript to check board access.</noscript>
+    </section>
+    <div id="board-app" hidden>
     <header class="masthead">
       <a class="brand" href="./">Misclickas <span>Spooky Bingo</span></a>
       <button id="reviewer-login" class="quiet" disabled>Reviewer sign in</button>
@@ -29,14 +44,13 @@
       </section>
       <section id="team-board" hidden aria-label="Team bingo board">
         <div class="board-help"><p>Select a tile to see its requirements or submit a screenshot.</p><p class="legend">✓ Complete &nbsp; ◐ Progress &nbsp; ⏳ Pending review</p></div>
-        <div class="board-scroll"><object id="board" data="october-osrs-bingo.svg" type="image/svg+xml" aria-label="Interactive team bingo board"><a href="october-osrs-bingo.svg">Open the bingo board</a></object></div>
+        <div class="board-scroll"><object id="board" type="image/svg+xml" aria-label="Interactive team bingo board"></object></div>
         <div class="tile-picker"><label for="tile-select">Jump to a tile</label><select id="tile-select"><option value="">Choose a tile…</option></select></div>
         <section class="submissions" aria-labelledby="history-title">
           <div class="toolbar"><h2 id="history-title">Team submissions</h2><label>Show <select id="history-filter"><option value="all">All submissions</option><option value="pending">Pending review</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select></label><button id="refresh" class="quiet">Refresh</button></div>
           <div id="history"></div>
         </section>
       </section>
-      <noscript><p>Enable JavaScript for team boards and submissions. <a href="october-osrs-bingo.svg">View the original board</a>.</p></noscript>
     </main>
     <dialog id="tile-dialog" aria-labelledby="tile-title">
       <button type="button" class="close" aria-label="Close tile">×</button>
@@ -70,5 +84,6 @@
       <form id="review-form"><fieldset id="review-fields"><label>Decision<select name="status"><option value="approved">Approve</option><option value="rejected">Reject</option><option value="pending">Return to pending</option></select></label><label id="manual-completion"><input type="checkbox" name="completesTile"> All requirements for this tile are now met</label><label>Review notes <span class="muted">(required for rejection)</span><textarea name="reason" maxlength="500" rows="2"></textarea></label><button type="submit">Save decision</button></fieldset><p id="review-status" role="status"></p></form>
       <h3>Review history</h3><div id="review-audit"></div>
     </dialog>
+    </div>
   </body>
 </html>

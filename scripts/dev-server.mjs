@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve, sep, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { publicFiles } from './public-files.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const types = { '.html': 'text/html', '.css': 'text/css', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png' };
@@ -15,7 +16,7 @@ export function createDevServer(apiHandler) {
         response.writeHead(result.status, Object.fromEntries(result.headers)); response.end(Buffer.from(await result.arrayBuffer())); return;
       }
       const path = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
-      const permitted = /^\/(index\.html|signup\.html|roster\.html|site-config\.json|october-bingo-ideas\.json|october-osrs-bingo\.svg|(?:web|shared|assets)\/[^?]+)$/.test(path);
+      const permitted = publicFiles.includes(path.slice(1));
       const filename = resolve(root, '.' + path);
       if (!permitted || !filename.startsWith(resolve(root) + sep) || path.split('/').some(part => part.startsWith('.'))) { response.writeHead(404); response.end('Not found'); return; }
       let bytes = await readFile(filename);

@@ -49,6 +49,8 @@ Look for `SIGNUPS_DB` in the deployment's bindings list. Your existing Worker UR
 
 ## 5. Publish the pages
 
+The board now has an organiser gate. Before publishing, follow [BOARD_ACCESS.md](BOARD_ACCESS.md) to select **GitHub Actions** as the Pages publishing source. This keeps the board SVG and tile JSON out of the public website while signups stay open.
+
 In GitHub Desktop, review and commit the signup changes and your database binding, then **Push origin**. Wait for the GitHub Pages deployment to finish.
 
 - Share with the clan: https://owl-proxy.github.io/Misclickas-2026-spooky-bingo/signup.html

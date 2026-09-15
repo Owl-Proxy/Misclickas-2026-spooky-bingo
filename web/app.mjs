@@ -1,4 +1,4 @@
-import { buildTiles, tileProgress, summary } from '../shared/bingo.mjs';
+import { tileProgress, summary } from '../shared/bingo.mjs';
 
 const $ = selector => document.querySelector(selector);
 const node = (tag, text, className) => { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el; };
@@ -10,13 +10,17 @@ const session = {
 let settings, tiles = [], team = null, submissions = [], ready = false, loaded = false, generation = 0, refreshSequence = 0;
 let selectedTile, selectedSubmission, loginRole, loginTeam, previewURL, uploadId, uploading = false;
 let teamCodes = session.get('bingo-team-codes') || {}, reviewer = session.get('bingo-reviewer');
+let boardPublic = false, boardURL, evidenceURL;
+function boardHeaders() {
+  return !boardPublic && reviewer ? { 'X-Board-Code': reviewer.code, 'X-Board-Reviewer-Id': reviewer.id } : {};
+}
 const teamURL = id => { const url = new URL(location.href); url.searchParams.set('team', id); url.hash = ''; return url; };
 const field = (form, name) => $(form).elements.namedItem(name);
 const date = value => new Date(value).toLocaleString();
 const bonusLabel = points => `${points.toLocaleString()} bonus ${points === 1 ? 'point' : 'points'}`;
 
 async function api(path, body, auth) {
-  const headers = {};
+  const headers = boardHeaders();
   if (body) headers['Content-Type'] = 'application/json';
   if (auth) { headers.Authorization = `Bearer ${auth.code}`; if (auth.id) headers['X-Reviewer-Id'] = auth.id; }
   const response = await fetch(settings.apiBaseUrl.replace(/\/$/, '') + path, {
@@ -208,7 +212,14 @@ function openReview(submission) {
   renderRequirements($('#review-detail').appendChild(node('div')), tile);
   // Construct the image route ourselves; never navigate to a submitted URL.
   const imageURL = settings.apiBaseUrl.replace(/\/$/, '') + `/images/${encodeURIComponent(team.id)}/${encodeURIComponent(submission.id)}`;
-  $('#full-image').href = $('#review-image').src = imageURL;
+  $('#full-image').removeAttribute('href'); $('#review-image').removeAttribute('src');
+  if (evidenceURL) URL.revokeObjectURL(evidenceURL);
+  fetch(imageURL, { headers: boardHeaders(), cache: 'no-store' }).then(async response => {
+    if (!response.ok) throw new Error('Could not load this screenshot.');
+    const blob = await response.blob();
+    if (selectedSubmission !== submission || !$('#review-dialog').open) return;
+    $('#full-image').href = $('#review-image').src = evidenceURL = URL.createObjectURL(blob);
+  }).catch(error => { if (selectedSubmission === submission) message('#review-status', error.message, true); });
   $('#review-form').hidden = !reviewer; $('#review-fields').disabled = false; $('#review-form').reset();
   field('#review-form', 'status').value = submission.status === 'pending' ? 'approved' : submission.status;
   field('#review-form', 'completesTile').checked = submission.completesTile;
@@ -243,7 +254,16 @@ $('#team-login').onclick = () => {
   else openLogin('team');
 };
 $('#reviewer-login').onclick = () => {
-  if (reviewer) { reviewer = null; session.set('bingo-reviewer', null); authButtons(); }
+  if (reviewer) {
+    reviewer = null; session.set('bingo-reviewer', null);
+    if (!boardPublic) {
+      document.querySelector('#board-app').remove();
+      if (boardURL) URL.revokeObjectURL(boardURL);
+      if (evidenceURL) URL.revokeObjectURL(evidenceURL);
+      location.reload(); return;
+    }
+    authButtons();
+  }
   else openLogin('reviewer');
 };
 async function prepareImage(file) {
@@ -301,17 +321,18 @@ $('#tile-select').onchange = event => { const tile = tiles.find(t => t.id === ev
 $('#board').addEventListener('load', renderBoard);
 window.addEventListener('popstate', () => { if (settings) selectTeam(); });
 setInterval(() => { if (!document.hidden && !document.querySelector('dialog[open]')) refresh(); }, 30000);
-async function start() {
-  try {
-    const [configResponse, eventResponse] = await Promise.all([fetch('site-config.json', { cache: 'no-store' }), fetch('october-bingo-ideas.json')]);
-    if (!configResponse.ok || !eventResponse.ok) throw new Error('The board files could not be loaded.');
-    settings = await configResponse.json(); tiles = buildTiles(await eventResponse.json());
-    if (settings.apiBaseUrl) {
-      try { const service = await api('/config'); settings.teams = service.teams; tiles = service.tiles; ready = service.ready; }
-      catch { ready = false; }
-    }
+export async function start(initial) {
+    settings = initial.settings;
+    const service = initial.service;
+    if (initial.account) reviewer = initial.account;
+    boardPublic = service.boardPublic === true;
+    settings.teams = service.teams; tiles = service.tiles; ready = service.ready;
+    const response = await fetch(settings.apiBaseUrl.replace(/\/$/, '') + '/board.svg', { headers: boardHeaders(), cache: 'no-store' });
+    if (!response.ok) throw new Error('The board image could not be loaded. Please try again.');
+    if (boardURL) URL.revokeObjectURL(boardURL);
+    boardURL = URL.createObjectURL(new Blob([await response.text()], { type: 'image/svg+xml' }));
+    $('#board').data = boardURL;
+    $('#tile-select').replaceChildren(node('option', 'Choose a tile…'));
     $('#tile-select').append(...tiles.filter(t => !t.free).map(tile => { const option = node('option', tile.title); option.value = tile.id; return option; }));
     await selectTeam();
-  } catch (error) { message('#service-status', error.message, true); }
 }
-start();
