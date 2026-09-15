@@ -36,3 +36,7 @@ OSRS image sources and credits are listed in [assets/README.md](assets/README.md
 ## Interactive team boards
 
 Team Vampire and Team Werewolf have separate boards, shareable links, screenshot submissions, and organiser reviews. See [SETUP.md](SETUP.md) to connect the submission service and open uploads. The site remains browsable before that setup is complete.
+
+## Clan signups
+
+`signup.html` is a separate Halloween signup page. Names are stored privately in Cloudflare D1, with reviewer-only access through `roster.html`, team assignment, Discord role tracking and CSV export. Follow [SIGNUP_SETUP.md](SIGNUP_SETUP.md) to create the database and publish the pages.

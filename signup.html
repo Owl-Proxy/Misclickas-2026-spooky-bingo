@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#140c0b">
+  <meta name="description" content="Join Misclickas Spooky Bingo this October. Sign up with your OSRS and Discord usernames.">
+  <title>Join the haunt · Misclickas Spooky Bingo</title>
+  <link rel="stylesheet" href="web/signup.css">
+  <script type="module" src="web/signup.mjs"></script>
+</head>
+<body>
+  <main class="signup-layout">
+    <section class="invitation" aria-labelledby="event-title">
+      <p class="eyebrow">MISCLICKAS CLAN · OCTOBER 2026</p>
+      <div class="sigil" aria-hidden="true">✦</div>
+      <h1 id="event-title">Misclickas<br><span>Spooky Bingo</span></h1>
+      <p class="tagline">A month of frights.<br>A clan full of misclicks.</p>
+      <p class="intro">Gather your courage and join the clan for an October of Old School RuneScape bingo. Your team awaits.</p>
+      <div class="team-tags" aria-label="The teams"><span>Team Vampire</span><i aria-hidden="true">✦</i><span>Team Werewolf</span></div>
+      <div class="pumpkins" aria-hidden="true"><img src="assets/pumpkin.png" alt=""><img src="assets/spooky-pumpkin-lantern.png" alt=""><img src="assets/pumpkin.png" alt=""></div>
+    </section>
+    <section class="signup-card" aria-labelledby="signup-title">
+      <p class="eyebrow">OCTOBER IS CALLING</p>
+      <h2 id="signup-title">Join the haunt</h2>
+      <p class="muted">Add your name to the list. Organisers will arrange teams and share the next steps in Discord.</p>
+      <form id="signup-form">
+        <label for="player">OSRS username</label>
+        <input id="player" name="player" maxlength="12" required autocomplete="off" spellcheck="false" aria-describedby="player-help">
+        <p class="field-help" id="player-help">The character you’ll be playing on.</p>
+        <label for="discord">Discord username</label>
+        <input id="discord" name="discord" maxlength="80" required autocomplete="off" spellcheck="false" aria-describedby="discord-help">
+        <p class="field-help" id="discord-help">Your unique username, so organisers can find you in the clan server.</p>
+        <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="check"><input type="checkbox" name="consent" required><span>Organisers may use these names to arrange my team and Discord role for this bingo.</span></label>
+        <button id="submit-signup" disabled>Checking signups…</button>
+      </form>
+      <p id="signup-message" class="message" role="status" aria-live="polite"></p>
+      <p class="privacy">Your signup is visible only to the organising team. Already signed up? Contact an organiser if your details change.</p>
+    </section>
+  </main>
+  <footer>Misclickas Spooky Bingo <span aria-hidden="true">✦</span> October 2026</footer>
+</body>
+</html>

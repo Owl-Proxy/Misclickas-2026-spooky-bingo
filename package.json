@@ -7,5 +7,5 @@
     "worker:dev": "npx wrangler@4 dev --config worker/wrangler.jsonc",
     "worker:deploy": "npx wrangler@4 deploy --config worker/wrangler.jsonc"
   },
-  "engines": { "node": ">=22" }
+  "engines": { "node": ">=22.13" }
 }

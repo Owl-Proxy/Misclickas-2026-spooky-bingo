@@ -15,7 +15,7 @@ export function createDevServer(apiHandler) {
         response.writeHead(result.status, Object.fromEntries(result.headers)); response.end(Buffer.from(await result.arrayBuffer())); return;
       }
       const path = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
-      const permitted = /^\/(index\.html|site-config\.json|october-bingo-ideas\.json|october-osrs-bingo\.svg|(?:web|shared|assets)\/[^?]+)$/.test(path);
+      const permitted = /^\/(index\.html|signup\.html|roster\.html|site-config\.json|october-bingo-ideas\.json|october-osrs-bingo\.svg|(?:web|shared|assets)\/[^?]+)$/.test(path);
       const filename = resolve(root, '.' + path);
       if (!permitted || !filename.startsWith(resolve(root) + sep) || path.split('/').some(part => part.startsWith('.'))) { response.writeHead(404); response.end('Not found'); return; }
       let bytes = await readFile(filename);

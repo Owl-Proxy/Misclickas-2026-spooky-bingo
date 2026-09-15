@@ -1,5 +1,7 @@
 // Local test fixtures only. This process never writes to GitHub.
 import { createDevServer } from '../scripts/dev-server.mjs';
 import { fixture, env } from './helpers.mjs';
+import { signupDatabase } from './signup-db.mjs';
 const { app } = fixture();
-createDevServer(request => app.fetch(request, env)).listen(4173, '127.0.0.1', () => console.log('In-memory test preview: http://localhost:4173'));
+const previewEnv = { ...env, SIGNUPS_DB: signupDatabase() };
+createDevServer(request => app.fetch(request, previewEnv)).listen(4173, '127.0.0.1', () => console.log('In-memory test preview: http://localhost:4173'));

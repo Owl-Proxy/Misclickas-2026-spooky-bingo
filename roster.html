@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#140c0b">
+  <title>Organiser roster · Misclickas Spooky Bingo</title>
+  <link rel="stylesheet" href="web/signup.css"><script type="module" src="web/roster.mjs"></script>
+</head>
+<body><main class="roster-layout">
+  <p class="eyebrow">MISCLICKAS SPOOKY BINGO · ORGANISERS</p>
+  <h1>The signup roster</h1>
+  <p class="muted">Arrange teams and track Discord roles. Participant details are visible only after organiser sign-in.</p>
+  <section id="login-panel" class="panel">
+    <h2>Organiser sign-in</h2>
+    <form id="login-form">
+      <label for="reviewer-id">Reviewer ID</label><input id="reviewer-id" name="id" required autocomplete="username">
+      <label for="reviewer-code">Reviewer access code</label><input id="reviewer-code" name="code" type="password" required autocomplete="current-password">
+      <button>Sign in</button>
+    </form>
+  </section>
+  <p id="roster-message" class="message" role="status" aria-live="polite"></p>
+  <section id="roster-panel" hidden aria-label="Participant roster">
+    <p id="roster-count" class="muted"></p>
+    <div class="toolbar">
+      <input id="search" type="search" aria-label="Search OSRS or Discord username" placeholder="Search OSRS or Discord name">
+      <button id="refresh" class="secondary">Refresh</button><button id="export" class="secondary">Download CSV</button><button id="signout" class="secondary">Sign out</button>
+    </div>
+    <p class="muted">Assign the role in Discord yourself, then tick “Discord role assigned” here. Changing teams clears that checkbox until you save the new role status.</p>
+    <div id="roster" class="roster-grid"></div>
+  </section>
+</main></body></html>

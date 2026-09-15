@@ -2,6 +2,7 @@ import event from '../october-bingo-ideas.json' with { type: 'json' };
 import config from '../site-config.json' with { type: 'json' };
 import { buildTiles } from '../shared/bingo.mjs';
 import { GitHubStore } from './github.mjs';
+import { handleSignups } from './signups.mjs';
 
 const MAX_IMAGE = 3 * 1024 * 1024;
 const MAX_BODY = Math.ceil(MAX_IMAGE * 4 / 3) + 16384;
@@ -107,7 +108,9 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
         const teamId = teamMatch?.[1] ?? imageMatch?.[1];
         if (teamId && !config.teams.some(team => team.id === teamId)) fail(404, 'Team not found.');
         if (path === '/config' && request.method === 'GET') response = json({ teams: config.teams, tiles, ready: ready(env), maxImageBytes: MAX_IMAGE });
-        else {
+        else if (path === '/signups' || path.startsWith('/signups/')) {
+          response = await handleSignups(request, env, path, config.teams, { authorize, limit, readJSON, text, json, fail });
+        } else {
           if (!ready(env)) fail(503, 'Submissions are not open yet.');
           const store = storeFactory(env);
           const ip = request.headers.get('CF-Connecting-IP') || 'local';

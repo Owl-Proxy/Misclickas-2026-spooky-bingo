@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+:root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; color: #f6e9dc; background: #100a0a; --muted: #bdaba3; --orange: #ffb363; --line: #624032; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 14% 35%, #70280e55, transparent 55%), radial-gradient(ellipse at 88% 100%, #64182d33, transparent 60%), linear-gradient(155deg, #180c0b, #0b090b 75%); }
+body::before, body::after { content: ''; position: absolute; top: 0; width: min(27vw, 310px); height: 280px; background: url('../assets/cobweb.png') top left / contain no-repeat; opacity: .15; pointer-events: none; }
+body::after { right: 0; transform: scaleX(-1); }
+.signup-layout { position: relative; max-width: 1180px; margin: auto; padding: 80px 40px 24px; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 72px; }
+.eyebrow { color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: .2em; line-height: 1.8; }
+.sigil { font-size: 35px; color: #d97038; margin: 24px 0 18px; }
+h1, h2, h3 { font-family: Cinzel, Georgia, serif; }
+h1 { font-size: clamp(36px, 4.7vw, 60px); line-height: 1.15; font-weight: 600; margin: 0 0 24px; letter-spacing: -.045em; }
+h1 span { color: #ffbd76; text-shadow: 0 0 45px #f1783233; }
+.tagline { font-family: Georgia, serif; font-size: 25px; line-height: 1.4; color: #eed1b9; }
+.intro, .muted { color: var(--muted); line-height: 1.7; font-size: 14px; }
+.intro { max-width: 380px; }
+.team-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; color: #d4b19a; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; margin-top: 28px; }
+.team-tags i { color: #b46a42; font-style: normal; }
+.pumpkins { height: 120px; display: flex; align-items: end; gap: 7px; margin-top: 26px; filter: drop-shadow(0 0 24px #ec702833); }
+.pumpkins img { width: 64px; height: 66px; object-fit: contain; image-rendering: auto; }
+.pumpkins img:nth-child(2) { width: 108px; height: 116px; }
+.pumpkins img:nth-child(3) { width: 49px; height: 52px; transform: rotate(12deg); }
+.signup-card, .panel { background: linear-gradient(145deg, #281915, #181114 70%); border: 1px solid var(--line); border-radius: 22px; padding: 36px; box-shadow: 0 24px 80px #0005, inset 0 1px 0 #ffd5a80a; }
+.signup-card { border-top: 3px solid #c06a36; }
+h2 { font-size: 30px; font-weight: 500; margin: 10px 0; }
+form { margin-top: 28px; }
+label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 9px; }
+input:not([type=checkbox]), select { width: 100%; min-height: 46px; border: 1px solid #6b4c3e; border-radius: 8px; padding: 11px 13px; background: #100b0c; color: #fff1e5; font: inherit; font-size: 15px; }
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.field-help { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 8px 0 24px; }
+.check { display: flex; gap: 11px; align-items: start; font-size: 12px; font-weight: 400; color: #d4bfb2; line-height: 1.65; margin: 26px 0; }
+input[type=checkbox] { width: 18px; height: 18px; flex-shrink: 0; margin: 2px 0 0; accent-color: #ed923e; }
+button { border: 1px solid #efa857; border-radius: 8px; padding: 13px 20px; background: linear-gradient(#ffb465, #e9913e); color: #281209; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+button:hover { filter: brightness(1.1); }
+button:disabled { cursor: default; opacity: .6; }
+#submit-signup { width: 100%; }
+.privacy { border-top: 1px solid #62403288; padding-top: 20px; margin: 22px 0 0; font-size: 11px; line-height: 1.7; color: var(--muted); }
+.message { font-size: 14px; line-height: 1.65; color: #bde7c3; overflow-wrap: anywhere; }
+.message:empty { display: none; }
+.message.error { color: #ffae9e; }
+.honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+footer { text-align: center; color: #967867; font-size: 11px; padding: 30px 20px; letter-spacing: .06em; }
+footer span { padding: 0 12px; color: #b57246; }
+[hidden] { display: none !important; }
+.roster-layout { max-width: 1150px; margin: auto; padding: 60px 28px; position: relative; }
+.roster-layout h1 { font-size: 40px; }
+#login-panel { max-width: 460px; margin: 32px 0; }
+#login-panel input { margin-bottom: 22px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 25px 0; }
+.toolbar input { flex: 1; min-width: 180px; }
+.secondary { background: #241a17; color: #efc6a4; border-color: #75513c; }
+.roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.roster-entry { padding: 24px; }
+.roster-entry h3 { margin: 0 0 8px; font-size: 21px; overflow-wrap: anywhere; }
+.roster-entry p { overflow-wrap: anywhere; }
+.roster-entry form { margin-top: 20px; }
+.roster-entry .check { margin: 18px 0; }
+@media (max-width: 800px) { .signup-layout { grid-template-columns: 1fr; max-width: 570px; gap: 35px; padding: 45px 22px 12px; } .invitation { text-align: center; } h1 { font-size: 44px; } .sigil { margin: 14px 0; } .intro { margin-inline: auto; } .team-tags, .pumpkins { justify-content: center; } .pumpkins { height: 80px; margin-top: 20px; } .pumpkins img:nth-child(2) { width: 80px; height: 80px; } .signup-card { padding: 28px; } }
+@media (max-width: 380px) { h1 { font-size: 36px; } .signup-card { padding: 22px; } .signup-layout { padding-inline: 15px; } .roster-layout { padding-inline: 15px; } .roster-grid { grid-template-columns: 1fr; } }
