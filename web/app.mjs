@@ -11,6 +11,7 @@ let settings, tiles = [], team = null, submissions = [], ready = false, loaded =
 let selectedTile, selectedSubmission, loginRole, loginTeam, previewURL, uploadId, uploading = false;
 let teamCodes = session.get('bingo-team-codes') || {}, reviewer = session.get('bingo-reviewer');
 let boardPublic = false, boardURL, evidenceURL;
+let refreshNotBefore = 0;
 function boardHeaders() {
   return !boardPublic && reviewer ? { 'X-Board-Code': reviewer.code, 'X-Board-Reviewer-Id': reviewer.id } : {};
 }
@@ -28,7 +29,11 @@ async function api(path, body, auth) {
     cache: 'no-store', signal: AbortSignal.timeout(45000)
   });
   const result = await response.json();
-  if (!response.ok) throw new Error(result.error || 'The request could not be completed.');
+  if (!response.ok) {
+    const wait = Number(result.retryAfter) || 0;
+    const error = new Error((result.error || 'The request could not be completed.') + (wait ? ` Please wait ${wait < 60 ? `${wait} seconds` : `${Math.ceil(wait / 60)} minute(s)`} before trying again.` : ''));
+    error.retryAfter = wait; throw error;
+  }
   return result;
 }
 function authButtons() {
@@ -66,7 +71,7 @@ async function selectTeam() {
   else message('#service-status', 'Choose a team to view its progress and submissions.');
 }
 async function refresh() {
-  if (!team || !ready) return;
+  if (!team || !ready || Date.now() < refreshNotBefore) return;
   const current = generation, sequence = ++refreshSequence, id = team.id;
   try {
     if (!loaded) message('#service-status', 'Loading team progress…');
@@ -74,9 +79,10 @@ async function refresh() {
     if (current !== generation || sequence !== refreshSequence) return;
     if (data.teamId !== id) throw new Error('The service returned the wrong team. Please refresh.');
     submissions = data.submissions.filter(s => s.teamId === id); loaded = true;
-    message('#service-status', `Progress updated ${new Date().toLocaleTimeString()}. Only approved evidence counts.`);
+    message('#service-status', `Progress as of ${new Date(data.updatedAt || Date.now()).toLocaleTimeString()}. Updates can take about 20 seconds. Only approved evidence counts.`);
     render();
   } catch (error) {
+    if (error.retryAfter) refreshNotBefore = Date.now() + error.retryAfter * 1000;
     if (current === generation && sequence === refreshSequence) message('#service-status', `${error.message} ${loaded ? 'Showing the last loaded progress.' : 'Progress could not be loaded.'}`, true);
   }
 }
@@ -300,7 +306,9 @@ $('#upload-form').addEventListener('submit', async event => {
       $('#upload-form').reset(); $('#upload-preview').hidden = true; uploadId = null;
       message('#upload-status', 'Screenshot saved. It is pending organiser review.'); await refresh();
     }
-  } catch (error) { if (generation === current && selectedTile?.id === tile.id) message('#upload-status', error.message, true); }
+  } catch (error) {
+    if (generation === current && selectedTile?.id === tile.id) message('#upload-status', error.message + ' Keep this form open and retry without changing its details; the same submission will not be added twice.', true);
+  }
   finally { uploading = false; if (selectedTile && team) renderTile(); }
 });
 $('#review-form').addEventListener('submit', async event => {

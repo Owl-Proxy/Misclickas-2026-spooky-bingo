@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { GitHubStore, toBase64 } from '../worker/github.mjs';
+import { GitHubStore, StorageBusyError, toBase64 } from '../worker/github.mjs';
 
 test('network transport is called without the store as its receiver', async () => {
   const store = new GitHubStore({ GITHUB_OWNER: 'o', GITHUB_REPO: 'r', GITHUB_BRANCH: 'submissions' }, async function () {
@@ -41,4 +41,21 @@ test('image writes retry a concurrent branch conflict without overwriting files'
   });
   await store.putImage('submissions/vampire/tile/uuid-hash.png', new Uint8Array([1, 2, 3]));
   assert.equal(puts, 2);
+});
+
+test('persistent conflicts use bounded staggered retries then return a retryable error', async () => {
+  const delays = []; let puts = 0;
+  const store = new GitHubStore({}, async (url, options) => {
+    if (options.method === 'GET') return new Response('', { status: 404 });
+    puts++; return new Response('', { status: 409 });
+  }, { sleep: async ms => { delays.push(ms); }, random: () => .5 });
+  await assert.rejects(store.putImage('test.png', new Uint8Array([1])), error => error instanceof StorageBusyError && error.retryAfter === 10);
+  assert.equal(puts, 8); assert.deepEqual(delays, [150, 300, 600, 1200, 2000, 2000, 2000]);
+});
+
+test('upstream throttling respects the indicated wait instead of automatic write retries', async () => {
+  let calls = 0;
+  const store = new GitHubStore({}, async () => { calls++; return new Response('', { status: 429, headers: { 'Retry-After': '90' } }); });
+  await assert.rejects(store.putImage('test.png', new Uint8Array([1])), error => error instanceof StorageBusyError && error.retryAfter === 90);
+  assert.equal(calls, 1);
 });

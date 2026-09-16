@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture, codes, upload, env } from './helpers.mjs';
 import { tileProgress } from '../shared/bingo.mjs';
+import { createApp } from '../worker/index.mjs';
+import { StorageBusyError } from '../worker/github.mjs';
 
 test('public catalog has no credentials; team codes cannot cross teams or review', async () => {
   const { request } = fixture();
@@ -106,4 +108,11 @@ test('missing setup fails closed and rate limits are enforced', async () => {
   assert.equal((await app.fetch(new Request('http://localhost/teams/vampire'), { BOARD_PUBLIC: 'true' })).status, 503);
   const request = new Request('http://localhost/auth/team', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ teamId: 'vampire' }) });
   assert.equal((await app.fetch(request, { ...env, AUTH_RATE_LIMIT: { limit: async () => ({ success: false }) } })).status, 429);
+});
+
+test('storage backpressure provides a retry status and wait duration to browsers', async () => {
+  const app = createApp(() => ({ readTeam: async () => { throw new StorageBusyError('Please retry later.', 90); } }));
+  const response = await app.fetch(new Request('http://localhost/teams/vampire'), env);
+  assert.equal(response.status, 503); assert.equal(response.headers.get('Retry-After'), '90');
+  assert.equal((await response.json()).retryAfter, 90);
 });

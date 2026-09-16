@@ -1,8 +1,9 @@
 import event from '../october-bingo-ideas.json' with { type: 'json' };
 import config from '../site-config.json' with { type: 'json' };
 import { buildTiles } from '../shared/bingo.mjs';
-import { GitHubStore } from './github.mjs';
+import { GitHubStore, StorageBusyError } from './github.mjs';
 import { handleSignups } from './signups.mjs';
+import { ProgressCache } from './progress-cache.mjs';
 
 const MAX_IMAGE = 3 * 1024 * 1024;
 const MAX_BODY = Math.ceil(MAX_IMAGE * 4 / 3) + 16384;
@@ -92,7 +93,22 @@ function present(data) {
   }) };
 }
 
-export function createApp(storeFactory = env => new GitHubStore(env)) {
+export function createApp(storeFactory = env => new GitHubStore(env), cacheOptions = {}) {
+  const progress = new ProgressCache(cacheOptions);
+  const writes = new Map();
+  async function write(env, operation) {
+    // Serialise this isolate's branch writes. Other isolates still use SHA checks and backoff.
+    // These are active HTTP requests, not a durable/background submission queue.
+    const key = JSON.stringify([env.GITHUB_OWNER, env.GITHUB_REPO, env.GITHUB_BRANCH]);
+    const started = Date.now(), previous = writes.get(key) || Promise.resolve();
+    const current = previous.catch(() => {}).then(() => {
+      if (Date.now() - started > 20000) throw new StorageBusyError('There are several saves ahead of yours. Keep this form open and retry shortly.');
+      return operation();
+    });
+    writes.set(key, current);
+    try { return await current; }
+    finally { if (writes.get(key) === current) writes.delete(key); }
+  }
   return { async fetch(request, env) {
     const origin = request.headers.get('Origin');
     const allowed = (env.ALLOWED_ORIGINS || '').split(',').map(value => value.trim());
@@ -123,6 +139,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
         } else {
           if (!ready(env)) fail(503, 'Submissions are not open yet.');
           const store = storeFactory(env);
+          const progressKey = teamId ? progress.key(request, env, teamId) : null;
           const ip = request.headers.get('CF-Connecting-IP') || 'local';
           if (request.method === 'POST' && path.startsWith('/auth/')) await limit(env.AUTH_RATE_LIMIT, ip);
           if (path === '/auth/team' && request.method === 'POST') {
@@ -135,7 +152,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
             const reviewer = await authorize(request, env, 'reviewer', text(body.reviewerId, 'reviewer ID', 64));
             response = json({ role: 'reviewer', ...reviewer });
           } else if (teamMatch && request.method === 'GET' && path === `/teams/${teamId}`) {
-            response = json(present((await store.readTeam(teamId)).data));
+            response = json(await progress.get(progressKey, async () => present((await store.readTeam(teamId)).data)));
           } else if (teamMatch && request.method === 'POST' && path === `/teams/${teamId}/submissions`) {
             await authorize(request, env, 'team', teamId);
             await limit(env.UPLOAD_RATE_LIMIT, teamId);
@@ -165,8 +182,8 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
               const submission = { id: body.id, teamId, tileId: tile.id, choiceId: body.choiceId, quantity: body.quantity, player, notes,
                 imagePath, imageHash, imageType: type, createdAt: new Date().toISOString(), status: 'pending', revision: 0, completesTile: false, reviews: [] };
               checkNew(snapshot);
-              await store.putImage(imagePath, bytes);
-              const saved = await store.updateTeam(teamId, data => {
+              await write(env, () => store.putImage(imagePath, bytes));
+              const saved = await write(env, () => store.updateTeam(teamId, data => {
                 const concurrent = data.submissions.find(s => s.id === body.id);
                 if (concurrent) {
                   if (!matches(concurrent)) fail(409, 'This submission ID is already in use.');
@@ -175,7 +192,8 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
                 checkNew(data);
                 data.submissions.push(submission);
                 return submission;
-              });
+              }));
+              await progress.invalidate(progressKey);
               response = json({ id: saved.id, status: saved.status }, 201);
             }
           } else if (teamMatch?.[2] && request.method === 'POST') {
@@ -183,7 +201,7 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
             const body = await readJSON(request);
             if (!['approved', 'rejected', 'pending'].includes(body.status) || !Number.isInteger(body.revision)) fail(400, 'Invalid review decision.');
             const reason = text(body.reason ?? '', 'review notes', 500, body.status === 'rejected');
-            const result = await store.updateTeam(teamId, data => {
+            const result = await write(env, () => store.updateTeam(teamId, data => {
               const submission = data.submissions.find(s => s.id === teamMatch[2]);
               if (!submission) fail(404, 'Submission not found.');
               if (submission.revision !== body.revision) fail(409, 'Another reviewer changed this submission. Refresh before reviewing it.');
@@ -194,7 +212,8 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
               submission.completesTile = !tile?.bonus && !tile?.paths && body.status === 'approved' && body.completesTile === true;
               submission.revision++;
               return { id: submission.id, status: submission.status, revision: submission.revision };
-            });
+            }));
+            await progress.invalidate(progressKey);
             response = json(result);
           } else if (imageMatch && request.method === 'GET') {
             const submission = (await store.readTeam(teamId)).data.submissions.find(s => s.id === imageMatch[2]);
@@ -206,7 +225,9 @@ export function createApp(storeFactory = env => new GitHubStore(env)) {
         }
       }
     } catch (error) {
-      response = json({ error: error instanceof HttpError ? error.message : 'The submission service could not save or load this request. Please try again.' }, error instanceof HttpError ? error.status : 502);
+      const retryAfter = error instanceof StorageBusyError ? error.retryAfter : error instanceof HttpError && error.status === 429 ? 60 : undefined;
+      response = json({ error: error instanceof HttpError || error instanceof StorageBusyError ? error.message : 'The submission service could not save or load this request. Please try again.', ...(retryAfter ? { retryAfter } : {}) }, error instanceof HttpError ? error.status : error instanceof StorageBusyError ? 503 : 502);
+      if (retryAfter) response.headers.set('Retry-After', String(retryAfter));
     }
     response.headers.set('Cache-Control', 'no-store');
     response.headers.set('X-Content-Type-Options', 'nosniff');

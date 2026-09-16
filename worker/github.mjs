@@ -1,6 +1,10 @@
+export class StorageBusyError extends Error {
+  constructor(message, retryAfter = 10) { super(message); this.retryAfter = retryAfter; }
+}
 export class GitHubStore {
-  constructor(env, transport = fetch) {
+  constructor(env, transport = fetch, { sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), random = Math.random } = {}) {
     this.env = env;
+    this.sleep = sleep; this.random = random;
     // Keep the native fetch call unbound: Cloudflare rejects a GitHubStore
     // instance as its `this` receiver when fetch is called as a class property.
     this.transport = (...args) => transport(...args);
@@ -15,11 +19,22 @@ export class GitHubStore {
     }, body: body ? JSON.stringify(body) : undefined });
     if (response.status === 404 && method === 'GET') return null;
     if (!response.ok) {
+      const details = response.status === 403 ? await response.clone().json().catch(() => ({})) : {};
+      if (response.status === 429 || (response.status === 403 && (response.headers.has('Retry-After') || response.headers.get('X-RateLimit-Remaining') === '0' || /rate limit/i.test(details.message || '')))) {
+        const wait = Number(response.headers.get('Retry-After')) || Math.ceil(Number(response.headers.get('X-RateLimit-Reset')) - Date.now() / 1000) || 60;
+        throw new StorageBusyError('Submission storage is temporarily rate limited. Keep your screenshot and try again after the wait shown.', Math.min(86400, Math.max(1, wait)));
+      }
       const error = new Error('Repository storage is unavailable. Please try again.');
       error.upstreamStatus = response.status;
       throw error;
     }
     return raw ? new Uint8Array(await response.arrayBuffer()) : response.json();
+  }
+  async conflict(error, attempt) {
+    if (![409, 422].includes(error.upstreamStatus)) throw error;
+    if (attempt === 7) throw new StorageBusyError('Several submissions are being saved at once. Wait a few seconds, then retry the same submission.');
+    // Randomised exponential delay prevents competing writes retrying in lockstep.
+    await this.sleep(Math.round((.5 + this.random()) * Math.min(2000, 150 * 2 ** attempt)));
   }
   async readTeam(teamId) {
     const result = await this.request(`submissions/${teamId}/index.json`);
@@ -29,7 +44,7 @@ export class GitHubStore {
     return { sha: result.sha, data: JSON.parse(new TextDecoder().decode(bytes)) };
   }
   async updateTeam(teamId, mutate) {
-    for (let attempt = 0; attempt < 5; attempt++) {
+    for (let attempt = 0; attempt < 8; attempt++) {
       const { sha, data } = await this.readTeam(teamId);
       const result = mutate(data);
       try {
@@ -39,20 +54,20 @@ export class GitHubStore {
         });
         return result;
       } catch (error) {
-        if (![409, 422].includes(error.upstreamStatus) || attempt === 4) throw error;
+        await this.conflict(error, attempt);
       }
     }
   }
   async putImage(path, bytes) {
     // UUID + content hash paths make retries immutable. Different image writes
     // can also conflict when their commits update the same branch concurrently.
-    for (let attempt = 0; attempt < 5; attempt++) {
+    for (let attempt = 0; attempt < 8; attempt++) {
       if (await this.request(path)) return;
       try {
         await this.request(path, 'PUT', { message: 'Add bingo screenshot', branch: this.env.GITHUB_BRANCH, content: toBase64(bytes) });
         return;
       } catch (error) {
-        if (![409, 422].includes(error.upstreamStatus) || attempt === 4) throw error;
+        await this.conflict(error, attempt);
       }
     }
   }

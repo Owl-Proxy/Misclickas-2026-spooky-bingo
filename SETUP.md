@@ -103,6 +103,8 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ## Local checks
 
+See [LOAD_TEST_RESULTS.md](LOAD_TEST_RESULTS.md) for the 50–75-viewer and concurrent-upload tests. Team progress is cached for up to 20 seconds per Cloudflare location. An upload or review refreshes that location's cache; other viewers may see a short delay. If an upload says to wait, leave its form unchanged and retry after the indicated time. This reuses its submission ID. There is no durable background upload queue.
+
 ```sh
 npm test
 npm run dev
