@@ -103,7 +103,13 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ## Local checks
 
-See [LOAD_TEST_RESULTS.md](LOAD_TEST_RESULTS.md) for the 50–75-viewer and concurrent-upload tests. Team progress is cached for up to 20 seconds per Cloudflare location. An upload or review refreshes that location's cache; other viewers may see a short delay. If an upload says to wait, leave its form unchanged and retry after the indicated time. This reuses its submission ID. There is no durable background upload queue.
+See [LOAD_TEST_RESULTS.md](LOAD_TEST_RESULTS.md) for the 50–75-viewer and concurrent-upload tests. Team progress is cached for up to 20 seconds per Cloudflare location. An upload or review refreshes that location's cache; other viewers may see a short delay.
+
+Uploads start immediately. Temporary rate limits, busy storage, connection interruptions and ambiguous server responses trigger a visible countdown with up to **three automatic retries within five minutes**. The browser respects the server's waiting period and adds 1–5 seconds of random delay. It freezes the screenshot and form details and reuses the same submission ID. Validation, authentication and duplicate/conflict errors require user attention and are not automatically retried.
+
+Keep the page and tile open while waiting. **Stop automatic retries**, closing the tile, changing teams, signing out or leaving the page stops further automatic attempts. An already-sent request may still finish on the server. After retries stop, check the evidence list and retry the unchanged form if necessary; it retains its original ID and prepared screenshot until you edit it or open another tile. A wait longer than the five-minute budget stops automatic retries without sending early. Refreshing or closing the page loses the form; there is no durable background upload queue.
+
+These browser changes require committing and pushing the website, including `web/upload-retry.mjs`; they need no new Worker settings or database migration. They use the existing Worker's retry responses.
 
 ```sh
 npm test

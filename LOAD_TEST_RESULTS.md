@@ -30,6 +30,8 @@ Additional tests conservatively charged every attempted PUT, including conflicts
 
 Retries in this test were sequential after advancing the clock by a minute; they were not another simultaneous rush. In every scenario, an exact repeat of a successful submission kept one entry. Five simultaneous reviews of different submissions preserved all approvals. Five concurrent 3 MiB synthetic payloads also saved successfully. These synthetic images test byte handling, not image rendering.
 
+The browser now also has bounded automatic retries, described in [SETUP.md](SETUP.md). The recorded load results above predate that browser feature; they do not measure many browsers retrying together. `tests/upload-retry.test.mjs` verifies retry limits, server waits and cancellation with a fake clock. `tests/retry-browser-smoke.mjs` checks countdown display, recovery and lost acknowledgements against the local preview, including preservation of the same submission ID and screenshot.
+
 ## Local Cloudflare runtime check
 
 The actual local `workerd` runtime was tested with HTTP requests and the real Cache API. Its GitHub transport was redirected to a loopback-only server. A burst of 75 viewer requests needed two upstream reads, and all 20 simultaneous uploads saved with no write conflicts. This verifies request-context compatibility for caching and write coordination; it does not reproduce Cloudflare's production CPU limits or worldwide routing.

@@ -1,4 +1,5 @@
 import { tileProgress, summary } from '../shared/bingo.mjs';
+import { uploadWithRetries } from './upload-retry.mjs';
 
 const $ = selector => document.querySelector(selector);
 const node = (tag, text, className) => { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el; };
@@ -9,6 +10,7 @@ const session = {
 };
 let settings, tiles = [], team = null, submissions = [], ready = false, loaded = false, generation = 0, refreshSequence = 0;
 let selectedTile, selectedSubmission, loginRole, loginTeam, previewURL, uploadId, uploading = false;
+let uploadRun = null, uploadPayload = null;
 let teamCodes = session.get('bingo-team-codes') || {}, reviewer = session.get('bingo-reviewer');
 let boardPublic = false, boardURL, evidenceURL;
 let refreshNotBefore = 0;
@@ -20,19 +22,32 @@ const field = (form, name) => $(form).elements.namedItem(name);
 const date = value => new Date(value).toLocaleString();
 const bonusLabel = points => `${points.toLocaleString()} bonus ${points === 1 ? 'point' : 'points'}`;
 
-async function api(path, body, auth) {
+async function api(path, body, auth, { signal, timeoutMs = 45000 } = {}) {
   const headers = boardHeaders();
   if (body) headers['Content-Type'] = 'application/json';
   if (auth) { headers.Authorization = `Bearer ${auth.code}`; if (auth.id) headers['X-Reviewer-Id'] = auth.id; }
-  const response = await fetch(settings.apiBaseUrl.replace(/\/$/, '') + path, {
+  let response;
+  try { response = await fetch(settings.apiBaseUrl.replace(/\/$/, '') + path, {
     method: body ? 'POST' : 'GET', headers, body: body ? JSON.stringify(body) : undefined,
-    cache: 'no-store', signal: AbortSignal.timeout(45000)
-  });
-  const result = await response.json();
+    cache: 'no-store', signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)]) : AbortSignal.timeout(timeoutMs)
+  }); } catch (error) {
+    if (signal?.aborted) throw new DOMException('Upload retries stopped.', 'AbortError');
+    const failure = new Error('The connection was interrupted before the result could be confirmed.');
+    failure.transient = error.name === 'TypeError' || error.name === 'TimeoutError'; throw failure;
+  }
+  const header = response.headers.get('Retry-After');
+  const headerWait = /^\d+$/.test(header || '') ? Number(header) : Math.ceil((Date.parse(header) - Date.now()) / 1000);
+  const minimumWait = Math.max(0, Number.isFinite(headerWait) ? headerWait : 0);
+  let result;
+  try { result = await response.json(); } catch {
+    if (signal?.aborted) throw new DOMException('Upload retries stopped.', 'AbortError');
+    const error = new Error('The server response could not be read.'); error.status = response.status;
+    error.retryAfter = minimumWait; error.transient = response.ok; throw error;
+  }
   if (!response.ok) {
-    const wait = Number(result.retryAfter) || 0;
-    const error = new Error((result.error || 'The request could not be completed.') + (wait ? ` Please wait ${wait < 60 ? `${wait} seconds` : `${Math.ceil(wait / 60)} minute(s)`} before trying again.` : ''));
-    error.retryAfter = wait; throw error;
+    const wait = Math.max(minimumWait, Number(result?.retryAfter) || 0);
+    const error = new Error((result?.error || 'The request could not be completed.') + (wait ? ` Please wait ${wait < 60 ? `${wait} seconds` : `${Math.ceil(wait / 60)} minute(s)`} before trying again.` : ''));
+    error.retryAfter = wait; error.status = response.status; throw error;
   }
   return result;
 }
@@ -56,6 +71,7 @@ function renderTeams() {
   }));
 }
 async function selectTeam() {
+  stopUpload();
   generation++; refreshSequence++;
   const id = new URL(location.href).searchParams.get('team');
   team = settings.teams.find(value => value.id === id) || null;
@@ -163,7 +179,8 @@ function renderRequirements(target, tile) {
 }
 function openTile(tile) {
   if (!team) return;
-  selectedTile = tile; uploadId = null;
+  stopUpload();
+  selectedTile = tile; uploadId = null; uploadPayload = null;
   $('#upload-form').reset(); message('#upload-status');
   if (previewURL) URL.revokeObjectURL(previewURL); previewURL = null; $('#upload-preview').hidden = true;
   field('#upload-form', 'choiceId').replaceChildren(...tile.choices.map(choice => { const option = node('option', tile.bonus && choice.id === 'activity-progress' ? 'Qualifying unique drop or pet' : choice.label); option.value = choice.id; return option; }));
@@ -196,7 +213,7 @@ function renderBonusChoices() {
   }));
   if ([...dropField.options].some(o => o.value === oldDrop)) dropField.value = oldDrop;
 }
-field('#upload-form', 'bonusSource').addEventListener('change', () => { uploadId = null; renderBonusChoices(); });
+field('#upload-form', 'bonusSource').addEventListener('change', () => { uploadId = null; uploadPayload = null; renderBonusChoices(); });
 function renderHistory(target, entries) {
   target.replaceChildren();
   if (!loaded || !entries.length) { target.append(node('p', !loaded ? 'Submission history is unavailable.' : 'No submissions yet.', 'empty')); return; }
@@ -256,11 +273,12 @@ $('#login-form').addEventListener('submit', async event => {
   finally { button.disabled = false; }
 });
 $('#team-login').onclick = () => {
-  if (teamCodes[team.id]) { delete teamCodes[team.id]; session.set('bingo-team-codes', teamCodes); authButtons(); }
+  if (teamCodes[team.id]) { stopUpload(); delete teamCodes[team.id]; session.set('bingo-team-codes', teamCodes); authButtons(); }
   else openLogin('team');
 };
 $('#reviewer-login').onclick = () => {
   if (reviewer) {
+    stopUpload();
     reviewer = null; session.set('bingo-reviewer', null);
     if (!boardPublic) {
       document.querySelector('#board-app').remove();
@@ -287,8 +305,20 @@ async function prepareImage(file) {
     return { type: blob.type, base64: dataURL.split(',')[1] };
   } finally { bitmap.close(); }
 }
-$('#upload-form').addEventListener('input', () => { uploadId = null; });
+function stopUpload() {
+  if (!uploadRun) return;
+  const confirmed = uploadRun.confirmed;
+  uploadRun.controller.abort(); uploadRun = null; uploading = false;
+  $('#upload-countdown').hidden = true; $('#stop-upload-retries').hidden = true;
+  if (!confirmed) message('#upload-status', 'Automatic retries stopped. A request already sent may still finish. Check the tile’s evidence before trying again.');
+  if (selectedTile && team) renderTile();
+}
+$('#stop-upload-retries').onclick = stopUpload;
+$('#tile-dialog').addEventListener('close', stopUpload);
+window.addEventListener('pagehide', stopUpload);
+$('#upload-form').addEventListener('input', () => { uploadId = null; uploadPayload = null; });
 field('#upload-form', 'screenshot').addEventListener('change', event => {
+  uploadId = null; uploadPayload = null;
   if (previewURL) URL.revokeObjectURL(previewURL);
   const file = event.target.files[0]; $('#upload-preview').hidden = !file;
   if (file) $('#upload-preview').src = previewURL = URL.createObjectURL(file);
@@ -298,18 +328,51 @@ $('#upload-form').addEventListener('submit', async event => {
   const current = generation, teamId = team.id, tile = selectedTile, code = teamCodes[teamId];
   uploadId ||= crypto.randomUUID(); const submissionId = uploadId;
   const values = new FormData($('#upload-form'));
+  const run = { controller: new AbortController() }; uploadRun = run;
+  const isCurrent = () => uploadRun === run && generation === current && selectedTile === tile;
   uploading = true; $('#upload-fields').disabled = true; message('#upload-status', 'Preparing and saving your screenshot…');
+  $('#stop-upload-retries').hidden = false;
   try {
-    const image = await prepareImage(values.get('screenshot'));
-    await api(`/teams/${teamId}/submissions`, { id: submissionId, tileId: tile.id, choiceId: values.get('choiceId'), quantity: Number(values.get('quantity')), player: values.get('player'), notes: values.get('notes'), image }, { code });
-    if (generation === current && selectedTile?.id === tile.id) {
-      $('#upload-form').reset(); $('#upload-preview').hidden = true; uploadId = null;
-      message('#upload-status', 'Screenshot saved. It is pending organiser review.'); await refresh();
+    if (!uploadPayload) {
+      const image = await prepareImage(values.get('screenshot'));
+      if (!isCurrent()) return;
+      uploadPayload = { id: submissionId, tileId: tile.id, choiceId: values.get('choiceId'), quantity: Number(values.get('quantity')), player: values.get('player'), notes: values.get('notes'), image };
+    }
+    const payload = uploadPayload;
+    const saved = await uploadWithRetries(async options => {
+      const result = await api(`/teams/${teamId}/submissions`, payload, { code }, options);
+      if (result?.id !== payload.id || !['pending', 'approved', 'rejected'].includes(result.status)) {
+        const error = new Error('The server did not confirm this submission.'); error.transient = true; throw error;
+      }
+      return result;
+    }, {
+      signal: run.controller.signal,
+      onState(state) {
+        if (!isCurrent()) return;
+        $('#upload-countdown').hidden = state.phase === 'sending';
+        if (state.phase === 'waiting') message('#upload-status', 'Your upload has not been confirmed yet. We’ll retry automatically. Keep this page open; you can stop retries below.');
+        else if (state.phase === 'countdown') $('#upload-countdown').textContent = `Retrying in ${state.seconds} seconds · automatic retry ${state.attempt} of ${state.maxRetries}`;
+        else message('#upload-status', state.attempt ? `Sending automatic retry ${state.attempt} of ${state.maxRetries}… Keep this page open.` : 'Saving your screenshot… Keep this page open.');
+      }
+    });
+    if (isCurrent()) {
+      run.confirmed = true;
+      $('#upload-form').reset(); $('#upload-preview').hidden = true; uploadId = null; uploadPayload = null;
+      $('#upload-countdown').hidden = true; $('#stop-upload-retries').hidden = true;
+      if (saved.status !== 'pending') message('#upload-status', `Screenshot already saved. Its current review status is ${saved.status}.`);
+      else message('#upload-status', 'Screenshot saved. It is pending organiser review.');
+      await refresh();
     }
   } catch (error) {
-    if (generation === current && selectedTile?.id === tile.id) message('#upload-status', error.message + ' Keep this form open and retry without changing its details; the same submission will not be added twice.', true);
+    if (isCurrent()) message('#upload-status', error.message + (error.retryStopped || error.transient || [429, 502, 503, 504].includes(error.status) ? ' Your screenshot and details are still here. Check the tile’s evidence, then retry this unchanged form later to avoid a duplicate.' : ' Check the form or your access code before trying again.'), true);
   }
-  finally { uploading = false; if (selectedTile && team) renderTile(); }
+  finally {
+    if (uploadRun === run) {
+      uploadRun = null; uploading = false;
+      $('#upload-countdown').hidden = true; $('#stop-upload-retries').hidden = true;
+      if (selectedTile && team) renderTile();
+    }
+  }
 });
 $('#review-form').addEventListener('submit', async event => {
   event.preventDefault(); if (!reviewer) return;
