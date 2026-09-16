@@ -34,7 +34,7 @@ const bossImages = {
   'Dagannoth Kings': 'https://oldschool.runescape.wiki/images/Fighting_Dagannoth_Kings.png?7a1a7',
   'Kalphite Queen': 'https://oldschool.runescape.wiki/images/Kalphite_Queen.png?a4955',
   Skotizo: 'https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8',
-  'Temple Trekking Vampyres': 'https://oldschool.runescape.wiki/images/Vyrelady.png?ce470',
+  'Temple Trekking': 'https://oldschool.runescape.wiki/images/Vyrelady.png?ce470',
   'The Mimic': 'https://oldschool.runescape.wiki/images/The_Mimic.png?b45f4',
   'Chaos Fanatic': 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d',
   'The Nightmare of Ashihama': 'https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a',
@@ -119,13 +119,14 @@ const spriteAliases = {
   'Gold key': 'Gold_key_purple',
   'Kalphite head': 'Ensouled_kalphite_head',
   'Scythe of vitur': 'Scythe_of_Vitur',
-  'Tome of experience': 'Tome_of_experience_(1).png',
   'Zamorak spear': 'Zamorakian_spear',
   'Kalphite Queen head (mounted) icon': 'Kalphite_Queen_head_(mounted)_icon',
   'Masori armour': 'Masori_armour_equipped_female.png'
 };
 
 const getSpriteUrl = (itemName) => {
+  if (itemName === 'Lumberjack hat') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'lumberjack-hat.png')).toString('base64')}`;
+  if (itemName === 'Tome of experience') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'temple-trekking-tome.png')).toString('base64')}`;
   if (itemName === 'Crystal armour seed') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'crystal-armour-seed.png')).toString('base64')}`;
   if (itemName === "Vorkath's head") return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'vorkaths-head.png')).toString('base64')}`;
   if (itemName === 'Dual macuahuitl') return `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'dual-macuahuitl.png')).toString('base64')}`;

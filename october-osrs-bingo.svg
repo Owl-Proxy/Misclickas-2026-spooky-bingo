@@ -158,11 +158,11 @@
       <title>Through the Vampire Mist: 1 qualifying drop(s) required</title>
       <rect x="563.6666666666667" y="481" width="232.33333333333334" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
       <image class="tile-backdrop" x="563.6666666666667" y="481" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Vyrelady.png?ce470" preserveAspectRatio="xMidYMid slice"/>
-      <image x="663.8333333333334" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tome_of_experience_(1).png" preserveAspectRatio="xMidYMid meet"/>
+      <image x="663.8333333333334" y="487" width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAMAAACE9bUqAAAAY1BMVEUAAAAAAAE8PDc/PzpCQj1FRUBISENMSkZOTkhRUUpUVE1WVlBYWFJbW1VGRjlDQzU5OSw1NCowMCYmJiAiIhodHRUoKCYyMC45OTQ1NTAsLCokJCIgIB1APzI8PDAsLCIVFRH1C5n6AAAAAXRSTlMAQObYZgAAANFJREFUeNoFwWFLk2EYgNFz3XtnhoUfItcI+v+/KypqsqKmEZg8ngMAVQAEEMfy1QIEaIrnQ//vF7AD2na7iccbtw/AAGYCP87PHysM6NWgcrWdv304vo8BkrCftu3+e9hB1xI1k+Hm5q8BCGamYBgAkAVOiwEEsRbqdGiAAItFdRK0vVlPayFtbi/VeYBH+6ss+21fl946rw3t+HftCtpbtIimiYUneLdYv1ZqqoXDlwX55M/83CoSdwHLZ6y0K3F3+b0AYDjC4fVDAEAEsADAC1eqOodJEV7TAAAAAElFTkSuQmCC" preserveAspectRatio="xMidYMid meet"/>
 
       <text x="679.8333333333334" y="540" class="tile-label"><tspan x="679.8333333333334" dy="0">Through the Vampire</tspan><tspan x="679.8333333333334" dy="25">Mist</tspan></text>
-      <text x="679.8333333333334" y="591" class="tile-boss">Temple Trekking Vampyres</text>
-      <text x="679.8333333333334" y="616" class="tile-note"><tspan x="679.8333333333334" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="679.8333333333334" dy="17">- 1x Tome of experience</tspan><tspan x="679.8333333333334" dy="17">- 1x Silver sickle (b)</tspan><tspan x="679.8333333333334" dy="17">- 1x Loar remains</tspan></text>
+      <text x="679.8333333333334" y="591" class="tile-boss">Temple Trekking</text>
+      <text x="679.8333333333334" y="616" class="tile-note"><tspan x="679.8333333333334" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack hat</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack top</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack legs</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack boots</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Hungry Chest: (10x Mimic completions) OR (1x Rare clue-table reward)</title>
       <rect x="804" y="481" width="232.33333333333334" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>

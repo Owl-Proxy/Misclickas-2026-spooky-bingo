@@ -84,13 +84,14 @@
         "target_drops": ["Dark claw", "Uncut onyx", "Ancient shard"]
       },
       {
-        "boss": "Temple Trekking Vampyres",
+        "boss": "Temple Trekking",
         "tile_name": "Through the Vampire Mist",
         "tile_id": "through-the-vampire-mist",
         "completion_mode": "all",
         "target_quantity": 1,
-        "spooky_vibe": "Escorting vulnerable citizens through the mist-shrouded swamps of Morytania while fighting off bloodsucking fiends.",
-        "target_drops": ["Tome of experience", "Silver sickle (b)", "Loar remains"]
+        "spooky_vibe": "Obtain a full Lumberjack outfit from the undead lumberjacks lurking in Morytania's mist-shrouded swamps.",
+        "requirements_note": "Obtain all four Lumberjack outfit pieces as drops from Temple Trekking during the bingo. Previously owned pieces and Forestry purchases do not count.",
+        "target_drops": ["Lumberjack hat", "Lumberjack top", "Lumberjack legs", "Lumberjack boots"]
       },
       {
         "boss": "The Mimic",

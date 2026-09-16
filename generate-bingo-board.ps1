@@ -36,6 +36,12 @@ function Escape-Xml([string]$Value) {
 }
 
 function Get-Sprite-Url([string]$ItemName) {
+  if ($ItemName -eq 'Lumberjack hat') {
+    return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/lumberjack-hat.png')))
+  }
+  if ($ItemName -eq 'Tome of experience') {
+    return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/temple-trekking-tome.png')))
+  }
   if ($ItemName -eq 'Crystal armour seed') {
     return 'data:image/png;base64,' + [Convert]::ToBase64String([System.IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'assets/crystal-armour-seed.png')))
   }
@@ -54,7 +60,6 @@ function Get-Sprite-Url([string]$ItemName) {
     "Gold key" = "Gold_key_purple"
     "Kalphite head" = "Ensouled_kalphite_head"
     "Scythe of vitur" = "Scythe_of_Vitur"
-    "Tome of experience" = "Tome_of_experience_(1).png"
     "Zamorak spear" = "Zamorakian_spear"
     "Kalphite Queen head (mounted) icon" = "Kalphite_Queen_head_(mounted)_icon"
     "Masori armour" = "Masori_armour_equipped_female.png"
@@ -94,7 +99,7 @@ function Get-Boss-Image([string]$BossName) {
     'Dagannoth Kings' = 'https://oldschool.runescape.wiki/images/Fighting_Dagannoth_Kings.png?7a1a7'
     'Kalphite Queen' = 'https://oldschool.runescape.wiki/images/Kalphite_Queen.png?a4955'
     'Skotizo' = 'https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8'
-    'Temple Trekking Vampyres' = 'https://oldschool.runescape.wiki/images/Vyrelady.png?ce470'
+    'Temple Trekking' = 'https://oldschool.runescape.wiki/images/Vyrelady.png?ce470'
     'The Mimic' = 'https://oldschool.runescape.wiki/images/The_Mimic.png?b45f4'
     'Chaos Fanatic' = 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d'
     'The Nightmare of Ashihama' = 'https://oldschool.runescape.wiki/images/The_Nightmare.png?0128a'

@@ -23,6 +23,7 @@ export function buildTiles(event) {
       id: entry.tile_id ?? slug(entry.tile_name), title: entry.tile_name,
       source: entry.boss ?? entry.source ?? entry.subtitle ?? '',
       description: entry.challenge ?? entry.rule ?? entry.spooky_vibe ?? entry.spooky_lore ?? '',
+      requirementsNote: entry.requirements_note ?? '',
       quantity: entry.target_quantity, paths, choices,
       bonus: entry.scoring_mode === 'bonus', pointsPerDrop: entry.points_per_drop ?? 1,
       legacyRequirements: entry.target_requirements ?? (entry.challenge || entry.rule ? [entry.challenge ?? entry.rule]

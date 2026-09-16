@@ -154,6 +154,7 @@ function renderRequirements(target, tile) {
     return;
   }
   target.append(node('h3', progress.complete && loaded ? '✓ Tile complete' : 'Completion requirements'));
+  if (tile.requirementsNote) target.append(node('p', tile.requirementsNote, 'muted'));
   if (tile.paths) {
     progress.paths.forEach((path, index) => {
       if (index) target.append(node('p', 'OR', 'or'));

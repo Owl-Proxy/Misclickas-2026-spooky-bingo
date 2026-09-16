@@ -1,5 +1,9 @@
 # Image sources
 
+`lumberjack-hat.png` is the OSRS Wiki's [Lumberjack hat](https://oldschool.runescape.wiki/w/File:Lumberjack_hat.png) inventory icon, embedded locally for Through the Vampire Mist.
+
+`temple-trekking-tome.png` is the OSRS Wiki's [Slayer tome (blue)](https://oldschool.runescape.wiki/w/File:Slayer_tome_(blue).png) inventory icon. Both generators support embedding it for experience tome requirements; it replaces the nonexistent `Tome_of_experience_(1).png` image.
+
 `corrupted-hunllef.png` is the OSRS Wiki's [Corrupted Hunllef](https://oldschool.runescape.wiki/w/File:Corrupted_Hunllef.png) image. It provides The Red Labyrinth's distinct boss background.
 
 `crystal-armour-seed.png` is the OSRS Wiki's [Crystal armour seed](https://oldschool.runescape.wiki/w/File:Crystal_armour_seed.png) inventory icon, used for The Red Labyrinth's sprite. Both images are embedded locally in the generated board.
