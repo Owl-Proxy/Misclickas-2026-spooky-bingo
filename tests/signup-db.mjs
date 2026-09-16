@@ -1,9 +1,10 @@
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 // Execute the production schema and SQL in SQLite; expose the D1 methods we use.
 export function signupDatabase() {
   const sqlite = new DatabaseSync(':memory:');
-  sqlite.exec(readFileSync(new URL('../worker/migrations/0001_signups.sql', import.meta.url), 'utf8'));
+  const migrations = new URL('../worker/migrations/', import.meta.url);
+  for (const file of readdirSync(migrations).filter(file => file.endsWith('.sql')).sort()) sqlite.exec(readFileSync(new URL(file, migrations), 'utf8'));
   return {
     close: () => sqlite.close(),
     prepare(sql) {

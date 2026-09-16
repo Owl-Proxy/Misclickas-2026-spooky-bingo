@@ -22,18 +22,24 @@ function render() {
     for (const team of [{ id: '', name: 'Unassigned' }, ...teams]) { const option = node('option', team.name); option.value = team.id; select.append(option); }
     select.value = entry.team_id;
     const checkLabel = node('label', '', 'check'), check = node('input'); check.type = 'checkbox'; check.checked = Boolean(entry.role_assigned); check.disabled = !select.value;
+    check.name = 'roleAssigned';
     checkLabel.append(check, node('span', 'Discord role assigned'));
+    const paidLabel = node('label', '', 'check'), paid = node('input');
+    paid.type = 'checkbox'; paid.name = 'paidEntryFee'; paid.checked = Boolean(entry.paid_entry_fee);
+    paid.disabled = entry.paid_entry_fee === undefined;
+    paidLabel.append(paid, node('span', 'Paid entry fee'));
     select.addEventListener('change', () => { check.checked = false; check.disabled = !select.value; });
-    const button = node('button', 'Save assignment'), feedback = node('p', '', 'message'); feedback.setAttribute('role', 'status');
-    form.append(label, select, checkLabel, button, feedback); card.append(form); $('#roster').append(card);
+    const button = node('button', 'Save changes'), feedback = node('p', '', 'message'); feedback.setAttribute('role', 'status');
+    form.append(label, select, checkLabel, paidLabel, button, feedback); card.append(form); $('#roster').append(card);
+    if (paid.disabled) message(feedback, 'Entry fee tracking is unavailable until the updated submission service is deployed.', true);
     form.addEventListener('submit', async event => {
       event.preventDefault(); button.disabled = true; message(feedback, 'Saving…');
-      const teamId = select.value, roleAssigned = check.checked, currentAccount = account;
+      const teamId = select.value, roleAssigned = check.checked, paidEntryFee = paid.checked, currentAccount = account;
       try {
-        const saved = await api(`/signups/${entry.id}`, { teamId, roleAssigned, revision: entry.revision }, currentAccount);
+        const saved = await api(`/signups/${entry.id}`, { teamId, roleAssigned, ...(paid.disabled ? {} : { paidEntryFee }), revision: entry.revision }, currentAccount);
         if (account !== currentAccount) return;
-        Object.assign(entry, { team_id: teamId, role_assigned: Number(roleAssigned), revision: saved.revision });
-        render(); message(status, `Saved assignment for ${entry.player}.`);
+        Object.assign(entry, { team_id: teamId, role_assigned: Number(roleAssigned), ...(paid.disabled ? {} : { paid_entry_fee: Number(paidEntryFee) }), revision: saved.revision });
+        render(); message(status, `Saved changes for ${entry.player}.`);
       } catch (error) { message(feedback, error.message, true); button.disabled = false; }
     });
   }
@@ -61,7 +67,7 @@ $('#signout').addEventListener('click', signout);
 // Keep codes and private names in memory only; refresh or sign-out clears the session.
 $('#export').addEventListener('click', () => {
   const cell = value => { let text = String(value ?? ''); if (/^[\s]*[=+@-]/.test(text)) text = "'" + text; return '"' + text.replaceAll('"', '""') + '"'; };
-  const rows = [['OSRS username', 'Discord username', 'Team', 'Discord role assigned', 'Signed up'], ...entries.map(e => [e.player, e.discord, teams.find(t => t.id === e.team_id)?.name || 'Unassigned', e.role_assigned ? 'Yes' : 'No', e.created_at])];
+  const rows = [['OSRS username', 'Discord username', 'Team', 'Discord role assigned', 'Paid entry fee', 'Signed up'], ...entries.map(e => [e.player, e.discord, teams.find(t => t.id === e.team_id)?.name || 'Unassigned', e.role_assigned ? 'Yes' : 'No', e.paid_entry_fee === undefined ? 'Unknown' : e.paid_entry_fee ? 'Yes' : 'No', e.created_at])];
   const url = URL.createObjectURL(new Blob(['\ufeff' + rows.map(row => row.map(cell).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' }));
   const link = node('a'); link.href = url; link.download = 'misclickas-signups.csv'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });

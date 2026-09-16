@@ -32,7 +32,7 @@ export async function handleSignups(request, env, path, teams, { authorize, limi
   }
   const reviewer = await authorize(request, env, 'reviewer', request.headers.get('X-Reviewer-Id') || '');
   if (path === '/signups' && request.method === 'GET') {
-    const { results } = await db.prepare('SELECT id, player, discord, team_id, role_assigned, created_at, revision FROM signups ORDER BY created_at, id').all();
+    const { results } = await db.prepare('SELECT id, player, discord, team_id, role_assigned, paid_entry_fee, created_at, revision FROM signups ORDER BY created_at, id').all();
     return json({ signups: results, teams, open });
   }
   const match = path.match(/^\/signups\/([a-f0-9-]{36})$/);
@@ -40,10 +40,12 @@ export async function handleSignups(request, env, path, teams, { authorize, limi
     const body = await readJSON(request, 2048);
     if (body.teamId !== '' && !teams.some(team => team.id === body.teamId)) fail(400, 'Select a valid team.');
     if (typeof body.roleAssigned !== 'boolean' || (body.roleAssigned && !body.teamId)) fail(400, 'Select a team before marking its Discord role assigned.');
+    if (body.paidEntryFee !== undefined && typeof body.paidEntryFee !== 'boolean') fail(400, 'Check the paid entry fee status.');
     if (!Number.isInteger(body.revision) || body.revision < 0) fail(400, 'Refresh the roster before saving.');
-    const result = await db.prepare(`UPDATE signups SET team_id = ?, role_assigned = ?, revision = revision + 1,
+    // Older roster tabs omit paidEntryFee; preserve the saved value in that case.
+    const result = await db.prepare(`UPDATE signups SET team_id = ?, role_assigned = ?, paid_entry_fee = COALESCE(?, paid_entry_fee), revision = revision + 1,
       updated_by = ?, updated_at = ? WHERE id = ? AND revision = ?`)
-      .bind(body.teamId, Number(body.roleAssigned), reviewer.id, new Date().toISOString(), match[1], body.revision).run();
+      .bind(body.teamId, Number(body.roleAssigned), body.paidEntryFee === undefined ? null : Number(body.paidEntryFee), reviewer.id, new Date().toISOString(), match[1], body.revision).run();
     if (!result.meta.changes) fail(409, 'This entry changed or no longer exists. Refresh the roster before saving.');
     return json({ revision: body.revision + 1 });
   }

@@ -51,14 +51,37 @@ try {
   await until(`!document.querySelector('#roster-panel').hidden && document.querySelectorAll('.roster-entry').length > 0`);
   await evaluate(`document.querySelector('#search').value = ${JSON.stringify(player)}; document.querySelector('#search').dispatchEvent(new Event('input'))`);
   await evaluate(`const select = document.querySelector('.roster-entry select'); select.value = 'vampire'; select.dispatchEvent(new Event('change')); document.querySelector('.roster-entry input[type=checkbox]').checked = true; document.querySelector('.roster-entry button').click()`);
-  await until(`document.querySelector('#roster-message').textContent.startsWith('Saved assignment')`);
+  await until(`document.querySelector('#roster-message').textContent.startsWith('Saved changes')`);
+  await until(`document.querySelector('.roster-entry button').disabled === false`);
   await evaluate(`document.querySelector('#refresh').click()`);
   await until(`document.querySelector('#roster-message').textContent === 'Signups are open.'`);
   assert.equal(await evaluate(`document.querySelector('.roster-entry select').value`), 'vampire');
   assert.equal(await evaluate(`document.querySelector('.roster-entry input[type=checkbox]').checked`), true);
+  assert.equal(await evaluate(`document.querySelector('.roster-entry [name=paidEntryFee]').checked`), false);
+  await evaluate(`document.querySelector('.roster-entry [name=paidEntryFee]').checked = true; document.querySelector('.roster-entry button').click()`);
+  await until(`document.querySelector('#roster-message').textContent.startsWith('Saved changes')`);
+  await evaluate(`document.querySelector('#refresh').click()`);
+  await until(`document.querySelector('#roster-message').textContent === 'Signups are open.'`);
+  assert.equal(await evaluate(`document.querySelector('.roster-entry [name=paidEntryFee]').checked`), true);
+  assert.equal(await evaluate(`document.querySelector('.roster-entry [name=roleAssigned]').checked`), true);
+  // Changing team clears role tracking but retains the independent payment flag.
+  await evaluate(`const team = document.querySelector('.roster-entry select'); team.value = ''; team.dispatchEvent(new Event('change'))`);
+  assert.equal(await evaluate(`document.querySelector('.roster-entry [name=paidEntryFee]').checked`), true);
+  await evaluate(`document.querySelector('.roster-entry button').click()`);
+  await until(`document.querySelector('#roster-message').textContent.startsWith('Saved changes')`);
   assert.equal(await evaluate('document.documentElement.scrollWidth <= innerWidth'), true);
   await command('Emulation.setDeviceMetricsOverride', { width: 1280, height: 960, deviceScaleFactor: 1, mobile: false });
   await screenshot('signup-roster');
+  const csv = await evaluate(`(async () => {
+    const originalURL = URL.createObjectURL, originalClick = HTMLAnchorElement.prototype.click;
+    let captured;
+    URL.createObjectURL = blob => { captured = blob.text(); return originalURL(blob); };
+    HTMLAnchorElement.prototype.click = function() { if (!this.download) originalClick.call(this); };
+    try { document.querySelector('#export').click(); return await captured; }
+    finally { URL.createObjectURL = originalURL; HTMLAnchorElement.prototype.click = originalClick; }
+  })()`);
+  assert.match(csv, /"Paid entry fee"/);
+  assert.ok(csv.split('\r\n').some(line => line.includes(player) && line.includes('"Unassigned","No","Yes"')));
   await evaluate(`document.querySelector('#signout').click()`);
   assert.equal(await evaluate(`document.querySelector('#roster').textContent`), '');
   assert.equal(await evaluate(`JSON.stringify(localStorage).includes('signup.tester') || JSON.stringify(sessionStorage).includes('signup.tester')`), false);

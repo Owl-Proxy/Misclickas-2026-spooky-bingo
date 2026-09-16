@@ -1,5 +1,18 @@
 # Set up the Halloween signup page
 
+## Update an existing roster: entry fee tracking
+
+To enable the **Paid entry fee** checkbox on an already configured site, run these commands from the project folder, in order:
+
+```powershell
+npx.cmd wrangler@4 d1 migrations apply misclickas-bingo-signups --remote --config worker/wrangler.jsonc
+npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc
+```
+
+The first command applies `0002_paid_entry_fee.sql`. Existing signups, team assignments and Discord role statuses are preserved; all entries initially have the new payment checkbox unticked. After both commands succeed, commit and push the changes in GitHub Desktop to update the roster page.
+
+Tick **Paid entry fee** after receiving a player's 10m GP buy-in, then click **Save changes**. The checkbox works before team assignment and is included in the CSV export. Only organisers can update it. Untick and save to correct a mistake.
+
 The public page is `signup.html`. It collects an OSRS username and a Discord username, with a dark Halloween theme and no board link or tile details. The board's current URL stays the same.
 
 Names are stored in **Cloudflare D1**, in your existing Cloudflare account. They do not go into this public repository or its `submissions` branch. `roster.html` reads the database only after an organiser signs in with an existing reviewer ID and code. Team codes cannot access it.
@@ -37,7 +50,7 @@ The repository includes a commented example beginning with `//`. That example do
 npx.cmd wrangler@4 d1 migrations apply misclickas-bingo-signups --remote --config worker/wrangler.jsonc
 ```
 
-Confirm applying `0001_signups.sql` when prompted. This creates the empty table; it does not change bingo submissions. `--remote` means your online database. Future runs apply only migrations that have not already run.
+Confirm applying the listed migrations when prompted (`0001_signups.sql` and `0002_paid_entry_fee.sql` on a new database). This creates the signup table with entry fee tracking; it does not change bingo submissions. `--remote` means your online database. Future runs apply only migrations that have not already run.
 
 ## 4. Deploy the Worker
 
@@ -62,7 +75,7 @@ The roster HTML itself is public, but it contains no names or access codes. Its 
 
 1. Open the signup link. Enter your OSRS and Discord usernames, tick the organiser-use checkbox, and submit. You should see **You're on the list**.
 2. Open the roster link. Enter your existing **reviewer ID** (for example, `organiser`) and its **reviewer access code**. These are the same credentials used to review screenshots, not a team code or GitHub token.
-3. Find your entry. Select Team Vampire or Team Werewolf and click **Save assignment**.
+3. Find your entry. Select Team Vampire or Team Werewolf and click **Save changes**.
 4. Give the member the team role in Discord. Then tick **Discord role assigned** and save again. This page tracks the role; it does not change Discord itself.
 5. Use **Download CSV** if you want a local spreadsheet. The download contains participant names, so keep it with the organising team and outside this public repository.
 

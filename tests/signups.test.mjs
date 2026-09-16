@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { createApp } from '../worker/index.mjs';
 import { codes, env } from './helpers.mjs';
 import { signupDatabase } from './signup-db.mjs';
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
 function fixture(t, overrides = {}) {
   const db = signupDatabase(); t.after(() => db.close());
   const settings = { REVIEWERS: env.REVIEWERS, ALLOWED_ORIGINS: env.ALLOWED_ORIGINS, SIGNUPS_DB: db, ...overrides };
@@ -18,6 +20,36 @@ function fixture(t, overrides = {}) {
   };
 }
 const signup = overrides => ({ player: 'Spooky Owl', discord: 'owl.proxy', consent: true, website: '', ...overrides });
+test('payment migration preserves existing signups and defaults them to unpaid', () => {
+  const db = new DatabaseSync(':memory:');
+  try {
+    db.exec(readFileSync(new URL('../worker/migrations/0001_signups.sql', import.meta.url), 'utf8'));
+    db.prepare('INSERT INTO signups (id, player, player_key, discord, created_at, team_id, role_assigned, revision) VALUES (?, ?, ?, ?, ?, ?, ?, ?)').run('old', 'Old Player', 'old player', 'old.discord', '2026-09-15', 'vampire', 1, 4);
+    db.exec(readFileSync(new URL('../worker/migrations/0002_paid_entry_fee.sql', import.meta.url), 'utf8'));
+    const row = db.prepare('SELECT * FROM signups').get();
+    assert.equal(row.paid_entry_fee, 0); assert.equal(row.player, 'Old Player'); assert.equal(row.team_id, 'vampire'); assert.equal(row.role_assigned, 1); assert.equal(row.revision, 4);
+  } finally { db.close(); }
+});
+
+test('only reviewers can mark entry fees paid; old clients and stale edits cannot erase payment', async t => {
+  const request = fixture(t);
+  await request('/signups', signup({ paidEntryFee: true }));
+  const getEntry = async () => (await request('/signups', undefined, codes.reviewer)).body.signups[0];
+  const entry = await getEntry(); assert.equal(entry.paid_entry_fee, 0);
+  const path = '/signups/' + entry.id;
+  const edit = { teamId: '', roleAssigned: false, paidEntryFee: true, revision: 0 };
+  assert.equal((await request(path, edit)).status, 401);
+  assert.equal((await request(path, edit, codes.vampire)).status, 401);
+  for (const paidEntryFee of ['true', 1, null]) assert.equal((await request(path, { ...edit, paidEntryFee }, codes.reviewer)).status, 400);
+  assert.equal((await request(path, edit, codes.reviewer)).status, 200);
+  assert.equal((await getEntry()).paid_entry_fee, 1);
+  assert.equal((await request(path, { ...edit, paidEntryFee: false }, codes.reviewer)).status, 409);
+  assert.equal((await request(path, { teamId: 'werewolf', roleAssigned: true, revision: 1 }, codes.reviewer)).status, 200);
+  assert.equal((await getEntry()).paid_entry_fee, 1);
+  assert.equal((await request(path, { teamId: 'werewolf', roleAssigned: true, paidEntryFee: false, revision: 2 }, codes.reviewer)).status, 200);
+  const cleared = await getEntry();
+  assert.equal(cleared.paid_entry_fee, 0); assert.equal(cleared.role_assigned, 1); assert.equal(cleared.team_id, 'werewolf');
+});
 test('signup stores private names without GitHub; only reviewers can read the roster', async t => {
   const request = fixture(t);
   assert.deepEqual((await request('/signups/status')).body, { open: true });
