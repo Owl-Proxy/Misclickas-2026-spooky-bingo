@@ -103,6 +103,22 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ## Local checks
 
+### Wise Old Man cross-checks
+
+Competition [156506](https://wiseoldman.net/competitions/156506) is linked through `wiseOldManCompetitionId` in `site-config.json`. It uses the public read API; no verification code, new secret, or database migration is needed.
+
+Sign in as a reviewer, open **The Crypt Keeper**, **Fists of Fury**, or **The Hungry Chest**, then click **Check tracked progress**. The same panel appears while reviewing evidence. It shows the event dates, team and individual gains, starting/ending counts, and update timestamps. A submitter on the WOM roster is highlighted; a missing submitter is flagged. The main competition metric can stay Overall XP: the Worker explicitly requests Barrows and Mimic counts.
+
+These checks are supporting evidence only. They never approve a submission, increment a tile, or award points. Counts cover the entire competition, so compare earlier approved submissions before crediting another batch. Weaponless Barrows still requires proof of equipment restrictions; Mimic drop alternatives still require drop evidence. Shade cremations and Chaos Altar offerings are not supported by WOM metrics.
+
+Keep the competition team names **Team Vampire** and **Team Werewolf** and maintain their participants on WOM. The bingo signup roster and WOM roster do not automatically synchronise. Missing teams, unranked/missing baselines, and failed requests are not treated as zero. Have players log out and update WOM at the start before their event activity, and again before the competition ends. Checks read already-recorded stats and do not request player updates.
+
+The competition initially returned a start of **1 October 2026, 16:00 UTC** (noon EDT) and end of **1 November 2026, 03:59 UTC** (31 October, 11:59 p.m. EDT). Change these on WOM if a midnight start was intended. Dates and roster changes are picked up by subsequent reads. Successful reads and concurrent requests are shared for up to one minute within a Worker instance; failures back off for at least a minute, respecting longer upstream Retry-After values. No background polling is added.
+
+Publish both sides: deploy the Worker with `npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`, then commit and push the site, including `web/wise-old-man.mjs` and its Pages allowlist entry. Existing secrets and submissions stay intact.
+
+Additional browser check: with the local preview and headless Chrome running, execute `node tests/wom-browser-smoke.mjs`. It uses simulated WOM responses and does not modify the real competition.
+
 See [LOAD_TEST_RESULTS.md](LOAD_TEST_RESULTS.md) for the 50–75-viewer and concurrent-upload tests. Team progress is cached for up to 20 seconds per Cloudflare location. An upload or review refreshes that location's cache; other viewers may see a short delay.
 
 Uploads start immediately. Temporary rate limits, busy storage, connection interruptions and ambiguous server responses trigger a visible countdown with up to **three automatic retries within five minutes**. The browser respects the server's waiting period and adds 1–5 seconds of random delay. It freezes the screenshot and form details and reuses the same submission ID. Validation, authentication and duplicate/conflict errors require user attention and are not automatically retried.

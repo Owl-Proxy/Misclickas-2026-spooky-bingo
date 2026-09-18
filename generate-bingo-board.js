@@ -73,7 +73,7 @@ const activityImages = {
   'Doom of Mokhaiotl': 'https://oldschool.runescape.wiki/images/Doom_of_Mokhaiotl.png',
   'Royal Titans': `data:image/png;base64,${fs.readFileSync(path.join(__dirname, 'assets', 'royal-titans.png')).toString('base64')}`,
   'Barrows Brothers': 'https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092',
-  'Chaos Fanatic / Mummies': 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d',
+  'Chaos Fanatic / Ancient Pyramid mummies': 'https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d',
   'Catacombs of Kourend': 'https://oldschool.runescape.wiki/images/Skotizo.png?dc8b8',
   'Kril Tsutsaroth': 'https://oldschool.runescape.wiki/images/K%27ril_Tsutsaroth.png',
   'Theatre of Blood (ToB)': 'https://oldschool.runescape.wiki/images/Sanguinesti_staff_detail.png',

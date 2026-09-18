@@ -344,14 +344,14 @@
       <text x="1160.5" y="1275" class="tile-boss">Sarachnis</text>
       <text x="1160.5" y="1300" class="tile-note"><tspan x="1160.5" dy="0">- Defeat Sarachnis and obtain</tspan><tspan x="1160.5" dy="17">1 Sarachnis cudgel</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>The Undertaker: Cremate 25 shades in Mort&apos;ton, or burn 25 Chewed bones to send their spirits onward.</title>
-      <rect x="1284.66666666667" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="1284.66666666667" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
-      <image x="1384.83333333333" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Pyre_logs_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="1400.83333333333" y="1235" class="tile-label"><tspan x="1400.83333333333" dy="0">The Undertaker</tspan></text>
-      <text x="1400.83333333333" y="1275" class="tile-boss">Mort&apos;ton pyre ships / shades</text>
-      <text x="1400.83333333333" y="1300" class="tile-note"><tspan x="1400.83333333333" dy="0">- Cremate 25 shades in</tspan><tspan x="1400.83333333333" dy="17">Mort&apos;ton, or burn 25 Chewed</tspan><tspan x="1400.83333333333" dy="17">bones to send their spirits</tspan><tspan x="1400.83333333333" dy="17">onward.</tspan></text>
+      <title>The Undertaker: Cremate 25 shades in Mort&apos;ton, or burn 25 Chewed bones on pyre ships at Otto&apos;s Grotto.</title>
+      <rect x="1284.6666666666667" y="1165" width="232.33333333333334" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.6666666666667" y="1165" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Ahrim_the_Blighted.png?33092" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.8333333333335" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Pyre_logs_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="1400.8333333333335" y="1235" class="tile-label"><tspan x="1400.8333333333335" dy="0">The Undertaker</tspan></text>
+      <text x="1400.8333333333335" y="1275" class="tile-boss">Mort&apos;ton / Otto&apos;s Grotto</text>
+      <text x="1400.8333333333335" y="1300" class="tile-note"><tspan x="1400.8333333333335" dy="0">- Cremate 25 shades in</tspan><tspan x="1400.8333333333335" dy="17">Mort&apos;ton, or burn 25 Chewed</tspan><tspan x="1400.8333333333335" dy="17">bones on pyre ships at Otto&apos;s</tspan><tspan x="1400.8333333333335" dy="17">Grotto.</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Revenant Hunter: Obtain 1 Ancient Emblem, 1 Ancient Totem, or 1 Ancient Statuette from the Revenants.</title>
       <rect x="83" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
@@ -380,14 +380,14 @@
       <text x="679.833333333333" y="1503" class="tile-boss">Gold Shade Chest</text>
       <text x="679.833333333333" y="1528" class="tile-note"><tspan x="679.833333333333" dy="0">- Open a Gold Shade Chest</tspan><tspan x="679.833333333333" dy="17">using a gold key in the</tspan><tspan x="679.833333333333" dy="17">creepy, infected town of</tspan><tspan x="679.833333333333" dy="17">Morytania.</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>The Grim Reaper: Teleport to Death&apos;s Office and successfully claim a Grave / Death reclaim while wearing a black cape.</title>
-      <rect x="804" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="804" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Dying_animation.gif?30e7c" preserveAspectRatio="xMidYMid slice"/>
-      <image x="904.166666666667" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Black_cape_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="920.166666666667" y="1463" class="tile-label"><tspan x="920.166666666667" dy="0">The Grim Reaper</tspan></text>
-      <text x="920.166666666667" y="1503" class="tile-boss">Death&apos;s Office</text>
-      <text x="920.166666666667" y="1528" class="tile-note"><tspan x="920.166666666667" dy="0">- Teleport to Death&apos;s Office</tspan><tspan x="920.166666666667" dy="17">and successfully claim a Grave</tspan><tspan x="920.166666666667" dy="17">/ Death reclaim while wearing</tspan><tspan x="920.166666666667" dy="17">a black cape.</tspan></text>
+      <title>The Grim Reaper: Visit Death&apos;s Office and successfully reclaim items from a grave or Death while wearing a black cape.</title>
+      <rect x="804" y="1393" width="232.33333333333334" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="804" y="1393" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Dying_animation.gif?30e7c" preserveAspectRatio="xMidYMid slice"/>
+      <image x="904.1666666666666" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Black_cape_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="920.1666666666666" y="1463" class="tile-label"><tspan x="920.1666666666666" dy="0">The Grim Reaper</tspan></text>
+      <text x="920.1666666666666" y="1503" class="tile-boss">Death&apos;s Office</text>
+      <text x="920.1666666666666" y="1528" class="tile-note"><tspan x="920.1666666666666" dy="0">- Visit Death&apos;s Office and</tspan><tspan x="920.1666666666666" dy="17">successfully reclaim items</tspan><tspan x="920.1666666666666" dy="17">from a grave or Death while</tspan><tspan x="920.1666666666666" dy="17">wearing a black cape.</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Fists of Fury: As a team, complete 3 Barrows chests with no equipped weapons. Barrows damage may come from spells, prayers, or fists.</title>
       <rect x="1044.33333333333" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
@@ -452,14 +452,14 @@
       <text x="1160.5000000000002" y="1731" class="tile-boss">Perilous Moons</text>
       <text x="1160.5000000000002" y="1756" class="tile-note"><tspan x="1160.5000000000002" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="1160.5000000000002" dy="17">- 1x Dual macuahuitl</tspan><tspan x="1160.5000000000002" dy="17">- 1x Blue moon spear</tspan><tspan x="1160.5000000000002" dy="17">- 1x Eclipse atlatl</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>Staff of the Old Ones: Chaos Fanatic / Mummies</title>
-      <rect x="1284.66666666667" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="1284.66666666667" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d" preserveAspectRatio="xMidYMid slice"/>
-      <image x="1384.83333333333" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="1400.83333333333" y="1691" class="tile-label"><tspan x="1400.83333333333" dy="0">Staff of the Old Ones</tspan></text>
-      <text x="1400.83333333333" y="1731" class="tile-boss">Chaos Fanatic / Mummies</text>
-      <text x="1400.83333333333" y="1756" class="tile-note"><tspan x="1400.83333333333" dy="0">- 1x Ancient Staff</tspan></text>
+      <title>Staff of the Old Ones: Chaos Fanatic / Ancient Pyramid mummies</title>
+      <rect x="1284.6666666666667" y="1621" width="232.33333333333334" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.6666666666667" y="1621" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Chaos_Fanatic.png?8871d" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.8333333333335" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_staff_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="1400.8333333333335" y="1691" class="tile-label"><tspan x="1400.8333333333335" dy="0">Staff of the Old Ones</tspan></text>
+      <text x="1400.8333333333335" y="1731" class="tile-boss">Chaos Fanatic / Ancient Pyramid mummies</text>
+      <text x="1400.8333333333335" y="1756" class="tile-note"><tspan x="1400.8333333333335" dy="0">- 1x Ancient Staff</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Buried Doom: Doom of Mokhaiotl</title>
       <rect x="83" y="1849" width="232.33333333333334" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
@@ -561,12 +561,12 @@
       <text x="1160.5" y="2212" class="tile-note"><tspan x="1160.5" dy="0">- 1x Aggy</tspan><tspan x="1160.5" dy="17" font-weight="700" fill="#f7e9c6">OR all of the following:</tspan><tspan x="1160.5" dy="17">- 1x Jar of Light</tspan><tspan x="1160.5" dy="17">- 1x Hallowfell</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Pharaoh&apos;s Curse: (1x Tumeken&apos;s shadow) OR (1x Lightbearer AND 1x any of (Masori mask OR Masori body OR Masori chaps) AND 1x any of (Elidinis&apos; ward OR Osmumten&apos;s fang))</title>
-      <rect x="1284.66666666667" y="2077" width="232.333333333333" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="1284.66666666667" y="2077" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Akkha.png" preserveAspectRatio="xMidYMid slice"/>
-      <image x="1384.83333333333" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tumeken's_shadow_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="1400.83333333333" y="2147" class="tile-label"><tspan x="1400.83333333333" dy="0">The Pharaoh&apos;s Curse</tspan></text>
-      <text x="1400.83333333333" y="2187" class="tile-boss">Akkha</text>
-      <text x="1400.83333333333" y="2212" class="tile-note"><tspan x="1400.83333333333" dy="0" font-size="12">- 1x Tumeken&apos;s shadow</tspan><tspan x="1400.83333333333" dy="14" font-size="12" font-weight="700" fill="#f7e9c6">OR all of the following:</tspan><tspan x="1400.83333333333" dy="14" font-size="12">- 1x Lightbearer</tspan><tspan x="1400.83333333333" dy="14" font-size="12">- 1x Masori piece</tspan><tspan x="1400.83333333333" dy="14" font-size="12">- 1x Weapon (Elidinis&apos; ward /</tspan><tspan x="1400.83333333333" dy="14" font-size="12">Fang)</tspan></text>
+      <rect x="1284.6666666666667" y="2077" width="232.33333333333334" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1284.6666666666667" y="2077" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Tombs_of_Amascut.png?f9992" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1384.8333333333335" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tumeken's_shadow_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="1400.8333333333335" y="2147" class="tile-label"><tspan x="1400.8333333333335" dy="0">The Pharaoh&apos;s Curse</tspan></text>
+      <text x="1400.8333333333335" y="2187" class="tile-boss">Tombs of Amascut</text>
+      <text x="1400.8333333333335" y="2212" class="tile-note"><tspan x="1400.8333333333335" dy="0" font-size="12">- 1x Tumeken&apos;s shadow</tspan><tspan x="1400.8333333333335" dy="14" font-size="12" font-weight="700" fill="#f7e9c6">OR all of the following:</tspan><tspan x="1400.8333333333335" dy="14" font-size="12">- 1x Lightbearer</tspan><tspan x="1400.8333333333335" dy="14" font-size="12">- 1x Masori piece</tspan><tspan x="1400.8333333333335" dy="14" font-size="12">- 1x Weapon (Elidinis&apos; ward /</tspan><tspan x="1400.8333333333335" dy="14" font-size="12">Fang)</tspan></text>
     </g></g>
 </svg>

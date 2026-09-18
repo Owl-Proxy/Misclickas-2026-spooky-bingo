@@ -122,6 +122,7 @@
       {
         "boss": "The Nightmare of Ashihama",
         "tile_name": "Dreams of Ashihama",
+        "requirements_note": "The Inquisitor armour requirement means any one Inquisitor's great helm, hauberk, or plateskirt, plus one Nightmare staff.",
         "tile_id": "dreams-of-ashihama",
         "completion_mode": "all",
         "target_quantity": 1,
@@ -131,6 +132,7 @@
       {
         "boss": "Theatre of Blood (ToB)",
         "tile_name": "The Blood Theatre",
+        "requirements_note": "Obtain these rewards from the Theatre of Blood reward chest in Normal or Hard Mode. Entry Mode cannot award these uniques.",
         "tile_id": "the-blood-theatre",
         "target_quantity": 1,
         "completion_paths": [
@@ -147,6 +149,7 @@
       {
         "boss": "Abyssal Sire",
         "tile_name": "Heart of the Abyss",
+        "requirements_note": "Obtain an Unsired from Abyssal Sire, and an abyssal whip and abyssal dagger by redeeming Unsired at the Font of Consumption. Capture the Unsired before redeeming it; both its drop and its reward may count toward their respective requirements.",
         "tile_id": "heart-of-the-abyss",
         "completion_mode": "all",
         "target_quantity": 1,
@@ -239,6 +242,7 @@
       {
         "boss": "Kril Tsutsaroth",
         "tile_name": "Demon in the Snow",
+        "requirements_note": "Zamorak spear refers to the Zamorakian spear dropped by K'ril Tsutsaroth.",
         "tile_id": "demon-in-the-snow",
         "completion_mode": "all",
         "target_quantity": 1,
@@ -302,10 +306,10 @@
       {
         "tile_name": "The Undertaker",
         "tile_id": "the-undertaker",
-        "subtitle": "Mort'ton pyre ships / shades",
+        "subtitle": "Mort'ton / Otto's Grotto",
         "target_quantity": 25,
         "sprite_item": "Pyre logs",
-        "challenge": "Cremate 25 shades in Mort'ton, or burn 25 Chewed bones to send their spirits onward."
+        "challenge": "Cremate 25 shades in Mort'ton, or burn 25 Chewed bones on pyre ships at Otto's Grotto."
       },
       {
         "tile_name": "Revenant Hunter",
@@ -337,7 +341,7 @@
         "subtitle": "Death's Office",
         "target_quantity": 1,
         "sprite_item": "Black cape",
-        "challenge": "Teleport to Death's Office and successfully claim a Grave / Death reclaim while wearing a black cape."
+        "challenge": "Visit Death's Office and successfully reclaim items from a grave or Death while wearing a black cape."
       }
     ],
     "dynamic_challenges": [
@@ -413,7 +417,7 @@
       "tile_name": "Staff of the Old Ones",
       "tile_id": "staff-of-the-old-ones",
         "completion_mode": "all",
-      "source": "Chaos Fanatic / Mummies",
+      "source": "Chaos Fanatic / Ancient Pyramid mummies",
       "spooky_lore": "A sinister, purple staff required to channel the dark magic of the Ancient Magicks spellbook."
     },
     {
@@ -428,7 +432,7 @@
       "spooky_lore": "Descend beneath Mokhaiotl and claim a relic from the ravenous demon waiting in the dark."
     },
     {
-      "item_name": "Bandos chestplate / Bandos tassets / Bandos godsword",
+      "item_name": "Bandos chestplate / Bandos tassets / Bandos hilt",
       "target_quantity": 1,
       "target_items": ["Bandos chestplate", "Bandos tassets", "Bandos Hilt"],
       "tile_name": "The General's War Spoils",
@@ -498,7 +502,7 @@
       "spooky_lore": "A terrifying, witch-doctor style tribal mask housing dark defensive spirits."
     },
     {
-      "item_name": "Granite hammer / Black tourmaline core / Granite ring / Guardian boots",
+      "item_name": "Granite hammer / Black tourmaline core / Granite ring",
       "target_quantity": 1,
       "target_items": ["Granite hammer", "Black tourmaline core", "Granite ring"],
       "tile_name": "The Grotesque Guardians",
@@ -513,6 +517,7 @@
       "target_quantity": 1,
       "target_items": ["Soulflame horn", "Oathplate armour", "Yama dossier"],
       "tile_name": "The Pact Devil",
+      "requirements_note": "Oathplate armour means any one Oathplate helm, chest, or legs dropped by Yama. Yama dossier refers to the item named Dossier. Obtain one armour piece, one Soulflame horn, and one Dossier.",
       "tile_id": "the-pact-devil",
         "completion_mode": "all",
       "sprite_item": "Soulflame horn",
@@ -562,7 +567,8 @@
       "tile_name": "The Pharaoh's Curse",
       "tile_id": "the-pharaoh-s-curse",
       "sprite_item": "Tumeken's shadow",
-      "source": "Akkha",
+      "source": "Tombs of Amascut",
+      "requirements_note": "These are end-of-raid rewards from Osmumten's burial chamber after completing Tombs of Amascut, not drops from Akkha alone.",
       "spooky_lore": "A cursed desert tomb filled with ancient guardians, scarabs, and the wrath of a forgotten god."
     }
   ]

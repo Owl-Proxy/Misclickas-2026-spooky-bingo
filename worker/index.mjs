@@ -4,11 +4,12 @@ import { buildTiles } from '../shared/bingo.mjs';
 import { GitHubStore, StorageBusyError } from './github.mjs';
 import { handleSignups } from './signups.mjs';
 import { ProgressCache } from './progress-cache.mjs';
+import { WiseOldMan, TrackingError, trackedTiles } from './wise-old-man.mjs';
 
 const MAX_IMAGE = 3 * 1024 * 1024;
 const MAX_BODY = Math.ceil(MAX_IMAGE * 4 / 3) + 16384;
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
-const tiles = buildTiles(event);
+const tiles = buildTiles(event).map(tile => ({ ...tile, trackingMetric: trackedTiles[tile.id]?.metric ?? null }));
 function checkBonusClaim(tile, submission, entries) {
   if (!tile?.bonus) return;
   const choice = tile.choices.find(choice => choice.id === submission.choiceId);
@@ -93,8 +94,9 @@ function present(data) {
   }) };
 }
 
-export function createApp(storeFactory = env => new GitHubStore(env), cacheOptions = {}) {
+export function createApp(storeFactory = env => new GitHubStore(env), cacheOptions = {}, trackingOptions = {}) {
   const progress = new ProgressCache(cacheOptions);
+  const tracking = new WiseOldMan(trackingOptions);
   const writes = new Map();
   async function write(env, operation) {
     // Serialise this isolate's branch writes. Other isolates still use SHA checks and backoff.
@@ -134,6 +136,13 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
           response = new Response(env.BOARD_SVG, { headers: { 'Content-Type': 'image/svg+xml', 'Content-Security-Policy': "script-src 'none'" } });
         }
         else if (path === '/config' && request.method === 'GET') response = json({ teams: config.teams, tiles, ready: ready(env), maxImageBytes: MAX_IMAGE, boardPublic });
+        else if (path.startsWith('/integrations/wise-old-man/') && request.method === 'GET') {
+          await authorize(request, env, 'reviewer', request.headers.get('X-Reviewer-Id') || '');
+          const match = path.match(/^\/integrations\/wise-old-man\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+          const trackingTeam = config.teams.find(t => t.id === match?.[1]);
+          if (!trackingTeam || !trackedTiles[match?.[2]]) fail(404, 'No tracked activity for this tile.');
+          response = json(await tracking.get(config.wiseOldManCompetitionId, trackingTeam, match[2]));
+        }
         else if (path === '/signups' || path.startsWith('/signups/')) {
           response = await handleSignups(request, env, path, config.teams, { authorize, limit, readJSON, text, json, fail });
         } else {
@@ -225,8 +234,8 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
         }
       }
     } catch (error) {
-      const retryAfter = error instanceof StorageBusyError ? error.retryAfter : error instanceof HttpError && error.status === 429 ? 60 : undefined;
-      response = json({ error: error instanceof HttpError || error instanceof StorageBusyError ? error.message : 'The submission service could not save or load this request. Please try again.', ...(retryAfter ? { retryAfter } : {}) }, error instanceof HttpError ? error.status : error instanceof StorageBusyError ? 503 : 502);
+      const retryAfter = error instanceof StorageBusyError || error instanceof TrackingError ? error.retryAfter : error instanceof HttpError && error.status === 429 ? 60 : undefined;
+      response = json({ error: error instanceof HttpError || error instanceof StorageBusyError || error instanceof TrackingError ? error.message : 'The submission service could not save or load this request. Please try again.', ...(retryAfter ? { retryAfter } : {}) }, error instanceof HttpError ? error.status : error instanceof StorageBusyError || error instanceof TrackingError ? 503 : 502);
       if (retryAfter) response.headers.set('Retry-After', String(retryAfter));
     }
     response.headers.set('Cache-Control', 'no-store');

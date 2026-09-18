@@ -1,5 +1,6 @@
 import { tileProgress, summary } from '../shared/bingo.mjs';
 import { uploadWithRetries } from './upload-retry.mjs';
+import { renderTrackingCheck, clearTrackingChecks } from './wise-old-man.mjs';
 
 const $ = selector => document.querySelector(selector);
 const node = (tag, text, className) => { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el; };
@@ -177,6 +178,13 @@ function renderRequirements(target, tile) {
     target.append(card, node('p', 'An organiser confirms when this tile’s requirements are met.', 'muted'));
     if (loaded && progress.approved) target.append(node('p', `Approved evidence: ${tile.choices.map(c => `${progress.counts[c.id] || 0} × ${c.label}`).join(' · ')}`, 'muted'));
   }
+  if (reviewer && tile.trackingMetric) {
+    const teamId = team.id, tileId = tile.id, auth = reviewer;
+    renderTrackingCheck(target, { teamId, tileId,
+      player: target.closest('#review-dialog') ? selectedSubmission?.player : null,
+      load: () => api(`/integrations/wise-old-man/${teamId}/${tileId}`, undefined, auth)
+    });
+  }
 }
 function openTile(tile) {
   if (!team) return;
@@ -281,6 +289,7 @@ $('#reviewer-login').onclick = () => {
   if (reviewer) {
     stopUpload();
     reviewer = null; session.set('bingo-reviewer', null);
+    clearTrackingChecks();
     if (!boardPublic) {
       document.querySelector('#board-app').remove();
       if (boardURL) URL.revokeObjectURL(boardURL);

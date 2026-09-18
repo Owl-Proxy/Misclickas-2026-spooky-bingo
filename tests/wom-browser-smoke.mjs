@@ -1,0 +1,40 @@
+// Run with tests/preview-server.mjs and local headless Chrome on port 9333.
+import assert from 'node:assert/strict';
+import { writeFile } from 'node:fs/promises';
+import { codes } from './helpers.mjs';
+const tab = await (await fetch('http://127.0.0.1:9333/json/new?http%3A%2F%2Flocalhost%3A4173%2F%3Fteam%3Dvampire',{method:'PUT'})).json();
+const socket = new WebSocket(tab.webSocketDebuggerUrl);
+await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
+let id=0; const pending=new Map(), errors=[];
+socket.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result);}if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);};
+const send=(method,params={})=>new Promise((resolve,reject)=>{const n=++id;pending.set(n,{resolve,reject});socket.send(JSON.stringify({id:n,method,params}));});
+const run=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+const until=async expression=>{for(let n=0;n<100;n++){if(await run(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error('Timed out: '+expression);};
+const sample={competitionId:156506,competitionUrl:'https://wiseoldman.net/competitions/156506',startsAt:'2026-10-01T16:00:00Z',endsAt:'2026-11-01T03:59:00Z',fetchedAt:'2026-10-10T12:00:00Z',phase:'active',teamId:'vampire',teamName:'Team Vampire',tileId:'the-crypt-keeper',label:'Barrows chests',target:50,total:25,knownTotal:25,missingPlayers:0,players:[{username:'vampire one',displayName:'Vampire One',start:100,end:125,gained:25,updatedAt:'2026-10-10T11:00:00Z'}]};
+try {
+  await send('Runtime.enable'); await send('Page.enable');
+  await send('Emulation.setDeviceMetricsOverride',{width:1200,height:1000,deviceScaleFactor:1,mobile:false});
+  await until(`document.querySelector('#board').contentDocument?.querySelector('g.tile[role=button]')`);
+  await run(`window.womResponse=${JSON.stringify(sample)}; window.womFail=false; window.womCalls=0;
+    const originalFetch=window.fetch.bind(window);window.fetch=(url,options)=>{if(String(url).includes('/integrations/wise-old-man/')){window.womCalls++;return Promise.resolve(Response.json(window.womFail?{error:'Wise Old Man unavailable',retryAfter:60}:window.womResponse,{status:window.womFail?503:200}));}return originalFetch(url,options);};
+    [...document.querySelector('#board').contentDocument.querySelectorAll('g.tile')].find(g=>g.querySelector('title').textContent.startsWith('The Crypt Keeper:')).dispatchEvent(new MouseEvent('click'));`);
+  assert.equal(await run(`document.querySelectorAll('.tracking-check').length`),0);
+  await run(`document.querySelector('#tile-dialog').close();document.querySelector('#reviewer-login').click();document.querySelector('#login-form [name=reviewerId]').value='organiser';document.querySelector('#login-form [name=code]').value=${JSON.stringify(codes.reviewer)};document.querySelector('#login-form').requestSubmit();`);
+  await until(`document.querySelector('#reviewer-login').textContent.includes('Sign out')`);
+  await run(`[...document.querySelector('#board').contentDocument.querySelectorAll('g.tile')].find(g=>g.querySelector('title').textContent.startsWith('The Crypt Keeper:')).dispatchEvent(new MouseEvent('click'));document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('25 barrows chests gained')`);
+  assert.match(await run(`document.querySelector('#score').textContent`),/0 \/ 52/);
+  assert.match(await run(`document.querySelector('.tracking-check').textContent`),/100 → 125/);
+  await writeFile('test-results/wom-cross-check.png',Buffer.from((await send('Page.captureScreenshot',{format:'png'})).data,'base64'));
+  await run(`window.womResponse.phase='upcoming';window.womResponse.total=null;window.womResponse.players[0].gained=null;document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('has not started')`);
+  await run(`window.womResponse.phase='active';window.womResponse.missingPlayers=1;window.womResponse.knownTotal=0;document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('not a complete team total')`);
+  await run(`window.womFail=true;document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('Wise Old Man unavailable')`);
+  assert.equal(await run(`document.querySelector('.tracking-check').textContent.includes('25 barrows chests gained')`),false);
+  await run(`document.querySelector('#tile-dialog').close();document.querySelector('#reviewer-login').click();`);
+  assert.equal(await run(`document.querySelectorAll('.tracking-check').length`),0);
+  assert.deepEqual(errors,[]);
+  console.log('PASS: reviewer-only check, team totals, upcoming/missing states, outage, and unchanged bingo score.');
+} finally { await send('Page.close');socket.close(); }
