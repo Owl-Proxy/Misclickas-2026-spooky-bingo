@@ -562,7 +562,7 @@
     </g>    <g class="tile" tabindex="0">
       <title>The Pharaoh&apos;s Curse: (1x Tumeken&apos;s shadow) OR (1x Lightbearer AND 1x any of (Masori mask OR Masori body OR Masori chaps) AND 1x any of (Elidinis&apos; ward OR Osmumten&apos;s fang))</title>
       <rect x="1284.6666666666667" y="2077" width="232.33333333333334" height="220" rx="4" fill="url(#tile-relic)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="1284.6666666666667" y="2077" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Tombs_of_Amascut.png?f9992" preserveAspectRatio="xMidYMid slice"/>
+      <image class="tile-backdrop" x="1284.6666666666667" y="2077" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Akkha.png" preserveAspectRatio="xMidYMid slice"/>
       <image x="1384.8333333333335" y="2083" width="32" height="32" href="https://oldschool.runescape.wiki/images/Tumeken's_shadow_detail.png" preserveAspectRatio="xMidYMid meet"/>
 
       <text x="1400.8333333333335" y="2147" class="tile-label"><tspan x="1400.8333333333335" dy="0">The Pharaoh&apos;s Curse</tspan></text>

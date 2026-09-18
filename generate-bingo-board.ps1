@@ -158,6 +158,7 @@ function Get-Activity-Image([string]$Title, [string]$Subtitle, [string]$Source) 
     'Yama' = 'https://oldschool.runescape.wiki/images/Yama.png?7653a'
     'Maggot King' = 'https://oldschool.runescape.wiki/images/Maggot_King.png?a6790'
     'Mad Angel' = 'https://oldschool.runescape.wiki/images/Mad_Angel.webp?c7990'
+    'The Pharaoh''s Curse' = 'https://oldschool.runescape.wiki/images/Akkha.png'
     'Tombs of Amascut' = 'https://oldschool.runescape.wiki/images/Tombs_of_Amascut.png?f9992'
     'Akkha' = 'https://oldschool.runescape.wiki/images/Akkha.png'
   }
