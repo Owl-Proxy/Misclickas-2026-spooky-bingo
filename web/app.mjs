@@ -180,7 +180,7 @@ function renderRequirements(target, tile) {
   }
   // Pages and the Worker deploy independently. Older catalogs lack trackingMetric;
   // stable tile IDs keep the panel visible so an endpoint error can be explained.
-  if (reviewer && (tile.trackingMetric || ['the-crypt-keeper', 'fists-of-fury', 'the-hungry-chest'].includes(tile.id))) {
+  if (reviewer && (tile.trackingMetric || ['the-crypt-keeper', 'fists-of-fury', 'the-hungry-chest', 'bone-collector'].includes(tile.id))) {
     const teamId = team.id, tileId = tile.id, auth = reviewer;
     renderTrackingCheck(target, { teamId, tileId,
       player: target.closest('#review-dialog') ? selectedSubmission?.player : null,

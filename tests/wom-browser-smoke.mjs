@@ -51,10 +51,15 @@ try {
   assert.equal(await run(`document.querySelector('.tracking-check').textContent.includes('25 barrows chests gained')`),false);
   await run(`window.womFail=false;window.womMissing=true;document.querySelector('.tracking-check button').click();`);
   await until(`document.querySelector('.tracking-check').textContent.includes('deploy the latest Worker')`);
-  for (const title of ['Fists of Fury', 'The Hungry Chest', 'The Voice in the Dark']) {
+  for (const title of ['Fists of Fury', 'The Hungry Chest', 'The Voice in the Dark', 'Bone Collector']) {
     await run(`document.querySelector('#tile-dialog').close();[...document.querySelector('#board').contentDocument.querySelectorAll('g.tile')].find(g=>g.querySelector('title').textContent.startsWith(${JSON.stringify(title+':')})).dispatchEvent(new MouseEvent('click'));`);
     assert.equal(await run(`Boolean(document.querySelector('#requirements .tracking-check'))`),title !== 'The Voice in the Dark');
   }
+  await run(`window.womMissing=false;window.womResponse=${JSON.stringify({...sample,tileId:'bone-collector',metric:'prayer',label:'Prayer XP',target:null,total:25200,knownTotal:25200,players:[{...sample.players[0],start:100000,end:125200,gained:25200}],note:'Prayer XP includes all sources. XP alone does not complete this tile.'})};document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('25200 Prayer XP gained')`);
+  assert.equal(await run(`document.querySelector('.tracking-check').textContent.includes('Tile target:')`),false);
+  assert.match(await run(`document.querySelector('.tracking-check').textContent`),/XP alone does not complete/);
+  assert.match(await run(`document.querySelector('#score').textContent`),/0 \/ 52/);
   await run(`document.querySelector('#tile-dialog').close();document.querySelector('#reviewer-login').click();`);
   assert.equal(await run(`document.querySelectorAll('.tracking-check').length`),0);
   assert.deepEqual(errors,[]);

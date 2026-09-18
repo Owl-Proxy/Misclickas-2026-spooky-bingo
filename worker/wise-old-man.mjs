@@ -4,7 +4,9 @@ export const trackedTiles = {
   'fists-of-fury': { metric: 'barrows_chests', label: 'Barrows chests', target: 3,
     note: 'These counts include all Barrows chests. Screenshots or a recording must still establish that the three claimed chests were completed without equipped weapons.' },
   'the-hungry-chest': { metric: 'mimic', label: 'Mimic completions', target: 10,
-    note: 'Counts support the ten-completion route only. The rare-reward route still requires drop evidence.' }
+    note: 'Counts support the ten-completion route only. The rare-reward route still requires drop evidence.' },
+  'bone-collector': { metric: 'prayer', label: 'Prayer XP', target: null,
+    note: 'Prayer XP includes all sources during the competition. It cannot confirm the bone type, number of offerings, or use of the Chaos Altar. Screenshots or a recording must still support offering 100 dragon bones or better at the Chaos Altar; XP alone does not complete this tile.' }
 };
 
 export class TrackingError extends Error {
@@ -68,7 +70,7 @@ export class WiseOldMan {
   async load(id) {
     try {
       const transport = this.transport;
-      const response = await transport(`https://api.wiseoldman.net/v2/competitions/${id}?metrics=barrows_chests&metrics=mimic`, {
+      const response = await transport(`https://api.wiseoldman.net/v2/competitions/${id}?metrics=barrows_chests&metrics=mimic&metrics=prayer`, {
         headers: { Accept: 'application/json', 'User-Agent': 'Misclickas-Spooky-Bingo/1.0' }, signal: AbortSignal.timeout(10000)
       });
       if (!response.ok) {

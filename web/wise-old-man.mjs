@@ -16,12 +16,13 @@ export function renderTrackingCheck(target, { teamId, tileId, player, load }) {
   panel.append(button, status, result); target.append(panel);
   const show = data => {
     result.replaceChildren();
+    const gainLabel = data.metric === 'prayer' ? 'Prayer XP' : data.label.toLowerCase();
     const link = element('a', 'Open competition'); link.href = data.competitionUrl; link.target = '_blank'; link.rel = 'noopener';
     result.append(link, element('p', `Event: ${when(data.startsAt)} – ${when(data.endsAt)} (your local time).`));
     if (data.phase === 'upcoming') result.append(element('p', 'The competition has not started. Event gains are not available yet.'));
     else if (!data.players.length) result.append(element('p', `No players are assigned to ${data.teamName} in this competition. Check the Wise Old Man team roster.`));
-    else if (data.total === null) result.append(element('p', `${data.knownTotal} known ${data.label.toLowerCase()} gained; ${data.missingPlayers} player(s) have missing or unranked starting/ending counts. This is not a complete team total.`));
-    else result.append(element('p', `${data.teamName}: ${data.total} ${data.label.toLowerCase()} gained during the competition. Tile target: ${data.target}.`));
+    else if (data.total === null) result.append(element('p', `${data.knownTotal} known ${gainLabel} gained; ${data.missingPlayers} player(s) have missing or unranked starting/ending counts. This is not a complete team total.`));
+    else result.append(element('p', `${data.teamName}: ${data.total} ${gainLabel} gained during the competition.${data.target == null ? '' : ` Tile target: ${data.target}.`}`));
     if (data.phase === 'ended') result.append(element('p', 'The competition has ended. Check that participants saved a final update before the cutoff.'));
     const normalize = name => String(name || '').replaceAll('_',' ').trim().toLowerCase();
     if (player && !data.players.some(p => normalize(p.username) === normalize(player))) {
