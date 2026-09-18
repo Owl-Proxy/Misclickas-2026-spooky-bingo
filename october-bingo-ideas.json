@@ -81,7 +81,8 @@
         "completion_mode": "all",
         "target_quantity": 1,
         "spooky_vibe": "A massive, purple demonic entity summoned deep within the dark, crystalline Catacombs of Kourend.",
-        "target_drops": ["Dark claw", "Uncut onyx", "Ancient shard"]
+        "requirements_note": "The Dark totem must be obtained as a complete drop from Skotizo. Totems assembled from separate pieces do not count.",
+        "target_drops": ["Dark claw", "Dark totem", "Ancient shard"]
       },
       {
         "boss": "Temple Trekking",
@@ -316,6 +317,11 @@
         "tile_id": "revenant-hunter",
         "subtitle": "Revenants",
         "target_quantity": 1,
+        "completion_paths": [
+          { "all_of": [{ "label": "Ancient emblem", "quantity": 1 }] },
+          { "all_of": [{ "label": "Ancient totem", "quantity": 1 }] },
+          { "all_of": [{ "label": "Ancient statuette", "quantity": 1 }] }
+        ],
         "sprite_item": "Ancient emblem",
         "challenge": "Obtain 1 Ancient Emblem, 1 Ancient Totem, or 1 Ancient Statuette from the Revenants."
       },
@@ -374,10 +380,10 @@
       {
         "tile_name": "Zombie Apocalypse",
         "tile_id": "zombie-apocalypse",
-        "subtitle": "Pest Control / raid room",
+        "subtitle": "Pest Control",
         "target_quantity": 1,
         "sprite_item": "Zombie mask",
-        "rule": "Win a Pest Control game while every participant wears a zombie-themed outfit, or complete a raid room with everyone poisoned at the finish."
+        "rule": "Win a Pest Control game while every participant wears a zombie-themed outfit."
       },
       {
         "tile_name": "Spooky Scary Skeletons",

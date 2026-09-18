@@ -153,7 +153,7 @@
 
       <text x="439.50000000000006" y="551" class="tile-label"><tspan x="439.50000000000006" dy="0">The Purple Portal</tspan></text>
       <text x="439.50000000000006" y="591" class="tile-boss">Skotizo</text>
-      <text x="439.50000000000006" y="616" class="tile-note"><tspan x="439.50000000000006" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="439.50000000000006" dy="17">- 1x Dark claw</tspan><tspan x="439.50000000000006" dy="17">- 1x Uncut onyx</tspan><tspan x="439.50000000000006" dy="17">- 1x Ancient shard</tspan></text>
+      <text x="439.50000000000006" y="616" class="tile-note"><tspan x="439.50000000000006" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="439.50000000000006" dy="17">- 1x Dark claw</tspan><tspan x="439.50000000000006" dy="17">- 1x Dark totem</tspan><tspan x="439.50000000000006" dy="17">- 1x Ancient shard</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Through the Vampire Mist: 1 qualifying drop(s) required</title>
       <rect x="563.6666666666667" y="481" width="232.33333333333334" height="220" rx="4" fill="url(#tile-haunted)" stroke="#6e4b3c" stroke-width="2"/>
@@ -353,14 +353,14 @@
       <text x="1400.8333333333335" y="1275" class="tile-boss">Mort&apos;ton / Otto&apos;s Grotto</text>
       <text x="1400.8333333333335" y="1300" class="tile-note"><tspan x="1400.8333333333335" dy="0">- Cremate 25 shades in</tspan><tspan x="1400.8333333333335" dy="17">Mort&apos;ton, or burn 25 Chewed</tspan><tspan x="1400.8333333333335" dy="17">bones on pyre ships at Otto&apos;s</tspan><tspan x="1400.8333333333335" dy="17">Grotto.</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>Revenant Hunter: Obtain 1 Ancient Emblem, 1 Ancient Totem, or 1 Ancient Statuette from the Revenants.</title>
-      <rect x="83" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="83" y="1393" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1" preserveAspectRatio="xMidYMid slice"/>
-      <image x="183.166666666667" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_emblem_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="199.166666666667" y="1463" class="tile-label"><tspan x="199.166666666667" dy="0">Revenant Hunter</tspan></text>
-      <text x="199.166666666667" y="1503" class="tile-boss">Revenants</text>
-      <text x="199.166666666667" y="1528" class="tile-note"><tspan x="199.166666666667" dy="0">- Obtain 1 Ancient Emblem, 1</tspan><tspan x="199.166666666667" dy="17">Ancient Totem, or 1 Ancient</tspan><tspan x="199.166666666667" dy="17">Statuette from the Revenants.</tspan></text>
+      <title>Revenant Hunter: (1x Ancient emblem) OR (1x Ancient totem) OR (1x Ancient statuette)</title>
+      <rect x="83" y="1393" width="232.33333333333334" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="83" y="1393" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Fighting_revenant_dragon.png?380e1" preserveAspectRatio="xMidYMid slice"/>
+      <image x="183.16666666666669" y="1399" width="32" height="32" href="https://oldschool.runescape.wiki/images/Ancient_emblem_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="199.16666666666669" y="1463" class="tile-label"><tspan x="199.16666666666669" dy="0">Revenant Hunter</tspan></text>
+      <text x="199.16666666666669" y="1503" class="tile-boss">Revenants</text>
+      <text x="199.16666666666669" y="1528" class="tile-note"><tspan x="199.16666666666669" dy="0">- 1x Ancient emblem</tspan><tspan x="199.16666666666669" dy="17" font-weight="700" fill="#f7e9c6">OR</tspan><tspan x="199.16666666666669" dy="17">- 1x Ancient totem</tspan><tspan x="199.16666666666669" dy="17" font-weight="700" fill="#f7e9c6">OR</tspan><tspan x="199.16666666666669" dy="17">- 1x Ancient statuette</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Bone Collector: Offer 100 dragon bones or better at the Chaos Altar.</title>
       <rect x="323.333333333333" y="1393" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
@@ -416,14 +416,14 @@
       <text x="199.16666666666669" y="1731" class="tile-boss">Boss / raid unique drop</text>
       <text x="199.16666666666669" y="1756" class="tile-note"><tspan x="199.16666666666669" dy="0">- Listed board drop, 12 AM to</tspan><tspan x="199.16666666666669" dy="17">1 AM</tspan><tspan x="199.16666666666669" dy="17">- 1 bonus point per board tile</tspan><tspan x="199.16666666666669" dy="17">- Complete or incomplete tiles</tspan><tspan x="199.16666666666669" dy="17">count</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>Zombie Apocalypse: Win a Pest Control game while every participant wears a zombie-themed outfit, or complete a raid room with everyone poisoned at the finish.</title>
-      <rect x="323.333333333333" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="323.333333333333" y="1621" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Pest_Control.png?ed7bb" preserveAspectRatio="xMidYMid slice"/>
-      <image x="423.5" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Zombie_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="439.5" y="1691" class="tile-label"><tspan x="439.5" dy="0">Zombie Apocalypse</tspan></text>
-      <text x="439.5" y="1731" class="tile-boss">Pest Control / raid room</text>
-      <text x="439.5" y="1756" class="tile-note"><tspan x="439.5" dy="0">- Win a Pest Control game</tspan><tspan x="439.5" dy="17">while every participant wears</tspan><tspan x="439.5" dy="17">a zombie-themed outfit, or</tspan><tspan x="439.5" dy="17">complete a raid room with</tspan><tspan x="439.5" dy="17">everyone poisoned at the</tspan><tspan x="439.5" dy="17">finish.</tspan></text>
+      <title>Zombie Apocalypse: Win a Pest Control game while every participant wears a zombie-themed outfit.</title>
+      <rect x="323.33333333333337" y="1621" width="232.33333333333334" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.33333333333337" y="1621" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Pest_Control.png?ed7bb" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.50000000000006" y="1627" width="32" height="32" href="https://oldschool.runescape.wiki/images/Zombie_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="439.50000000000006" y="1691" class="tile-label"><tspan x="439.50000000000006" dy="0">Zombie Apocalypse</tspan></text>
+      <text x="439.50000000000006" y="1731" class="tile-boss">Pest Control</text>
+      <text x="439.50000000000006" y="1756" class="tile-note"><tspan x="439.50000000000006" dy="0">- Win a Pest Control game</tspan><tspan x="439.50000000000006" dy="17">while every participant wears</tspan><tspan x="439.50000000000006" dy="17">a zombie-themed outfit.</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>Spooky Scary Skeletons: Complete a Barrows chest or raid room while every participant wears a visible skeleton-themed item.</title>
       <rect x="563.666666666667" y="1621" width="232.333333333333" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>

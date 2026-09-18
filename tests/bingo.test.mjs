@@ -97,6 +97,22 @@ test('Exorcist needs both sets; Hungry Chest accepts either ten completions or o
   assert.equal(bonus.choices.some(c => c.id === 'the-hungry-chest--mimic-completions'), false);
   assert.equal(bonus.choices.some(c => c.id === 'the-hungry-chest--rare-clue-table-reward'), true);
 });
+test('Revenant Hunter tracks each alternative and completes with any one approved drop', () => {
+  const t = tile('revenant-hunter');
+  const labels = ['Ancient emblem', 'Ancient totem', 'Ancient statuette'];
+  assert.deepEqual(t.choices.map(c => c.label), labels);
+  for (const [index, label] of labels.entries()) {
+    for (const status of ['pending', 'rejected', 'approved']) {
+      const progress = tileProgress(t, evidence(t.id, [label], status));
+      assert.equal(progress.complete, status === 'approved');
+      assert.deepEqual(progress.paths.map(p => p[0].current), labels.map((_, i) => i === index && status === 'approved' ? 1 : 0));
+    }
+  }
+  assert.equal(tileProgress(t, [{tileId:t.id,choiceId:'activity-progress',quantity:1,status:'approved',completesTile:true}]).complete, false);
+  const bonus = tile('the-witching-hour');
+  for (const label of labels) assert.ok(bonus.choices.some(c => c.id === `${t.id}--${slug(label)}`));
+});
+
 test('organiser-confirmed activities require an approved completion decision', () => {
   const t = tile('fists-of-fury'), drops = evidence(t.id, ['Activity progress']);
   assert.equal(tileProgress(t, drops).complete, false);
