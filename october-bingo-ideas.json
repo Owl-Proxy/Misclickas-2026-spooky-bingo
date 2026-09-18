@@ -99,12 +99,12 @@
         "tile_name": "The Hungry Chest",
         "tile_id": "the-hungry-chest",
         "completion_paths": [
-          { "all_of": [{ "label": "Mimic completions", "quantity": 10 }] },
+          { "all_of": [{ "label": "Mimic completions", "quantity": 5 }] },
           { "all_of": [{ "label": "Rare clue-table reward", "quantity": 1 }] }
         ],
         "bonus_excluded_choices": ["Mimic completions"],
-        "target_quantity": 10,
-        "target_requirements": ["10 Mimic completions", "1 rare reward from the clue reward table"],
+        "target_quantity": 5,
+        "target_requirements": ["5 Mimic completions", "1 rare reward from the clue reward table"],
         "sprite_item": "3rd age platebody",
         "spooky_vibe": "A classic fantasy horror trope—a seemingly innocent treasure chest that sprouts teeth and tries to eat you alive.",
         "target_drops": ["Mimic completions", "Rare clue-table reward"]
@@ -275,10 +275,10 @@
       {
         "tile_name": "Spooky Wardrobe",
         "tile_id": "spooky-wardrobe",
-        "subtitle": "Halloween event / Skeleton outfit",
+        "subtitle": "Halloween event",
         "target_quantity": 1,
         "sprite_item": "Skeleton mask",
-        "challenge": "Complete the Halloween Holiday Event, or equip 1 full Skeleton outfit and earn 1 qualifying drop."
+        "challenge": "Complete the Halloween holiday event."
       },
       {
         "tile_name": "The Exorcist",
@@ -302,7 +302,7 @@
         "subtitle": "Sarachnis",
         "target_quantity": 1,
         "sprite_item": "Sarachnis cudgel",
-        "challenge": "Defeat Sarachnis and obtain 1 Sarachnis cudgel"
+        "challenge": "Obtain 1 Sarachnis cudgel."
       },
       {
         "tile_name": "The Undertaker",

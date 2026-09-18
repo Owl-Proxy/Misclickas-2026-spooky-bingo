@@ -3,8 +3,8 @@ export const trackedTiles = {
   'the-crypt-keeper': { metric: 'barrows_chests', label: 'Barrows chests', target: 50 },
   'fists-of-fury': { metric: 'barrows_chests', label: 'Barrows chests', target: 3,
     note: 'These counts include all Barrows chests. Screenshots or a recording must still establish that the three claimed chests were completed without equipped weapons.' },
-  'the-hungry-chest': { metric: 'mimic', label: 'Mimic completions', target: 10,
-    note: 'Counts support the ten-completion route only. The rare-reward route still requires drop evidence.' },
+  'the-hungry-chest': { metric: 'mimic', label: 'Mimic completions', target: 5,
+    note: 'Counts support the five-completion route only. The rare-reward route still requires drop evidence.' },
   'bone-collector': { metric: 'prayer', label: 'Prayer XP', target: null,
     note: 'Prayer XP includes all sources during the competition. It cannot confirm the bone type, number of offerings, or use of the Chaos Altar. Screenshots or a recording must still support offering 100 dragon bones or better at the Chaos Altar; XP alone does not complete this tile.' }
 };

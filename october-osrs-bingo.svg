@@ -164,14 +164,14 @@
       <text x="679.8333333333334" y="591" class="tile-boss">Temple Trekking</text>
       <text x="679.8333333333334" y="616" class="tile-note"><tspan x="679.8333333333334" dy="0" font-weight="700" fill="#f7e9c6">All of the following:</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack hat</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack top</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack legs</tspan><tspan x="679.8333333333334" dy="17">- 1x Lumberjack boots</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>The Hungry Chest: (10x Mimic completions) OR (1x Rare clue-table reward)</title>
+      <title>The Hungry Chest: (5x Mimic completions) OR (1x Rare clue-table reward)</title>
       <rect x="804" y="481" width="232.33333333333334" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>
       <image class="tile-backdrop" x="804" y="481" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/The_Mimic.png?b45f4" preserveAspectRatio="xMidYMid slice"/>
       <image x="904.1666666666666" y="487" width="32" height="32" href="https://oldschool.runescape.wiki/images/3rd_Age_platebody_detail.png" preserveAspectRatio="xMidYMid meet"/>
 
       <text x="920.1666666666666" y="551" class="tile-label"><tspan x="920.1666666666666" dy="0">The Hungry Chest</tspan></text>
       <text x="920.1666666666666" y="591" class="tile-boss">The Mimic</text>
-      <text x="920.1666666666666" y="616" class="tile-note"><tspan x="920.1666666666666" dy="0">- 10x Mimic completions</tspan><tspan x="920.1666666666666" dy="17" font-weight="700" fill="#f7e9c6">OR</tspan><tspan x="920.1666666666666" dy="17">- 1x Rare clue-table reward</tspan></text>
+      <text x="920.1666666666666" y="616" class="tile-note"><tspan x="920.1666666666666" dy="0">- 5x Mimic completions</tspan><tspan x="920.1666666666666" dy="17" font-weight="700" fill="#f7e9c6">OR</tspan><tspan x="920.1666666666666" dy="17">- 1x Rare clue-table reward</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Wilderness Warlock: 1 qualifying drop(s) required</title>
       <rect x="1044.3333333333335" y="481" width="232.33333333333334" height="220" rx="4" fill="url(#tile-infernal)" stroke="#6e4b3c" stroke-width="2"/>
@@ -308,14 +308,14 @@
       <text x="199.166666666667" y="1275" class="tile-boss">Stronghold of Security</text>
       <text x="199.166666666667" y="1300" class="tile-note"><tspan x="199.166666666667" dy="0">- Obtain a Skull sceptre from</tspan><tspan x="199.166666666667" dy="17">the Stronghold of Security.</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>Spooky Wardrobe: Complete the Halloween Holiday Event, or equip 1 full Skeleton outfit and earn 1 qualifying drop.</title>
-      <rect x="323.333333333333" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="323.333333333333" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Ghostly_robes_equipped_male.png?bf960" preserveAspectRatio="xMidYMid slice"/>
-      <image x="423.5" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="439.5" y="1235" class="tile-label"><tspan x="439.5" dy="0">Spooky Wardrobe</tspan></text>
-      <text x="439.5" y="1275" class="tile-boss">Halloween event / Skeleton outfit</text>
-      <text x="439.5" y="1300" class="tile-note"><tspan x="439.5" dy="0">- Complete the Halloween</tspan><tspan x="439.5" dy="17">Holiday Event, or equip 1 full</tspan><tspan x="439.5" dy="17">Skeleton outfit and earn 1</tspan><tspan x="439.5" dy="17">qualifying drop.</tspan></text>
+      <title>Spooky Wardrobe: Complete the Halloween holiday event.</title>
+      <rect x="323.33333333333337" y="1165" width="232.33333333333334" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="323.33333333333337" y="1165" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Ghostly_robes_equipped_male.png?bf960" preserveAspectRatio="xMidYMid slice"/>
+      <image x="423.50000000000006" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Skeleton_mask_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="439.50000000000006" y="1235" class="tile-label"><tspan x="439.50000000000006" dy="0">Spooky Wardrobe</tspan></text>
+      <text x="439.50000000000006" y="1275" class="tile-boss">Halloween event</text>
+      <text x="439.50000000000006" y="1300" class="tile-note"><tspan x="439.50000000000006" dy="0">- Complete the Halloween</tspan><tspan x="439.50000000000006" dy="17">holiday event.</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Exorcist: (5x Venator shards AND 3x Ancient icons)</title>
       <rect x="563.6666666666667" y="1165" width="232.33333333333334" height="220" rx="4" fill="url(#tile-spectral)" stroke="#6e4b3c" stroke-width="2"/>
@@ -335,14 +335,14 @@
       
       <text x="920.166666666667" y="1268" class="tile-note"><tspan x="920.166666666667" dy="0">BOO!</tspan></text>
     </g>    <g class="tile" tabindex="0">
-      <title>Arachnophobia: Defeat Sarachnis and obtain 1 Sarachnis cudgel</title>
-      <rect x="1044.33333333333" y="1165" width="232.333333333333" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
-      <image class="tile-backdrop" x="1044.33333333333" y="1165" width="232.333333333333" height="220" href="https://oldschool.runescape.wiki/images/Sarachnis.png?8f040" preserveAspectRatio="xMidYMid slice"/>
-      <image x="1144.5" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Sarachnis_cudgel_detail.png" preserveAspectRatio="xMidYMid meet"/>
-      
-      <text x="1160.5" y="1235" class="tile-label"><tspan x="1160.5" dy="0">Arachnophobia</tspan></text>
-      <text x="1160.5" y="1275" class="tile-boss">Sarachnis</text>
-      <text x="1160.5" y="1300" class="tile-note"><tspan x="1160.5" dy="0">- Defeat Sarachnis and obtain</tspan><tspan x="1160.5" dy="17">1 Sarachnis cudgel</tspan></text>
+      <title>Arachnophobia: Obtain 1 Sarachnis cudgel.</title>
+      <rect x="1044.3333333333335" y="1165" width="232.33333333333334" height="220" rx="4" fill="url(#tile-swamp)" stroke="#6e4b3c" stroke-width="2"/>
+      <image class="tile-backdrop" x="1044.3333333333335" y="1165" width="232.33333333333334" height="220" href="https://oldschool.runescape.wiki/images/Sarachnis.png?8f040" preserveAspectRatio="xMidYMid slice"/>
+      <image x="1144.5000000000002" y="1171" width="32" height="32" href="https://oldschool.runescape.wiki/images/Sarachnis_cudgel_detail.png" preserveAspectRatio="xMidYMid meet"/>
+
+      <text x="1160.5000000000002" y="1235" class="tile-label"><tspan x="1160.5000000000002" dy="0">Arachnophobia</tspan></text>
+      <text x="1160.5000000000002" y="1275" class="tile-boss">Sarachnis</text>
+      <text x="1160.5000000000002" y="1300" class="tile-note"><tspan x="1160.5000000000002" dy="0">- Obtain 1 Sarachnis cudgel.</tspan></text>
     </g>    <g class="tile" tabindex="0">
       <title>The Undertaker: Cremate 25 shades in Mort&apos;ton, or burn 25 Chewed bones on pyre ships at Otto&apos;s Grotto.</title>
       <rect x="1284.6666666666667" y="1165" width="232.33333333333334" height="220" rx="4" fill="url(#tile-crypt)" stroke="#6e4b3c" stroke-width="2"/>

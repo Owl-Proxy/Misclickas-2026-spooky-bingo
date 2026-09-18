@@ -80,7 +80,7 @@ test('counted drops accumulate across screenshots and only finish at the thresho
   }
 });
 
-test('Exorcist needs both sets; Hungry Chest accepts either ten completions or one rare reward', () => {
+test('Exorcist needs both sets; Hungry Chest accepts either five completions or one rare reward', () => {
   const t = tile('the-exorcist');
   const shards = { tileId: t.id, choiceId: 'venator-shards', quantity: 5, status: 'approved' };
   const icons = { tileId: t.id, choiceId: 'ancient-icons', quantity: 3, status: 'approved' };
@@ -90,8 +90,8 @@ test('Exorcist needs both sets; Hungry Chest accepts either ten completions or o
   assert.equal(tileProgress(t, [shards, icons]).complete, true);
   assert.equal(tileProgress(t, [{ tileId: t.id, choiceId: 'activity-progress', quantity: 10, status: 'approved', completesTile: true }]).complete, false);
   const mimic = tile('the-hungry-chest');
-  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 9, status: 'approved' }]).complete, false);
-  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 10, status: 'approved' }]).complete, true);
+  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 4, status: 'approved' }]).complete, false);
+  assert.equal(tileProgress(mimic, [{ tileId: mimic.id, choiceId: 'mimic-completions', quantity: 5, status: 'approved' }]).complete, true);
   assert.equal(tileProgress(mimic, evidence(mimic.id, ['Rare clue-table reward'])).complete, true);
   const bonus = tile('the-witching-hour');
   assert.equal(bonus.choices.some(c => c.id === 'the-hungry-chest--mimic-completions'), false);
@@ -146,7 +146,7 @@ test('Grave Robber tracks one of each sceptre component while retaining its boar
 
 test('Arachnophobia tracks one approved Sarachnis cudgel', () => {
   const t = tile('arachnophobia');
-  assert.equal(t.description, 'Defeat Sarachnis and obtain 1 Sarachnis cudgel');
+  assert.equal(t.description, 'Obtain 1 Sarachnis cudgel.');
   assert.deepEqual(t.choices.map(c => c.label), ['Sarachnis cudgel']);
   assert.equal(t.paths[0][0].quantity, 1);
   const drops = evidence(t.id, ['Sarachnis cudgel']);

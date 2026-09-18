@@ -39,6 +39,7 @@ test('Bone Collector shows only Prayer XP, without interpreting XP as bone offer
 test('WOM uses the requested metric and team, never overall XP or the other team', () => {
   assert.equal(view(sampleCompetition()).total,25);
   assert.equal(view(sampleCompetition(),'the-hungry-chest').total,2);
+  assert.equal(view(sampleCompetition(),'the-hungry-chest').target,5);
   assert.match(view(sampleCompetition(),'fists-of-fury').note,/without equipped weapons/);
   assert.equal(view(sampleCompetition()).players.length,1);
   assert.equal(view(sampleCompetition(),'the-crypt-keeper',Date.parse('2026-09-20')).total,null);
