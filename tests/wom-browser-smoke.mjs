@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
 import { codes } from './helpers.mjs';
-const tab = await (await fetch('http://127.0.0.1:9333/json/new?http%3A%2F%2Flocalhost%3A4173%2F%3Fteam%3Dvampire',{method:'PUT'})).json();
+const tab = await (await fetch('http://127.0.0.1:9333/json/new?about:blank',{method:'PUT'})).json();
 const socket = new WebSocket(tab.webSocketDebuggerUrl);
 await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
 let id=0; const pending=new Map(), errors=[];
@@ -13,10 +13,26 @@ const until=async expression=>{for(let n=0;n<100;n++){if(await run(expression))r
 const sample={competitionId:156506,competitionUrl:'https://wiseoldman.net/competitions/156506',startsAt:'2026-10-01T16:00:00Z',endsAt:'2026-11-01T03:59:00Z',fetchedAt:'2026-10-10T12:00:00Z',phase:'active',teamId:'vampire',teamName:'Team Vampire',tileId:'the-crypt-keeper',label:'Barrows chests',target:50,total:25,knownTotal:25,missingPlayers:0,players:[{username:'vampire one',displayName:'Vampire One',start:100,end:125,gained:25,updatedAt:'2026-10-10T11:00:00Z'}]};
 try {
   await send('Runtime.enable'); await send('Page.enable');
+  // Reproduce Pages running newer code than the Worker's tile catalog.
+  if (process.env.WOM_LEGACY_CATALOG === '1') await send('Page.addScriptToEvaluateOnNewDocument', { source: `
+    const nativeFetch = window.fetch.bind(window);
+    window.fetch = async (...args) => {
+      const response = await nativeFetch(...args);
+      if (String(args[0]).endsWith('/config') && response.ok) {
+        const data = await response.json();
+        data.tiles.forEach(tile => delete tile.trackingMetric);
+        window.legacyWOMCatalogUsed = true;
+        return Response.json(data);
+      }
+      return response;
+    };
+  ` });
+  await send('Page.navigate', { url: 'http://localhost:4173/?team=vampire' });
   await send('Emulation.setDeviceMetricsOverride',{width:1200,height:1000,deviceScaleFactor:1,mobile:false});
   await until(`document.querySelector('#board').contentDocument?.querySelector('g.tile[role=button]')`);
-  await run(`window.womResponse=${JSON.stringify(sample)}; window.womFail=false; window.womCalls=0;
-    const originalFetch=window.fetch.bind(window);window.fetch=(url,options)=>{if(String(url).includes('/integrations/wise-old-man/')){window.womCalls++;return Promise.resolve(Response.json(window.womFail?{error:'Wise Old Man unavailable',retryAfter:60}:window.womResponse,{status:window.womFail?503:200}));}return originalFetch(url,options);};
+  if (process.env.WOM_LEGACY_CATALOG === '1') assert.equal(await run('window.legacyWOMCatalogUsed'), true);
+  await run(`window.womResponse=${JSON.stringify(sample)}; window.womFail=false; window.womMissing=false; window.womCalls=0;
+    const originalFetch=window.fetch.bind(window);window.fetch=(url,options)=>{if(String(url).includes('/integrations/wise-old-man/')){window.womCalls++;return Promise.resolve(Response.json(window.womMissing?{error:'Not found.'}:window.womFail?{error:'Wise Old Man unavailable',retryAfter:60}:window.womResponse,{status:window.womMissing?404:window.womFail?503:200}));}return originalFetch(url,options);};
     [...document.querySelector('#board').contentDocument.querySelectorAll('g.tile')].find(g=>g.querySelector('title').textContent.startsWith('The Crypt Keeper:')).dispatchEvent(new MouseEvent('click'));`);
   assert.equal(await run(`document.querySelectorAll('.tracking-check').length`),0);
   await run(`document.querySelector('#tile-dialog').close();document.querySelector('#reviewer-login').click();document.querySelector('#login-form [name=reviewerId]').value='organiser';document.querySelector('#login-form [name=code]').value=${JSON.stringify(codes.reviewer)};document.querySelector('#login-form').requestSubmit();`);
@@ -33,6 +49,12 @@ try {
   await run(`window.womFail=true;document.querySelector('.tracking-check button').click();`);
   await until(`document.querySelector('.tracking-check').textContent.includes('Wise Old Man unavailable')`);
   assert.equal(await run(`document.querySelector('.tracking-check').textContent.includes('25 barrows chests gained')`),false);
+  await run(`window.womFail=false;window.womMissing=true;document.querySelector('.tracking-check button').click();`);
+  await until(`document.querySelector('.tracking-check').textContent.includes('deploy the latest Worker')`);
+  for (const title of ['Fists of Fury', 'The Hungry Chest', 'The Voice in the Dark']) {
+    await run(`document.querySelector('#tile-dialog').close();[...document.querySelector('#board').contentDocument.querySelectorAll('g.tile')].find(g=>g.querySelector('title').textContent.startsWith(${JSON.stringify(title+':')})).dispatchEvent(new MouseEvent('click'));`);
+    assert.equal(await run(`Boolean(document.querySelector('#requirements .tracking-check'))`),title !== 'The Voice in the Dark');
+  }
   await run(`document.querySelector('#tile-dialog').close();document.querySelector('#reviewer-login').click();`);
   assert.equal(await run(`document.querySelectorAll('.tracking-check').length`),0);
   assert.deepEqual(errors,[]);

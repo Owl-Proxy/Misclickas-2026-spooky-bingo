@@ -178,11 +178,19 @@ function renderRequirements(target, tile) {
     target.append(card, node('p', 'An organiser confirms when this tile’s requirements are met.', 'muted'));
     if (loaded && progress.approved) target.append(node('p', `Approved evidence: ${tile.choices.map(c => `${progress.counts[c.id] || 0} × ${c.label}`).join(' · ')}`, 'muted'));
   }
-  if (reviewer && tile.trackingMetric) {
+  // Pages and the Worker deploy independently. Older catalogs lack trackingMetric;
+  // stable tile IDs keep the panel visible so an endpoint error can be explained.
+  if (reviewer && (tile.trackingMetric || ['the-crypt-keeper', 'fists-of-fury', 'the-hungry-chest'].includes(tile.id))) {
     const teamId = team.id, tileId = tile.id, auth = reviewer;
     renderTrackingCheck(target, { teamId, tileId,
       player: target.closest('#review-dialog') ? selectedSubmission?.player : null,
-      load: () => api(`/integrations/wise-old-man/${teamId}/${tileId}`, undefined, auth)
+      load: async () => {
+        try { return await api(`/integrations/wise-old-man/${teamId}/${tileId}`, undefined, auth); }
+        catch (error) {
+          if (error.status === 404) throw new Error('The submission service does not have the Wise Old Man update yet. Ask the organiser to deploy the latest Worker, then check again.');
+          throw error;
+        }
+      }
     });
   }
 }
