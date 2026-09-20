@@ -36,7 +36,26 @@ The browser now also has bounded automatic retries, described in [SETUP.md](SETU
 
 The actual local `workerd` runtime was tested with HTTP requests and the real Cache API. Its GitHub transport was redirected to a loopback-only server. A burst of 75 viewer requests needed two upstream reads, and all 20 simultaneous uploads saved with no write conflicts. This verifies request-context compatibility for caching and write coordination; it does not reproduce Cloudflare's production CPU limits or worldwide routing.
 
-## Changes made
+## First-time browser loads — September 20, 2026
+
+Ran the actual website in Chrome 153 using separate empty browser contexts with browser caching disabled. All tabs were prepared first, then navigated concurrently. The local server ran the real board-status, configuration, SVG, and team-progress Worker routes with in-memory test storage. Team Vampire had one approved test entry; Team Werewolf had none, so each session had to display its correct team total. The live event was not contacted or modified.
+
+| Scenario | Result | Slowest local completion |
+| --- | --- | --- |
+| 1 first-time visitor, revealed board | Passed | 0.60 seconds |
+| 30 simultaneous first-time visitors, revealed board | 30/30 passed | 8.44 seconds |
+| 40 simultaneous first-time visitors, revealed board | 40/40 passed | 13.56 seconds |
+| 40 simultaneous visitors, unrevealed board | 40/40 showed the gate; no tile catalog or board image requests | 1.35 seconds |
+
+Each revealed-board session loaded all 54 interactive SVG tiles, showed the expected team score, and opened The Hungry Chest with the current five-completion requirement. There were no recorded API errors, JavaScript exceptions, or failed network requests. No page needed a reload. The test blocked submission writes and verified that its fixture data was unchanged. Screenshots were captured and the 30-session screenshot was visually checked.
+
+The board's 87 external Wiki image URLs all returned image responses successfully when fetched once for the test. Those actual image files were then mirrored locally, with the SVG's image URLs rewritten only in the test service. The 40-session run served 3,480 image requests, rather than sending that burst to the Wiki. Embedded SVG images were also retained. The production board was not changed.
+
+**Limits:** these are browser rendering and startup checks on one computer, not 40 physical devices or a Cloudflare/GitHub production benchmark. Local rendering contention affects the timings, while local storage and mirrored images remove internet latency and upstream throttling. The timings are not predicted participant wait times. This test does not measure concurrent uploads, automatic upload retries, large submission archives, reviewer login bursts, or resilience to a real service outage. Together with the earlier backend load simulations, the results support the expected 30–40-person turnout without guaranteeing that an initial load can never fail.
+
+Reproduce with headless Chrome listening on `127.0.0.1:9333`, then run `node tests/board-load-browser.mjs`. The script starts and stops its own local service on port 4175 and closes every browser context it creates. It downloads each external image at most once into ignored `test-results/board-load-images/`; subsequent runs reuse those files. Results are saved as `test-results/board-browser-load.json`, with screenshots named `board-load-1.png`, `board-load-30.png`, and `board-load-40.png` in the same directory.
+
+## Implementation changes
 
 - Cache the read-only team progress response for 20 seconds using Cloudflare's built-in Cache API. Share concurrent reads within an instance. Cache failures fall back to GitHub.
 - Keep the board access check ahead of cache reads. Cached replies never bypass the organiser gate, and client responses remain `no-store`.

@@ -96,7 +96,7 @@ async function refresh() {
     if (current !== generation || sequence !== refreshSequence) return;
     if (data.teamId !== id) throw new Error('The service returned the wrong team. Please refresh.');
     submissions = data.submissions.filter(s => s.teamId === id); loaded = true;
-    message('#service-status', `Progress as of ${new Date(data.updatedAt || Date.now()).toLocaleTimeString()}. Updates can take about 20 seconds. Only approved evidence counts.`);
+    message('#service-status', `Progress as of ${new Date(data.updatedAt || Date.now()).toLocaleTimeString()}. Auto-refreshes every minute; cached results can be up to 20 seconds old. Only approved evidence counts.`);
     render();
   } catch (error) {
     if (error.retryAfter) refreshNotBefore = Date.now() + error.retryAfter * 1000;
@@ -409,7 +409,7 @@ $('#refresh').onclick = refresh; $('#history-filter').onchange = render;
 $('#tile-select').onchange = event => { const tile = tiles.find(t => t.id === event.target.value); if (tile) openTile(tile); event.target.value = ''; };
 $('#board').addEventListener('load', renderBoard);
 window.addEventListener('popstate', () => { if (settings) selectTeam(); });
-setInterval(() => { if (!document.hidden && !document.querySelector('dialog[open]')) refresh(); }, 30000);
+setInterval(() => { if (!document.hidden && !document.querySelector('dialog[open]')) refresh(); }, 60000);
 export async function start(initial) {
     settings = initial.settings;
     const service = initial.service;
