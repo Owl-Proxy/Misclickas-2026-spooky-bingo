@@ -105,6 +105,8 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ### Live captain draft
 
+**Try it first:** open `draft.html?practice=1`, or choose **Try a practice draft** on the draft sign-in page. This uses 36 sample players with no sign-in required. Choose captains and an order, then switch between organiser and either captain using **Try the view as**. You can make picks, pause, resume and undo. Practice makes no Worker requests and changes no real signups, team assignments, payment records or draft state. Everything stays in memory in that tab; **Reset practice draft**, reloading or closing the page discards it. Tabs do not share practice picks. Leave practice using its link when ready to sign in to the real draft. Publishing practice mode needs only a website commit/push, provided the main draft setup below is already deployed.
+
 `draft.html` is a separate page alongside signup and roster. It shows signup participants, searchable by OSRS or Discord name, the unpicked pool, both teams, the current turn, and pick history. It does not load the bingo board or reveal its tiles. Names are available only after captain or organiser sign-in. Captains use the existing `TEAM_CODES` for Vampire or Werewolf; keep those codes with the captains until the draft finishes, since anyone holding one can make that team's picks. Organisers use the existing reviewer ID and code. No additional secrets are needed.
 
 **Deploy in this order:**

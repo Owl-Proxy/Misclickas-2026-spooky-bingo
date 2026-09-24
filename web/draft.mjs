@@ -1,9 +1,13 @@
+import {createPracticeDraft} from './draft-practice.mjs';
+const practice=new URLSearchParams(location.search).get('practice')==='1';
+let practiceRequest=practice?createPracticeDraft():null;
 const $ = selector => document.querySelector(selector);
 const el = (tag,text,className) => { const node=document.createElement(tag); if(text!==undefined) node.textContent=text; if(className) node.className=className; return node; };
 let account=null, data=null, busy=false, refreshing=false, fresh=false, pendingAction=null, latestKey='', setupKey='', actionError='';
-const config=fetch('site-config.json',{cache:'no-store'}).then(r=>{if(!r.ok) throw Error('Could not load the site settings. Refresh to try again.');return r.json();});
+const config=practice?null:fetch('site-config.json',{cache:'no-store'}).then(r=>{if(!r.ok) throw Error('Could not load the site settings. Refresh to try again.');return r.json();});
 const message=(text,error=false)=>{ $('#draft-message').textContent=text; $('#draft-message').classList.toggle('error',error); };
 async function api(path,body,identity=account) {
+  if(practice)return practiceRequest(path,body,identity);
   const settings=await config;
   const response=await fetch(settings.apiBaseUrl.replace(/\/$/,'')+path,{method:body===undefined?'GET':'POST',cache:'no-store',signal:AbortSignal.timeout(20000),
     headers:{...(body===undefined?{}:{'Content-Type':'application/json'}),Authorization:`Bearer ${identity.code}`,
@@ -44,14 +48,14 @@ function renderSetup() {
 function render() {
   if(!account||!data) return;
   const state=data.state, organiser=account.role==='reviewer', waiting=state.status==='waiting';
-  $('#login-panel').hidden=true;$('#draft-room').hidden=false;$('#roster-link').hidden=!organiser;
+  $('#login-panel').hidden=true;$('#draft-room').hidden=false;$('#roster-link').hidden=practice||!organiser;
   $('#identity').textContent=organiser?'Organiser · You can manage picks for either team':`${teamName(account.id)} · Captain`;
   $('#draft-setup').hidden=!organiser||!waiting; if(waiting&&organiser) renderSetup();
   $('#start-draft').disabled=busy||!fresh||data.players.length<2;
   $('#pick-number').textContent=waiting?'THE CAPTAINS ARE GATHERING':`${state.mode==='snake'?'Snake':'Alternating'} draft · ${state.status==='complete'?state.pickCount+' picks made':'Pick '+(state.pickCount+1)}`;
   $('#turn-title').textContent=waiting?'Awaiting the first pick':state.status==='complete'?'The teams are chosen':state.status==='paused'?'The draft is paused':`${teamName(data.nextTeam)} is choosing`;
   $('#turn-banner').dataset.team=data.nextTeam||'';
-  $('#turn-help').textContent=!fresh?'Connection interrupted. Refresh to confirm the current turn.':waiting?'An organiser will choose the captains, draft order, and first team.':state.status==='complete'?'Team assignments are saved in the roster.':state.status==='paused'?'An organiser can resume when everyone is ready.':canPick()?'Your pick is ready. Choose a player below.':'Watch the picks appear here. Your turn is coming.';
+  $('#turn-help').textContent=!fresh?'Connection interrupted. Refresh to confirm the current turn.':waiting?'An organiser will choose the captains, draft order, and first team.':state.status==='complete'?(practice?'Practice complete. Your real roster is unchanged.':'Team assignments are saved in the roster.'):state.status==='paused'?'An organiser can resume when everyone is ready.':canPick()?'Your pick is ready. Choose a player below.':'Watch the picks appear here. Your turn is coming.';
   $('#organiser-controls').hidden=!organiser||waiting;
   $('#pause-draft').textContent=state.status==='paused'?'Resume draft':'Pause draft';
   $('#pause-draft').disabled=busy||!fresh||state.status==='complete';$('#undo-pick').disabled=busy||!fresh||!data.picks.length;
@@ -105,4 +109,14 @@ $('#player-search').oninput=render;$('#refresh').onclick=refresh;$('#signout').o
 async function poll() {try{if(!document.hidden&&!busy)await refresh();}finally{setTimeout(poll,data?.state.status==='complete'?60000:5000);}}
 setTimeout(poll,5000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
-try {const saved=JSON.parse(sessionStorage.getItem('bingo-draft'));if(saved&&['captain','reviewer'].includes(saved.role)&&saved.id&&saved.code){account=saved;refresh();}}catch{}
+if(practice) {
+  document.title='Practice draft · Misclickas Spooky Bingo';
+  $('#practice-panel').hidden=false;$('#signout').hidden=true;
+  $('#draft-footer').textContent='Practice only: sample players and picks stay in this tab’s memory. Refreshing or closing the page discards them. Other tabs and the real roster are unaffected.';
+  const changeView=()=>{const role=$('#practice-role').value;account={role:role==='reviewer'?'reviewer':'captain',id:role==='reviewer'?'practice':role};refresh();};
+  $('#practice-role').onchange=changeView;
+  $('#practice-reset').onclick=()=>confirmAction('Reset practice draft?','All practice picks will be discarded. The real draft and roster are unaffected.',()=>{practiceRequest=createPracticeDraft();actionError='';setupKey='';$('#player-search').value='';$('#practice-role').value='reviewer';changeView();});
+  changeView();
+} else {
+  try {const saved=JSON.parse(sessionStorage.getItem('bingo-draft'));if(saved&&['captain','reviewer'].includes(saved.role)&&saved.id&&saved.code){account=saved;refresh();}}catch{}
+}

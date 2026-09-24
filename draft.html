@@ -13,6 +13,12 @@
       <h1>The midnight <span>draft</span></h1><p class="muted">Two captains. Two creatures of the night. Choose your team.</p></div>
     <img class="draft-lantern" src="assets/spooky-pumpkin-lantern.png" alt="" width="110" height="120">
   </header>
+  <section id="practice-panel" class="panel" hidden>
+    <h2>Practice mode — nothing is saved</h2>
+    <p>Try the draft with 36 sample players. Real signups, team assignments and draft picks are untouched. Refresh this page to start over.</p>
+    <label for="practice-role">Try the view as</label><select id="practice-role"><option value="reviewer">Organiser</option><option value="vampire">Team Vampire captain</option><option value="werewolf">Team Werewolf captain</option></select>
+    <div class="draft-toolbar"><button id="practice-reset" class="secondary">Reset practice draft</button><a href="draft.html">Leave practice and open real draft sign-in</a></div>
+  </section>
   <section id="login-panel" class="panel">
     <h2>Enter the draft</h2>
     <p class="muted">Captains use their team’s existing access code. Organisers use their reviewer credentials.</p>
@@ -23,6 +29,7 @@
       <label for="access-code">Access code</label><input id="access-code" type="password" required autocomplete="current-password">
       <button>Enter draft</button>
     </form>
+    <p><a href="draft.html?practice=1">Try a practice draft — no sign-in or saved changes</a></p>
   </section>
   <p id="draft-message" class="message" role="status" aria-live="polite"></p>
   <section id="draft-room" hidden>
@@ -48,7 +55,7 @@
     </div>
     <section id="late-panel" class="panel" hidden><h2>Signed up after the draft started</h2><p class="muted">These players are outside the current draft pool. An organiser can assign them on the roster after the draft finishes.</p><ul id="late-list"></ul></section>
     <section class="draft-history"><h2>The picks so far</h2><ol id="pick-history"></ol></section>
-    <p class="field-help">Updates every five seconds while the draft is live and this page is visible; once per minute after completion. Team assignments are shared with the roster. Discord roles are assigned separately by organisers.</p>
+    <p id="draft-footer" class="field-help">Updates every five seconds while the draft is live and this page is visible; once per minute after completion. Team assignments are shared with the roster. Discord roles are assigned separately by organisers.</p>
   </section>
   <dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-copy"></p><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="confirm-action" value="confirm">Confirm</button></div></form></dialog>
 </main></body></html>

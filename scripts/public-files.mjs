@@ -1,7 +1,7 @@
 // Deliberate allowlist: board artwork, tile JSON, source docs and promotions stay out of Pages.
 export const publicFiles = [
   'index.html', 'signup.html', 'roster.html', 'draft.html', 'site-config.json', '.nojekyll',
-  'web/draft.mjs', 'web/draft.css',
+  'web/draft.mjs', 'web/draft.css', 'web/draft-practice.mjs',
   'web/style.css', 'web/app.mjs', 'web/board-gate.mjs', 'web/upload-retry.mjs',
   'web/wise-old-man.mjs',
   'web/signup.css', 'web/signup.mjs', 'web/signup-api.mjs', 'web/roster.mjs',
