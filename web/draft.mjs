@@ -95,12 +95,20 @@ async function refresh() {
   catch(error) {if(account!==current)return;fresh=false;if(error.status===401)signout();else render();message(error.message,true);}
   finally {refreshing=false;}
 }
-function signout() {account=null;data=null;fresh=false;latestKey='';setupKey='';pendingAction=null;$('#confirm-dialog').close();try{sessionStorage.removeItem('bingo-draft');}catch{}$('#draft-room').hidden=true;$('#login-panel').hidden=false;for(const id of ['player-pool','vampire-roster','werewolf-roster','pick-history','late-list','vampire-captain','werewolf-captain'])$('#'+id).replaceChildren();$('#latest-pick').textContent='';$('#identity').textContent='';$('#confirm-title').textContent='';$('#confirm-copy').textContent='';$('#draft-login').reset();$('#reviewer-field').hidden=true;message('Signed out.');}
-$('#login-role').onchange=()=>{$('#reviewer-field').hidden=$('#login-role').value!=='reviewer';$('#reviewer-id').required=!$('#reviewer-field').hidden;};
+function signout() {account=null;data=null;fresh=false;latestKey='';setupKey='';pendingAction=null;$('#confirm-dialog').close();try{sessionStorage.removeItem('bingo-draft');}catch{}$('#draft-room').hidden=true;$('#login-panel').hidden=false;for(const id of ['player-pool','vampire-roster','werewolf-roster','pick-history','late-list','vampire-captain','werewolf-captain'])$('#'+id).replaceChildren();$('#latest-pick').textContent='';$('#identity').textContent='';$('#confirm-title').textContent='';$('#confirm-copy').textContent='';$('#draft-login').reset();syncLoginRole();message('Signed out.');}
+function syncLoginRole() {
+  const reviewer=$('#login-role').value==='reviewer';
+  $('#reviewer-field').hidden=!reviewer;
+  $('#reviewer-id').required=reviewer;
+  $('#reviewer-id').disabled=!reviewer;
+}
+$('#login-role').onchange=syncLoginRole;
+window.addEventListener('pageshow',syncLoginRole);
+syncLoginRole();
 $('#draft-login').onsubmit=async event=>{
-  event.preventDefault();const button=event.submitter;button.disabled=true;
+  event.preventDefault();const button=event.submitter||$('#draft-login button');button.disabled=true;button.textContent='Signing in...';message('Checking your access code...');
   const role=$('#login-role').value;const candidate={role:role==='reviewer'?'reviewer':'captain',id:role==='reviewer'?$('#reviewer-id').value.trim():role,code:$('#access-code').value.trim()};
-  try{await api('/draft/auth',{role:candidate.role,id:candidate.id},candidate);account=candidate;actionError='';try{sessionStorage.setItem('bingo-draft',JSON.stringify(candidate));}catch{}$('#access-code').value='';await refresh();}catch(error){message(error.message,true);}finally{button.disabled=false;}
+  try{await api('/draft/auth',{role:candidate.role,id:candidate.id},candidate);account=candidate;actionError='';try{sessionStorage.setItem('bingo-draft',JSON.stringify(candidate));}catch{}$('#access-code').value='';await refresh();}catch(error){message(error.message,true);}finally{button.disabled=false;button.textContent='Enter draft';}
 };
 $('#setup-form').onsubmit=event=>{event.preventDefault();const body={revision:data.state.revision,mode:$('#draft-mode').value,firstTeam:$('#first-team').value,vampireCaptainId:$('#vampire-captain').value,werewolfCaptainId:$('#werewolf-captain').value};confirmAction('Begin the draft?',`${playerName(body.vampireCaptainId)} leads Vampire; ${playerName(body.werewolfCaptainId)} leads Werewolf. ${teamName(body.firstTeam)} picks first. ${data.players.length} signed-up players will be included.`,()=>mutate('/draft/start',body));};
 $('#pause-draft').onclick=()=>mutate(data.state.status==='paused'?'/draft/resume':'/draft/pause',{revision:data.state.revision});
