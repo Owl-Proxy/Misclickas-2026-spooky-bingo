@@ -3,6 +3,7 @@ import config from '../site-config.json' with { type: 'json' };
 import { buildTiles } from '../shared/bingo.mjs';
 import { GitHubStore, StorageBusyError } from './github.mjs';
 import { handleSignups } from './signups.mjs';
+import { handleDraft } from './draft.mjs';
 import { ProgressCache } from './progress-cache.mjs';
 import { WiseOldMan, TrackingError, trackedTiles } from './wise-old-man.mjs';
 
@@ -143,6 +144,9 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
           if (!trackingTeam || !trackedTiles[match?.[2]]) fail(404, 'No tracked activity for this tile.');
           response = json(await tracking.get(config.wiseOldManCompetitionId, trackingTeam, match[2]));
         }
+        else if (path === '/draft' || path.startsWith('/draft/')) {
+          response = await handleDraft(request, env, path, config.teams, { authorize, limit, readJSON, text, json, fail });
+        }
         else if (path === '/signups' || path.startsWith('/signups/')) {
           response = await handleSignups(request, env, path, config.teams, { authorize, limit, readJSON, text, json, fail });
         } else {
@@ -243,7 +247,7 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
     response.headers.set('Vary', 'Origin');
     if (origin && allowed.includes(origin)) response.headers.set('Access-Control-Allow-Origin', origin);
     response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Reviewer-Id, X-Board-Reviewer-Id, X-Board-Code');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Reviewer-Id, X-Board-Reviewer-Id, X-Board-Code, X-Draft-Team');
     return response;
   } };
 }

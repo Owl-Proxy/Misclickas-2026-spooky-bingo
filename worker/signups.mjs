@@ -33,7 +33,8 @@ export async function handleSignups(request, env, path, teams, { authorize, limi
   const reviewer = await authorize(request, env, 'reviewer', request.headers.get('X-Reviewer-Id') || '');
   if (path === '/signups' && request.method === 'GET') {
     const { results } = await db.prepare('SELECT id, player, discord, team_id, role_assigned, paid_entry_fee, created_at, revision FROM signups ORDER BY created_at, id').all();
-    return json({ signups: results, teams, open });
+    const draft = await db.prepare('SELECT status FROM draft_state WHERE id = 1').all();
+    return json({ signups: results, teams, open, draftStatus: draft.results[0]?.status || 'waiting' });
   }
   const match = path.match(/^\/signups\/([a-f0-9-]{36})$/);
   if (match && request.method === 'POST') {
@@ -44,9 +45,10 @@ export async function handleSignups(request, env, path, teams, { authorize, limi
     if (!Number.isInteger(body.revision) || body.revision < 0) fail(400, 'Refresh the roster before saving.');
     // Older roster tabs omit paidEntryFee; preserve the saved value in that case.
     const result = await db.prepare(`UPDATE signups SET team_id = ?, role_assigned = ?, paid_entry_fee = COALESCE(?, paid_entry_fee), revision = revision + 1,
-      updated_by = ?, updated_at = ? WHERE id = ? AND revision = ?`)
-      .bind(body.teamId, Number(body.roleAssigned), body.paidEntryFee === undefined ? null : Number(body.paidEntryFee), reviewer.id, new Date().toISOString(), match[1], body.revision).run();
-    if (!result.meta.changes) fail(409, 'This entry changed or no longer exists. Refresh the roster before saving.');
+      updated_by = ?, updated_at = ? WHERE id = ? AND revision = ?
+      AND (team_id = ? OR NOT EXISTS (SELECT 1 FROM draft_state WHERE status IN ('active','paused')))`)
+      .bind(body.teamId, Number(body.roleAssigned), body.paidEntryFee === undefined ? null : Number(body.paidEntryFee), reviewer.id, new Date().toISOString(), match[1], body.revision, body.teamId).run();
+    if (!result.meta.changes) fail(409, 'This entry changed, or team assignments are locked during the draft. Refresh the roster; make draft picks on the draft page.');
     return json({ revision: body.revision + 1 });
   }
   fail(404, 'Not found.');

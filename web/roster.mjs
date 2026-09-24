@@ -1,10 +1,10 @@
 import { api, message } from './signup-api.mjs';
 const $ = selector => document.querySelector(selector);
-let account = null, entries = [], teams = [];
+let account = null, entries = [], teams = [], draftStatus = 'waiting', dirty = false, refreshing = false, saving = false;
 const status = $('#roster-message');
 const node = (tag, text, className) => { const element = document.createElement(tag); if (text) element.textContent = text; if (className) element.className = className; return element; };
 function signout() {
-  account = null; entries = []; teams = [];
+  account = null; entries = []; teams = []; dirty = false;
   $('#roster').replaceChildren(); $('#roster-panel').hidden = true; $('#login-panel').hidden = false;
   $('#login-form').reset(); $('#search').value = ''; $('#roster-count').textContent = ''; message(status, 'Signed out.');
 }
@@ -21,6 +21,7 @@ function render() {
     select.id = `team-${entry.id}`; label.htmlFor = select.id;
     for (const team of [{ id: '', name: 'Unassigned' }, ...teams]) { const option = node('option', team.name); option.value = team.id; select.append(option); }
     select.value = entry.team_id;
+    select.disabled = ['active','paused'].includes(draftStatus);
     const checkLabel = node('label', '', 'check'), check = node('input'); check.type = 'checkbox'; check.checked = Boolean(entry.role_assigned); check.disabled = !select.value;
     check.name = 'roleAssigned';
     checkLabel.append(check, node('span', 'Discord role assigned'));
@@ -33,24 +34,29 @@ function render() {
     form.append(label, select, checkLabel, paidLabel, button, feedback); card.append(form); $('#roster').append(card);
     if (paid.disabled) message(feedback, 'Entry fee tracking is unavailable until the updated submission service is deployed.', true);
     form.addEventListener('submit', async event => {
-      event.preventDefault(); button.disabled = true; message(feedback, 'Saving…');
+      event.preventDefault(); button.disabled = true; saving = true; message(feedback, 'Saving…');
       const teamId = select.value, roleAssigned = check.checked, paidEntryFee = paid.checked, currentAccount = account;
       try {
         const saved = await api(`/signups/${entry.id}`, { teamId, roleAssigned, ...(paid.disabled ? {} : { paidEntryFee }), revision: entry.revision }, currentAccount);
         if (account !== currentAccount) return;
         Object.assign(entry, { team_id: teamId, role_assigned: Number(roleAssigned), ...(paid.disabled ? {} : { paid_entry_fee: Number(paidEntryFee) }), revision: saved.revision });
-        render(); message(status, `Saved changes for ${entry.player}.`);
+        dirty = false; render(); message(status, `Saved changes for ${entry.player}.`);
       } catch (error) { message(feedback, error.message, true); button.disabled = false; }
+      finally { saving = false; }
     });
   }
 }
-async function refresh() {
+async function refresh(automatic = false) {
+  if (refreshing || saving || (automatic && dirty)) return;
+  refreshing = true;
   const currentAccount = account;
+  try {
   const data = await api('/signups', undefined, currentAccount);
-  if (account !== currentAccount) return;
-  entries = data.signups; teams = data.teams; render();
+  if (account !== currentAccount || (automatic && dirty)) return;
+  entries = data.signups; teams = data.teams; draftStatus = data.draftStatus || 'waiting'; dirty = false; render();
   $('#login-panel').hidden = true; $('#roster-panel').hidden = false;
-  message(status, data.open ? 'Signups are open.' : 'Signups are closed.');
+  message(status, (data.open ? 'Signups are open.' : 'Signups are closed.') + (['active','paused'].includes(draftStatus) ? ' Live draft in progress: team assignments update automatically. Make picks on the draft page; payment and Discord-role checkboxes remain editable.' : ''));
+  } finally { refreshing = false; }
 }
 $('#login-form').addEventListener('submit', async event => {
   event.preventDefault(); const button = event.submitter; button.disabled = true;
@@ -64,6 +70,8 @@ $('#login-form').addEventListener('submit', async event => {
 $('#refresh').addEventListener('click', () => refresh().catch(error => { signout(); message(status, error.message, true); }));
 $('#search').addEventListener('input', render);
 $('#signout').addEventListener('click', signout);
+$('#roster').addEventListener('input', () => { dirty = true; });
+setInterval(() => { if (account && !document.hidden && !dirty && !saving) refresh(true).catch(error => message(status, error.message, true)); }, 10000);
 // Keep codes and private names in memory only; refresh or sign-out clears the session.
 $('#export').addEventListener('click', () => {
   const cell = value => { let text = String(value ?? ''); if (/^[\s]*[=+@-]/.test(text)) text = "'" + text; return '"' + text.replaceAll('"', '""') + '"'; };

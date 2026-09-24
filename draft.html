@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#140c0b">
+  <title>The midnight draft · Misclickas Spooky Bingo</title>
+  <link rel="stylesheet" href="web/signup.css"><link rel="stylesheet" href="web/draft.css">
+  <script type="module" src="web/draft.mjs"></script>
+</head>
+<body><main class="draft-layout">
+  <header class="draft-header">
+    <div><p class="eyebrow">MISCLICKAS SPOOKY BINGO · OCTOBER 2026</p>
+      <h1>The midnight <span>draft</span></h1><p class="muted">Two captains. Two creatures of the night. Choose your team.</p></div>
+    <img class="draft-lantern" src="assets/spooky-pumpkin-lantern.png" alt="" width="110" height="120">
+  </header>
+  <section id="login-panel" class="panel">
+    <h2>Enter the draft</h2>
+    <p class="muted">Captains use their team’s existing access code. Organisers use their reviewer credentials.</p>
+    <form id="draft-login">
+      <label for="login-role">Sign in as</label>
+      <select id="login-role"><option value="vampire">Team Vampire captain</option><option value="werewolf">Team Werewolf captain</option><option value="reviewer">Organiser</option></select>
+      <div id="reviewer-field" hidden><label for="reviewer-id">Reviewer ID</label><input id="reviewer-id" autocomplete="username"></div>
+      <label for="access-code">Access code</label><input id="access-code" type="password" required autocomplete="current-password">
+      <button>Enter draft</button>
+    </form>
+  </section>
+  <p id="draft-message" class="message" role="status" aria-live="polite"></p>
+  <section id="draft-room" hidden>
+    <div class="draft-toolbar"><p id="identity" class="muted"></p><div><a id="roster-link" href="roster.html" hidden>Open roster</a> <button id="refresh" class="secondary">Refresh</button> <button id="signout" class="secondary">Sign out</button></div></div>
+    <section id="draft-setup" class="panel" hidden>
+      <h2>Set the stage</h2><p class="muted">Choose both captains from the signup roster. Captains join their teams without using a pick. Existing assignments stay in place; everyone unassigned becomes available to draft.</p>
+      <form id="setup-form" class="setup-grid">
+        <div><label for="vampire-captain">Vampire captain</label><select id="vampire-captain" required></select></div>
+        <div><label for="werewolf-captain">Werewolf captain</label><select id="werewolf-captain" required></select></div>
+        <div><label for="draft-mode">Pick order</label><select id="draft-mode"><option value="snake">Snake · A, B, B, A, A, B…</option><option value="alternating">Alternating · A, B, A, B…</option></select></div>
+        <div><label for="first-team">First pick</label><select id="first-team"><option value="vampire">Team Vampire</option><option value="werewolf">Team Werewolf</option></select></div>
+        <p class="field-help">The player pool is fixed when the draft starts. With an odd number, the team picking first has one extra place. A full team’s turns pass to the other team.</p>
+        <button id="start-draft">Start draft</button>
+      </form>
+    </section>
+    <section id="turn-banner" class="turn-banner" aria-live="polite"><p class="eyebrow" id="pick-number"></p><h2 id="turn-title"></h2><p id="turn-help"></p></section>
+    <div id="organiser-controls" class="draft-toolbar" hidden><p class="muted">Organiser controls</p><div><button id="pause-draft" class="secondary">Pause draft</button> <button id="undo-pick" class="secondary">Undo last pick</button></div></div>
+    <div id="latest-pick" class="latest-pick" aria-live="polite" hidden></div>
+    <div class="draft-columns">
+      <section class="team-column vampire"><p class="eyebrow">THE COVEN</p><h2>Team Vampire</h2><p id="vampire-count" class="muted"></p><ol id="vampire-roster" class="team-list"></ol></section>
+      <section class="pool-column"><div class="pool-heading"><h2>The unclaimed</h2><span id="pool-count"></span></div><label class="search-label" for="player-search">Find a participant</label><input id="player-search" type="search" placeholder="OSRS or Discord name" autocomplete="off"><div id="player-pool" class="player-pool"></div></section>
+      <section class="team-column werewolf"><p class="eyebrow">THE PACK</p><h2>Team Werewolf</h2><p id="werewolf-count" class="muted"></p><ol id="werewolf-roster" class="team-list"></ol></section>
+    </div>
+    <section id="late-panel" class="panel" hidden><h2>Signed up after the draft started</h2><p class="muted">These players are outside the current draft pool. An organiser can assign them on the roster after the draft finishes.</p><ul id="late-list"></ul></section>
+    <section class="draft-history"><h2>The picks so far</h2><ol id="pick-history"></ol></section>
+    <p class="field-help">Updates every five seconds while the draft is live and this page is visible; once per minute after completion. Team assignments are shared with the roster. Discord roles are assigned separately by organisers.</p>
+  </section>
+  <dialog id="confirm-dialog"><form method="dialog"><h2 id="confirm-title"></h2><p id="confirm-copy"></p><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="confirm-action" value="confirm">Confirm</button></div></form></dialog>
+</main></body></html>

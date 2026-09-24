@@ -103,6 +103,32 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ## Local checks
 
+### Live captain draft
+
+`draft.html` is a separate page alongside signup and roster. It shows signup participants, searchable by OSRS or Discord name, the unpicked pool, both teams, the current turn, and pick history. It does not load the bingo board or reveal its tiles. Names are available only after captain or organiser sign-in. Captains use the existing `TEAM_CODES` for Vampire or Werewolf; keep those codes with the captains until the draft finishes, since anyone holding one can make that team's picks. Organisers use the existing reviewer ID and code. No additional secrets are needed.
+
+**Deploy in this order:**
+
+1. Apply the new tables to the existing signup database (existing signups, payment records, and team assignments are preserved):
+   ```powershell
+   npx.cmd wrangler@4 d1 migrations apply misclickas-bingo-signups --remote --config worker/wrangler.jsonc
+   ```
+2. Deploy the Worker:
+   ```powershell
+   npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc
+   ```
+3. Commit and push the website files, including the Pages allowlist update. Open `https://owl-proxy.github.io/Misclickas-2026-spooky-bingo/draft.html`. The roster also has an **Open live draft** link.
+
+An organiser chooses the two captains from existing signups, selects **Snake** (A, B, B, A, A, B…) or **Alternating** (A, B, A, B…), and selects the first team after the luck contest. **Start draft** reserves the captains on their respective teams without consuming picks. Other existing team assignments stay in place; review those on the roster beforehand if everyone should be drafted from scratch. The signed-up player pool is fixed at the start. Late signups remain visible separately and can be assigned on the roster after the draft. With an odd total, the first team has one additional place. Turns skip teams that have already filled their places.
+
+Captains choose a player and confirm the pick. Only the current team can pick; organisers may pick on either team's behalf. Picks and roster assignments save atomically in D1, with revision checks preventing stale or simultaneous clicks from taking extra turns. Existing paid-entry records stay intact. Assigning a new team clears **Discord role assigned**: the site does not assign Discord roles or synchronise Wise Old Man teams.
+
+The draft checks for changes every five seconds while visible, dropping to once per minute after completion. The roster checks every ten seconds while visible and no edits are in progress; unsaved edits are kept until saved or manually refreshed. During an active or paused draft, roster team changes are locked so they cannot conflict with picks. Payment and Discord-role tracking remain editable. Organisers can **Pause**, **Resume**, or **Undo last pick**. Undo returns that player to the pool, removes their assignment, clears their Discord-role checkbox, and pauses the draft. An audit of starts, picks, undo, and pause/resume is retained in D1. There is no bulk reset button.
+
+Draft sign-in survives refreshes in the same browser tab via session storage. The draft page is intended for the two captains and organisers; screen-share it for the clan's live event. It remains usable with `BOARD_PUBLIC` set to `false` or `SIGNUPS_OPEN` set to `false`.
+
+Local verification: `node --test --test-isolation=none tests/*.test.mjs` covers permissions, both pick orders, odd teams, concurrent picks, roster edits, undo and rollback. With a fresh `node tests/preview-server.mjs` and headless Chrome on port 9333, run `node tests/draft-browser-smoke.mjs` for a 36-player draft across four browser tabs. This uses fake local signups and never changes the live event.
+
 ### Wise Old Man cross-checks
 
 Competition [156506](https://wiseoldman.net/competitions/156506) is linked through `wiseOldManCompetitionId` in `site-config.json`. It uses the public read API; no verification code, new secret, or database migration is needed.
