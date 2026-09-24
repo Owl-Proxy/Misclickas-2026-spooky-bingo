@@ -3,6 +3,10 @@
 .draft-header h1 { margin-bottom: 10px; }
 .draft-header h1 span { color: #ffbd76; }
 .draft-lantern { object-fit: contain; filter: drop-shadow(0 0 25px #eb752e66); }
+.draft-pumpkins { display: flex; align-items: flex-end; justify-content: center; flex: 0 0 auto; gap: 3px; padding: 12px 6px; border-radius: 50%; background: radial-gradient(ellipse at 50% 75%,#e8752426,transparent 70%); pointer-events: none; user-select: none; }
+.draft-pumpkin { object-fit: contain; filter: drop-shadow(0 3px 10px #e8752426); transform: rotate(-12deg); }
+.draft-pumpkin:last-child { transform: rotate(12deg); }
+body::before, body::after { opacity: .23; }
 .draft-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
 a { color: #ffc087; } #roster-link { margin-right: 15px; }
 #draft-login select, #draft-login input { margin-bottom: 20px; }
@@ -11,11 +15,18 @@ a { color: #ffc087; } #roster-link { margin-right: 15px; }
 .turn-banner { text-align: center; background: radial-gradient(ellipse at top,#65402c55,transparent),#1d1212; border: 1px solid #935b3e; border-radius: 16px; padding: 25px 20px; margin: 25px 0; }
 .turn-banner h2 { font-size: clamp(25px,3vw,40px); margin: 8px 0; }
 .turn-banner p:last-child { color: #d6bfb0; margin-bottom: 0; }
+.turn-banner { position: relative; isolation: isolate; overflow: hidden; }
+.turn-banner::before, .turn-banner::after { content: ''; position: absolute; top: 0; left: 0; width: min(14%,115px); height: 115px; background: url('../assets/cobweb.png') left top / contain no-repeat; opacity: .23; pointer-events: none; z-index: -1; }
+.turn-banner::after { left: auto; right: 0; transform: scaleX(-1); }
 .turn-banner[data-team=vampire] { border-color: #d94a67; box-shadow: inset 0 0 65px #a5263d22; }
 .turn-banner[data-team=werewolf] { border-color: #d9a15c; box-shadow: inset 0 0 65px #b2813422; }
 .draft-columns { display: grid; grid-template-columns: minmax(220px,1fr) minmax(300px,1.6fr) minmax(220px,1fr); align-items: start; gap: 24px; }
 .team-column { border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: #1a1113; }
 .team-column h2 { font-size: 25px; } .vampire { border-top: 3px solid #d94a67; } .werewolf { border-top: 3px solid #d9a15c; }
+.team-column { position: relative; isolation: isolate; background: radial-gradient(ellipse at 50% 100%,#7d33231c,transparent 45%),#1a1113; }
+.team-column::before { content: ''; position: absolute; top: 0; right: 0; width: 75px; height: 75px; border-radius: 0 14px 0 0; background: url('../assets/cobweb.png') left top / contain no-repeat; transform: scaleX(-1); opacity: .16; pointer-events: none; z-index: -1; }
+.team-column::after { content: ''; display: block; height: 52px; margin-top: 14px; background: url('../assets/pumpkin.png') center bottom / 42px auto no-repeat; filter: drop-shadow(0 0 12px #ed7c2838); opacity: .85; pointer-events: none; }
+.werewolf::after { background-image: url('../assets/spooky-pumpkin-lantern.png'); }
 .team-list, #pick-history { list-style: none; margin: 0; padding: 0; }
 .team-list li { padding: 15px 0; border-top: 1px solid #563a3355; overflow-wrap: anywhere; }
 .team-list small { display: block; color: #baa195; font-size: 11px; margin-top: 5px; }
@@ -35,4 +46,5 @@ a { color: #ffc087; } #roster-link { margin-right: 15px; }
 dialog { color: #f6e9dc; background: #231619; border: 1px solid #c0874d; border-radius: 18px; width: min(500px,92vw); padding: 28px; } dialog::backdrop { background: #000a; } dialog form { margin: 0; } dialog p { line-height: 1.7; }.dialog-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 25px; }
 @media (max-width: 1000px) { .draft-columns { grid-template-columns: 1fr 1fr; }.pool-column { grid-column: 1/-1; grid-row: 1; }.player-pool { grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); } }
 @media (max-width: 560px) { .draft-layout { padding: 28px 16px; }.draft-lantern { width: 65px; height: 80px; }.draft-header h1 { font-size: 38px; }.draft-columns { gap: 12px; }.team-column { padding: 15px; }.team-column h2 { font-size: 19px; }.setup-grid { grid-template-columns: 1fr; }.player-pool { grid-template-columns: 1fr 1fr; }.player-card { padding: 13px; }#draft-setup { padding: 22px; } }
+@media (max-width: 700px) { .draft-pumpkin { display: none; }.draft-pumpkins { padding: 0; }.team-column::before { width: 48px; height: 48px; }.team-column::after { height: 42px; background-size: 34px auto; } }
 @media (prefers-reduced-motion: reduce) { .latest-pick.reveal { animation: none; } }
