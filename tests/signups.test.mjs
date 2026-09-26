@@ -63,6 +63,50 @@ test('signup stores private names without GitHub; only reviewers can read the ro
   assert.equal(roster.body.signups.length, 1);
   assert.equal(roster.body.signups[0].discord, 'owl.proxy');
 });
+
+test('username corrections require organisers and preserve signup details and older client compatibility', async t => {
+  const request = fixture(t);
+  await request('/signups', signup());
+  const read = async () => (await request('/signups', undefined, codes.reviewer)).body;
+  const original = (await read()).signups[0], path = '/signups/' + original.id;
+  const fields = {teamId:'vampire',roleAssigned:true,paidEntryFee:true};
+  await request(path, {...fields,revision:0}, codes.reviewer);
+  const before = (await read()).signups[0];
+  const edit = {...fields,player:'  New_Owl  ',revision:1};
+  for (const code of [undefined,codes.vampire]) assert.equal((await request(path,edit,code)).status,401);
+  const response = await request(path,edit,codes.reviewer);
+  assert.equal(response.status,200);assert.equal(response.body.player,'New_Owl');
+  const updated = (await read()).signups[0];
+  assert.deepEqual(updated,{...before,player:'New_Owl',revision:2});
+  assert.equal((await read()).canEditUsernames,true);
+  assert.equal((await request(path,{...fields,player:'Stale Name',revision:1},codes.reviewer)).status,409);
+  // Old tabs omit the name entirely, and must keep the correction.
+  assert.equal((await request(path,{...fields,revision:2},codes.reviewer)).status,200);
+  assert.equal((await read()).signups[0].player,'New_Owl');
+  // The normalized key is corrected too: this must not add a duplicate signup.
+  await request('/signups',signup({player:'NEW-OWL',discord:'another.person'}));
+  assert.equal((await read()).signups.length,1);
+});
+
+test('invalid and duplicate username corrections change no saved fields, including simultaneous claims', async t => {
+  const request = fixture(t);
+  await request('/signups',signup());
+  await request('/signups',signup({player:'Other Owl'}));
+  const read = async () => (await request('/signups',undefined,codes.reviewer)).body.signups;
+  const before = await read(), original = before.find(p=>p.player==='Spooky Owl');
+  const edit = {teamId:'werewolf',roleAssigned:true,paidEntryFee:true,revision:0};
+  for (const player of ['',null,42,'waytoolongusername','<script>','---','  ']) {
+    assert.equal((await request('/signups/'+original.id,{...edit,player},codes.reviewer)).status,400);
+  }
+  for (const player of ['OTHER_OWL','Other-Owl','other  owl']) {
+    const response = await request('/signups/'+original.id,{...edit,player},codes.reviewer);
+    assert.equal(response.status,409);assert.match(response.body.error,/already registered/);
+  }
+  assert.deepEqual(await read(),before);
+  const outcomes = await Promise.all(before.map(p=>request('/signups/'+p.id,{...edit,player:'Same Name'},codes.reviewer)));
+  assert.deepEqual(outcomes.map(r=>r.status).sort(),[200,409]);
+  assert.equal((await read()).filter(p=>p.player==='Same Name').length,1);
+});
 test('duplicate names and concurrent signup retries preserve the original private details', async t => {
   const request = fixture(t);
   const original = await request('/signups', signup());

@@ -103,6 +103,14 @@ To publish this logic change, deploy the updated Worker (`npx.cmd wrangler@4 dep
 
 ## Local checks
 
+### Correcting a signup username
+
+Sign in to `roster.html` as an organiser, find the participant, edit **OSRS username**, and click **Save changes**. The correction keeps their signup ID, Discord name, team, paid-entry status and draft pick. The draft displays the corrected name on its next refresh, including beside that player's original pick number. Existing submission names and Wise Old Man records are separate and are not rewritten.
+
+Names use the same validation as signup: up to 12 letters, numbers, spaces, hyphens or underscores. A name already registered to another participant is rejected, ignoring case and treating underscores/hyphens as spaces. Stale edits are rejected so they cannot overwrite a newer roster change or draft assignment. Username corrections are available during the draft; team changes remain locked until it ends.
+
+Publish username editing by deploying the Worker with `npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`, then committing and pushing the website. No database migration or new secrets are needed. If the website updates first, the username fields remain disabled with a deployment message until the updated Worker is available. Older roster tabs preserve the saved username when updating other fields.
+
 ### Live captain draft
 
 **Try it first:** open `draft.html?practice=1`, or choose **Try a practice draft** on the draft sign-in page. This uses 36 sample players with no sign-in required. Choose captains and an order, then switch between organiser and either captain using **Try the view as**. You can make picks, pause, resume and undo. Practice makes no Worker requests and changes no real signups, team assignments, payment records or draft state. Everything stays in memory in that tab; **Reset practice draft**, reloading or closing the page discards it. Tabs do not share practice picks. Leave practice using its link when ready to sign in to the real draft. Publishing practice mode needs only a website commit/push, provided the main draft setup below is already deployed.

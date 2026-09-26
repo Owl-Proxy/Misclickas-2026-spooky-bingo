@@ -1,6 +1,6 @@
 import { api, message } from './signup-api.mjs';
 const $ = selector => document.querySelector(selector);
-let account = null, entries = [], teams = [], draftStatus = 'waiting', dirty = false, refreshing = false, saving = false;
+let account = null, entries = [], teams = [], draftStatus = 'waiting', canEditUsernames = false, dirty = false, refreshing = false, saving = false;
 const status = $('#roster-message');
 const node = (tag, text, className) => { const element = document.createElement(tag); if (text) element.textContent = text; if (className) element.className = className; return element; };
 function signout() {
@@ -18,6 +18,12 @@ function render() {
     const card = node('article', '', 'panel roster-entry');
     card.append(node('h3', entry.player), node('p', `Discord: ${entry.discord}`, 'muted'), node('p', `Signed up ${new Date(entry.created_at).toLocaleDateString()}`, 'field-help'));
     const form = node('form'), label = node('label', 'Team'), select = node('select');
+    const nameLabel = node('label', 'OSRS username'), nameInput = node('input');
+    nameInput.id = `player-${entry.id}`; nameInput.name = 'player'; nameLabel.htmlFor = nameInput.id;
+    nameInput.value = entry.player; nameInput.required = true; nameInput.maxLength = 12;
+    nameInput.pattern = '[a-zA-Z0-9 _\\-]{1,12}'; nameInput.autocomplete = 'off';
+    nameInput.title = 'Up to 12 letters, numbers, spaces, hyphens or underscores.';
+    nameInput.disabled = !canEditUsernames;
     select.id = `team-${entry.id}`; label.htmlFor = select.id;
     for (const team of [{ id: '', name: 'Unassigned' }, ...teams]) { const option = node('option', team.name); option.value = team.id; select.append(option); }
     select.value = entry.team_id;
@@ -31,15 +37,16 @@ function render() {
     paidLabel.append(paid, node('span', 'Paid entry fee'));
     select.addEventListener('change', () => { check.checked = false; check.disabled = !select.value; });
     const button = node('button', 'Save changes'), feedback = node('p', '', 'message'); feedback.setAttribute('role', 'status');
-    form.append(label, select, checkLabel, paidLabel, button, feedback); card.append(form); $('#roster').append(card);
+    form.append(nameLabel, nameInput, label, select, checkLabel, paidLabel, button, feedback); card.append(form); $('#roster').append(card);
+    if (!canEditUsernames) message(feedback, 'Deploy the updated Worker to enable username editing.', true);
     if (paid.disabled) message(feedback, 'Entry fee tracking is unavailable until the updated submission service is deployed.', true);
     form.addEventListener('submit', async event => {
       event.preventDefault(); button.disabled = true; saving = true; message(feedback, 'Saving…');
       const teamId = select.value, roleAssigned = check.checked, paidEntryFee = paid.checked, currentAccount = account;
       try {
-        const saved = await api(`/signups/${entry.id}`, { teamId, roleAssigned, ...(paid.disabled ? {} : { paidEntryFee }), revision: entry.revision }, currentAccount);
+        const saved = await api(`/signups/${entry.id}`, { teamId, roleAssigned, ...(nameInput.disabled ? {} : { player: nameInput.value.trim() }), ...(paid.disabled ? {} : { paidEntryFee }), revision: entry.revision }, currentAccount);
         if (account !== currentAccount) return;
-        Object.assign(entry, { team_id: teamId, role_assigned: Number(roleAssigned), ...(paid.disabled ? {} : { paid_entry_fee: Number(paidEntryFee) }), revision: saved.revision });
+        Object.assign(entry, { ...(saved.player === undefined ? {} : { player: saved.player }), team_id: teamId, role_assigned: Number(roleAssigned), ...(paid.disabled ? {} : { paid_entry_fee: Number(paidEntryFee) }), revision: saved.revision });
         dirty = false; render(); message(status, `Saved changes for ${entry.player}.`);
       } catch (error) { message(feedback, error.message, true); button.disabled = false; }
       finally { saving = false; }
@@ -53,7 +60,7 @@ async function refresh(automatic = false) {
   try {
   const data = await api('/signups', undefined, currentAccount);
   if (account !== currentAccount || (automatic && dirty)) return;
-  entries = data.signups; teams = data.teams; draftStatus = data.draftStatus || 'waiting'; dirty = false; render();
+  entries = data.signups; teams = data.teams; draftStatus = data.draftStatus || 'waiting'; canEditUsernames = data.canEditUsernames === true; dirty = false; render();
   $('#login-panel').hidden = true; $('#roster-panel').hidden = false;
   message(status, (data.open ? 'Signups are open.' : 'Signups are closed.') + (['active','paused'].includes(draftStatus) ? ' Live draft in progress: team assignments update automatically. Make picks on the draft page; payment and Discord-role checkboxes remain editable.' : ''));
   } finally { refreshing = false; }

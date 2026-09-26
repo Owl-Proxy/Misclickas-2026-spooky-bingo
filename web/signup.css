@@ -53,6 +53,7 @@ footer span { padding: 0 12px; color: #b57246; }
 .roster-entry h3 { margin: 0 0 8px; font-size: 21px; overflow-wrap: anywhere; }
 .roster-entry p { overflow-wrap: anywhere; }
 .roster-entry form { margin-top: 20px; }
+.roster-entry input[name=player] { margin-bottom: 20px; }
 .roster-entry .check { margin: 18px 0; }
 @media (max-width: 800px) { .signup-layout { grid-template-columns: 1fr; max-width: 570px; gap: 35px; padding: 45px 22px 12px; } .invitation { text-align: center; } h1 { font-size: 44px; } .sigil { margin: 14px 0; } .intro { margin-inline: auto; } .team-tags, .pumpkins { justify-content: center; } .pumpkins { height: 80px; margin-top: 20px; } .pumpkins img:nth-child(2) { width: 80px; height: 80px; } .signup-card { padding: 28px; } }
 @media (max-width: 380px) { h1 { font-size: 36px; } .signup-card { padding: 22px; } .signup-layout { padding-inline: 15px; } .roster-layout { padding-inline: 15px; } .roster-grid { grid-template-columns: 1fr; } }

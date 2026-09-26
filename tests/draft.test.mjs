@@ -65,6 +65,26 @@ test('alternating draft handles first-pick choice and an odd player count',async
   assert.deepEqual(sequence,['werewolf','vampire','werewolf','vampire','werewolf']);
   const v=await f.read();assert.equal(v.players.filter(p=>p.team_id==='werewolf').length,4);
 });
+
+test('roster username corrections update draft names without changing picks, captains or payment',async t=>{
+  const f=await fixture(t);await f.start();let view=await f.read();
+  const target=view.players.find(p=>!p.team_id);
+  await f.pick('vampire',target.id,view.state.revision);
+  view=await f.read();const picked=view.players.find(p=>p.id===target.id);
+  const edit={teamId:'vampire',roleAssigned:true,paidEntryFee:true,player:'Renamed Owl',revision:picked.revision};
+  assert.equal((await f.request('/signups/'+target.id,edit,'vampire')).status,401);
+  assert.equal((await f.request('/signups/'+target.id,edit)).status,200);
+  const after=await f.read(),updated=after.players.find(p=>p.id===target.id);
+  assert.equal(updated.player,'Renamed Owl');assert.equal(updated.team_id,'vampire');assert.equal(updated.paid_entry_fee,1);
+  assert.deepEqual(after.picks,view.picks);assert.deepEqual(after.state,view.state);
+  const captain=after.players.find(p=>p.id===after.state.vampireCaptainId);
+  assert.equal((await f.request('/signups/'+captain.id,{teamId:'vampire',roleAssigned:false,player:'Captain Owl',revision:captain.revision})).status,200);
+  assert.equal((await f.read()).state.vampireCaptainId,captain.id);
+  // Renaming does not prevent undo from finding the original selected signup.
+  assert.equal((await f.request('/draft/undo',{revision:after.state.revision})).status,200);
+  const undone=(await f.read()).players.find(p=>p.id===target.id);
+  assert.equal(undone.player,'Renamed Owl');assert.equal(undone.team_id,'');assert.equal(undone.paid_entry_fee,1);
+});
 test('out-of-turn, duplicate and concurrent picks cannot consume extra turns',async t=>{
   const f=await fixture(t);await f.start();const v=await f.read(),available=v.players.filter(p=>!p.team_id);
   assert.equal((await f.pick('werewolf',available[0].id,v.state.revision)).status,403);
