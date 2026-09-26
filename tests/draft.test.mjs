@@ -66,6 +66,47 @@ test('alternating draft handles first-pick choice and an odd player count',async
   const v=await f.read();assert.equal(v.players.filter(p=>p.team_id==='werewolf').length,4);
 });
 
+test('excluded signups stay on roster but never become captains, picks or capacity in a draft',async t=>{
+  const f=await fixture(t,8),original=await f.read(),excluded=original.players.slice(5);
+  for(const player of excluded)assert.equal((await f.request('/signups/'+player.id,{revision:0,teamId:'werewolf',roleAssigned:true,paidEntryFee:true,includeInDraft:false})).status,200);
+  for(const role of ['reviewer','vampire']) {
+    const view=(await f.request('/draft',undefined,role)).body;
+    assert.equal(view.players.length,5);assert.equal(view.players.some(p=>excluded.some(e=>e.id===p.id)),false);
+  }
+  const badStart=await f.request('/draft/start',{revision:0,mode:'snake',firstTeam:'vampire',vampireCaptainId:excluded[0].id,werewolfCaptainId:original.players[1].id});
+  assert.equal(badStart.status,400);
+  assert.equal((await f.start()).status,200);
+  assert.equal((await f.db.prepare('SELECT COUNT(*) AS count FROM draft_pool').all()).results[0].count,5);
+  let view=await f.read();
+  assert.equal((await f.pick('vampire',excluded[0].id,view.state.revision)).status,409);
+  const update=(player,includeInDraft)=>f.request('/signups/'+player.id,{revision:player.revision,teamId:player.team_id,roleAssigned:Boolean(player.role_assigned),includeInDraft});
+  // Both re-including an excluded player and removing an included captain are locked.
+  assert.equal((await update({...excluded[0],team_id:'werewolf',role_assigned:1,revision:1},true)).status,409);
+  assert.equal((await update(view.players[0],false)).status,409);
+  await f.request('/draft/pause',{revision:view.state.revision});view=await f.read();
+  assert.equal((await update(view.players[0],false)).status,409);
+  await f.request('/draft/resume',{revision:view.state.revision});
+  while((view=await f.read()).state.status==='active')assert.equal((await f.pick(view.nextTeam,view.players.find(p=>!p.team_id).id,view.state.revision)).status,200);
+  assert.equal(view.picks.length,3);assert.equal(view.players.filter(p=>p.team_id==='vampire').length,3);assert.equal(view.players.filter(p=>p.team_id==='werewolf').length,2);
+  assert.equal((await update(view.players[0],false)).status,409);
+  const roster=(await f.request('/signups')).body.signups;assert.equal(roster.length,8);
+  for(const p of roster.filter(p=>excluded.some(e=>e.id===p.id))) {assert.equal(p.include_in_draft,0);assert.equal(p.paid_entry_fee,1);assert.equal(p.team_id,'werewolf');assert.equal(p.role_assigned,1);}
+  // Omitted inclusion remains compatible with normal roster edits after completion.
+  const p=view.players[0];assert.equal((await f.request('/signups/'+p.id,{revision:p.revision,teamId:p.team_id,roleAssigned:false,player:'New Captain'})).status,200);
+});
+
+test('a concurrent inclusion change cannot slip into a frozen draft pool',async t=>{
+  const f=await fixture(t,4),original=await f.read(),target=original.players[3];
+  const results=await Promise.all([f.start(),f.request('/signups/'+target.id,{revision:0,teamId:'',roleAssigned:false,includeInDraft:false})]);
+  assert.ok(results.every(r=>[200,409].includes(r.status)));
+  const state=(await f.read()).state,roster=(await f.request('/signups')).body.signups;
+  const pool=(await f.db.prepare('SELECT signup_id FROM draft_pool').all()).results;
+  if(state.status!=='waiting') {
+    assert.ok(pool.every(p=>roster.find(s=>s.id===p.signup_id).include_in_draft===1));
+    assert.equal(pool.length,roster.filter(p=>p.include_in_draft).length);
+  } else {assert.equal(pool.length,0);assert.equal(results[0].status,409);}
+});
+
 test('roster username corrections update draft names without changing picks, captains or payment',async t=>{
   const f=await fixture(t);await f.start();let view=await f.read();
   const target=view.players.find(p=>!p.team_id);

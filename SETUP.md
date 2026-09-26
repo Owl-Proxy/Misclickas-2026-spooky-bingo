@@ -111,6 +111,20 @@ Names use the same validation as signup: up to 12 letters, numbers, spaces, hyph
 
 Publish username editing by deploying the Worker with `npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`, then committing and pushing the website. No database migration or new secrets are needed. If the website updates first, the username fields remain disabled with a deployment message until the updated Worker is available. Older roster tabs preserve the saved username when updating other fields.
 
+### Including or excluding signups from the draft
+
+Every existing and new signup defaults to **Include in draft** checked. Before starting the draft, sign in to the organiser roster, uncheck it for any player you want to leave out, then click **Save changes**. The signup remains visible on the roster with an **Excluded from draft** label, retaining the same username, Discord name, payment record and any existing team assignment. Check it again and save to restore eligibility before the draft starts. The roster totals and CSV export include this setting.
+
+Excluded players do not appear on the draft page, cannot be selected as captains or picks, and do not count toward draft team capacities. Inclusion locks when the draft starts, including while paused and after completion. It is not a ban or an identity check. Re-submitting the same signup does not re-enable an excluded entry. Late signups stay outside the frozen player pool as before.
+
+Deploy this update in order:
+
+1. Apply the new column: `npx.cmd wrangler@4 d1 migrations apply misclickas-bingo-signups --remote --config worker/wrangler.jsonc`.
+2. Deploy the Worker: `npx.cmd wrangler@4 deploy --config worker/wrangler.jsonc`.
+3. Commit and push the website updates, then refresh the roster and draft pages.
+
+The migration preserves existing signups, payments, assignments and any draft already in progress. No new secrets are needed. If the website deploys ahead of the Worker, the inclusion control stays disabled until the Worker returns the new field. Older roster tabs that omit the setting preserve its saved value.
+
 ### Live captain draft
 
 **Try it first:** open `draft.html?practice=1`, or choose **Try a practice draft** on the draft sign-in page. This uses 36 sample players with no sign-in required. Choose captains and an order, then switch between organiser and either captain using **Try the view as**. You can make picks, pause, resume and undo. Practice makes no Worker requests and changes no real signups, team assignments, payment records or draft state. Everything stays in memory in that tab; **Reset practice draft**, reloading or closing the page discards it. Tabs do not share practice picks. Leave practice using its link when ready to sign in to the real draft. Publishing practice mode needs only a website commit/push, provided the main draft setup below is already deployed.
@@ -129,7 +143,7 @@ Publish username editing by deploying the Worker with `npx.cmd wrangler@4 deploy
    ```
 3. Commit and push the website files, including the Pages allowlist update. Open `https://owl-proxy.github.io/Misclickas-2026-spooky-bingo/draft.html`. The roster also has an **Open live draft** link.
 
-An organiser chooses the two captains from existing signups, selects **Snake** (A, B, B, A, A, B…) or **Alternating** (A, B, A, B…), and selects the first team after the luck contest. **Start draft** reserves the captains on their respective teams without consuming picks. Other existing team assignments stay in place; review those on the roster beforehand if everyone should be drafted from scratch. The signed-up player pool is fixed at the start. Late signups remain visible separately and can be assigned on the roster after the draft. With an odd total, the first team has one additional place. Turns skip teams that have already filled their places.
+An organiser chooses the two captains from included signups, selects **Snake** (A, B, B, A, A, B…) or **Alternating** (A, B, A, B…), and selects the first team after the luck contest. **Start draft** reserves the captains on their respective teams without consuming picks. Other existing team assignments stay in place; review those on the roster beforehand if everyone should be drafted from scratch. The included player pool is fixed at the start. Late signups remain visible separately and can be assigned on the roster after the draft. With an odd included total, the first team has one additional place. Turns skip teams that have already filled their places.
 
 Captains choose a player and confirm the pick. Only the current team can pick; organisers may pick on either team's behalf. Picks and roster assignments save atomically in D1, with revision checks preventing stale or simultaneous clicks from taking extra turns. Existing paid-entry records stay intact. Assigning a new team clears **Discord role assigned**: the site does not assign Discord roles or synchronise Wise Old Man teams.
 

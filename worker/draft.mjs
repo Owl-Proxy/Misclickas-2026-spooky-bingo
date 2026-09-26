@@ -29,7 +29,7 @@ export async function handleDraft(request, env, path, teams, {authorize, limit, 
   try {
     snapshot = await db.batch([
       statement('SELECT * FROM draft_state WHERE id = 1'),
-      statement(`SELECT s.id,s.player,s.discord,s.team_id,s.role_assigned,s.paid_entry_fee,s.revision,
+      statement(`SELECT s.id,s.player,s.discord,s.team_id,s.role_assigned,s.paid_entry_fee,s.include_in_draft,s.revision,
         CASE WHEN p.signup_id IS NULL THEN 0 ELSE 1 END AS in_pool
         FROM signups s LEFT JOIN draft_pool p ON p.signup_id = s.id ORDER BY s.player_key,s.id`),
       statement('SELECT * FROM draft_picks ORDER BY number')
@@ -42,7 +42,7 @@ export async function handleDraft(request, env, path, teams, {authorize, limit, 
   const nextTeam = nextDraftTeam(state,players);
   const view = () => ({state:{status:state.status,mode:state.mode,firstTeam:state.first_team,pickCount:state.pick_count,
     revision:state.revision,vampireCaptainId:state.vampire_captain,werewolfCaptainId:state.werewolf_captain,updatedAt:state.updated_at},
-    players:players.map(p => role === 'reviewer' ? p : Object.fromEntries(Object.entries(p).filter(([key])=>!['paid_entry_fee','role_assigned'].includes(key)))),
+    players:players.filter(p=>p.include_in_draft || p.in_pool).map(p => role === 'reviewer' ? p : Object.fromEntries(Object.entries(p).filter(([key])=>!['paid_entry_fee','role_assigned'].includes(key)))),
     picks:picks.map(({picked_by,...p})=>p),teams,nextTeam:state.status === 'waiting' ? null : nextTeam});
   if (path === '/draft' && request.method === 'GET') return json(view());
   if (request.method !== 'POST' || !['/draft/start','/draft/pick','/draft/pause','/draft/resume','/draft/undo'].includes(path)) fail(404, 'Not found.');
@@ -59,19 +59,20 @@ export async function handleDraft(request, env, path, teams, {authorize, limit, 
   if (action === 'start') {
     if (state.status !== 'waiting') fail(409, 'This draft has already started.');
     if (!['snake','alternating'].includes(body.mode) || !teams.some(t=>t.id===body.firstTeam)) fail(400, 'Choose a draft order and first team.');
-    const captains = [body.vampireCaptainId,body.werewolfCaptainId].map(id=>players.find(p=>p.id===id));
-    if (!captains.every(Boolean) || captains[0].id === captains[1].id) fail(400, 'Choose two different signed-up captains.');
-    const assigned = players.map(p=>({...p,team_id:p.id===captains[0].id?'vampire':p.id===captains[1].id?'werewolf':p.team_id}));
+    const eligible = players.filter(p=>p.include_in_draft);
+    const captains = [body.vampireCaptainId,body.werewolfCaptainId].map(id=>eligible.find(p=>p.id===id));
+    if (!captains.every(Boolean) || captains[0].id === captains[1].id) fail(400, 'Choose two different captains included in the draft.');
+    const assigned = eligible.map(p=>({...p,team_id:p.id===captains[0].id?'vampire':p.id===captains[1].id?'werewolf':p.team_id}));
     for (const t of teams) {
-      const cap = t.id === body.firstTeam ? Math.ceil(players.length/2) : Math.floor(players.length/2);
+      const cap = t.id === body.firstTeam ? Math.ceil(eligible.length/2) : Math.floor(eligible.length/2);
       if (assigned.filter(p=>p.team_id===t.id).length > cap) fail(409, `${t.name} already exceeds its draft capacity. Adjust existing assignments in the roster first.`);
     }
-    Object.assign(details,{mode:body.mode,firstTeam:body.firstTeam,captains:captains.map(p=>p.id),participants:players.length});
+    Object.assign(details,{mode:body.mode,firstTeam:body.firstTeam,captains:captains.map(p=>p.id),participants:eligible.length});
     batch.push(updateState('status = ?, mode = ?, first_team = ?, vampire_captain = ?, werewolf_captain = ?',
       [assigned.some(p=>!p.team_id)?'active':'complete',body.mode,body.firstTeam,captains[0].id,captains[1].id],
       'AND (SELECT COUNT(*) FROM signups) = ? AND (SELECT COALESCE(SUM(revision),0) FROM signups) = ?',
       [players.length,players.reduce((sum,p)=>sum+p.revision,0)]));
-    batch.push(statement(`INSERT INTO draft_pool (signup_id) SELECT id FROM signups WHERE ${owns}`,operation));
+    batch.push(statement(`INSERT INTO draft_pool (signup_id) SELECT id FROM signups WHERE include_in_draft = 1 AND ${owns}`,operation));
     for (const [index,captain] of captains.entries()) batch.push(statement(
       `UPDATE signups SET team_id = ?, role_assigned = CASE WHEN team_id = ? THEN role_assigned ELSE 0 END,
       revision = revision + 1, updated_by = ?, updated_at = ? WHERE id = ? AND ${owns}`,

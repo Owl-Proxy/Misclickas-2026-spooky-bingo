@@ -20,6 +20,39 @@ function fixture(t, overrides = {}) {
   };
 }
 const signup = overrides => ({ player: 'Spooky Owl', discord: 'owl.proxy', consent: true, website: '', ...overrides });
+
+test('draft inclusion migration keeps existing signup details and active draft pool', () => {
+  const db = new DatabaseSync(':memory:');
+  try {
+    for(const file of ['0001_signups.sql','0002_paid_entry_fee.sql','0003_draft.sql'])db.exec(readFileSync(new URL('../worker/migrations/'+file,import.meta.url),'utf8'));
+    db.exec("INSERT INTO signups (id,player,player_key,discord,created_at,team_id,paid_entry_fee,revision) VALUES ('existing','Old Owl','old owl','owl','2026-09-01','vampire',1,5)");
+    db.exec("INSERT INTO draft_pool (signup_id) VALUES ('existing'); UPDATE draft_state SET status='active'");
+    const before=db.prepare('SELECT * FROM signups').get();
+    db.exec(readFileSync(new URL('../worker/migrations/0004_draft_eligibility.sql',import.meta.url),'utf8'));
+    assert.deepEqual({...db.prepare('SELECT * FROM signups').get()},{...before,include_in_draft:1});
+    assert.equal(db.prepare('SELECT COUNT(*) AS count FROM draft_pool').get().count,1);
+    assert.equal(db.prepare('SELECT status FROM draft_state').get().status,'active');
+  } finally {db.close();}
+});
+
+test('only organisers control inclusion; old clients and repeat signups preserve exclusions',async t=>{
+  const request=fixture(t);
+  await request('/signups',signup({includeInDraft:false}));
+  const read=async()=>(await request('/signups',undefined,codes.reviewer)).body.signups[0];
+  const original=await read();assert.equal(original.include_in_draft,1);
+  const path='/signups/'+original.id;
+  const edit={teamId:'vampire',roleAssigned:true,paidEntryFee:true,includeInDraft:false,revision:0};
+  for(const code of [undefined,codes.vampire])assert.equal((await request(path,edit,code)).status,401);
+  for(const includeInDraft of ['false',0,null])assert.equal((await request(path,{...edit,includeInDraft},codes.reviewer)).status,400);
+  assert.equal((await request(path,edit,codes.reviewer)).status,200);
+  await request('/signups',signup({includeInDraft:true}));
+  assert.equal((await read()).include_in_draft,0);
+  assert.equal((await request(path,{teamId:'vampire',roleAssigned:true,revision:1},codes.reviewer)).status,200);
+  assert.equal((await read()).include_in_draft,0);assert.equal((await read()).paid_entry_fee,1);
+  assert.equal((await request(path,{...edit,includeInDraft:true,revision:1},codes.reviewer)).status,409);
+  assert.equal((await request(path,{...edit,includeInDraft:true,revision:2},codes.reviewer)).status,200);
+  assert.equal((await read()).include_in_draft,1);
+});
 test('payment migration preserves existing signups and defaults them to unpaid', () => {
   const db = new DatabaseSync(':memory:');
   try {
