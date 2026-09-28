@@ -1,6 +1,7 @@
 import event from '../october-bingo-ideas.json' with { type: 'json' };
 import config from '../site-config.json' with { type: 'json' };
 import { buildTiles } from '../shared/bingo.mjs';
+import { boardAccess } from './board-access.mjs';
 import { GitHubStore, StorageBusyError } from './github.mjs';
 import { handleSignups } from './signups.mjs';
 import { handleDraft } from './draft.mjs';
@@ -122,7 +123,8 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
       else {
         const url = new URL(request.url);
         const path = url.pathname.replace(/\/$/, '');
-        const boardPublic = env.BOARD_PUBLIC === 'true';
+        const access = boardAccess(env);
+        const boardPublic = access.public;
         // Signup endpoints and authentication stay available before the reveal.
         if (!boardPublic && (path === '/config' || path === '/board.svg' || path.startsWith('/teams/') || path.startsWith('/images/'))) {
           await authorize(request, env, 'reviewer', request.headers.get('X-Board-Reviewer-Id') || request.headers.get('X-Reviewer-Id') || '', request.headers.get('X-Board-Code'));
@@ -131,7 +133,7 @@ export function createApp(storeFactory = env => new GitHubStore(env), cacheOptio
         const imageMatch = path.match(/^\/images\/([a-z0-9-]+)\/([a-f0-9-]+)$/);
         const teamId = teamMatch?.[1] ?? imageMatch?.[1];
         if (teamId && !config.teams.some(team => team.id === teamId)) fail(404, 'Team not found.');
-        if (path === '/board/status' && request.method === 'GET') response = json({ public: boardPublic });
+        if (path === '/board/status' && request.method === 'GET') response = json(access);
         else if (path === '/board.svg' && request.method === 'GET') {
           if (!env.BOARD_SVG) fail(503, 'The board image is unavailable.');
           response = new Response(env.BOARD_SVG, { headers: { 'Content-Type': 'image/svg+xml', 'Content-Security-Policy': "script-src 'none'" } });

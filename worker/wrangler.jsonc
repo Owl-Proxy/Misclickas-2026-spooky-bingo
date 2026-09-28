@@ -6,6 +6,7 @@
 	"workers_dev": true,
 	"vars": {
 		"BOARD_PUBLIC": "false",
+		"BOARD_REVEAL_AT": "2026-09-28T12:00:00-04:00",
 		"SIGNUPS_OPEN": "true",
 		"GITHUB_OWNER": "Owl-Proxy",
 		"GITHUB_REPO": "Misclickas-2026-spooky-bingo",

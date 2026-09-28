@@ -6,14 +6,25 @@
     <meta name="theme-color" content="#170c09">
     <meta name="description" content="Misclickas Spooky Bingo — an Old School RuneScape Halloween bingo board.">
     <title>Misclickas Spooky Bingo</title>
-    <link rel="stylesheet" href="web/style.css">
-    <script type="module" src="web/board-gate.mjs"></script>
+    <link rel="stylesheet" href="web/style.css?v=reveal-20260927">
+    <script type="module" src="web/board-gate.mjs?v=reveal-20260927"></script>
   </head>
   <body>
     <section id="board-gate" class="team-panel" style="max-width:520px;margin:8vh auto;padding:28px" aria-labelledby="gate-title">
       <p class="eyebrow">Misclickas Spooky Bingo · October 2026</p>
       <h1 id="gate-title">The board is under wraps</h1>
       <p>The hunt will be revealed when the organisers open the board. You can sign up now without spoiling the surprises.</p>
+      <section id="reveal-countdown" class="reveal-countdown" aria-labelledby="reveal-heading" hidden>
+        <h2 id="reveal-heading">The reveal approaches</h2>
+        <div class="reveal-clock" role="timer" aria-live="off" aria-label="Time until the board opens">
+          <span><strong id="reveal-days">00</strong>Days</span>
+          <span><strong id="reveal-hours">00</strong>Hours</span>
+          <span><strong id="reveal-minutes">00</strong>Minutes</span>
+          <span><strong id="reveal-seconds">00</strong>Seconds</span>
+        </div>
+        <p id="reveal-date"></p>
+        <p id="reveal-message">The board will open automatically. Let the haunting begin.</p>
+      </section>
       <p><a href="signup.html">Sign up for the bingo</a></p>
       <form id="gate-form" hidden>
         <h2>Organiser preview</h2>

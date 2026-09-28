@@ -1,6 +1,6 @@
 # Open team submissions
 
-The site now has separate **Team Vampire** and **Team Werewolf** boards. Each team has its own shareable URL, submission history, and approved progress. GitHub Pages serves the site; a small Cloudflare Worker accepts screenshots and writes them to this repository. The board stays locked until an organiser signs in or the Worker setting `BOARD_PUBLIC` is `"true"`. See [BOARD_ACCESS.md](BOARD_ACCESS.md) for gate deployment and the required GitHub Actions publishing setup.
+The site now has separate **Team Vampire** and **Team Werewolf** boards. Each team has its own shareable URL, submission history, and approved progress. GitHub Pages serves the site; a small Cloudflare Worker accepts screenshots and writes them to this repository. The board stays locked until an organiser signs in, the Worker setting `BOARD_PUBLIC` is `"true"`, or `BOARD_REVEAL_AT` arrives (currently September 28, 2026 at noon EDT). See [BOARD_ACCESS.md](BOARD_ACCESS.md) for the countdown, scheduled reveal, gate deployment and required GitHub Actions publishing setup.
 
 ## 1. Prepare repository storage
 

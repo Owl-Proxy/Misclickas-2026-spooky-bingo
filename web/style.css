@@ -11,6 +11,12 @@ button:disabled{opacity:.45;cursor:not-allowed}
 button:hover:enabled{filter:brightness(1.15)}
 :focus-visible{outline:3px solid #f3c66f;outline-offset:4px}
 [hidden]{display:none!important}
+.reveal-countdown{margin:1.5rem 0;padding:1.1rem .8rem;border:1px solid #9a5831;border-radius:14px;background:radial-gradient(ellipse at top,#75301566,transparent 80%),#140c10;text-align:center;box-shadow:0 0 28px #e67e1812}
+.reveal-countdown h2{font:700 1.4rem Georgia,serif;color:#ffc686;margin:.2rem 0 1rem}
+.reveal-clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem}
+.reveal-clock span{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.reveal-clock strong{display:block;font:700 clamp(1.5rem,6vw,2.7rem) Georgia,serif;font-variant-numeric:tabular-nums;color:#ffe2b5;margin-bottom:.3rem}
+.reveal-countdown p{font-size:.85rem;line-height:1.5;margin:.9rem 0 0}
 .masthead{max-width:1600px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.5rem 2rem;border-bottom:1px solid var(--line)}
 .brand{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;text-decoration:none}
 .brand span{color:#e5aa70}

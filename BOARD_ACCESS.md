@@ -1,6 +1,6 @@
 # Keep the board under wraps
 
-The board now requires an organiser's existing reviewer ID and code until you reveal it. The signup page and private roster keep working as before. Team codes do not unlock an unrevealed board.
+The board requires an organiser's existing reviewer ID and code until you reveal it manually or its scheduled reveal time arrives. The signup page and private roster keep working as before. Team codes do not unlock an unrevealed board.
 
 There are two parts to publishing this change: the Worker enforces access, and GitHub Pages must publish only the approved website files. Complete both before sharing the signup link more widely.
 
@@ -38,9 +38,22 @@ The preview login is stored only in that browser tab's session storage, just lik
 
 ## Reveal the board for the event
 
-Change `BOARD_PUBLIC` to `"true"` in `worker/wrangler.jsonc`, then deploy the Worker again using the command above. Commit that configuration change so future deploys retain the reveal setting.
+The board is scheduled to open **Monday, September 28, 2026 at noon Eastern (EDT)**. In `worker/wrangler.jsonc`:
 
-Visitors can then view both boards without an organiser login. Team codes still control submissions and reviewer codes still control approvals. The signup roster remains private. Only an exact `"true"` opens the board; a missing setting leaves it locked.
+```json
+"BOARD_PUBLIC": "false",
+"BOARD_REVEAL_AT": "2026-09-28T12:00:00-04:00"
+```
+
+Deploy the Worker to activate this schedule, and commit/push the website changes to publish the countdown. No database migration is needed. The Worker checks its own clock on each request and opens access at the scheduled time, without a scheduled job or another deployment at noon. This reveals the board; it does not change the bingo event dates or Wise Old Man competition.
+
+Visitors see days, hours, minutes and seconds on the locked page. The clock ticks locally, using the server's time as its starting point. Visible locked pages check access once a minute and at the reveal, then open the board automatically when the service confirms access. Hidden pages stop checks and catch up when visible again. Temporary connection errors retry on the next check. An organiser already previewing the board will not see the countdown; use a private window to check it.
+
+To change the scheduled time, edit `BOARD_REVEAL_AT` and deploy again. Always include the timezone offset (`-04:00` for this September date). To cancel the schedule and keep the board locked, remove `BOARD_REVEAL_AT` and keep `BOARD_PUBLIC` set to `"false"`, then deploy. **Setting `BOARD_PUBLIC` to `"false"` alone does not re-lock a board whose scheduled reveal has passed.**
+
+To reveal early, change `BOARD_PUBLIC` to `"true"` and deploy. Commit configuration changes so future deploys retain your settings.
+
+Visitors can then view both boards without an organiser login. Team codes still control submissions and reviewer codes still control approvals. The signup roster remains private. Without an explicit `"true"` or a valid scheduled time that has arrived, the board stays locked.
 
 Whenever you change tile data or regenerate the SVG, deploy the Worker again to update the board contents. Push website changes to update Pages.
 
