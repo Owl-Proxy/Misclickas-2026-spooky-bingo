@@ -7,10 +7,10 @@
     <meta name="description" content="Misclickas Spooky Bingo — an Old School RuneScape Halloween bingo board.">
     <title>Misclickas Spooky Bingo</title>
     <link rel="stylesheet" href="web/style.css?v=reveal-20260927">
-    <script type="module" src="web/board-gate.mjs?v=reveal-20260927"></script>
+    <script type="module" src="web/board-gate.mjs?v=team-selection-20260928"></script>
   </head>
   <body>
-    <section id="board-gate" class="team-panel" style="max-width:520px;margin:8vh auto;padding:28px" aria-labelledby="gate-title">
+    <section id="board-gate" class="team-panel" style="max-width:520px;margin:8vh auto;padding:28px" aria-labelledby="gate-title" hidden>
       <p class="eyebrow">Misclickas Spooky Bingo · October 2026</p>
       <h1 id="gate-title">The board is under wraps</h1>
       <p>The hunt will be revealed when the organisers open the board. You can sign up now without spoiling the surprises.</p>
@@ -35,7 +35,7 @@
       <p id="gate-status" role="status">Checking board access…</p>
       <noscript>Enable JavaScript to check board access.</noscript>
     </section>
-    <div id="board-app" hidden>
+    <div id="board-app">
     <header class="masthead">
       <a class="brand" href="./">Misclickas <span>Spooky Bingo</span></a>
       <button id="reviewer-login" class="quiet" disabled>Reviewer sign in</button>
@@ -45,13 +45,17 @@
         <p class="eyebrow">October • Old School RuneScape</p>
         <h1 id="team-title">Choose your team</h1>
         <p>Two teams. One haunted hunt. Every drop has a story.</p>
-        <nav id="teams" aria-label="Team boards"></nav>
+        <nav id="teams" aria-label="Team boards">
+          <a href="?team=vampire" data-team="vampire" style="--team-color:#d94a67"><span class="sigil">V</span><span>Team Vampire</span></a>
+          <a href="?team=werewolf" data-team="werewolf" style="--team-color:#d9a15c"><span class="sigil">W</span><span>Team Werewolf</span></a>
+        </nav>
         <div id="team-tools" class="toolbar" hidden>
           <div id="score" class="score" aria-live="polite"></div>
           <button id="copy-link" class="quiet">Copy team link</button>
           <button id="team-login" disabled>Team sign in</button>
         </div>
         <p id="service-status" role="status">Loading the boards…</p>
+        <noscript>Enable JavaScript to load the bingo boards.</noscript>
       </section>
       <section id="team-board" hidden aria-label="Team bingo board">
         <div class="board-help"><p>Select a tile to see its requirements or submit a screenshot.</p><p class="legend">✓ Complete &nbsp; ◐ Progress &nbsp; ⏳ Pending review</p></div>

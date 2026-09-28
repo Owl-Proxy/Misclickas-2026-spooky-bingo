@@ -5,7 +5,11 @@ import { createDevServer } from '../scripts/dev-server.mjs';
 import { fixture, env } from './helpers.mjs';
 const { app } = fixture();
 const settings = { ...env, BOARD_PUBLIC: 'false', ALLOWED_ORIGINS: 'http://localhost:4173' };
-const server = createDevServer(request => app.fetch(request, settings));
+let delayArtwork = false;
+const server = createDevServer(async request => {
+  if (delayArtwork && new URL(request.url).pathname === '/board.svg') await new Promise(resolve => setTimeout(resolve, 1500));
+  return app.fetch(request, settings);
+});
 await new Promise(resolve => server.listen(4173, '127.0.0.1', resolve));
 const page = await (await fetch('http://127.0.0.1:9333/json/new?about:blank', { method: 'PUT' })).json();
 const socket = new WebSocket(page.webSocketDebuggerUrl);
@@ -47,8 +51,31 @@ try {
   await until(`document.querySelector('#board-app').hidden === false && document.querySelector('#board').contentDocument?.querySelectorAll('g.tile[role=button]').length === 54`);
   assert.equal(requests.filter(url => url.endsWith('/board/status')).length, 2);
   assert.equal(await evaluate(`sessionStorage.getItem('bingo-reviewer')`), null);
+  // Fresh visits after reveal show team selection throughout a slow board load.
+  delayArtwork = true;
+  await command('Page.addScriptToEvaluateOnNewDocument', { source: `
+    window.sawGate = false; window.sawCountdown = false;
+    new MutationObserver(() => {
+      const gate = document.querySelector('#board-gate');
+      if (gate && !gate.hidden) window.sawGate = true;
+      const countdown = document.querySelector('#reveal-countdown');
+      if (countdown && !countdown.hidden && gate && !gate.hidden) window.sawCountdown = true;
+    }).observe(document, { subtree: true, childList: true, attributes: true });
+  ` });
+  await command('Page.navigate', { url: 'http://localhost:4173/' });
+  await until(`document.querySelector('#teams')?.children.length === 2 && document.querySelector('#service-status')?.textContent.includes('Loading')`);
+  assert.equal(await evaluate(`document.querySelector('#board-app').hidden`), false);
+  assert.equal(await evaluate(`document.querySelector('#board-gate').hidden`), true);
+  await until(`document.querySelector('#service-status')?.textContent.includes('Choose a team')`);
+  assert.equal(await evaluate('window.sawGate || window.sawCountdown'), false);
+  assert.equal(await evaluate('document.documentElement.scrollWidth <= innerWidth'), true);
+  const selection = await command('Page.captureScreenshot', { format: 'png' });
+  await writeFile('test-results/team-selection-mobile.png', Buffer.from(selection.data, 'base64'));
+  await evaluate(`document.querySelector('[data-team="werewolf"]').click()`);
+  await until(`document.querySelector('#team-title')?.textContent.includes('Werewolf') && document.querySelector('#team-board').hidden === false`);
+  assert.equal(await evaluate('window.sawGate || window.sawCountdown'), false);
   assert.deepEqual(errors, []);
-  console.log('Mobile countdown, incorrect browser clock, no early spoiler requests, local ticks and automatic public reveal passed.');
+  console.log('Mobile countdown, automatic reveal, direct team selection after reveal, no gate/countdown flash during slow loading, and team switching passed.');
 } finally {
   await command('Page.close').catch(() => {}); socket.close();
   server.closeAllConnections(); await new Promise(resolve => server.close(resolve));

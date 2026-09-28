@@ -51,6 +51,8 @@ Visitors see days, hours, minutes and seconds on the locked page. The clock tick
 
 To change the scheduled time, edit `BOARD_REVEAL_AT` and deploy again. Always include the timezone offset (`-04:00` for this September date). To cancel the schedule and keep the board locked, remove `BOARD_REVEAL_AT` and keep `BOARD_PUBLIC` set to `"false"`, then deploy. **Setting `BOARD_PUBLIC` to `"false"` alone does not re-lock a board whose scheduled reveal has passed.**
 
+After reveal, fresh visits show team selection immediately while the board loads, without displaying the expired countdown. The service still checks access before loading any tiles; if the board is locked again, the organiser gate appears instead.
+
 To reveal early, change `BOARD_PUBLIC` to `"true"` and deploy. Commit configuration changes so future deploys retain your settings.
 
 Visitors can then view both boards without an organiser login. Team codes still control submissions and reviewer codes still control approvals. The signup roster remains private. Without an explicit `"true"` or a valid scheduled time that has arrived, the board stays locked.
