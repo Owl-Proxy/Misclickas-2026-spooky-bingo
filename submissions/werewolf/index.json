@@ -105,6 +105,23 @@
           "at": "2026-10-01T01:07:33.178Z"
         }
       ]
+    },
+    {
+      "id": "431e805f-3e77-43ac-8ca3-91e1239f1bbc",
+      "teamId": "werewolf",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-hungry-chest/431e805f-3e77-43ac-8ca3-91e1239f1bbc-659b77dc0d544f6d35447c59613b6377de41d8b967a6573592dd9e488f9d33e5.webp",
+      "imageHash": "659b77dc0d544f6d35447c59613b6377de41d8b967a6573592dd9e488f9d33e5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T02:05:06.804Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
