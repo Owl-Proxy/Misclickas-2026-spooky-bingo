@@ -813,6 +813,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "ea111003-8716-41d7-992d-de106ac9b90c",
+      "teamId": "vampire",
+      "tileId": "ghostbusters",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "N0BunsBobby",
+      "notes": "",
+      "imagePath": "submissions/vampire/ghostbusters/ea111003-8716-41d7-992d-de106ac9b90c-bcfedb47c3a0467fb2ef4624deab079606e9791dac28fab13a5ede86377dc809.webp",
+      "imageHash": "bcfedb47c3a0467fb2ef4624deab079606e9791dac28fab13a5ede86377dc809",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T22:26:25.306Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
