@@ -659,6 +659,23 @@
           "at": "2026-10-01T19:00:49.500Z"
         }
       ]
+    },
+    {
+      "id": "298dbe19-fbb1-4c7e-8a66-aa23d552e61b",
+      "teamId": "vampire",
+      "tileId": "arachnophobia",
+      "choiceId": "sarachnis-cudgel",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/arachnophobia/298dbe19-fbb1-4c7e-8a66-aa23d552e61b-29f0df2e21fef270a36eef0b23d96d775e317744f98ff55b1db357170d70cd07.webp",
+      "imageHash": "29f0df2e21fef270a36eef0b23d96d775e317744f98ff55b1db357170d70cd07",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T19:05:55.694Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
