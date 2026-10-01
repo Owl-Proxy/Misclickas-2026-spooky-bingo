@@ -52,6 +52,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "fd109ee8-995e-47cc-b765-e8a4ccb3efaf",
+      "teamId": "vampire",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-six-brothers/fd109ee8-995e-47cc-b765-e8a4ccb3efaf-a991aefb31e93de5e05d919a5c43a38f8b5ca23cba1cbf9368e14e4d4a7cfd68.webp",
+      "imageHash": "a991aefb31e93de5e05d919a5c43a38f8b5ca23cba1cbf9368e14e4d4a7cfd68",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:37:09.599Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
