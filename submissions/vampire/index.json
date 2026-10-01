@@ -18,6 +18,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5beb0eab-d43b-4641-8e14-7ad9dd90d459",
+      "teamId": "vampire",
+      "tileId": "the-grotesque-guardians",
+      "choiceId": "granite-ring",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-grotesque-guardians/5beb0eab-d43b-4641-8e14-7ad9dd90d459-aa497d85ad1e5dfa7dbb582799cfe80c76ef57e6f663dc6c5329ec211fea55fe.webp",
+      "imageHash": "aa497d85ad1e5dfa7dbb582799cfe80c76ef57e6f663dc6c5329ec211fea55fe",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:18:55.472Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
