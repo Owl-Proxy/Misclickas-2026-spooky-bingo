@@ -18,6 +18,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "db7b3dbb-49a2-4966-8a9a-84fcdc462e70",
+      "teamId": "werewolf",
+      "tileId": "giants-in-the-green",
+      "choiceId": "hill-giant-club",
+      "quantity": 1,
+      "player": "Devil 324",
+      "notes": "LFG!!!",
+      "imagePath": "submissions/werewolf/giants-in-the-green/db7b3dbb-49a2-4966-8a9a-84fcdc462e70-ee9a85deb99d30d402113eaa91bcb98e73ffe79f8e22b9bb477b00673356e564.webp",
+      "imageHash": "ee9a85deb99d30d402113eaa91bcb98e73ffe79f8e22b9bb477b00673356e564",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:07:34.499Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
