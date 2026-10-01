@@ -596,6 +596,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "71607b36-632d-411b-87b6-5e8285072d67",
+      "teamId": "werewolf",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-legs",
+      "quantity": 1,
+      "player": "Nickyesyes",
+      "notes": "",
+      "imagePath": "submissions/werewolf/through-the-vampire-mist/71607b36-632d-411b-87b6-5e8285072d67-2d3bce8860bd3007cc6569b4bd5b0f71515f15a5e7fbd16b7e322fa480fde95f.webp",
+      "imageHash": "2d3bce8860bd3007cc6569b4bd5b0f71515f15a5e7fbd16b7e322fa480fde95f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T21:21:34.952Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
