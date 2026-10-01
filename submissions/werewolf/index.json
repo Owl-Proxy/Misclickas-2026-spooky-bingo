@@ -286,6 +286,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "68352608-6810-4ef1-96d1-4246cb2b438b",
+      "teamId": "werewolf",
+      "tileId": "the-grim-reaper",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "PHDNFISTER",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-grim-reaper/68352608-6810-4ef1-96d1-4246cb2b438b-a560649d742d028edb8bb618e2a3563af11f6497a33975b2c766f198751d13c2.webp",
+      "imageHash": "a560649d742d028edb8bb618e2a3563af11f6497a33975b2c766f198751d13c2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:32:58.329Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
