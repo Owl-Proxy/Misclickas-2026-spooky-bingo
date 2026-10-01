@@ -664,6 +664,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7d98f6a4-bb5f-429d-9bff-93659e05f445",
+      "teamId": "werewolf",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-top",
+      "quantity": 1,
+      "player": "Nickyesyes",
+      "notes": "",
+      "imagePath": "submissions/werewolf/through-the-vampire-mist/7d98f6a4-bb5f-429d-9bff-93659e05f445-2669d9a2b1f5c8c3d998b3e53600b33f51387c7856f06ddd1a11380395829afb.webp",
+      "imageHash": "2669d9a2b1f5c8c3d998b3e53600b33f51387c7856f06ddd1a11380395829afb",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T23:12:36.603Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
