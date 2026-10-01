@@ -131,6 +131,23 @@
           "at": "2026-10-01T02:19:51.802Z"
         }
       ]
+    },
+    {
+      "id": "7b4abb04-8fe6-4230-b6b0-79aa15ec4364",
+      "teamId": "werewolf",
+      "tileId": "shades-of-mort-ton",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/shades-of-mort-ton/7b4abb04-8fe6-4230-b6b0-79aa15ec4364-e5d8bdd4b1af3dd9776aeab07393ba902d5d5fa586b002932e749308c35e1b88.webp",
+      "imageHash": "e5d8bdd4b1af3dd9776aeab07393ba902d5d5fa586b002932e749308c35e1b88",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T02:25:18.789Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
