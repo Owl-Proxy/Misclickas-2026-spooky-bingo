@@ -269,6 +269,23 @@
           "at": "2026-10-01T05:37:41.889Z"
         }
       ]
+    },
+    {
+      "id": "a7e40ecc-0cb3-43d5-a3a6-4dc0acf6ed88",
+      "teamId": "werewolf",
+      "tileId": "the-buried-doom",
+      "choiceId": "eye-of-ayak-uncharged",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-buried-doom/a7e40ecc-0cb3-43d5-a3a6-4dc0acf6ed88-3bb1e6b37e0841d296d69b321b32f445100cd1ab3158b9607a063d3ce7daa050.webp",
+      "imageHash": "3bb1e6b37e0841d296d69b321b32f445100cd1ab3158b9607a063d3ce7daa050",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:10:32.042Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
