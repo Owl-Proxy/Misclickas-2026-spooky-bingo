@@ -711,6 +711,23 @@
           "at": "2026-10-01T19:29:07.188Z"
         }
       ]
+    },
+    {
+      "id": "3766ae9b-5555-4abe-94b3-e7784d620825",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "First venator shard!",
+      "imagePath": "submissions/vampire/the-exorcist/3766ae9b-5555-4abe-94b3-e7784d620825-9371760c38bf25c71b416fba2dc3000fd1f64c1d26bed7c965fc703207c22192.webp",
+      "imageHash": "9371760c38bf25c71b416fba2dc3000fd1f64c1d26bed7c965fc703207c22192",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T20:37:49.594Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
