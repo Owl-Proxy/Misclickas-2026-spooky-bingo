@@ -607,6 +607,23 @@
           "at": "2026-10-01T16:24:49.034Z"
         }
       ]
+    },
+    {
+      "id": "27077fbd-670c-40c5-8689-eeef1f4d5f3d",
+      "teamId": "vampire",
+      "tileId": "hounds-of-hell",
+      "choiceId": "eternal-crystal",
+      "quantity": 1,
+      "player": "Killa 1771",
+      "notes": "",
+      "imagePath": "submissions/vampire/hounds-of-hell/27077fbd-670c-40c5-8689-eeef1f4d5f3d-6a616a4de8700e834b908922d946c9bcc8a8a9c96c3ab81837cc3aa65459f687.webp",
+      "imageHash": "6a616a4de8700e834b908922d946c9bcc8a8a9c96c3ab81837cc3aa65459f687",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T18:17:24.054Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
