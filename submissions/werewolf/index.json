@@ -381,6 +381,23 @@
           "at": "2026-10-01T06:35:59.735Z"
         }
       ]
+    },
+    {
+      "id": "56b078dc-3b5e-457c-bf56-e86e2291f595",
+      "teamId": "werewolf",
+      "tileId": "arachnophobia",
+      "choiceId": "sarachnis-cudgel",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/arachnophobia/56b078dc-3b5e-457c-bf56-e86e2291f595-3a80a7571c5bcb667a8bf32d484614cb07a27569c08bf43865efa13aa7196e6e.webp",
+      "imageHash": "3a80a7571c5bcb667a8bf32d484614cb07a27569c08bf43865efa13aa7196e6e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T13:25:57.869Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
