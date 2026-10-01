@@ -200,6 +200,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "ddaaa4ba-c177-4dc3-ad96-17e786a2b232",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-blood-theatre--avernic-defender-hilt",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/ddaaa4ba-c177-4dc3-ad96-17e786a2b232-d2b890cbe4e318623f51c297fb3d77a4f6f02fc9638ac4ce6277cf605643eca6.webp",
+      "imageHash": "d2b890cbe4e318623f51c297fb3d77a4f6f02fc9638ac4ce6277cf605643eca6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T05:10:44.986Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
