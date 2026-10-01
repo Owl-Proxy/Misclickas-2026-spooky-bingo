@@ -949,6 +949,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "49536cf9-e92e-4ba4-a821-667a069bc2b0",
+      "teamId": "vampire",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "tanzanite-fang",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-swamp-serpent/49536cf9-e92e-4ba4-a821-667a069bc2b0-d317de5ba0233687f161f2e418c87ca2b23d419c1f33a47e76cb97b708c32676.webp",
+      "imageHash": "d317de5ba0233687f161f2e418c87ca2b23d419c1f33a47e76cb97b708c32676",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T23:18:14.136Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
