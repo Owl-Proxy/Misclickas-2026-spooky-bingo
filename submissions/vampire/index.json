@@ -828,10 +828,19 @@
       "imageHash": "d094eec5044e48b2137c6dcff27c2bf64940f666d6f0b9fa833647e80e6a1155",
       "imageType": "image/png",
       "createdAt": "2026-10-01T21:55:10.785Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-01T23:29:26.560Z"
+        }
+      ]
     },
     {
       "id": "2a2eaa0c-c4f3-47dc-89ba-9dd484349f55",
