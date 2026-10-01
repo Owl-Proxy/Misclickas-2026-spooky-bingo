@@ -390,6 +390,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "394b2615-1dcb-4abc-86f4-c59c57d60f5f",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-wilderness-warlock--malediction-shard-1",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/394b2615-1dcb-4abc-86f4-c59c57d60f5f-c15358dcdbafbc7974cd61e89cde2ba2b7e38e0a75f054ea3ceb6b3ba3bc1ae2.webp",
+      "imageHash": "c15358dcdbafbc7974cd61e89cde2ba2b7e38e0a75f054ea3ceb6b3ba3bc1ae2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:42:03.474Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
