@@ -209,6 +209,23 @@
           "at": "2026-10-01T01:08:31.071Z"
         }
       ]
+    },
+    {
+      "id": "de28c487-7bda-4261-8ead-e03e0105eab5",
+      "teamId": "vampire",
+      "tileId": "web-of-nightmares",
+      "choiceId": "noxious-point",
+      "quantity": 1,
+      "player": "Skwala",
+      "notes": "",
+      "imagePath": "submissions/vampire/web-of-nightmares/de28c487-7bda-4261-8ead-e03e0105eab5-1ad86c359182452eec409f1c20ec882dc2eb8385dfa7fdfb3f96047ee07cd94c.webp",
+      "imageHash": "1ad86c359182452eec409f1c20ec882dc2eb8385dfa7fdfb3f96047ee07cd94c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T02:04:52.677Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
