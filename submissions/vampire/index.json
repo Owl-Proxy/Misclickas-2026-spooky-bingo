@@ -776,10 +776,19 @@
       "imageHash": "9ceb1a77a8959542e94116b8a6a66c58f60dbd5c03851dc4341b1bfe91bc5114",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T20:53:47.477Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-01T23:29:04.391Z"
+        }
+      ]
     },
     {
       "id": "b9d4776c-045c-427d-93d7-70668c968eab",
