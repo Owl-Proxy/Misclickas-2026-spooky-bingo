@@ -347,6 +347,23 @@
           "at": "2026-10-01T05:34:08.900Z"
         }
       ]
+    },
+    {
+      "id": "655ac9cc-5988-4ee3-965e-b0923e229673",
+      "teamId": "vampire",
+      "tileId": "staff-of-the-old-ones",
+      "choiceId": "ancient-staff",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "Ancient staff during witching hour",
+      "imagePath": "submissions/vampire/staff-of-the-old-ones/655ac9cc-5988-4ee3-965e-b0923e229673-c8717beacc5534c9077d0aa33e3ed71dc046eb979de04c14b4e9aac8c42a1bef.webp",
+      "imageHash": "c8717beacc5534c9077d0aa33e3ed71dc046eb979de04c14b4e9aac8c42a1bef",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:20:18.228Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
