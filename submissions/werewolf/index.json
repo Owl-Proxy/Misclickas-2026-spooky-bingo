@@ -407,6 +407,23 @@
           "at": "2026-10-01T14:23:18.402Z"
         }
       ]
+    },
+    {
+      "id": "20c7ae7b-7821-44b5-8409-530a551eb8b1",
+      "teamId": "werewolf",
+      "tileId": "staff-of-the-old-ones",
+      "choiceId": "ancient-staff",
+      "quantity": 1,
+      "player": "phdnfister",
+      "notes": "",
+      "imagePath": "submissions/werewolf/staff-of-the-old-ones/20c7ae7b-7821-44b5-8409-530a551eb8b1-fd8cc1696d95ebdf9ee0daf2c85d631ffa22312c28a59a40ba782bef89a908fc.webp",
+      "imageHash": "fd8cc1696d95ebdf9ee0daf2c85d631ffa22312c28a59a40ba782bef89a908fc",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T16:10:05.606Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
