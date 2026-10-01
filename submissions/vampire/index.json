@@ -235,6 +235,23 @@
           "at": "2026-10-01T02:20:07.284Z"
         }
       ]
+    },
+    {
+      "id": "e4360a5b-eba4-43e6-bf4f-af02e1f0e1d1",
+      "teamId": "vampire",
+      "tileId": "the-catacombs-of-xeric",
+      "choiceId": "ancestral-robe-top",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "With omlet btw",
+      "imagePath": "submissions/vampire/the-catacombs-of-xeric/e4360a5b-eba4-43e6-bf4f-af02e1f0e1d1-917d84f2dac9c9dd4eb125b8b8317e476f0607779670925ba6c20d560573d34c.webp",
+      "imageHash": "917d84f2dac9c9dd4eb125b8b8317e476f0607779670925ba6c20d560573d34c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T02:28:34.215Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
