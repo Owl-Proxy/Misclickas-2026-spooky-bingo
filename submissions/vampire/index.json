@@ -796,6 +796,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "2a2eaa0c-c4f3-47dc-89ba-9dd484349f55",
+      "teamId": "vampire",
+      "tileId": "the-necromancer",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "N0BunsBobby",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-necromancer/2a2eaa0c-c4f3-47dc-89ba-9dd484349f55-a694253993b3b921b6642da0299682867d5aa3f27c6a7344e591f759f2e6a6ab.webp",
+      "imageHash": "a694253993b3b921b6642da0299682867d5aa3f27c6a7344e591f759f2e6a6ab",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T22:25:43.286Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
