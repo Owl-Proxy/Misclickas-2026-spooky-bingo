@@ -248,8 +248,8 @@
       "imageHash": "917d84f2dac9c9dd4eb125b8b8317e476f0607779670925ba6c20d560573d34c",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T02:28:34.215Z",
-      "status": "pending",
-      "revision": 1,
+      "status": "rejected",
+      "revision": 2,
       "completesTile": false,
       "reviews": [
         {
@@ -259,6 +259,14 @@
           "to": "pending",
           "reason": "Submit as Ancestral robe bottom pls",
           "at": "2026-10-01T04:19:34.046Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "Ancestral robe top",
+          "at": "2026-10-01T05:33:41.940Z"
         }
       ]
     },
