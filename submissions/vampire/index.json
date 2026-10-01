@@ -1,5 +1,23 @@
 {
   "version": 1,
   "teamId": "vampire",
-  "submissions": []
+  "submissions": [
+    {
+      "id": "67a69f0b-bdfa-4ddd-8b06-c544b9ab0387",
+      "teamId": "vampire",
+      "tileId": "the-crystal-prison",
+      "choiceId": "enhanced-crystal-weapon-seed",
+      "quantity": 1,
+      "player": "Zulrussy",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-crystal-prison/67a69f0b-bdfa-4ddd-8b06-c544b9ab0387-3b9763832fe881e94227a440bd65eac7c7fa37dd33b2dd360338372cbcf57d1d.webp",
+      "imageHash": "3b9763832fe881e94227a440bd65eac7c7fa37dd33b2dd360338372cbcf57d1d",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:16:26.669Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
+    }
+  ]
 }
