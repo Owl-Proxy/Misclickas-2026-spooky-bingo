@@ -881,6 +881,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "e8b5d211-4ec4-45a9-b429-f1d799c4f85f",
+      "teamId": "vampire",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-hat",
+      "quantity": 1,
+      "player": "weenienut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/through-the-vampire-mist/e8b5d211-4ec4-45a9-b429-f1d799c4f85f-8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788.webp",
+      "imageHash": "8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T23:05:52.013Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
