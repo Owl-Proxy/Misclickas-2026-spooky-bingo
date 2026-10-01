@@ -630,6 +630,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "060ece49-fe64-4ba9-a1f7-5091b2bd63e3",
+      "teamId": "werewolf",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-hat",
+      "quantity": 1,
+      "player": "Nickyesyes",
+      "notes": "",
+      "imagePath": "submissions/werewolf/through-the-vampire-mist/060ece49-fe64-4ba9-a1f7-5091b2bd63e3-c98b3f6c76470daf9c33b70f96f7949babbd5e55dacb6aeb8eee9f4e02b0053a.webp",
+      "imageHash": "c98b3f6c76470daf9c33b70f96f7949babbd5e55dacb6aeb8eee9f4e02b0053a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T21:32:18.743Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
