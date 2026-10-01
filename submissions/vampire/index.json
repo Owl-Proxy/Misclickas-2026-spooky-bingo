@@ -252,6 +252,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7c848932-7fcf-46a5-ae55-6a14d97217b4",
+      "teamId": "vampire",
+      "tileId": "revenant-hunter",
+      "choiceId": "ancient-emblem",
+      "quantity": 1,
+      "player": "N0BunsBobby",
+      "notes": "",
+      "imagePath": "submissions/vampire/revenant-hunter/7c848932-7fcf-46a5-ae55-6a14d97217b4-5fc594d7156dc52ceb84c1c09c4e00ab86a631d122733031981cafe4ccdc263d.webp",
+      "imageHash": "5fc594d7156dc52ceb84c1c09c4e00ab86a631d122733031981cafe4ccdc263d",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T04:17:49.064Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
