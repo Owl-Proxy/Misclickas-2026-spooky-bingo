@@ -235,6 +235,23 @@
           "at": "2026-10-01T05:11:20.416Z"
         }
       ]
+    },
+    {
+      "id": "09e61d66-7ba7-4766-a927-fce7bc9e1945",
+      "teamId": "werewolf",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Average Dadd",
+      "notes": "2 Chewed bones",
+      "imagePath": "submissions/werewolf/the-undertaker/09e61d66-7ba7-4766-a927-fce7bc9e1945-df6382e6d21473d4b649d0016ef525372e49b9fd8b73eba61d630af2b5155cff.webp",
+      "imageHash": "df6382e6d21473d4b649d0016ef525372e49b9fd8b73eba61d630af2b5155cff",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T05:20:20.745Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
