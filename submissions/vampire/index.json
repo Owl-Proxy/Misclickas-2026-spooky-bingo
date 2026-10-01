@@ -529,6 +529,23 @@
           "at": "2026-10-01T15:08:13.678Z"
         }
       ]
+    },
+    {
+      "id": "6015a0f0-4667-4b54-b92a-c38009554028",
+      "teamId": "vampire",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-hungry-chest/6015a0f0-4667-4b54-b92a-c38009554028-4f786086ad9c00c07a915ecea3c93a6764ebf39d475ee7945c1fa768ee5d54ed.webp",
+      "imageHash": "4f786086ad9c00c07a915ecea3c93a6764ebf39d475ee7945c1fa768ee5d54ed",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T15:46:54.051Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
