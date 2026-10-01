@@ -131,6 +131,23 @@
           "at": "2026-10-01T00:40:06.897Z"
         }
       ]
+    },
+    {
+      "id": "bad105c6-8b86-4edd-8d62-944526191216",
+      "teamId": "vampire",
+      "tileId": "bone-collector",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "long cuts",
+      "notes": "100 boners",
+      "imagePath": "submissions/vampire/bone-collector/bad105c6-8b86-4edd-8d62-944526191216-f396c0671fe9bcd0f01a7bdabf34471e08d81615af230bf4be7d3c53fd3d600b.webp",
+      "imageHash": "f396c0671fe9bcd0f01a7bdabf34471e08d81615af230bf4be7d3c53fd3d600b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:41:32.075Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
