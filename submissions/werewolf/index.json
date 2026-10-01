@@ -501,6 +501,23 @@
           "at": "2026-10-01T16:23:44.697Z"
         }
       ]
+    },
+    {
+      "id": "2f23c106-813c-4a06-87a5-bc6b001e236a",
+      "teamId": "werewolf",
+      "tileId": "the-wilderness-warlock",
+      "choiceId": "malediction-shard-1",
+      "quantity": 1,
+      "player": "phdnfister",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-wilderness-warlock/2f23c106-813c-4a06-87a5-bc6b001e236a-8ecb7bd736330af10d927eca720e41a7bf0a91ff82e52b1db4c6078ca0fa0783.webp",
+      "imageHash": "8ecb7bd736330af10d927eca720e41a7bf0a91ff82e52b1db4c6078ca0fa0783",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T16:24:20.037Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
