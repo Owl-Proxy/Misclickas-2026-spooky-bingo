@@ -676,6 +676,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "196e2853-2bc8-464f-9e8c-6519ae6260ee",
+      "teamId": "vampire",
+      "tileId": "the-mad-scholar",
+      "choiceId": "fedora",
+      "quantity": 1,
+      "player": "SmolPStream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-mad-scholar/196e2853-2bc8-464f-9e8c-6519ae6260ee-3c93a1ba568c2265f51ae50bda51ad3e4babf581cf84ef33ccdb509708200691.webp",
+      "imageHash": "3c93a1ba568c2265f51ae50bda51ad3e4babf581cf84ef33ccdb509708200691",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T19:07:28.226Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
