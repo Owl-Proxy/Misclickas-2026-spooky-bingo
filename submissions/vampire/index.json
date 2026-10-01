@@ -287,6 +287,23 @@
           "at": "2026-10-01T04:18:50.673Z"
         }
       ]
+    },
+    {
+      "id": "3b2884eb-41d5-45b9-9f42-c1d853383416",
+      "teamId": "vampire",
+      "tileId": "the-wilderness-warlock",
+      "choiceId": "odium-shard-1",
+      "quantity": 1,
+      "player": "SmolpStream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-wilderness-warlock/3b2884eb-41d5-45b9-9f42-c1d853383416-31372dc34284689fa883aa0c9e2219ff4ed726ab2d794f7c2b5537bb548732c4.webp",
+      "imageHash": "31372dc34284689fa883aa0c9e2219ff4ed726ab2d794f7c2b5537bb548732c4",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T04:38:37.462Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
