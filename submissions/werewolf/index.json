@@ -346,6 +346,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5f5dcfcf-8686-49fa-a280-18eabce3b9b3",
+      "teamId": "werewolf",
+      "tileId": "the-wilderness-warlock",
+      "choiceId": "odium-shard-1",
+      "quantity": 1,
+      "player": "PHDNFISTER",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-wilderness-warlock/5f5dcfcf-8686-49fa-a280-18eabce3b9b3-b21d640c18ea50be3937732bde580fca07772f075a32e360abce31968385285a.webp",
+      "imageHash": "b21d640c18ea50be3937732bde580fca07772f075a32e360abce31968385285a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:34:52.027Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
