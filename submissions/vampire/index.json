@@ -35,6 +35,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "42bd0ee5-b28f-4e01-8b43-5caf7ce659fe",
+      "teamId": "vampire",
+      "tileId": "the-pharaoh-s-curse",
+      "choiceId": "lightbearer",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "I have the skin of a killer",
+      "imagePath": "submissions/vampire/the-pharaoh-s-curse/42bd0ee5-b28f-4e01-8b43-5caf7ce659fe-5b3e24348e7349625c87f3e593e47a7f8dd83d945b12fe5ff8130ae199fed693.webp",
+      "imageHash": "5b3e24348e7349625c87f3e593e47a7f8dd83d945b12fe5ff8130ae199fed693",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:31:38.597Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
