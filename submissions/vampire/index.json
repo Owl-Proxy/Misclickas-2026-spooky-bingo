@@ -148,6 +148,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c2404c17-12d8-4fe0-bc48-8cd15552de4b",
+      "teamId": "vampire",
+      "tileId": "bone-collector",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "long cuts",
+      "notes": "",
+      "imagePath": "submissions/vampire/bone-collector/c2404c17-12d8-4fe0-bc48-8cd15552de4b-d677c55c4759754d0f25556c93b40e0de9efb853eb74690ba082d15dd66deef6.webp",
+      "imageHash": "d677c55c4759754d0f25556c93b40e0de9efb853eb74690ba082d15dd66deef6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:41:55.337Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
