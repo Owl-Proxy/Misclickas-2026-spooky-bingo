@@ -847,6 +847,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "39f517d0-78cf-4fcd-a372-596b9d3e3826",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-six-brothers--barrows-pieces",
+      "quantity": 1,
+      "player": "weenie nut jr",
+      "notes": "lumberjack",
+      "imagePath": "submissions/vampire/the-witching-hour/39f517d0-78cf-4fcd-a372-596b9d3e3826-8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788.webp",
+      "imageHash": "8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T23:00:33.043Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
