@@ -183,6 +183,23 @@
           "at": "2026-10-01T04:43:47.064Z"
         }
       ]
+    },
+    {
+      "id": "c6960aa3-9d34-418c-a49f-a96042cbc912",
+      "teamId": "werewolf",
+      "tileId": "the-blood-theatre",
+      "choiceId": "avernic-defender-hilt",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-blood-theatre/c6960aa3-9d34-418c-a49f-a96042cbc912-d2b890cbe4e318623f51c297fb3d77a4f6f02fc9638ac4ce6277cf605643eca6.webp",
+      "imageHash": "d2b890cbe4e318623f51c297fb3d77a4f6f02fc9638ac4ce6277cf605643eca6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T05:09:29.912Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
