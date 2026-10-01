@@ -728,6 +728,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "041898fc-905f-45dd-b842-92c74d3d7786",
+      "teamId": "vampire",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "WeenieNut jr",
+      "notes": "torags body",
+      "imagePath": "submissions/vampire/the-six-brothers/041898fc-905f-45dd-b842-92c74d3d7786-8f7f666d17bbc505a012d64068a1eb4684476f30887cefe80b9c785ef2d3e882.webp",
+      "imageHash": "8f7f666d17bbc505a012d64068a1eb4684476f30887cefe80b9c785ef2d3e882",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T20:48:01.052Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
