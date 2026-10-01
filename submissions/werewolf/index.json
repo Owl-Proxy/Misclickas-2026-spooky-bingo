@@ -53,6 +53,23 @@
           "at": "2026-10-01T00:11:13.708Z"
         }
       ]
+    },
+    {
+      "id": "9b72d96a-cd7e-404b-926d-7d39bce12bab",
+      "teamId": "werewolf",
+      "tileId": "the-purple-portal",
+      "choiceId": "ancient-shard",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-purple-portal/9b72d96a-cd7e-404b-926d-7d39bce12bab-0d99780d199db73470e00c9ee106454aa3bee6005b0c8eb5fa3c56c0678dfd6c.webp",
+      "imageHash": "0d99780d199db73470e00c9ee106454aa3bee6005b0c8eb5fa3c56c0678dfd6c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:36:18.998Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
