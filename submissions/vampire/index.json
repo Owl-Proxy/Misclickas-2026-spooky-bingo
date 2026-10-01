@@ -441,6 +441,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "30c82428-df51-4d1d-9b6e-d4a57466bad3",
+      "teamId": "vampire",
+      "tileId": "the-purple-portal",
+      "choiceId": "ancient-shard",
+      "quantity": 1,
+      "player": "N0BunsBobby",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-purple-portal/30c82428-df51-4d1d-9b6e-d4a57466bad3-628a3fdd2b6e3e7eb2d6053fc0615dbb50ce261236bc1681d5484e3be83be0d7.webp",
+      "imageHash": "628a3fdd2b6e3e7eb2d6053fc0615dbb50ce261236bc1681d5484e3be83be0d7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T07:05:13.284Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
