@@ -157,6 +157,23 @@
           "at": "2026-10-01T04:10:03.167Z"
         }
       ]
+    },
+    {
+      "id": "6ae06237-9440-489c-9e44-f97dd8a60411",
+      "teamId": "werewolf",
+      "tileId": "spooky-scary-skeletons",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/spooky-scary-skeletons/6ae06237-9440-489c-9e44-f97dd8a60411-9fe4db6b50bef688f20aa1e4f5b9a38f99f0a7fe6a9226b85bc36d06c8afe301.webp",
+      "imageHash": "9fe4db6b50bef688f20aa1e4f5b9a38f99f0a7fe6a9226b85bc36d06c8afe301",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T04:18:10.685Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
