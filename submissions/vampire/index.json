@@ -424,6 +424,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5082c32c-1e13-48b3-bd43-44aac0fe7302",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-purple-portal--ancient-shard",
+      "quantity": 1,
+      "player": "N0BunsBobby",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/5082c32c-1e13-48b3-bd43-44aac0fe7302-628a3fdd2b6e3e7eb2d6053fc0615dbb50ce261236bc1681d5484e3be83be0d7.webp",
+      "imageHash": "628a3fdd2b6e3e7eb2d6053fc0615dbb50ce261236bc1681d5484e3be83be0d7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:57:41.778Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
