@@ -329,6 +329,23 @@
           "at": "2026-10-01T06:33:34.573Z"
         }
       ]
+    },
+    {
+      "id": "77b1f156-0ff0-43d5-8b02-d58a51e0c5e6",
+      "teamId": "werewolf",
+      "tileId": "bone-collector",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "PHDNFISTER",
+      "notes": "",
+      "imagePath": "submissions/werewolf/bone-collector/77b1f156-0ff0-43d5-8b02-d58a51e0c5e6-5f43e0500a7714e2683cfb3c72905f3f6e2875ca77fc5813653120699ed49e00.webp",
+      "imageHash": "5f43e0500a7714e2683cfb3c72905f3f6e2875ca77fc5813653120699ed49e00",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:33:59.223Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
