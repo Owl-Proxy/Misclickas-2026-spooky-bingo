@@ -249,9 +249,18 @@
       "imageType": "image/webp",
       "createdAt": "2026-10-01T02:28:34.215Z",
       "status": "pending",
-      "revision": 0,
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "pending",
+          "reason": "Submit as Ancestral robe bottom pls",
+          "at": "2026-10-01T04:19:34.046Z"
+        }
+      ]
     },
     {
       "id": "7c848932-7fcf-46a5-ae55-6a14d97217b4",
