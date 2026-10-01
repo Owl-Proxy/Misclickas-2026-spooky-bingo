@@ -407,6 +407,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "ac127610-18a9-4f2f-b4df-9c45c4b0b60c",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "staff-of-the-old-ones--ancient-staff",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/ac127610-18a9-4f2f-b4df-9c45c4b0b60c-c8717beacc5534c9077d0aa33e3ed71dc046eb979de04c14b4e9aac8c42a1bef.webp",
+      "imageHash": "c8717beacc5534c9077d0aa33e3ed71dc046eb979de04c14b4e9aac8c42a1bef",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T06:42:42.800Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
