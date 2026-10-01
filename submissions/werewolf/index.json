@@ -527,6 +527,23 @@
           "at": "2026-10-01T16:24:33.028Z"
         }
       ]
+    },
+    {
+      "id": "80daba4b-8aa4-4e89-8dfb-dc6a882c2af2",
+      "teamId": "werewolf",
+      "tileId": "hive-of-horrors",
+      "choiceId": "kq-head",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/hive-of-horrors/80daba4b-8aa4-4e89-8dfb-dc6a882c2af2-b3280e87f82c974cf7c51598dd19820d7da525bb32848a3c7edf52497c0336d7.webp",
+      "imageHash": "b3280e87f82c974cf7c51598dd19820d7da525bb32848a3c7edf52497c0336d7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T16:39:57.494Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
