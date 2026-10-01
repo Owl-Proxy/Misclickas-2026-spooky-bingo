@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "teamId": "werewolf",
+  "submissions": [
+    {
+      "id": "2abbea90-7fea-4252-9732-311a22414977",
+      "teamId": "werewolf",
+      "tileId": "the-cursed-moons",
+      "choiceId": "dual-macuahuitl",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-cursed-moons/2abbea90-7fea-4252-9732-311a22414977-a08ca0b2988c4e143210cf7d7bfc110d9fd23aaa76e88121c9191fb82330bf76.webp",
+      "imageHash": "a08ca0b2988c4e143210cf7d7bfc110d9fd23aaa76e88121c9191fb82330bf76",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:05:51.615Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
+    }
+  ]
+}
