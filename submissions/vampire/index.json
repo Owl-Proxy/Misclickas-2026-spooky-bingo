@@ -745,6 +745,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "780374b4-92a0-4909-b169-757f605595f8",
+      "teamId": "vampire",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "weenie nut jr",
+      "notes": "karils coif",
+      "imagePath": "submissions/vampire/the-six-brothers/780374b4-92a0-4909-b169-757f605595f8-9ceb1a77a8959542e94116b8a6a66c58f60dbd5c03851dc4341b1bfe91bc5114.webp",
+      "imageHash": "9ceb1a77a8959542e94116b8a6a66c58f60dbd5c03851dc4341b1bfe91bc5114",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T20:53:47.477Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
