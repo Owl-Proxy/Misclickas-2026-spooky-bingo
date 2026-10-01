@@ -79,6 +79,23 @@
           "at": "2026-10-01T00:39:45.098Z"
         }
       ]
+    },
+    {
+      "id": "9156857c-96e8-4edb-a1b9-2b3ce60fac1b",
+      "teamId": "werewolf",
+      "tileId": "the-purple-portal",
+      "choiceId": "dark-claw",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-purple-portal/9156857c-96e8-4edb-a1b9-2b3ce60fac1b-87ac65051890e6b8c5543be7aed3ed46e9946a30c1ac1e6b49bb469eddfc6efa.webp",
+      "imageHash": "87ac65051890e6b8c5543be7aed3ed46e9946a30c1ac1e6b49bb469eddfc6efa",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T00:44:45.073Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
