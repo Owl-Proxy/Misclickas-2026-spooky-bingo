@@ -647,6 +647,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "fbd7f8db-5e22-4af6-83a5-9c1e9b60916b",
+      "teamId": "werewolf",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-boots",
+      "quantity": 1,
+      "player": "Nickyesyes",
+      "notes": "",
+      "imagePath": "submissions/werewolf/through-the-vampire-mist/fbd7f8db-5e22-4af6-83a5-9c1e9b60916b-fa60e48dd8fcd8cbe2f4408368c3772a0a03e7d5ab19861db708ad4d8ae7256c.webp",
+      "imageHash": "fa60e48dd8fcd8cbe2f4408368c3772a0a03e7d5ab19861db708ad4d8ae7256c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-01T23:04:00.522Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
