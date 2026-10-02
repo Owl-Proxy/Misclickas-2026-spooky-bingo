@@ -1723,6 +1723,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "eda8a8aa-5b64-4043-a978-63d1a04ed168",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "ancient-icons",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "First icon!",
+      "imagePath": "submissions/vampire/the-exorcist/eda8a8aa-5b64-4043-a978-63d1a04ed168-26007dddb8f380e63b0011d340fbc4a0929bbc0bbb3cb8427f4f3cc32e58991a.webp",
+      "imageHash": "26007dddb8f380e63b0011d340fbc4a0929bbc0bbb3cb8427f4f3cc32e58991a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T22:01:24.043Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
