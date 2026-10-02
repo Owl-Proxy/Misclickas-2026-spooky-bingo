@@ -1476,6 +1476,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "e02860ca-30a4-45c4-a485-4913a1f9ba5a",
+      "teamId": "werewolf",
+      "tileId": "grave-robber",
+      "choiceId": "right-skull-half",
+      "quantity": 1,
+      "player": "let me runn",
+      "notes": "",
+      "imagePath": "submissions/werewolf/grave-robber/e02860ca-30a4-45c4-a485-4913a1f9ba5a-68394201b38e8a76f7864bf84c7d42a0f76aca32c77cdfb32fdfdefa81693ada.webp",
+      "imageHash": "68394201b38e8a76f7864bf84c7d42a0f76aca32c77cdfb32fdfdefa81693ada",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T18:49:38.419Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
