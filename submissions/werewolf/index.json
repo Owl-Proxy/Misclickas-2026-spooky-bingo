@@ -959,6 +959,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "cddea23d-9220-47b4-bdce-6cfb4ff2a8ad",
+      "teamId": "werewolf",
+      "tileId": "the-pact-devil",
+      "choiceId": "yama-dossier",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-pact-devil/cddea23d-9220-47b4-bdce-6cfb4ff2a8ad-5f1d597ae24a45687f22b8f1b3a57d4afd9780f3c457fd37865ce5f9117687f0.webp",
+      "imageHash": "5f1d597ae24a45687f22b8f1b3a57d4afd9780f3c457fd37865ce5f9117687f0",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:04:15.096Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
