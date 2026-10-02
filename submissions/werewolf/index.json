@@ -1511,6 +1511,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1b3b113d-fdd0-47e7-8344-530248045276",
+      "teamId": "werewolf",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "phdnfister",
+      "notes": "dh legs",
+      "imagePath": "submissions/werewolf/the-six-brothers/1b3b113d-fdd0-47e7-8344-530248045276-ca8b25a014ee9f5e1b53ef3233112a53f44b30e7c5ff3e8bede0317a9d12c9a5.webp",
+      "imageHash": "ca8b25a014ee9f5e1b53ef3233112a53f44b30e7c5ff3e8bede0317a9d12c9a5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T19:07:58.564Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
