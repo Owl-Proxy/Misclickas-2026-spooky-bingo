@@ -1323,6 +1323,23 @@
           "at": "2026-10-02T16:35:54.322Z"
         }
       ]
+    },
+    {
+      "id": "74cfc3fd-8ecf-4f68-b305-967e3fbdbffa",
+      "teamId": "werewolf",
+      "tileId": "the-cursed-moons",
+      "choiceId": "eclipse-atlatl",
+      "quantity": 1,
+      "player": "Average Dadd",
+      "notes": "Eclipse Atlatl",
+      "imagePath": "submissions/werewolf/the-cursed-moons/74cfc3fd-8ecf-4f68-b305-967e3fbdbffa-e239d952ef6aff6a3d0f84efe3021fbd4ca2fc63e5fbdd7ebe0cc55dcfa10092.webp",
+      "imageHash": "e239d952ef6aff6a3d0f84efe3021fbd4ca2fc63e5fbdd7ebe0cc55dcfa10092",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T17:43:55.142Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
