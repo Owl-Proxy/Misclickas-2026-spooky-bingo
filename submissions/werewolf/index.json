@@ -735,6 +735,23 @@
           "at": "2026-10-01T23:34:08.637Z"
         }
       ]
+    },
+    {
+      "id": "e419f96c-d4a6-400c-8e6e-d8b1a8449cf7",
+      "teamId": "werewolf",
+      "tileId": "the-pharaoh-s-curse",
+      "choiceId": "elidinis-ward",
+      "quantity": 1,
+      "player": "PHDNFISTER",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-pharaoh-s-curse/e419f96c-d4a6-400c-8e6e-d8b1a8449cf7-d79a6b32980648cabbadefc15b6ef27712eab3b53b8487e83fa10f46b29b132c.webp",
+      "imageHash": "d79a6b32980648cabbadefc15b6ef27712eab3b53b8487e83fa10f46b29b132c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T00:26:40.850Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
