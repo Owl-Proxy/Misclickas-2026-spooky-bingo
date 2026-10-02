@@ -1391,6 +1391,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "0b71784c-e7d3-47df-ad0a-44fc0ea72b3c",
+      "teamId": "werewolf",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-six-brothers/0b71784c-e7d3-47df-ad0a-44fc0ea72b3c-a77d77a5aaa3455cddee3b4dfc9f426624f2055ac542ec572c4b7fcfd3820361.png",
+      "imageHash": "a77d77a5aaa3455cddee3b4dfc9f426624f2055ac542ec572c4b7fcfd3820361",
+      "imageType": "image/png",
+      "createdAt": "2026-10-02T18:21:35.704Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
