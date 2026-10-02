@@ -1595,6 +1595,23 @@
           "at": "2026-10-02T12:48:09.475Z"
         }
       ]
+    },
+    {
+      "id": "b675ecc8-ee70-47cb-b51f-04802f8b6d20",
+      "teamId": "vampire",
+      "tileId": "the-cursed-moons",
+      "choiceId": "eclipse-atlatl",
+      "quantity": 1,
+      "player": "swwhangover",
+      "notes": "without stupid pop upp",
+      "imagePath": "submissions/vampire/the-cursed-moons/b675ecc8-ee70-47cb-b51f-04802f8b6d20-d25bebed48be8684354564f266162afceea55c158420de8c4935b1d3ccb6450a.webp",
+      "imageHash": "d25bebed48be8684354564f266162afceea55c158420de8c4935b1d3ccb6450a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T14:34:26.444Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
