@@ -984,10 +984,19 @@
       "imageHash": "8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T23:05:52.013Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "resubmit under lumberjack top",
+          "at": "2026-10-02T01:50:03.437Z"
+        }
+      ]
     },
     {
       "id": "b631f27e-bbc3-4846-9fac-d4a4396d143d",
