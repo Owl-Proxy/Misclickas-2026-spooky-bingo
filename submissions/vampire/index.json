@@ -1368,6 +1368,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "06a0eefe-00b5-46ed-9a60-b02af47b1467",
+      "teamId": "vampire",
+      "tileId": "heart-of-the-abyss",
+      "choiceId": "unsired",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/heart-of-the-abyss/06a0eefe-00b5-46ed-9a60-b02af47b1467-61126ddef6121ea42d045f6a8a438eec06a3cd82be1aa379be8aeb8d0ccd7e67.webp",
+      "imageHash": "61126ddef6121ea42d045f6a8a438eec06a3cd82be1aa379be8aeb8d0ccd7e67",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:40:03.547Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
