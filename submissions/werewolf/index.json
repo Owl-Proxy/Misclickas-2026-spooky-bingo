@@ -942,6 +942,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c4da9505-97cd-419b-9630-3cf64e0103c8",
+      "teamId": "werewolf",
+      "tileId": "the-pact-devil",
+      "choiceId": "oathplate-armour",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-pact-devil/c4da9505-97cd-419b-9630-3cf64e0103c8-a5765667ee5fabcb8664839dee8d553325cac804bf87f36bbbe9c27d15b86786.webp",
+      "imageHash": "a5765667ee5fabcb8664839dee8d553325cac804bf87f36bbbe9c27d15b86786",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:03:46.195Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
