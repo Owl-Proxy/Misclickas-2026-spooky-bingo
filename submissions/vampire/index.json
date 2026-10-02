@@ -1689,6 +1689,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "e3c2e728-8d05-4dcd-bf3b-5aa20a60cf8e",
+      "teamId": "vampire",
+      "tileId": "the-pact-devil",
+      "choiceId": "soulflame-horn",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "HOLEFLAME CORNNNNNN FOR THE GREEN LOGGER",
+      "imagePath": "submissions/vampire/the-pact-devil/e3c2e728-8d05-4dcd-bf3b-5aa20a60cf8e-a6e96e0d4795790dce6374329df9fe35d02f5075a09e1e930d27ce3493a503e5.webp",
+      "imageHash": "a6e96e0d4795790dce6374329df9fe35d02f5075a09e1e930d27ce3493a503e5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T21:31:05.146Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
