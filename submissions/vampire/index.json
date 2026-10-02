@@ -1248,6 +1248,23 @@
           "at": "2026-10-02T02:51:06.705Z"
         }
       ]
+    },
+    {
+      "id": "6bf7458f-56bb-49e9-ad58-c6504a94d5b5",
+      "teamId": "vampire",
+      "tileId": "the-crypt-keeper",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "Why patt Why and Alexforever did majority of KC",
+      "imagePath": "submissions/vampire/the-crypt-keeper/6bf7458f-56bb-49e9-ad58-c6504a94d5b5-c8b8a46312df638db869383f84e0fc8236f9eae96666d11c766c4e0bdd9309ca.webp",
+      "imageHash": "c8b8a46312df638db869383f84e0fc8236f9eae96666d11c766c4e0bdd9309ca",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:53:57.369Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
