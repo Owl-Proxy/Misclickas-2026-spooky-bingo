@@ -1629,6 +1629,23 @@
           "at": "2026-10-02T14:37:40.401Z"
         }
       ]
+    },
+    {
+      "id": "ed05cfe6-40b8-4065-8a59-3bf9e0f218dd",
+      "teamId": "vampire",
+      "tileId": "the-grim-reaper",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-grim-reaper/ed05cfe6-40b8-4065-8a59-3bf9e0f218dd-b88632a1d4d362de242a18a16e43e10e13bf0f078901cec4dc93eeb2429c92ef.webp",
+      "imageHash": "b88632a1d4d362de242a18a16e43e10e13bf0f078901cec4dc93eeb2429c92ef",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T19:09:50.002Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
