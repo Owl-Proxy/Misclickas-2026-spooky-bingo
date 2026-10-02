@@ -1123,6 +1123,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "9cfd4eb2-fd4e-435c-ab80-75ba458ad89e",
+      "teamId": "werewolf",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "vorkath-s-head",
+      "quantity": 1,
+      "player": "Average Dadd",
+      "notes": "Vorkath Head #2",
+      "imagePath": "submissions/werewolf/the-reanimated-wyvern/9cfd4eb2-fd4e-435c-ab80-75ba458ad89e-f16fb89ca634db1d222f4a7d946bf3270e55080d49ca321a85c42d54120b2c82.webp",
+      "imageHash": "f16fb89ca634db1d222f4a7d946bf3270e55080d49ca321a85c42d54120b2c82",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T13:52:11.314Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
