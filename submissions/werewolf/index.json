@@ -1492,8 +1492,8 @@
       "imageHash": "7bc3a82994a236351bfe037835141ae9447680aa06d997a8350ebaff9ad04386",
       "imageType": "image/webp",
       "createdAt": "2026-10-02T18:32:37.773Z",
-      "status": "approved",
-      "revision": 1,
+      "status": "rejected",
+      "revision": 2,
       "completesTile": false,
       "reviews": [
         {
@@ -1503,6 +1503,14 @@
           "to": "approved",
           "reason": "",
           "at": "2026-10-02T19:33:45.336Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "approved",
+          "to": "rejected",
+          "reason": "show drop in chat box not on ground",
+          "at": "2026-10-02T19:37:04.315Z"
         }
       ]
     },
