@@ -1854,6 +1854,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "0c0a498f-cb00-4a5f-b055-2f6236aa4f44",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-blood-theatre--avernic-defender-hilt",
+      "quantity": 1,
+      "player": "Sam Urai",
+      "notes": "Submitting for Sam Urai",
+      "imagePath": "submissions/vampire/the-witching-hour/0c0a498f-cb00-4a5f-b055-2f6236aa4f44-62b6aa9f21196a0cd2106aabe666e2c3049d0c5cf91a68c90eb72b4a9b93ba93.webp",
+      "imageHash": "62b6aa9f21196a0cd2106aabe666e2c3049d0c5cf91a68c90eb72b4a9b93ba93",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T23:53:22.526Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
