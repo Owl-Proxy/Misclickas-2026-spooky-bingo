@@ -1153,6 +1153,23 @@
           "at": "2026-10-02T01:48:01.643Z"
         }
       ]
+    },
+    {
+      "id": "997323df-2d70-4d28-b493-d6721f1967f1",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "through-the-vampire-mist--lumberjack-top",
+      "quantity": 1,
+      "player": "weenienut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/997323df-2d70-4d28-b493-d6721f1967f1-8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788.webp",
+      "imageHash": "8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:48:16.542Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
