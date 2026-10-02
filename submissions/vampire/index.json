@@ -1351,6 +1351,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "315e842e-85f9-4380-bf58-431d0a2c92ce",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-six-brothers--barrows-pieces",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/315e842e-85f9-4380-bf58-431d0a2c92ce-e86cfd54ec969eb45bcfc96511fea990e3b4501e86956f95cc317a2e260ce42e.webp",
+      "imageHash": "e86cfd54ec969eb45bcfc96511fea990e3b4501e86956f95cc317a2e260ce42e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:19:19.313Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
