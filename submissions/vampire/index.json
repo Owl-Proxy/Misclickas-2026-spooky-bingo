@@ -1038,6 +1038,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "b7665504-8925-4e73-9898-43c76a612d97",
+      "teamId": "vampire",
+      "tileId": "rat-king-rumble",
+      "choiceId": "scurrius-spine",
+      "quantity": 1,
+      "player": "GIMStump",
+      "notes": "Spine #3",
+      "imagePath": "submissions/vampire/rat-king-rumble/b7665504-8925-4e73-9898-43c76a612d97-1dda36938193a2a78cb12b192bd672f3f8196ae969d0f6e9d1458fdbaabf711f.webp",
+      "imageHash": "1dda36938193a2a78cb12b192bd672f3f8196ae969d0f6e9d1458fdbaabf711f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T00:46:40.173Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
