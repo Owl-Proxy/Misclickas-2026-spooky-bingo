@@ -1473,6 +1473,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "64e477fc-5c8a-4a7d-a0b1-db504d11b10b",
+      "teamId": "vampire",
+      "tileId": "the-cursed-moons",
+      "choiceId": "dual-macuahuitl",
+      "quantity": 1,
+      "player": "swwhangover",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-cursed-moons/64e477fc-5c8a-4a7d-a0b1-db504d11b10b-97a2464a9be3eba249eddfbe7825936b267e039a6788212540256cea690e11f2.webp",
+      "imageHash": "97a2464a9be3eba249eddfbe7825936b267e039a6788212540256cea690e11f2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T06:05:36.445Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
