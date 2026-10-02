@@ -1334,6 +1334,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "b7fa286f-748d-46ee-a4f1-31d6dd5d417c",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "ancient-icons",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-exorcist/b7fa286f-748d-46ee-a4f1-31d6dd5d417c-08fffbcf785709ac0f35772f29dcc4cd1c2683bf256d5df9dd3bb482b2c37b35.webp",
+      "imageHash": "08fffbcf785709ac0f35772f29dcc4cd1c2683bf256d5df9dd3bb482b2c37b35",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:08:58.555Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
