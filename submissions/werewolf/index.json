@@ -769,6 +769,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "0bc0a58d-4ef8-4d2d-9b08-eede80ececbf",
+      "teamId": "werewolf",
+      "tileId": "the-exorcist",
+      "choiceId": "ancient-icons",
+      "quantity": 1,
+      "player": "Devil 324",
+      "notes": "first 1 of 3",
+      "imagePath": "submissions/werewolf/the-exorcist/0bc0a58d-4ef8-4d2d-9b08-eede80ececbf-3a49fdb24498ec9697989508d15aa3c24ab82ddd128c9ae87580354ac80927e2.webp",
+      "imageHash": "3a49fdb24498ec9697989508d15aa3c24ab82ddd128c9ae87580354ac80927e2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T01:00:19.780Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
