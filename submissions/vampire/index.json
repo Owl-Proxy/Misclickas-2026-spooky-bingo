@@ -1655,6 +1655,23 @@
           "at": "2026-10-02T19:23:48.217Z"
         }
       ]
+    },
+    {
+      "id": "3f15097c-4da9-443d-b2ae-1678df20c12d",
+      "teamId": "vampire",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "vorkath-s-head",
+      "quantity": 1,
+      "player": "Lord Buurman",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-reanimated-wyvern/3f15097c-4da9-443d-b2ae-1678df20c12d-03ec2051f5f75a904d5b737b91c11cf3bea0177e48996c10f8fdcf56bc6b4098.webp",
+      "imageHash": "03ec2051f5f75a904d5b737b91c11cf3bea0177e48996c10f8fdcf56bc6b4098",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T20:16:21.947Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
