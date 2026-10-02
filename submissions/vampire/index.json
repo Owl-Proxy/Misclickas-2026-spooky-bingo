@@ -932,10 +932,19 @@
       "imageHash": "8629ed4f5dea5f3414bc3aae82cc966a5d6f151d8e6727778752c710b7fcf788",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T23:00:33.043Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "lumberjack piece",
+          "at": "2026-10-02T01:49:32.746Z"
+        }
+      ]
     },
     {
       "id": "198d92c7-b9cc-46e7-94b1-9c2400976e95",
