@@ -1244,6 +1244,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "0e419be7-24d8-45dc-8895-908f7117b0ed",
+      "teamId": "werewolf",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "Average Dadd",
+      "notes": "Dharok's Platelegs",
+      "imagePath": "submissions/werewolf/the-six-brothers/0e419be7-24d8-45dc-8895-908f7117b0ed-67ac1d226ccd440ced1ffa04109dbdf7fc18f32e3128da9fa7c9498f2f83cdf9.webp",
+      "imageHash": "67ac1d226ccd440ced1ffa04109dbdf7fc18f32e3128da9fa7c9498f2f83cdf9",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T15:39:12.605Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
