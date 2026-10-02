@@ -786,6 +786,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c30b8445-9af4-4880-aeed-c2a33cc9785e",
+      "teamId": "werewolf",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 2,
+      "player": "Average Dadd",
+      "notes": "Did not have passphrase set up yet, sorry....",
+      "imagePath": "submissions/werewolf/the-undertaker/c30b8445-9af4-4880-aeed-c2a33cc9785e-04546f18a3c0197d93ae21651ea6b5745072dc4012b3886465391389e9699223.webp",
+      "imageHash": "04546f18a3c0197d93ae21651ea6b5745072dc4012b3886465391389e9699223",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T01:30:00.705Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
