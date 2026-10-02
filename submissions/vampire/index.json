@@ -1706,6 +1706,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "3f8b00e8-76db-4061-a8be-a3d053fa2d67",
+      "teamId": "vampire",
+      "tileId": "the-pact-devil",
+      "choiceId": "yama-dossier",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "WOOOOOOOOOOOOOOOOOO",
+      "imagePath": "submissions/vampire/the-pact-devil/3f8b00e8-76db-4061-a8be-a3d053fa2d67-c819b9edc5311a8545644516ce41b611673d2d39bed4bf174e060794ae103587.webp",
+      "imageHash": "c819b9edc5311a8545644516ce41b611673d2d39bed4bf174e060794ae103587",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T21:58:45.580Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
