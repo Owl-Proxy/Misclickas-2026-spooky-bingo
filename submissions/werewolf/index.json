@@ -1193,6 +1193,23 @@
           "at": "2026-10-02T14:39:07.085Z"
         }
       ]
+    },
+    {
+      "id": "b54fe317-56a1-4523-ac8f-c26149d4ffed",
+      "teamId": "werewolf",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 6,
+      "player": "Big Spinach",
+      "notes": "6x chewed bones",
+      "imagePath": "submissions/werewolf/the-undertaker/b54fe317-56a1-4523-ac8f-c26149d4ffed-964784baad5f9c139f0a8e860a2538837b772fed8de7e22041a45ad865f07ae8.webp",
+      "imageHash": "964784baad5f9c139f0a8e860a2538837b772fed8de7e22041a45ad865f07ae8",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T15:07:35.636Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
