@@ -1385,6 +1385,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1eb33167-5783-4647-9e99-50dcb99db216",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "heart-of-the-abyss--unsired",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/1eb33167-5783-4647-9e99-50dcb99db216-61126ddef6121ea42d045f6a8a438eec06a3cd82be1aa379be8aeb8d0ccd7e67.webp",
+      "imageHash": "61126ddef6121ea42d045f6a8a438eec06a3cd82be1aa379be8aeb8d0ccd7e67",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:40:38.197Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
