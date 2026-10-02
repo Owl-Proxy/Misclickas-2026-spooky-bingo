@@ -1227,6 +1227,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5af24587-3973-4213-9419-b9f0a7a15ce4",
+      "teamId": "werewolf",
+      "tileId": "web-of-nightmares",
+      "choiceId": "noxious-point",
+      "quantity": 1,
+      "player": "xNlGHTMAYERx",
+      "notes": "",
+      "imagePath": "submissions/werewolf/web-of-nightmares/5af24587-3973-4213-9419-b9f0a7a15ce4-65bb02a26336422766f6a9c641b0e277c33b08b5506800cf4f90ee10e26e852f.webp",
+      "imageHash": "65bb02a26336422766f6a9c641b0e277c33b08b5506800cf4f90ee10e26e852f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T15:27:31.329Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
