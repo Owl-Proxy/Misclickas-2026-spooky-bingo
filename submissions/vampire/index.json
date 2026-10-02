@@ -1265,6 +1265,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "ffc82196-9c09-4ef7-990d-4c78847080fa",
+      "teamId": "vampire",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "Why Pat Why",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-six-brothers/ffc82196-9c09-4ef7-990d-4c78847080fa-47e5b3b2f04f18efdb6860e1d87d8d97c58af145a5a601650ea8c2579dd3ad0e.webp",
+      "imageHash": "47e5b3b2f04f18efdb6860e1d87d8d97c58af145a5a601650ea8c2579dd3ad0e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:57:00.206Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
