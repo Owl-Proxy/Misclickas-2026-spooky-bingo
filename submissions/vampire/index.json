@@ -1524,6 +1524,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "2b75c9db-ef70-428d-8d8d-15a6aa2d548b",
+      "teamId": "vampire",
+      "tileId": "the-cursed-moons",
+      "choiceId": "dual-macuahuitl",
+      "quantity": 1,
+      "player": "swwhanover",
+      "notes": "sorry for the extra pictures bq of the collectiopnlog popup u cant see the event things, i realist this a bid late. i hope it still counts with the extra pictures.",
+      "imagePath": "submissions/vampire/the-cursed-moons/2b75c9db-ef70-428d-8d8d-15a6aa2d548b-756dc2e0c9e62c7e699058d4f31188781e36a90c65d928327dd646f108bc4e42.webp",
+      "imageHash": "756dc2e0c9e62c7e699058d4f31188781e36a90c65d928327dd646f108bc4e42",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T07:02:32.994Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
