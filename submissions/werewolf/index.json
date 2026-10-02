@@ -1374,6 +1374,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "0db996d3-4b84-47b6-87ee-8fe1ff45efcf",
+      "teamId": "werewolf",
+      "tileId": "ghostbusters",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "2MlL",
+      "notes": "Ghostly cape",
+      "imagePath": "submissions/werewolf/ghostbusters/0db996d3-4b84-47b6-87ee-8fe1ff45efcf-7c541155ea9b92aa0d1656d7465f827e61f98bf60b2ca59ef8db3e94b1691155.png",
+      "imageHash": "7c541155ea9b92aa0d1656d7465f827e61f98bf60b2ca59ef8db3e94b1691155",
+      "imageType": "image/png",
+      "createdAt": "2026-10-02T18:05:49.900Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
