@@ -1300,6 +1300,23 @@
           "at": "2026-10-02T03:06:04.836Z"
         }
       ]
+    },
+    {
+      "id": "824f1ad0-083f-4cf0-8927-d8085a94f598",
+      "teamId": "vampire",
+      "tileId": "the-purple-portal",
+      "choiceId": "dark-claw",
+      "quantity": 1,
+      "player": "weenienut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-purple-portal/824f1ad0-083f-4cf0-8927-d8085a94f598-c9804209776dbd215c81e3145673c78ba7daa3b2cdfe4916980b62259da5bb90.webp",
+      "imageHash": "c9804209776dbd215c81e3145673c78ba7daa3b2cdfe4916980b62259da5bb90",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T03:41:39.830Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
