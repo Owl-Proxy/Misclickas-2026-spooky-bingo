@@ -1456,6 +1456,23 @@
           "at": "2026-10-02T04:53:16.340Z"
         }
       ]
+    },
+    {
+      "id": "51ff881e-47d8-430a-accb-7044f4ff7645",
+      "teamId": "vampire",
+      "tileId": "the-leviathan-s-maw",
+      "choiceId": "venator-vestige",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-leviathan-s-maw/51ff881e-47d8-430a-accb-7044f4ff7645-0e0c48e5c4f08d3350705ae5363a446e09bf318a567838a2d404085fd0935afb.webp",
+      "imageHash": "0e0c48e5c4f08d3350705ae5363a446e09bf318a567838a2d404085fd0935afb",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T05:20:54.645Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
