@@ -1062,10 +1062,19 @@
       "imageHash": "54ad925620821dab466011cbaa0643f1ff983534ee7ece38492244ff481f4ddc",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T23:07:04.774Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "resubmit under lumberjack boots",
+          "at": "2026-10-02T01:50:26.064Z"
+        }
+      ]
     },
     {
       "id": "49536cf9-e92e-4ba4-a821-667a069bc2b0",
