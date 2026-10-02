@@ -1740,6 +1740,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1097b25a-974f-4bd0-a0bc-88e847057373",
+      "teamId": "vampire",
+      "tileId": "the-witch-s-face",
+      "choiceId": "black-mask",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witch-s-face/1097b25a-974f-4bd0-a0bc-88e847057373-01144252d0201c887276799f58600c6fe02fd5220829394ea88a4ae163a20fc2.webp",
+      "imageHash": "01144252d0201c887276799f58600c6fe02fd5220829394ea88a4ae163a20fc2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T22:51:45.220Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
