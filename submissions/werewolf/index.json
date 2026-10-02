@@ -1563,6 +1563,23 @@
           "at": "2026-10-02T19:09:06.751Z"
         }
       ]
+    },
+    {
+      "id": "a1c36ebd-6377-4886-8a24-13392c653325",
+      "teamId": "werewolf",
+      "tileId": "fists-of-fury",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "",
+      "imagePath": "submissions/werewolf/fists-of-fury/a1c36ebd-6377-4886-8a24-13392c653325-b3a0fdc3689ff3341967cb790f2ca6df0c7481b2256852fa87b1c90c3db2aaa9.png",
+      "imageHash": "b3a0fdc3689ff3341967cb790f2ca6df0c7481b2256852fa87b1c90c3db2aaa9",
+      "imageType": "image/png",
+      "createdAt": "2026-10-02T19:18:08.732Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
