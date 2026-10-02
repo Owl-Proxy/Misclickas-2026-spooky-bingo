@@ -1387,10 +1387,19 @@
       "imageHash": "7c541155ea9b92aa0d1656d7465f827e61f98bf60b2ca59ef8db3e94b1691155",
       "imageType": "image/png",
       "createdAt": "2026-10-02T18:05:49.900Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "Must complete a team Wilderness boss, with multiple members wearing at least one ghostly piece, not a solo",
+          "at": "2026-10-02T19:30:57.818Z"
+        }
+      ]
     },
     {
       "id": "0b71784c-e7d3-47df-ad0a-44fc0ea72b3c",
