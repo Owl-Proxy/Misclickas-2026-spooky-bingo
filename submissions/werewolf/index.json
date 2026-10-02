@@ -976,6 +976,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "3fae9a1e-4114-4544-8766-007a31d487b2",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-pact-devil--yama-dossier",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/3fae9a1e-4114-4544-8766-007a31d487b2-5f1d597ae24a45687f22b8f1b3a57d4afd9780f3c457fd37865ce5f9117687f0.webp",
+      "imageHash": "5f1d597ae24a45687f22b8f1b3a57d4afd9780f3c457fd37865ce5f9117687f0",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:05:07.636Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
