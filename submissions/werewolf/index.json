@@ -1089,6 +1089,23 @@
           "at": "2026-10-02T13:23:16.862Z"
         }
       ]
+    },
+    {
+      "id": "e19a7c9a-2afc-498c-8436-5a2d6660b786",
+      "teamId": "werewolf",
+      "tileId": "the-pact-devil",
+      "choiceId": "soulflame-horn",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-pact-devil/e19a7c9a-2afc-498c-8436-5a2d6660b786-01f326a8ab469b8f3ad2f6dc2a844508a3e676241e067b94c56db966a45be7b5.webp",
+      "imageHash": "01f326a8ab469b8f3ad2f6dc2a844508a3e676241e067b94c56db966a45be7b5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T13:32:33.635Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
