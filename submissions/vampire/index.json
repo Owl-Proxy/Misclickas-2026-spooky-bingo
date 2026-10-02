@@ -1204,6 +1204,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c9832a5d-53a8-4c6c-97ed-e3aa1e65cb88",
+      "teamId": "vampire",
+      "tileId": "through-the-vampire-mist",
+      "choiceId": "lumberjack-boots",
+      "quantity": 1,
+      "player": "weenienut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/through-the-vampire-mist/c9832a5d-53a8-4c6c-97ed-e3aa1e65cb88-54ad925620821dab466011cbaa0643f1ff983534ee7ece38492244ff481f4ddc.webp",
+      "imageHash": "54ad925620821dab466011cbaa0643f1ff983534ee7ece38492244ff481f4ddc",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:49:54.991Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
