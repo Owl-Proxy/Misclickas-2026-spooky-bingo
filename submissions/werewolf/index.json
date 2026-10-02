@@ -925,6 +925,23 @@
           "at": "2026-10-02T03:05:26.711Z"
         }
       ]
+    },
+    {
+      "id": "f8b72b12-b6bb-4270-bda3-8fd125830686",
+      "teamId": "werewolf",
+      "tileId": "the-crypt-keeper",
+      "choiceId": "activity-progress",
+      "quantity": 32,
+      "player": "2MlL",
+      "notes": "32 completed",
+      "imagePath": "submissions/werewolf/the-crypt-keeper/f8b72b12-b6bb-4270-bda3-8fd125830686-bbf693a14aed6851ffa5c4cc3993398d54617f54682ba5dfa03efffa8231a63b.webp",
+      "imageHash": "bbf693a14aed6851ffa5c4cc3993398d54617f54682ba5dfa03efffa8231a63b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T03:42:47.964Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
