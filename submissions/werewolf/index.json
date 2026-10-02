@@ -847,6 +847,23 @@
           "at": "2026-10-02T01:51:03.572Z"
         }
       ]
+    },
+    {
+      "id": "b15efe7c-0df7-44ba-b921-c2bcf3f27af2",
+      "teamId": "werewolf",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "verac's helm",
+      "imagePath": "submissions/werewolf/the-six-brothers/b15efe7c-0df7-44ba-b921-c2bcf3f27af2-c7f0b958ea8b8ced34b0e453b9e65ed82803eb4094e448145deb0edc8e162033.webp",
+      "imageHash": "c7f0b958ea8b8ced34b0e453b9e65ed82803eb4094e448145deb0edc8e162033",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:43:05.104Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
