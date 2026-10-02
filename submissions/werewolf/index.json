@@ -248,8 +248,8 @@
       "imageHash": "df6382e6d21473d4b649d0016ef525372e49b9fd8b73eba61d630af2b5155cff",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T05:20:20.745Z",
-      "status": "pending",
-      "revision": 2,
+      "status": "rejected",
+      "revision": 3,
       "completesTile": false,
       "reviews": [
         {
@@ -267,6 +267,14 @@
           "to": "pending",
           "reason": "include passphrase pls and change quantity to 2",
           "at": "2026-10-01T05:37:41.889Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "resubmitted with 2 activity progress",
+          "at": "2026-10-02T01:51:29.394Z"
         }
       ]
     },
