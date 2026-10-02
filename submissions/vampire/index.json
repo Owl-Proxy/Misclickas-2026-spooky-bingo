@@ -1317,6 +1317,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "9a1a395e-884d-4a96-97e0-afeb20a07e57",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-exorcist--ancient-icons",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/9a1a395e-884d-4a96-97e0-afeb20a07e57-08fffbcf785709ac0f35772f29dcc4cd1c2683bf256d5df9dd3bb482b2c37b35.webp",
+      "imageHash": "08fffbcf785709ac0f35772f29dcc4cd1c2683bf256d5df9dd3bb482b2c37b35",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T04:08:25.197Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
