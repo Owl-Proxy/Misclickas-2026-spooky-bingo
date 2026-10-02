@@ -1055,6 +1055,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "706ceb4e-7885-42d3-84d3-d57ecc67eb74",
+      "teamId": "vampire",
+      "tileId": "the-six-brothers",
+      "choiceId": "barrows-pieces",
+      "quantity": 1,
+      "player": "GIM CNasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-six-brothers/706ceb4e-7885-42d3-84d3-d57ecc67eb74-e3b9ecb5c237ee634e67a5304c7320ee7df40e72f4252841e8879544ee713a4b.webp",
+      "imageHash": "e3b9ecb5c237ee634e67a5304c7320ee7df40e72f4252841e8879544ee713a4b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T01:13:27.836Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
