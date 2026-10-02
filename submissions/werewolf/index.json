@@ -1063,6 +1063,23 @@
           "at": "2026-10-02T12:46:39.192Z"
         }
       ]
+    },
+    {
+      "id": "2526a163-1ace-4bde-a2d2-f64cebeca948",
+      "teamId": "werewolf",
+      "tileId": "the-witch-s-face",
+      "choiceId": "black-mask",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "Mobile",
+      "imagePath": "submissions/werewolf/the-witch-s-face/2526a163-1ace-4bde-a2d2-f64cebeca948-fee99df5b30da53ae6fe1a3896cc7b263577b9cc0dd6ab77dce0fa4f5a0d7f22.png",
+      "imageHash": "fee99df5b30da53ae6fe1a3896cc7b263577b9cc0dd6ab77dce0fa4f5a0d7f22",
+      "imageType": "image/png",
+      "createdAt": "2026-10-02T13:22:40.084Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
