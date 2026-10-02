@@ -1837,6 +1837,23 @@
           "at": "2026-10-02T23:48:40.201Z"
         }
       ]
+    },
+    {
+      "id": "0e790fff-5f2f-4b55-ac9e-803d1ebd6577",
+      "teamId": "vampire",
+      "tileId": "the-blood-theatre",
+      "choiceId": "avernic-defender-hilt",
+      "quantity": 1,
+      "player": "Sam Urai",
+      "notes": "Adding screenshot for Sam.",
+      "imagePath": "submissions/vampire/the-blood-theatre/0e790fff-5f2f-4b55-ac9e-803d1ebd6577-62b6aa9f21196a0cd2106aabe666e2c3049d0c5cf91a68c90eb72b4a9b93ba93.webp",
+      "imageHash": "62b6aa9f21196a0cd2106aabe666e2c3049d0c5cf91a68c90eb72b4a9b93ba93",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T23:52:14.632Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
