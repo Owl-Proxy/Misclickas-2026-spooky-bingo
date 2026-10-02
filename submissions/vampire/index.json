@@ -1010,10 +1010,19 @@
       "imageHash": "080eab9bcf2aa293af5ec827934804cda372936424f652c9c6406c9e43b89848",
       "imageType": "image/webp",
       "createdAt": "2026-10-01T23:06:11.376Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "resubmit under lumberjack legs",
+          "at": "2026-10-02T01:50:14.562Z"
+        }
+      ]
     },
     {
       "id": "8d06ba05-229c-43f9-9edd-f169b6cee67d",
