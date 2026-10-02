@@ -864,6 +864,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7cb28f84-c354-4f61-a03c-64bc76d55e6a",
+      "teamId": "werewolf",
+      "tileId": "the-crypt-keeper",
+      "choiceId": "activity-progress",
+      "quantity": 25,
+      "player": "Dmitaines",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-crypt-keeper/7cb28f84-c354-4f61-a03c-64bc76d55e6a-701172f56a12622dca548bbe60cdeea8b8ba6475cb50d77042642a4e7a30cc6c.webp",
+      "imageHash": "701172f56a12622dca548bbe60cdeea8b8ba6475cb50d77042642a4e7a30cc6c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:43:32.724Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
