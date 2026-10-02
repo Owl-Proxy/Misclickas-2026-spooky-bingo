@@ -881,6 +881,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "6fa0b617-db54-45fe-ba45-6bd813951997",
+      "teamId": "werewolf",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "Devil 324",
+      "notes": "2nd ancient icon",
+      "imagePath": "submissions/werewolf/the-exorcist/6fa0b617-db54-45fe-ba45-6bd813951997-7bc3a82994a236351bfe037835141ae9447680aa06d997a8350ebaff9ad04386.webp",
+      "imageHash": "7bc3a82994a236351bfe037835141ae9447680aa06d997a8350ebaff9ad04386",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T02:44:58.504Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
