@@ -1672,6 +1672,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5857318a-90be-4c5d-aed1-86d706f2db7b",
+      "teamId": "vampire",
+      "tileId": "the-frozen-feast",
+      "choiceId": "magus-vestige",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "oh yeah baby!",
+      "imagePath": "submissions/vampire/the-frozen-feast/5857318a-90be-4c5d-aed1-86d706f2db7b-4a5a390af83bda1564a916ca36e4cf3c38134aca2495b46c6fb2dd3c60ef2c28.webp",
+      "imageHash": "4a5a390af83bda1564a916ca36e4cf3c38134aca2495b46c6fb2dd3c60ef2c28",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T21:20:17.081Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
