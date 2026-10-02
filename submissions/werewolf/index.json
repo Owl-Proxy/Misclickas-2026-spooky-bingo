@@ -1261,6 +1261,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "cec2612a-1f82-4316-a689-91129d8c99ac",
+      "teamId": "werewolf",
+      "tileId": "rat-king-rumble",
+      "choiceId": "scurrius-spine",
+      "quantity": 1,
+      "player": "I TOXlC I",
+      "notes": "",
+      "imagePath": "submissions/werewolf/rat-king-rumble/cec2612a-1f82-4316-a689-91129d8c99ac-f654e4fc5453a57ee6b3d3851f0f943e7b75558bd739c3d2b96169584ee5a8b8.png",
+      "imageHash": "f654e4fc5453a57ee6b3d3851f0f943e7b75558bd739c3d2b96169584ee5a8b8",
+      "imageType": "image/png",
+      "createdAt": "2026-10-02T15:51:36.251Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
