@@ -1357,6 +1357,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "76f67377-fc4e-4fcb-a17e-8802de17a614",
+      "teamId": "werewolf",
+      "tileId": "grave-robber",
+      "choiceId": "bottom-of-sceptre",
+      "quantity": 1,
+      "player": "let me runn",
+      "notes": "",
+      "imagePath": "submissions/werewolf/grave-robber/76f67377-fc4e-4fcb-a17e-8802de17a614-d58a3cbde4431460d807610fe700402fcf6190f76cbea4e53001820d2f61ae77.webp",
+      "imageHash": "d58a3cbde4431460d807610fe700402fcf6190f76cbea4e53001820d2f61ae77",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-02T18:02:30.606Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
