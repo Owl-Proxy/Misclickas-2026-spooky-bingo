@@ -800,10 +800,19 @@
       "imageHash": "3a49fdb24498ec9697989508d15aa3c24ab82ddd128c9ae87580354ac80927e2",
       "imageType": "image/webp",
       "createdAt": "2026-10-02T01:00:19.780Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-02T01:50:58.322Z"
+        }
+      ]
     },
     {
       "id": "c30b8445-9af4-4880-aeed-c2a33cc9785e",
