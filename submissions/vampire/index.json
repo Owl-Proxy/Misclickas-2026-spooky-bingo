@@ -2019,6 +2019,23 @@
           "at": "2026-10-03T05:01:40.014Z"
         }
       ]
+    },
+    {
+      "id": "fce73b0d-3a7c-4b79-a8a3-5a60de36115e",
+      "teamId": "vampire",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 13,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-undertaker/fce73b0d-3a7c-4b79-a8a3-5a60de36115e-ada3ca9067c0ee83c3ee9c9f699178c46e85fa6b3d7f693615e926a7e83e39a5.webp",
+      "imageHash": "ada3ca9067c0ee83c3ee9c9f699178c46e85fa6b3d7f693615e926a7e83e39a5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T05:03:26.031Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
