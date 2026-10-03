@@ -1980,10 +1980,19 @@
       "imageHash": "04e8960c7726465ef0b77002d3a6f45b95aa4c6632ded40b17be3167facdf51e",
       "imageType": "image/webp",
       "createdAt": "2026-10-03T04:22:59.298Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-03T05:01:32.858Z"
+        }
+      ]
     },
     {
       "id": "3e001fd6-e2a4-46f8-bf1f-66374052207c",
