@@ -2173,6 +2173,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1d6c19a1-c7c5-448a-a03f-93f27d31215f",
+      "teamId": "vampire",
+      "tileId": "hive-of-horrors",
+      "choiceId": "kq-head",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/hive-of-horrors/1d6c19a1-c7c5-448a-a03f-93f27d31215f-6124b5b5a05cc75b678543515285db39408e9cb7fbb5298e071f7f9453b9c99a.webp",
+      "imageHash": "6124b5b5a05cc75b678543515285db39408e9cb7fbb5298e071f7f9453b9c99a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T07:18:30.771Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
