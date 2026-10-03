@@ -2139,6 +2139,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "692baa24-5606-4f13-8948-c0f3e7635851",
+      "teamId": "vampire",
+      "tileId": "the-pharaoh-s-curse",
+      "choiceId": "osmumten-s-fang",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "I'm on fire baby.",
+      "imagePath": "submissions/vampire/the-pharaoh-s-curse/692baa24-5606-4f13-8948-c0f3e7635851-d3f50228f22270b318f8c0b777a45bca5541576cdd145faefb75ac59e5835313.webp",
+      "imageHash": "d3f50228f22270b318f8c0b777a45bca5541576cdd145faefb75ac59e5835313",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T06:30:08.352Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
