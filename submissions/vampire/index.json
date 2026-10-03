@@ -2059,8 +2059,8 @@
       "imageType": "image/webp",
       "createdAt": "2026-10-03T05:03:41.890Z",
       "status": "approved",
-      "revision": 1,
-      "completesTile": false,
+      "revision": 2,
+      "completesTile": true,
       "reviews": [
         {
           "reviewerId": "organiser",
@@ -2069,6 +2069,14 @@
           "to": "approved",
           "reason": "",
           "at": "2026-10-03T05:05:11.740Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "approved",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-03T05:05:55.023Z"
         }
       ]
     },
