@@ -2190,6 +2190,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "49677090-6b7e-4a26-8b1c-84a7500bffe8",
+      "teamId": "vampire",
+      "tileId": "dreams-of-ashihama",
+      "choiceId": "inquisitor-armor-piece",
+      "quantity": 1,
+      "player": "Long Cuts",
+      "notes": "*THIS IS ILLEGAL DO NOT APPROVE THIS\n\ndaddy owl plz let this count uwu sucky sucky",
+      "imagePath": "submissions/vampire/dreams-of-ashihama/49677090-6b7e-4a26-8b1c-84a7500bffe8-f842ce602741adfd2b4ca2a7c7dd8b831888c350afbcd3bc644a11d4265415e4.webp",
+      "imageHash": "f842ce602741adfd2b4ca2a7c7dd8b831888c350afbcd3bc644a11d4265415e4",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T13:42:08.995Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
