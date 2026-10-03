@@ -2252,6 +2252,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "70ad9f90-69fb-49b8-9300-4d673f0d281c",
+      "teamId": "vampire",
+      "tileId": "the-buried-doom",
+      "choiceId": "avernic-treads",
+      "quantity": 1,
+      "player": "Uh Free",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-buried-doom/70ad9f90-69fb-49b8-9300-4d673f0d281c-e2b9979e9eca4441bf3e459c62f8f6775cce58d2ed03eea789c948fa08b66336.webp",
+      "imageHash": "e2b9979e9eca4441bf3e459c62f8f6775cce58d2ed03eea789c948fa08b66336",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T22:55:00.854Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
