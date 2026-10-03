@@ -1966,6 +1966,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "3e001fd6-e2a4-46f8-bf1f-66374052207c",
+      "teamId": "vampire",
+      "tileId": "grave-robber",
+      "choiceId": "bottom-of-sceptre",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/grave-robber/3e001fd6-e2a4-46f8-bf1f-66374052207c-577a0412c756da89eb64b2b611476c84317282bf12e7489765c92f6348d9e53c.webp",
+      "imageHash": "577a0412c756da89eb64b2b611476c84317282bf12e7489765c92f6348d9e53c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T04:23:13.779Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
