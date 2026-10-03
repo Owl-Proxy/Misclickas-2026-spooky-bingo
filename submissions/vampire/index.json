@@ -2122,6 +2122,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "23eafe5e-628c-4126-9823-dcb2a8adc174",
+      "teamId": "vampire",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "vorkath-s-head",
+      "quantity": 1,
+      "player": "GIM CNasty",
+      "notes": "Head during witching hour",
+      "imagePath": "submissions/vampire/the-reanimated-wyvern/23eafe5e-628c-4126-9823-dcb2a8adc174-ab45e02f1404855c7163c810646e62e127d40ae8d2d3ee42ed104e547e587253.webp",
+      "imageHash": "ab45e02f1404855c7163c810646e62e127d40ae8d2d3ee42ed104e547e587253",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T05:39:54.561Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
