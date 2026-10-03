@@ -1932,6 +1932,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "d820f473-b4ab-4f7d-9724-884a9a29d471",
+      "teamId": "vampire",
+      "tileId": "grave-robber",
+      "choiceId": "left-skull-half",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/grave-robber/d820f473-b4ab-4f7d-9724-884a9a29d471-db5cf2cfa0ac48bd1aac4ff9785b9a44d370974e7718acf625d6ad6503517605.webp",
+      "imageHash": "db5cf2cfa0ac48bd1aac4ff9785b9a44d370974e7718acf625d6ad6503517605",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T04:22:40.254Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
