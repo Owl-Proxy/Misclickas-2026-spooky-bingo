@@ -2036,6 +2036,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "a689f0c8-d095-4cc2-8115-4157dacef6ad",
+      "teamId": "vampire",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 12,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-undertaker/a689f0c8-d095-4cc2-8115-4157dacef6ad-161786427bf6898ec4c955c70a4d538d5c3de4a20582f6667ee5b1832c4b9c84.webp",
+      "imageHash": "161786427bf6898ec4c955c70a4d538d5c3de4a20582f6667ee5b1832c4b9c84",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T05:03:41.890Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
