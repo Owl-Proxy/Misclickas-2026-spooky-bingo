@@ -2105,6 +2105,23 @@
           "at": "2026-10-03T05:05:44.871Z"
         }
       ]
+    },
+    {
+      "id": "950b0f90-f8a2-4b5c-8ba4-58ec0833f3d0",
+      "teamId": "vampire",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "Long Cuts",
+      "notes": "we love owl",
+      "imagePath": "submissions/vampire/the-hungry-chest/950b0f90-f8a2-4b5c-8ba4-58ec0833f3d0-b6cd69522e034a0792082913392b612a50be3b934b487835937256d65427d4c4.webp",
+      "imageHash": "b6cd69522e034a0792082913392b612a50be3b934b487835937256d65427d4c4",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T05:11:46.600Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
