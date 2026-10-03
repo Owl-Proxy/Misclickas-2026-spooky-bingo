@@ -2156,6 +2156,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "8dc6d545-702a-498e-9535-4c9082c5be0f",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-pharaoh-s-curse--osmumten-s-fang",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "Witching Hour Fangjamin",
+      "imagePath": "submissions/vampire/the-witching-hour/8dc6d545-702a-498e-9535-4c9082c5be0f-fa7299bfd05fd5a423d7479de11fd255865252d983ed8bded4f9768038ff6ecf.webp",
+      "imageHash": "fa7299bfd05fd5a423d7479de11fd255865252d983ed8bded4f9768038ff6ecf",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T06:33:30.914Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
