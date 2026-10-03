@@ -2269,6 +2269,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "811aaba8-7117-49d5-a6c9-fb6ee0db989b",
+      "teamId": "vampire",
+      "tileId": "the-blood-theatre",
+      "choiceId": "justiciar-chestguard",
+      "quantity": 1,
+      "player": "Uh Free",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-blood-theatre/811aaba8-7117-49d5-a6c9-fb6ee0db989b-c571b4ce854420b2a9b3effceb702db7c49e62e2f8db97585a1d15c073706bdb.webp",
+      "imageHash": "c571b4ce854420b2a9b3effceb702db7c49e62e2f8db97585a1d15c073706bdb",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T23:36:00.793Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
