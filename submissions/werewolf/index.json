@@ -1868,6 +1868,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "5981eb13-aad9-43d4-b1c3-d26b63bf6527",
+      "teamId": "werewolf",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "magic-fang",
+      "quantity": 1,
+      "player": "2MlL",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-swamp-serpent/5981eb13-aad9-43d4-b1c3-d26b63bf6527-4237541e66dbe65efb5ce6e455377e69cf870e13daed014be8938d338fbfcd98.webp",
+      "imageHash": "4237541e66dbe65efb5ce6e455377e69cf870e13daed014be8938d338fbfcd98",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-03T03:29:09.001Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
