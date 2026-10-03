@@ -1881,10 +1881,19 @@
       "imageHash": "4237541e66dbe65efb5ce6e455377e69cf870e13daed014be8938d338fbfcd98",
       "imageType": "image/webp",
       "createdAt": "2026-10-03T03:29:09.001Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-03T03:43:58.460Z"
+        }
+      ]
     }
   ]
 }
