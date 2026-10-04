@@ -2390,6 +2390,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "003048e5-4544-4dd2-a698-eaedfb07b28e",
+      "teamId": "vampire",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-hungry-chest/003048e5-4544-4dd2-a698-eaedfb07b28e-f2a8d8c2c87ee8b9dcb751c91c902221e165ea7f7fc621a2c9a18bf1d528854a.webp",
+      "imageHash": "f2a8d8c2c87ee8b9dcb751c91c902221e165ea7f7fc621a2c9a18bf1d528854a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T04:22:29.411Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
