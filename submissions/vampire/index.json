@@ -2469,6 +2469,23 @@
           "at": "2026-10-04T06:54:19.454Z"
         }
       ]
+    },
+    {
+      "id": "8ad2be50-90df-4f6b-a2dc-a75aaf3a56f5",
+      "teamId": "vampire",
+      "tileId": "the-cursed-moons",
+      "choiceId": "blue-moon-spear",
+      "quantity": 1,
+      "player": "swwhangover",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-cursed-moons/8ad2be50-90df-4f6b-a2dc-a75aaf3a56f5-fc0292ce8062118074ff800cc99e123ce288a7d1557b26a9913eb05394db8754.webp",
+      "imageHash": "fc0292ce8062118074ff800cc99e123ce288a7d1557b26a9913eb05394db8754",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T08:59:51.549Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
