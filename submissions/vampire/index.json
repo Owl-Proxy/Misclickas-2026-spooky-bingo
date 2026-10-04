@@ -2286,6 +2286,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "34dfdb37-6a2b-4788-b240-8e7bedf90658",
+      "teamId": "vampire",
+      "tileId": "the-corpse-eater",
+      "choiceId": "elder-venator-fang",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "Elder Fang babbyyyy! \nI. AM. DELIVERT!",
+      "imagePath": "submissions/vampire/the-corpse-eater/34dfdb37-6a2b-4788-b240-8e7bedf90658-eee5c5c5b6c40d642d95e1f134d8d6840f9fe1b57f3ad873e36a8705f024136a.webp",
+      "imageHash": "eee5c5c5b6c40d642d95e1f134d8d6840f9fe1b57f3ad873e36a8705f024136a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T03:09:31.815Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
