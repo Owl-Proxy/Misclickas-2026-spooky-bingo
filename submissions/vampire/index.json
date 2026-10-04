@@ -2339,6 +2339,23 @@
           "at": "2026-10-04T03:19:23.369Z"
         }
       ]
+    },
+    {
+      "id": "83210417-83a5-4818-90e5-3dedd33a7ef3",
+      "teamId": "vampire",
+      "tileId": "fists-of-fury",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/fists-of-fury/83210417-83a5-4818-90e5-3dedd33a7ef3-4bb54bfd93b4a0798b928edff7ef4a15eecfe9caae8c509095539f4883c7c600.webp",
+      "imageHash": "4bb54bfd93b4a0798b928edff7ef4a15eecfe9caae8c509095539f4883c7c600",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T03:51:01.366Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
