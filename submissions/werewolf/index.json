@@ -2006,6 +2006,23 @@
           "at": "2026-10-04T14:18:39.375Z"
         }
       ]
+    },
+    {
+      "id": "b932fd76-749d-4dbc-90cf-ed4067cae3d3",
+      "teamId": "werewolf",
+      "tileId": "hive-of-horrors",
+      "choiceId": "dragon-chainbody",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/hive-of-horrors/b932fd76-749d-4dbc-90cf-ed4067cae3d3-d07610da825ac7d4acea628bf5c4d5a104a9ca264f88c832523ba7af955589b6.webp",
+      "imageHash": "d07610da825ac7d4acea628bf5c4d5a104a9ca264f88c832523ba7af955589b6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T19:05:08.191Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
