@@ -1980,6 +1980,23 @@
           "at": "2026-10-04T06:53:32.100Z"
         }
       ]
+    },
+    {
+      "id": "27f919a8-d84d-4946-808f-59c324c9e275",
+      "teamId": "werewolf",
+      "tileId": "rat-king-rumble",
+      "choiceId": "scurrius-spine",
+      "quantity": 1,
+      "player": "devil 324",
+      "notes": "k c 124",
+      "imagePath": "submissions/werewolf/rat-king-rumble/27f919a8-d84d-4946-808f-59c324c9e275-cb9e6c7339b6d839ca669f4c9a775e38465b053142fd1b56568d19e7ff56f3a0.webp",
+      "imageHash": "cb9e6c7339b6d839ca669f4c9a775e38465b053142fd1b56568d19e7ff56f3a0",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T12:56:53.944Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
