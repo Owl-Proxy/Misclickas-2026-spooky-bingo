@@ -1919,6 +1919,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7908f8cd-11c9-4e7f-9d26-518e56ba54db",
+      "teamId": "werewolf",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-hungry-chest/7908f8cd-11c9-4e7f-9d26-518e56ba54db-63cf2a3994d18e0c1871afddeb90a156e62682d6acdea2e5178beefc1501b1e3.webp",
+      "imageHash": "63cf2a3994d18e0c1871afddeb90a156e62682d6acdea2e5178beefc1501b1e3",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T02:15:21.422Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
