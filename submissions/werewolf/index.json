@@ -2058,6 +2058,23 @@
           "at": "2026-10-04T20:48:00.268Z"
         }
       ]
+    },
+    {
+      "id": "15cc943d-3d74-467e-a0fe-561bfadfc5c1",
+      "teamId": "werewolf",
+      "tileId": "the-hungry-chest",
+      "choiceId": "rare-clue-table-reward",
+      "quantity": 1,
+      "player": "Nickyesyes",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-hungry-chest/15cc943d-3d74-467e-a0fe-561bfadfc5c1-f43f66f40db338997263a83d79c6f5f4602cdce2aee9e0e9c50d01c752150800.webp",
+      "imageHash": "f43f66f40db338997263a83d79c6f5f4602cdce2aee9e0e9c50d01c752150800",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T22:46:18.312Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
