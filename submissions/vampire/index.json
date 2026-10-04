@@ -2248,10 +2248,19 @@
       "imageHash": "f842ce602741adfd2b4ca2a7c7dd8b831888c350afbcd3bc644a11d4265415e4",
       "imageType": "image/webp",
       "createdAt": "2026-10-03T13:42:08.995Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "inquisitor armor piece sorry",
+          "at": "2026-10-04T03:19:39.077Z"
+        }
+      ]
     },
     {
       "id": "70ad9f90-69fb-49b8-9300-4d673f0d281c",
