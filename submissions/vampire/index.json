@@ -2512,6 +2512,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "3c6600d0-3cb3-4479-b322-72f86e52e25b",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "ancient-icons",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-exorcist/3c6600d0-3cb3-4479-b322-72f86e52e25b-a65e38f7ae8ce932951ea3739fbd3faa9a74df971c95a70ed51f36be8df69cab.webp",
+      "imageHash": "a65e38f7ae8ce932951ea3739fbd3faa9a74df971c95a70ed51f36be8df69cab",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T17:03:07.048Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
