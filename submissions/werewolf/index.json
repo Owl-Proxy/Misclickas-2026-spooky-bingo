@@ -1902,6 +1902,23 @@
           "at": "2026-10-03T03:43:58.460Z"
         }
       ]
+    },
+    {
+      "id": "bc17e385-a610-4020-bb73-e098a537d57f",
+      "teamId": "werewolf",
+      "tileId": "web-of-nightmares",
+      "choiceId": "noxious-blade",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/web-of-nightmares/bc17e385-a610-4020-bb73-e098a537d57f-198893665d29b1f06ae6571ad4beca06215f750736c47a4806539be61ba4f1eb.webp",
+      "imageHash": "198893665d29b1f06ae6571ad4beca06215f750736c47a4806539be61ba4f1eb",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T01:58:07.614Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
