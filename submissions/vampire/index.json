@@ -2495,6 +2495,23 @@
           "at": "2026-10-04T14:18:23.097Z"
         }
       ]
+    },
+    {
+      "id": "d466c763-22fd-4d26-9698-9f8aad9988ff",
+      "teamId": "vampire",
+      "tileId": "web-of-nightmares",
+      "choiceId": "noxious-pommel",
+      "quantity": 1,
+      "player": "Skwala",
+      "notes": "",
+      "imagePath": "submissions/vampire/web-of-nightmares/d466c763-22fd-4d26-9698-9f8aad9988ff-0474a4348b9e3365e1ff19b016413dbd812f848160b15140fb7553ccd27cb972.webp",
+      "imageHash": "0474a4348b9e3365e1ff19b016413dbd812f848160b15140fb7553ccd27cb972",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T15:34:01.639Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
