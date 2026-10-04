@@ -2529,6 +2529,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "d2b5e4d8-588a-4523-85ca-042a07b0a1c8",
+      "teamId": "vampire",
+      "tileId": "giants-in-the-green",
+      "choiceId": "bryophyta-s-essence",
+      "quantity": 1,
+      "player": "GIMStump",
+      "notes": "",
+      "imagePath": "submissions/vampire/giants-in-the-green/d2b5e4d8-588a-4523-85ca-042a07b0a1c8-61afa0f42e8fc1b749f4cf09457ebc4916ee263c938d265dd2b3f5803828d5e2.webp",
+      "imageHash": "61afa0f42e8fc1b749f4cf09457ebc4916ee263c938d265dd2b3f5803828d5e2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T17:43:33.345Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
