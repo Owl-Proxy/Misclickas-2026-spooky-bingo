@@ -2573,6 +2573,23 @@
           "at": "2026-10-04T18:54:53.578Z"
         }
       ]
+    },
+    {
+      "id": "34bdc9c5-4188-4cb2-a04e-6899bfa9a278",
+      "teamId": "vampire",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "fire-element-staff-crown",
+      "quantity": 1,
+      "player": "GIM CNasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/a-clash-of-ice-and-fire/34bdc9c5-4188-4cb2-a04e-6899bfa9a278-df49e094966624f983a2d33739bfc44e2899f41f59dab68e0c76d48250b5af86.webp",
+      "imageHash": "df49e094966624f983a2d33739bfc44e2899f41f59dab68e0c76d48250b5af86",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-04T23:29:53.269Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
