@@ -2651,6 +2651,23 @@
           "at": "2026-10-05T11:25:20.576Z"
         }
       ]
+    },
+    {
+      "id": "c7da70d8-f5ff-42c8-b73b-705cbc0c9084",
+      "teamId": "vampire",
+      "tileId": "hounds-of-hell",
+      "choiceId": "primordial-crystal",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/hounds-of-hell/c7da70d8-f5ff-42c8-b73b-705cbc0c9084-b85197edb8da0777b1c9fae6583220f42c6b9e86ddeb37bdcb8071af6af14f40.webp",
+      "imageHash": "b85197edb8da0777b1c9fae6583220f42c6b9e86ddeb37bdcb8071af6af14f40",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T18:59:41.125Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
