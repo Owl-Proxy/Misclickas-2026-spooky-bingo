@@ -2616,6 +2616,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "2b30fb3b-a631-4d18-8d0e-addf036666bf",
+      "teamId": "vampire",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "ice-element-staff-crown",
+      "quantity": 1,
+      "player": "swwhangover",
+      "notes": "",
+      "imagePath": "submissions/vampire/a-clash-of-ice-and-fire/2b30fb3b-a631-4d18-8d0e-addf036666bf-1dc8d0891c78d42d690f921d6384e72a45924e0457927d865348304cb2f01627.webp",
+      "imageHash": "1dc8d0891c78d42d690f921d6384e72a45924e0457927d865348304cb2f01627",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T08:47:32.845Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
