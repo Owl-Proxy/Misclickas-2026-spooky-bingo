@@ -2127,6 +2127,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "9bd74645-3f2d-4eca-ba7f-b2b3b21dc342",
+      "teamId": "werewolf",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 25,
+      "player": "Mr Blosom",
+      "notes": "this is the rewards for burned remains minus some gp",
+      "imagePath": "submissions/werewolf/the-undertaker/9bd74645-3f2d-4eca-ba7f-b2b3b21dc342-9254201ded901711776913ab0a2e2cd2fe1fe43ec385933f7f2734ec78af7ea2.webp",
+      "imageHash": "9254201ded901711776913ab0a2e2cd2fe1fe43ec385933f7f2734ec78af7ea2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T00:45:38.702Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
