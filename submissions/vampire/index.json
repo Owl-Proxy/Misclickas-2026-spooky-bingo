@@ -2668,6 +2668,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c0cbecca-5325-4804-82ea-954f3860d1c5",
+      "teamId": "vampire",
+      "tileId": "hounds-of-hell",
+      "choiceId": "pegasian-crystal",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/hounds-of-hell/c0cbecca-5325-4804-82ea-954f3860d1c5-1f1ee17c33b0e4b5aaa11edc0ef77453c6d4a45ceac689c54b34a981adb5b34e.webp",
+      "imageHash": "1f1ee17c33b0e4b5aaa11edc0ef77453c6d4a45ceac689c54b34a981adb5b34e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T19:08:57.860Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
