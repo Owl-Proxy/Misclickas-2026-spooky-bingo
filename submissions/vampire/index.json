@@ -2599,6 +2599,23 @@
           "at": "2026-10-04T23:53:53.310Z"
         }
       ]
+    },
+    {
+      "id": "10e00372-560b-478c-8ca6-edcb87c9a5f5",
+      "teamId": "vampire",
+      "tileId": "the-pharaoh-s-curse",
+      "choiceId": "masori-chaps",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-pharaoh-s-curse/10e00372-560b-478c-8ca6-edcb87c9a5f5-1d2e5e5d89aa64146034117dcf3319bfbb2b27445c2bd717f380f01252357296.webp",
+      "imageHash": "1d2e5e5d89aa64146034117dcf3319bfbb2b27445c2bd717f380f01252357296",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T00:03:25.367Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
