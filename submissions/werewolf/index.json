@@ -2161,6 +2161,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "d3e39f32-9663-4da9-8ede-b4dda641e364",
+      "teamId": "werewolf",
+      "tileId": "heart-of-the-abyss",
+      "choiceId": "unsired",
+      "quantity": 1,
+      "player": "xNlGHTMAYERx",
+      "notes": "",
+      "imagePath": "submissions/werewolf/heart-of-the-abyss/d3e39f32-9663-4da9-8ede-b4dda641e364-844646944df2900289da1cd6158e6923a4cd4a571c2264676a19ede1a49937b7.webp",
+      "imageHash": "844646944df2900289da1cd6158e6923a4cd4a571c2264676a19ede1a49937b7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T09:26:29.960Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
