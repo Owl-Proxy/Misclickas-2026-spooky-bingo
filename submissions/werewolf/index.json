@@ -2144,6 +2144,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "f783d584-6823-44ab-8542-bca8e7533611",
+      "teamId": "werewolf",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "mystic-vigour-prayer-scroll",
+      "quantity": 1,
+      "player": "Gim ZukDick",
+      "notes": "",
+      "imagePath": "submissions/werewolf/a-clash-of-ice-and-fire/f783d584-6823-44ab-8542-bca8e7533611-e4c5538ee532aea8eb49f33ff5701bc86c9fe132aab296145e72975a13b5271c.webp",
+      "imageHash": "e4c5538ee532aea8eb49f33ff5701bc86c9fe132aab296145e72975a13b5271c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T08:51:05.612Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
