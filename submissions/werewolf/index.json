@@ -2110,6 +2110,23 @@
           "at": "2026-10-04T23:14:44.520Z"
         }
       ]
+    },
+    {
+      "id": "ae409c46-7dfc-40c0-be82-b20a4170d040",
+      "teamId": "werewolf",
+      "tileId": "the-undertaker",
+      "choiceId": "activity-progress",
+      "quantity": 25,
+      "player": "Mr Blosom",
+      "notes": "have two screenshots",
+      "imagePath": "submissions/werewolf/the-undertaker/ae409c46-7dfc-40c0-be82-b20a4170d040-9b92cf4a13273eb9ab4fde94cbee3209f9ce6f30b888dec6db4c5a0c70dd1ea7.webp",
+      "imageHash": "9b92cf4a13273eb9ab4fde94cbee3209f9ce6f30b888dec6db4c5a0c70dd1ea7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-05T00:44:48.603Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
