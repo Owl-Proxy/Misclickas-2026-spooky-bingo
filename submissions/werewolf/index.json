@@ -2231,6 +2231,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1c3e3e01-e6e4-4856-8511-9f4128714d09",
+      "teamId": "werewolf",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "serpentine-visage",
+      "quantity": 1,
+      "player": "PhDNFISTER",
+      "notes": "witching hour baby",
+      "imagePath": "submissions/werewolf/the-swamp-serpent/1c3e3e01-e6e4-4856-8511-9f4128714d09-3a0314927629bc0930aa790249577d54ea45961764077cbe3a681c3fb9475426.webp",
+      "imageHash": "3a0314927629bc0930aa790249577d54ea45961764077cbe3a681c3fb9475426",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T06:00:29.728Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
