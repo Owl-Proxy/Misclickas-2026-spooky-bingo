@@ -2720,6 +2720,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "6650cc80-51a2-4c52-a8a9-e051cb1e1e14",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-drowned-crown--berserker-ring",
+      "quantity": 1,
+      "player": "WeenieNut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/6650cc80-51a2-4c52-a8a9-e051cb1e1e14-1bd6284bc3d2f0f6ec5125c93afc9e95a6fbcdc500e2f6971767c09b9845247a.webp",
+      "imageHash": "1bd6284bc3d2f0f6ec5125c93afc9e95a6fbcdc500e2f6971767c09b9845247a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T06:12:09.209Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
