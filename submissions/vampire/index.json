@@ -2703,6 +2703,23 @@
           "at": "2026-10-06T01:14:36.885Z"
         }
       ]
+    },
+    {
+      "id": "9b1033d6-fd48-49d2-98db-004ddcdc8c46",
+      "teamId": "vampire",
+      "tileId": "the-drowned-crown",
+      "choiceId": "berserker-ring",
+      "quantity": 1,
+      "player": "WeenieNut jr",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-drowned-crown/9b1033d6-fd48-49d2-98db-004ddcdc8c46-1bd6284bc3d2f0f6ec5125c93afc9e95a6fbcdc500e2f6971767c09b9845247a.webp",
+      "imageHash": "1bd6284bc3d2f0f6ec5125c93afc9e95a6fbcdc500e2f6971767c09b9845247a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T06:11:26.923Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
