@@ -2248,6 +2248,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "1c3e4cfc-15f7-4a4c-aa69-1dc584c54100",
+      "teamId": "werewolf",
+      "tileId": "the-fallen-seraph",
+      "choiceId": "aggy",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-fallen-seraph/1c3e4cfc-15f7-4a4c-aa69-1dc584c54100-bf2891751c3f180cc51a3f610cb58d2445fbad315ae887a1e607f9811c1f1bd9.webp",
+      "imageHash": "bf2891751c3f180cc51a3f610cb58d2445fbad315ae887a1e607f9811c1f1bd9",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T08:55:51.818Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
