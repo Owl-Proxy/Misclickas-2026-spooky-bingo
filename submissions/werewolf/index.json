@@ -2292,6 +2292,23 @@
           "at": "2026-10-06T11:01:23.043Z"
         }
       ]
+    },
+    {
+      "id": "bbb6e946-d3f8-441f-b0e0-3be6e85fcbcc",
+      "teamId": "werewolf",
+      "tileId": "the-grotesque-guardians",
+      "choiceId": "black-tourmaline-core",
+      "quantity": 1,
+      "player": "xNlGHTMAYERx",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-grotesque-guardians/bbb6e946-d3f8-441f-b0e0-3be6e85fcbcc-1339755731f5065fa1361bb4280db1c8c7b142adcd73a443f6eb229a76440e95.webp",
+      "imageHash": "1339755731f5065fa1361bb4280db1c8c7b142adcd73a443f6eb229a76440e95",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T17:28:55.389Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
