@@ -2755,6 +2755,23 @@
           "at": "2026-10-06T11:00:53.980Z"
         }
       ]
+    },
+    {
+      "id": "7716fafa-ebb4-4ac9-9bd4-377c7a5f34ba",
+      "teamId": "vampire",
+      "tileId": "the-voice-in-the-dark",
+      "choiceId": "virtus-mask",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-voice-in-the-dark/7716fafa-ebb4-4ac9-9bd4-377c7a5f34ba-31e4bd78e279699f9a81c0809b7d897bd7389590938fdce9dbf2f5337042a8fc.webp",
+      "imageHash": "31e4bd78e279699f9a81c0809b7d897bd7389590938fdce9dbf2f5337042a8fc",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T19:04:49.590Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
