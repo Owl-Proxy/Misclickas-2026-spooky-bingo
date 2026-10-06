@@ -2326,6 +2326,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "9b16207d-afef-4437-a114-d296a950b565",
+      "teamId": "werewolf",
+      "tileId": "the-red-labyrinth",
+      "choiceId": "crystal-armor-seeds",
+      "quantity": 1,
+      "player": "let me runn",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-red-labyrinth/9b16207d-afef-4437-a114-d296a950b565-8d3d6fb6ecafb6ea0cc3d72268bc80e43642051fabfd9ca925f2153e716016cd.webp",
+      "imageHash": "8d3d6fb6ecafb6ea0cc3d72268bc80e43642051fabfd9ca925f2153e716016cd",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-06T23:48:24.545Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
