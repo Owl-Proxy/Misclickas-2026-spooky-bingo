@@ -2876,6 +2876,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "4dd7ec16-8c15-4041-aed5-cbf49aaad03a",
+      "teamId": "vampire",
+      "tileId": "the-fallen-seraph",
+      "choiceId": "hallowfell",
+      "quantity": 1,
+      "player": "GIM CNasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-fallen-seraph/4dd7ec16-8c15-4041-aed5-cbf49aaad03a-42987b8a3b4aa580733a37421a0f0e18374093c529ac97c07c75da467d850349.webp",
+      "imageHash": "42987b8a3b4aa580733a37421a0f0e18374093c529ac97c07c75da467d850349",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T16:24:54.047Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
