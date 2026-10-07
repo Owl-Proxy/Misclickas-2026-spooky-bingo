@@ -2508,6 +2508,23 @@
           "at": "2026-10-07T16:35:55.416Z"
         }
       ]
+    },
+    {
+      "id": "3427d522-61c9-4aad-bf79-4183dd297740",
+      "teamId": "werewolf",
+      "tileId": "the-corpse-eater",
+      "choiceId": "crimson-kisten",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-corpse-eater/3427d522-61c9-4aad-bf79-4183dd297740-a225bfc63b526e2be30f52c07687b545c23832109b3c30e34c6745f39989d52c.webp",
+      "imageHash": "a225bfc63b526e2be30f52c07687b545c23832109b3c30e34c6745f39989d52c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T16:36:55.085Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
