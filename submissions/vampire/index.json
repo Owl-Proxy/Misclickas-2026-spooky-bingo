@@ -2772,6 +2772,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "dca481dd-2a08-47c5-9575-b541f7a71553",
+      "teamId": "vampire",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "vorkath-s-head",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-reanimated-wyvern/dca481dd-2a08-47c5-9575-b541f7a71553-b2a93a970061ee4f3de16cff96b6ece38273fc2e7de3f13483660c87673da5a6.webp",
+      "imageHash": "b2a93a970061ee4f3de16cff96b6ece38273fc2e7de3f13483660c87673da5a6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T05:01:06.259Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
