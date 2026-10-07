@@ -3015,6 +3015,23 @@
           "at": "2026-10-07T21:11:27.164Z"
         }
       ]
+    },
+    {
+      "id": "630784e8-caff-4905-941d-932660feb320",
+      "teamId": "vampire",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "deadeye-prayer-scroll",
+      "quantity": 1,
+      "player": "Why Pat Why",
+      "notes": "Deadeye",
+      "imagePath": "submissions/vampire/a-clash-of-ice-and-fire/630784e8-caff-4905-941d-932660feb320-b35767bade3eb72a5044928cd210fd9a842c399ace9edb7c33c89a5896833aed.webp",
+      "imageHash": "b35767bade3eb72a5044928cd210fd9a842c399ace9edb7c33c89a5896833aed",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T21:11:40.082Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
