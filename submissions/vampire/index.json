@@ -2928,6 +2928,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "d6f8a6b6-6a76-4e77-aefe-1e558f9eeede",
+      "teamId": "vampire",
+      "tileId": "heart-of-the-abyss",
+      "choiceId": "abyssal-dagger",
+      "quantity": 1,
+      "player": "Killa 1771",
+      "notes": "Unsired drop and dagger drop both in chat box",
+      "imagePath": "submissions/vampire/heart-of-the-abyss/d6f8a6b6-6a76-4e77-aefe-1e558f9eeede-ab819e8d7562eea0a4bc75591bf1daf188eb5dfd5fb4391403bb9e61c4648bba.webp",
+      "imageHash": "ab819e8d7562eea0a4bc75591bf1daf188eb5dfd5fb4391403bb9e61c4648bba",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T19:01:58.306Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
