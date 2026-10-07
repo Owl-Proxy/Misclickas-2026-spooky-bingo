@@ -2343,6 +2343,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "f6eed312-9b9c-44c9-83dc-2023860773f4",
+      "teamId": "werewolf",
+      "tileId": "the-grotesque-guardians",
+      "choiceId": "granite-hammer",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-grotesque-guardians/f6eed312-9b9c-44c9-83dc-2023860773f4-8972ec39f12dec29264373d01e2dfe6d451f798fe9befc78821dd3ae13d887f3.webp",
+      "imageHash": "8972ec39f12dec29264373d01e2dfe6d451f798fe9befc78821dd3ae13d887f3",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T02:31:55.866Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
