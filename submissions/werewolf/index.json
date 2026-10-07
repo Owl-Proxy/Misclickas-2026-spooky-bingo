@@ -2488,9 +2488,18 @@
       "imageType": "image/webp",
       "createdAt": "2026-10-07T14:37:37.715Z",
       "status": "pending",
-      "revision": 0,
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "pending",
+          "reason": "",
+          "at": "2026-10-07T16:35:00.368Z"
+        }
+      ]
     }
   ]
 }
