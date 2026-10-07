@@ -2859,6 +2859,23 @@
           "at": "2026-10-07T13:56:39.965Z"
         }
       ]
+    },
+    {
+      "id": "e1dd7da9-a1de-4033-825a-bde77852f945",
+      "teamId": "vampire",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "serpentine-visage",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-swamp-serpent/e1dd7da9-a1de-4033-825a-bde77852f945-a6476fe8cf3f02700cea9d7c09b6e0571fff544e50c79f0a6558bbfae5e21ce1.webp",
+      "imageHash": "a6476fe8cf3f02700cea9d7c09b6e0571fff544e50c79f0a6558bbfae5e21ce1",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T15:24:25.581Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
