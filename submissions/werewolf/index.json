@@ -2474,6 +2474,23 @@
           "at": "2026-10-07T13:54:33.303Z"
         }
       ]
+    },
+    {
+      "id": "29d305f0-87eb-4ee2-9f6b-db228be6bbb8",
+      "teamId": "werewolf",
+      "tileId": "the-corpse-eater",
+      "choiceId": "maggot-marquess",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-corpse-eater/29d305f0-87eb-4ee2-9f6b-db228be6bbb8-a225bfc63b526e2be30f52c07687b545c23832109b3c30e34c6745f39989d52c.webp",
+      "imageHash": "a225bfc63b526e2be30f52c07687b545c23832109b3c30e34c6745f39989d52c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T14:37:37.715Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
