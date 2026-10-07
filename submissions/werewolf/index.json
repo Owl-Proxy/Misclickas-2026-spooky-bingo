@@ -2487,8 +2487,8 @@
       "imageHash": "a225bfc63b526e2be30f52c07687b545c23832109b3c30e34c6745f39989d52c",
       "imageType": "image/webp",
       "createdAt": "2026-10-07T14:37:37.715Z",
-      "status": "pending",
-      "revision": 1,
+      "status": "rejected",
+      "revision": 2,
       "completesTile": false,
       "reviews": [
         {
@@ -2498,6 +2498,14 @@
           "to": "pending",
           "reason": "",
           "at": "2026-10-07T16:35:00.368Z"
+        },
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "Ur a moron",
+          "at": "2026-10-07T16:35:55.416Z"
         }
       ]
     }
