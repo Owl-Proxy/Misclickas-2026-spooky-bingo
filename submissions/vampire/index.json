@@ -2989,6 +2989,23 @@
           "at": "2026-10-07T21:07:43.877Z"
         }
       ]
+    },
+    {
+      "id": "b5534a44-ebc2-461e-9a2a-f8ff5e2af896",
+      "teamId": "vampire",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "fire-element-staff-crown",
+      "quantity": 1,
+      "player": "Why Pat Why",
+      "notes": "Deadeye",
+      "imagePath": "submissions/vampire/a-clash-of-ice-and-fire/b5534a44-ebc2-461e-9a2a-f8ff5e2af896-b35767bade3eb72a5044928cd210fd9a842c399ace9edb7c33c89a5896833aed.webp",
+      "imageHash": "b35767bade3eb72a5044928cd210fd9a842c399ace9edb7c33c89a5896833aed",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T21:10:23.041Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
