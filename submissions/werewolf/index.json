@@ -2377,6 +2377,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "b17f15cb-85e5-44ce-b785-41812e698f01",
+      "teamId": "werewolf",
+      "tileId": "rat-king-rumble",
+      "choiceId": "scurrius-spine",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/rat-king-rumble/b17f15cb-85e5-44ce-b785-41812e698f01-c608a42efc02e854a43e06bcdb1cccfe85ffb13465ee6256e977772d16416a4d.webp",
+      "imageHash": "c608a42efc02e854a43e06bcdb1cccfe85ffb13465ee6256e977772d16416a4d",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T05:30:18.446Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
