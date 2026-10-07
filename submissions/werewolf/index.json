@@ -2357,10 +2357,19 @@
       "imageHash": "8d3d6fb6ecafb6ea0cc3d72268bc80e43642051fabfd9ca925f2153e716016cd",
       "imageType": "image/webp",
       "createdAt": "2026-10-06T23:48:24.545Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-07T13:53:46.662Z"
+        }
+      ]
     },
     {
       "id": "f6eed312-9b9c-44c9-83dc-2023860773f4",
