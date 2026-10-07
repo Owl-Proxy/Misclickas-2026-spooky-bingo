@@ -2911,6 +2911,23 @@
           "at": "2026-10-07T17:06:10.803Z"
         }
       ]
+    },
+    {
+      "id": "13c2dd2f-ec92-4c41-95cd-6e98b357c31b",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "W00000000000000000000000000000000",
+      "imagePath": "submissions/vampire/the-exorcist/13c2dd2f-ec92-4c41-95cd-6e98b357c31b-57b4bc608c287b7dcb6862f4d9011e363443028d32479a6cc8a7e502679d4940.webp",
+      "imageHash": "57b4bc608c287b7dcb6862f4d9011e363443028d32479a6cc8a7e502679d4940",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T18:51:49.449Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
