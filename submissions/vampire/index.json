@@ -2945,6 +2945,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "75fc9c35-5490-48fb-975a-ffe38df47c48",
+      "teamId": "vampire",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "mystic-vigour-prayer-scroll",
+      "quantity": 1,
+      "player": "C E T H",
+      "notes": "",
+      "imagePath": "submissions/vampire/a-clash-of-ice-and-fire/75fc9c35-5490-48fb-975a-ffe38df47c48-b3bf1cc711f256a5cc9997460f5a98bda42ea54042fb0772937528859c858d46.webp",
+      "imageHash": "b3bf1cc711f256a5cc9997460f5a98bda42ea54042fb0772937528859c858d46",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-07T20:20:13.152Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
