@@ -3067,6 +3067,23 @@
           "at": "2026-10-08T00:34:30.644Z"
         }
       ]
+    },
+    {
+      "id": "51eb2176-ab0d-48a9-9654-59259c39c4be",
+      "teamId": "vampire",
+      "tileId": "the-grotesque-guardians",
+      "choiceId": "black-tourmaline-core",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": ":D",
+      "imagePath": "submissions/vampire/the-grotesque-guardians/51eb2176-ab0d-48a9-9654-59259c39c4be-ec92746a285f4067daad585ca98f3e47a124d716985848bc2bc689e1aff5a877.webp",
+      "imageHash": "ec92746a285f4067daad585ca98f3e47a124d716985848bc2bc689e1aff5a877",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T00:53:26.402Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
