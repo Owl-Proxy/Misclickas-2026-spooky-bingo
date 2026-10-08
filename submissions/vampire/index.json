@@ -3119,6 +3119,23 @@
           "at": "2026-10-08T02:40:02.165Z"
         }
       ]
+    },
+    {
+      "id": "b26800b7-b481-4792-bcd5-03d63f96ccfd",
+      "teamId": "vampire",
+      "tileId": "the-drowned-crown",
+      "choiceId": "archers-ring",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-drowned-crown/b26800b7-b481-4792-bcd5-03d63f96ccfd-c4628739f36d5c1554bc034c0412abb67f42d7551db1059d5b3e7d0069db883c.webp",
+      "imageHash": "c4628739f36d5c1554bc034c0412abb67f42d7551db1059d5b3e7d0069db883c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T05:16:23.344Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
