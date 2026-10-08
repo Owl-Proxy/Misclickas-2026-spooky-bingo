@@ -3041,6 +3041,23 @@
           "at": "2026-10-07T21:20:59.606Z"
         }
       ]
+    },
+    {
+      "id": "6dda0571-cae4-4488-b8a1-fdb0e0ba8bdb",
+      "teamId": "vampire",
+      "tileId": "the-catacombs-of-xeric",
+      "choiceId": "arcane-prayer-scroll",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "W000000000000000000000000000",
+      "imagePath": "submissions/vampire/the-catacombs-of-xeric/6dda0571-cae4-4488-b8a1-fdb0e0ba8bdb-2c6b4095cee6e17c069c45db8d08e3cf063d62810d24c45dba05105cf2201bb7.webp",
+      "imageHash": "2c6b4095cee6e17c069c45db8d08e3cf063d62810d24c45dba05105cf2201bb7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T00:12:06.710Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
