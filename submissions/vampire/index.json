@@ -3093,6 +3093,23 @@
           "at": "2026-10-08T00:59:13.550Z"
         }
       ]
+    },
+    {
+      "id": "e2a1eea6-28d6-4911-8ea7-9970f235fec0",
+      "teamId": "vampire",
+      "tileId": "the-buried-doom",
+      "choiceId": "mokhaiotl-cloth",
+      "quantity": 1,
+      "player": "Uh Free",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-buried-doom/e2a1eea6-28d6-4911-8ea7-9970f235fec0-c1341fc309bdfeb06503d77544256c0bd753672d3d2dcd33b86f07359ab3480a.webp",
+      "imageHash": "c1341fc309bdfeb06503d77544256c0bd753672d3d2dcd33b86f07359ab3480a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T02:37:04.520Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
