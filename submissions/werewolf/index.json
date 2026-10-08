@@ -2560,6 +2560,23 @@
           "at": "2026-10-08T00:59:54.006Z"
         }
       ]
+    },
+    {
+      "id": "8d4c2b16-507d-4692-a876-ad39dc50f67f",
+      "teamId": "werewolf",
+      "tileId": "the-headless-harvest",
+      "choiceId": "executioner-s-axe-head",
+      "quantity": 1,
+      "player": "GIM Craftie",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-headless-harvest/8d4c2b16-507d-4692-a876-ad39dc50f67f-61e53d305eafdb0188c6e59afcf9c19b3efcef92fb2c31e47978f5c359822639.webp",
+      "imageHash": "61e53d305eafdb0188c6e59afcf9c19b3efcef92fb2c31e47978f5c359822639",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T03:39:34.217Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
