@@ -2534,6 +2534,23 @@
           "at": "2026-10-07T21:06:44.822Z"
         }
       ]
+    },
+    {
+      "id": "cd8912ac-312c-425b-a5f0-9164bd2c7e2f",
+      "teamId": "werewolf",
+      "tileId": "web-of-nightmares",
+      "choiceId": "noxious-pommel",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/web-of-nightmares/cd8912ac-312c-425b-a5f0-9164bd2c7e2f-8dc40c8697ef02538a3e3ede3e25e46035cfd7cc18ec047ffd0f8adc0eded4d6.webp",
+      "imageHash": "8dc40c8697ef02538a3e3ede3e25e46035cfd7cc18ec047ffd0f8adc0eded4d6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T00:59:47.193Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
