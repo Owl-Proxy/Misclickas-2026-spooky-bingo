@@ -2620,6 +2620,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "4e529b07-baf0-41d5-8adb-c40c4597ce1c",
+      "teamId": "werewolf",
+      "tileId": "the-drowned-crown",
+      "choiceId": "archers-ring",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-drowned-crown/4e529b07-baf0-41d5-8adb-c40c4597ce1c-76214b34189dc8a8e329c81ef328c84b1cb16f3051953fd5416932387a5fc7f1.webp",
+      "imageHash": "76214b34189dc8a8e329c81ef328c84b1cb16f3051953fd5416932387a5fc7f1",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T22:00:51.596Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
