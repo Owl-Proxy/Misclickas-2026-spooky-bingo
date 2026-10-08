@@ -2586,6 +2586,23 @@
           "at": "2026-10-08T10:54:40.404Z"
         }
       ]
+    },
+    {
+      "id": "38e5199b-36bf-4647-aed9-565380502fef",
+      "teamId": "werewolf",
+      "tileId": "dreams-of-ashihama",
+      "choiceId": "inquisitor-armor-piece",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/dreams-of-ashihama/38e5199b-36bf-4647-aed9-565380502fef-0e1dba16f7711ebb4c455c6db4ce67923472b17a1e13473421aa1bbe30f2f2e0.webp",
+      "imageHash": "0e1dba16f7711ebb4c455c6db4ce67923472b17a1e13473421aa1bbe30f2f2e0",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T15:52:38.903Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
