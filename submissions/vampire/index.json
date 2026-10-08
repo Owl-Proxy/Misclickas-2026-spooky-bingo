@@ -3136,6 +3136,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "fe51fb33-1f1b-4abc-82ed-67c0dd355f17",
+      "teamId": "vampire",
+      "tileId": "the-drowned-crown",
+      "choiceId": "seers-ring",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-drowned-crown/fe51fb33-1f1b-4abc-82ed-67c0dd355f17-dcd3dec796f6f4c4f41d0ada3f3ce8af2e24cac772cb2bbd7662715d045870ee.webp",
+      "imageHash": "dcd3dec796f6f4c4f41d0ada3f3ce8af2e24cac772cb2bbd7662715d045870ee",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-08T09:06:44.629Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
