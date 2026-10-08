@@ -3158,10 +3158,19 @@
       "imageHash": "dcd3dec796f6f4c4f41d0ada3f3ce8af2e24cac772cb2bbd7662715d045870ee",
       "imageType": "image/webp",
       "createdAt": "2026-10-08T09:06:44.629Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-08T10:54:30.809Z"
+        }
+      ]
     }
   ]
 }
