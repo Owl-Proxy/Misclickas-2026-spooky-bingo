@@ -2664,6 +2664,23 @@
           "at": "2026-10-08T22:24:00.684Z"
         }
       ]
+    },
+    {
+      "id": "2f1a6451-eb1e-44fe-9d58-c41f800feb15",
+      "teamId": "werewolf",
+      "tileId": "the-catacombs-of-xeric",
+      "choiceId": "kodai-insignia",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "Kodai baby",
+      "imagePath": "submissions/werewolf/the-catacombs-of-xeric/2f1a6451-eb1e-44fe-9d58-c41f800feb15-30ac7de06c22189c11aede313256f0189f8802b2902f9f5e8dde2e4262ed5b05.webp",
+      "imageHash": "30ac7de06c22189c11aede313256f0189f8802b2902f9f5e8dde2e4262ed5b05",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T03:00:02.240Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
