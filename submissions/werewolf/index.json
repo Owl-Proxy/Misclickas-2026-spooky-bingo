@@ -2716,6 +2716,23 @@
           "at": "2026-10-09T11:01:23.168Z"
         }
       ]
+    },
+    {
+      "id": "408e5a19-8ea5-4fda-a0b8-d6ab461a781e",
+      "teamId": "werewolf",
+      "tileId": "the-catacombs-of-xeric",
+      "choiceId": "dexterous-prayer-scroll",
+      "quantity": 1,
+      "player": "let me runn",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-catacombs-of-xeric/408e5a19-8ea5-4fda-a0b8-d6ab461a781e-09e728d488f3a58f41496121f7b0ca2e1454657c5be3ed922b2225ecf6ddc558.webp",
+      "imageHash": "09e728d488f3a58f41496121f7b0ca2e1454657c5be3ed922b2225ecf6ddc558",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T12:41:12.792Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
