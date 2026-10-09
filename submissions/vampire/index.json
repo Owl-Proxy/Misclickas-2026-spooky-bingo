@@ -3275,6 +3275,23 @@
           "at": "2026-10-09T13:49:22.362Z"
         }
       ]
+    },
+    {
+      "id": "3c5263ba-8377-4b9c-8d11-a8eecc4d8d8c",
+      "teamId": "vampire",
+      "tileId": "the-hungry-chest",
+      "choiceId": "mimic-completions",
+      "quantity": 1,
+      "player": "SmolPstream",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-hungry-chest/3c5263ba-8377-4b9c-8d11-a8eecc4d8d8c-d94143fcc8a09c34d25d301e2fd29a8b5c33c80d178d453a53ee2cb4ef59db5f.webp",
+      "imageHash": "d94143fcc8a09c34d25d301e2fd29a8b5c33c80d178d453a53ee2cb4ef59db5f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T21:46:16.105Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
