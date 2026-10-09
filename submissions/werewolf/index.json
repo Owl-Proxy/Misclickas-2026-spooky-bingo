@@ -2759,6 +2759,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "a1cd78c3-de9e-4174-9f98-3eded7945183",
+      "teamId": "werewolf",
+      "tileId": "the-blood-theatre",
+      "choiceId": "justiciar-legguards",
+      "quantity": 1,
+      "player": "IAmGroupie",
+      "notes": "I'm the alpha now. AWOOOOOOOOOOOOOOOOO",
+      "imagePath": "submissions/werewolf/the-blood-theatre/a1cd78c3-de9e-4174-9f98-3eded7945183-e14ea33fe8a89fc02931bbbf6633a3e3478924b0f83bca5f15b6c2890d0206b6.webp",
+      "imageHash": "e14ea33fe8a89fc02931bbbf6633a3e3478924b0f83bca5f15b6c2890d0206b6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T15:49:14.894Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
