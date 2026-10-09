@@ -3205,6 +3205,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7354d10c-9c6c-40ca-9556-64be01d66479",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "demon-in-the-snow--zamorak-spear",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/7354d10c-9c6c-40ca-9556-64be01d66479-ca7efa95bbf681c98de39e77013d8baeb7cdedf9887fcaa66072feaaed97b808.webp",
+      "imageHash": "ca7efa95bbf681c98de39e77013d8baeb7cdedf9887fcaa66072feaaed97b808",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T06:24:32.326Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
