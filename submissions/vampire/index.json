@@ -3188,6 +3188,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "250e65bf-e6cf-4571-acad-a621a7c6afbf",
+      "teamId": "vampire",
+      "tileId": "demon-in-the-snow",
+      "choiceId": "zamorak-spear",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/demon-in-the-snow/250e65bf-e6cf-4571-acad-a621a7c6afbf-ca7efa95bbf681c98de39e77013d8baeb7cdedf9887fcaa66072feaaed97b808.webp",
+      "imageHash": "ca7efa95bbf681c98de39e77013d8baeb7cdedf9887fcaa66072feaaed97b808",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T06:23:57.395Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
