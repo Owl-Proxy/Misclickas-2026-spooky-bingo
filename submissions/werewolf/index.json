@@ -2742,6 +2742,23 @@
           "at": "2026-10-09T13:15:47.535Z"
         }
       ]
+    },
+    {
+      "id": "ebe60fcd-1e50-4153-a258-d239aecec536",
+      "teamId": "werewolf",
+      "tileId": "demon-in-the-snow",
+      "choiceId": "staff-of-the-dead",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/demon-in-the-snow/ebe60fcd-1e50-4153-a258-d239aecec536-a848997cad29a0986db021f8d88a2e51d2a5358f146aea963a2c6c9cc55cf376.webp",
+      "imageHash": "a848997cad29a0986db021f8d88a2e51d2a5358f146aea963a2c6c9cc55cf376",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T13:20:49.055Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
