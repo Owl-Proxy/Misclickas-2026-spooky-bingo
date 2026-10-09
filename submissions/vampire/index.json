@@ -3249,6 +3249,23 @@
           "at": "2026-10-09T11:01:50.621Z"
         }
       ]
+    },
+    {
+      "id": "601d3e8e-78bd-424c-9c8e-34020cef8896",
+      "teamId": "vampire",
+      "tileId": "heart-of-the-abyss",
+      "choiceId": "abyssal-whip",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/heart-of-the-abyss/601d3e8e-78bd-424c-9c8e-34020cef8896-0f781c6fde23c2cee03142f099de6b61e9926c5403b9ec6e700dbdf289dda723.webp",
+      "imageHash": "0f781c6fde23c2cee03142f099de6b61e9926c5403b9ec6e700dbdf289dda723",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T13:42:35.605Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
