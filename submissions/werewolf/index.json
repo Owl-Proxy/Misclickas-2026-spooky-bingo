@@ -2690,6 +2690,23 @@
           "at": "2026-10-09T03:00:14.379Z"
         }
       ]
+    },
+    {
+      "id": "f32e9ec2-c2bc-40e3-83f8-bd7ddf68f7e4",
+      "teamId": "werewolf",
+      "tileId": "the-drowned-crown",
+      "choiceId": "berserker-ring",
+      "quantity": 1,
+      "player": "PHDNFISTER",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-drowned-crown/f32e9ec2-c2bc-40e3-83f8-bd7ddf68f7e4-37061a61a592beb35d1c205ee58e60a9341deaa8f024a5b7759dd4dd8afb0b00.webp",
+      "imageHash": "37061a61a592beb35d1c205ee58e60a9341deaa8f024a5b7759dd4dd8afb0b00",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-09T04:42:11.770Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
