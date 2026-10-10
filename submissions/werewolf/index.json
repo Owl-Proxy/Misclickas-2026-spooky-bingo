@@ -2829,6 +2829,23 @@
           "at": "2026-10-10T00:52:59.693Z"
         }
       ]
+    },
+    {
+      "id": "b0ec4b7d-faf3-44d3-b87b-26ba85a7d01a",
+      "teamId": "werewolf",
+      "tileId": "the-pharaoh-s-curse",
+      "choiceId": "masori-body",
+      "quantity": 1,
+      "player": "IM Bopman",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-pharaoh-s-curse/b0ec4b7d-faf3-44d3-b87b-26ba85a7d01a-dfd9900e2b632d14509b9cd8c4078c1f3c20dfb99a92684f2163ce80fde3e097.webp",
+      "imageHash": "dfd9900e2b632d14509b9cd8c4078c1f3c20dfb99a92684f2163ce80fde3e097",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T03:41:29.036Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
