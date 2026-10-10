@@ -2855,6 +2855,23 @@
           "at": "2026-10-10T03:41:44.228Z"
         }
       ]
+    },
+    {
+      "id": "210a5c07-8608-4954-b024-9ac9656d8875",
+      "teamId": "werewolf",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "tanzanite-fang",
+      "quantity": 1,
+      "player": "Solo Redhead",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-swamp-serpent/210a5c07-8608-4954-b024-9ac9656d8875-c3016ff2ba4962c251ad90a913f123d39c2a10cfad0f9f667b5c242c7d8fd05d.png",
+      "imageHash": "c3016ff2ba4962c251ad90a913f123d39c2a10cfad0f9f667b5c242c7d8fd05d",
+      "imageType": "image/png",
+      "createdAt": "2026-10-10T04:22:34.831Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
