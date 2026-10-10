@@ -3327,6 +3327,23 @@
           "at": "2026-10-10T02:22:59.976Z"
         }
       ]
+    },
+    {
+      "id": "2c33e725-dc1a-4b24-91dd-50720088f80b",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-swamp-serpent--serpentine-visage",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/2c33e725-dc1a-4b24-91dd-50720088f80b-39c0af807a1cd9e4c3c0a5d1d72f71d157fe08594b1cee9da8e16dbadb4654c5.webp",
+      "imageHash": "39c0af807a1cd9e4c3c0a5d1d72f71d157fe08594b1cee9da8e16dbadb4654c5",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T06:46:49.923Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
