@@ -2959,6 +2959,23 @@
           "at": "2026-10-10T05:44:41.774Z"
         }
       ]
+    },
+    {
+      "id": "d547d47f-2c88-4414-a2ad-aaba80468a4d",
+      "teamId": "werewolf",
+      "tileId": "hounds-of-hell",
+      "choiceId": "eternal-crystal",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/hounds-of-hell/d547d47f-2c88-4414-a2ad-aaba80468a4d-aeeebd718ea4d0f049544e118a726b95802ee6c9926c7473861074421ae71063.webp",
+      "imageHash": "aeeebd718ea4d0f049544e118a726b95802ee6c9926c7473861074421ae71063",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T18:33:45.944Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
