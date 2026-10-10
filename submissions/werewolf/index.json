@@ -2889,6 +2889,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "a3c602c8-ccec-46c9-9e3e-8231ddb47526",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "staff-of-the-old-ones--ancient-staff",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/a3c602c8-ccec-46c9-9e3e-8231ddb47526-d0374b885cb0128525857c60841e4838cf80da2bd55ab8ccbb52e90538237bc7.webp",
+      "imageHash": "d0374b885cb0128525857c60841e4838cf80da2bd55ab8ccbb52e90538237bc7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T04:42:41.589Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
