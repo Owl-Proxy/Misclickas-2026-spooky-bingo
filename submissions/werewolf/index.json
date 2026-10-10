@@ -2933,6 +2933,23 @@
           "at": "2026-10-10T05:32:39.713Z"
         }
       ]
+    },
+    {
+      "id": "89b8e57f-6e27-4b05-8f54-5e4af1a2dc6d",
+      "teamId": "werewolf",
+      "tileId": "hounds-of-hell",
+      "choiceId": "pegasian-crystal",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/hounds-of-hell/89b8e57f-6e27-4b05-8f54-5e4af1a2dc6d-3fc656ec58c6e364c1af71760fbbffb463b27af420d686a770d49534dcd07835.webp",
+      "imageHash": "3fc656ec58c6e364c1af71760fbbffb463b27af420d686a770d49534dcd07835",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T05:33:54.182Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
