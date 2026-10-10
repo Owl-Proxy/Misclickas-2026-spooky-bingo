@@ -3301,6 +3301,23 @@
           "at": "2026-10-09T21:49:28.819Z"
         }
       ]
+    },
+    {
+      "id": "42ea1c45-1519-4ed3-9d86-1962fb16ab43",
+      "teamId": "vampire",
+      "tileId": "the-blood-theatre",
+      "choiceId": "scythe-of-vitur",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-blood-theatre/42ea1c45-1519-4ed3-9d86-1962fb16ab43-fbd8198676b683bdfb753d23a62fd4a0e4bb24b12b655d2390458dd51c2f7665.webp",
+      "imageHash": "fbd8198676b683bdfb753d23a62fd4a0e4bb24b12b655d2390458dd51c2f7665",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-10T02:20:19.500Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
