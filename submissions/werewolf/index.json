@@ -2868,10 +2868,19 @@
       "imageHash": "c3016ff2ba4962c251ad90a913f123d39c2a10cfad0f9f667b5c242c7d8fd05d",
       "imageType": "image/png",
       "createdAt": "2026-10-10T04:22:34.831Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "approved",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "",
+          "at": "2026-10-10T05:32:00.891Z"
+        }
+      ]
     },
     {
       "id": "1c8d2a95-04e5-4235-a4f4-ca2d842bca43",
