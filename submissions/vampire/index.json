@@ -3405,6 +3405,23 @@
           "at": "2026-10-11T12:48:49.109Z"
         }
       ]
+    },
+    {
+      "id": "cdfc7c05-1ca3-4afb-8bb2-0fab5b92fcf2",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "Uh Free",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-exorcist/cdfc7c05-1ca3-4afb-8bb2-0fab5b92fcf2-3336d8346aab8d66886af293684a38e27f020c41aeed76907839350c9adebf1b.webp",
+      "imageHash": "3336d8346aab8d66886af293684a38e27f020c41aeed76907839350c9adebf1b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-11T14:04:35.525Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
