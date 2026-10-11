@@ -3011,6 +3011,23 @@
           "at": "2026-10-10T21:06:16.939Z"
         }
       ]
+    },
+    {
+      "id": "b3dc0373-08de-47d6-bf50-113bfe5cfd02",
+      "teamId": "werewolf",
+      "tileId": "revenant-hunter",
+      "choiceId": "ancient-emblem",
+      "quantity": 1,
+      "player": "Im Bopman",
+      "notes": "",
+      "imagePath": "submissions/werewolf/revenant-hunter/b3dc0373-08de-47d6-bf50-113bfe5cfd02-bed261c50916f1635a091f12cfc35412f25bca712444475e98fa14bea0118de7.webp",
+      "imageHash": "bed261c50916f1635a091f12cfc35412f25bca712444475e98fa14bea0118de7",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-11T11:59:39.899Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
