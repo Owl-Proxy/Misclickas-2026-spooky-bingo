@@ -3353,6 +3353,23 @@
           "at": "2026-10-10T12:57:41.800Z"
         }
       ]
+    },
+    {
+      "id": "220ba730-4e26-4dd3-bfdd-991c33214b71",
+      "teamId": "vampire",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "Groupie built like a chubby stick figure",
+      "imagePath": "submissions/vampire/the-exorcist/220ba730-4e26-4dd3-bfdd-991c33214b71-61f66e40ac62a94b07ab2821b136fb5360507b7b1d202736614c8523a86993b4.webp",
+      "imageHash": "61f66e40ac62a94b07ab2821b136fb5360507b7b1d202736614c8523a86993b4",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-11T04:15:15.677Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
