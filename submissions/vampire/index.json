@@ -3370,6 +3370,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "c35be16e-c115-4ec0-a15a-0635daf21c65",
+      "teamId": "vampire",
+      "tileId": "the-buried-doom",
+      "choiceId": "eye-of-ayak-uncharged",
+      "quantity": 1,
+      "player": "Uh Free",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-buried-doom/c35be16e-c115-4ec0-a15a-0635daf21c65-38ce56ae714e37afb20e3d18c490f3787367eebc89f6a546bcf849bac6466451.webp",
+      "imageHash": "38ce56ae714e37afb20e3d18c490f3787367eebc89f6a546bcf849bac6466451",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-11T09:35:51.707Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
