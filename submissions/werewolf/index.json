@@ -3037,6 +3037,23 @@
           "at": "2026-10-11T12:48:32.071Z"
         }
       ]
+    },
+    {
+      "id": "69b378b7-94fc-424e-914a-79188542aed4",
+      "teamId": "werewolf",
+      "tileId": "demon-in-the-snow",
+      "choiceId": "zamorak-spear",
+      "quantity": 1,
+      "player": "xNlGHTMAYERx",
+      "notes": "",
+      "imagePath": "submissions/werewolf/demon-in-the-snow/69b378b7-94fc-424e-914a-79188542aed4-a107173a185b381ea30377d99bf4f644f3dfc1c7269ac56143198977c0cb2b28.webp",
+      "imageHash": "a107173a185b381ea30377d99bf4f644f3dfc1c7269ac56143198977c0cb2b28",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-11T20:02:43.604Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
