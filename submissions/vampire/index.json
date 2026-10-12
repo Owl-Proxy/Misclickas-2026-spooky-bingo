@@ -3465,6 +3465,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "83872795-9da9-4fe3-b9a6-b79376e93aa8",
+      "teamId": "vampire",
+      "tileId": "the-red-labyrinth",
+      "choiceId": "crystal-armor-seeds",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-red-labyrinth/83872795-9da9-4fe3-b9a6-b79376e93aa8-f7fcba3aebe962bda8c2b6ca0bfd34ee7774c3202f523ddd55522cf384d8ef52.webp",
+      "imageHash": "f7fcba3aebe962bda8c2b6ca0bfd34ee7774c3202f523ddd55522cf384d8ef52",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T03:24:07.130Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
