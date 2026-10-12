@@ -3089,6 +3089,23 @@
           "at": "2026-10-12T01:12:37.548Z"
         }
       ]
+    },
+    {
+      "id": "a37b4a25-ceae-4107-9c2b-0bf3ab28b6d5",
+      "teamId": "werewolf",
+      "tileId": "the-necromancer",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-necromancer/a37b4a25-ceae-4107-9c2b-0bf3ab28b6d5-19c32afa30e89e7db2bfe8aed92ab0c92a809d42a6945631ff7cf8ef2dd87d5b.webp",
+      "imageHash": "19c32afa30e89e7db2bfe8aed92ab0c92a809d42a6945631ff7cf8ef2dd87d5b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T03:13:31.045Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
