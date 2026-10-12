@@ -3119,10 +3119,19 @@
       "imageHash": "0d5621663c083c0536ecc29840d0e0284a027335a8d71d978caec20452d78aaa",
       "imageType": "image/png",
       "createdAt": "2026-10-12T12:33:29.949Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "I will resubmit for you - ZEM",
+          "at": "2026-10-12T13:02:57.500Z"
+        }
+      ]
     }
   ]
 }
