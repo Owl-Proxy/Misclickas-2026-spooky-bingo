@@ -3448,6 +3448,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "d04a54f2-5695-4acf-a3de-bb3ae5643220",
+      "teamId": "vampire",
+      "tileId": "the-general-s-war-spoils",
+      "choiceId": "bandos-hilt",
+      "quantity": 1,
+      "player": "Zulrussy",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-general-s-war-spoils/d04a54f2-5695-4acf-a3de-bb3ae5643220-e9b7651d63343bd1e41fb98ba4651a079312b1ecb4fa8a6a1a096a278826dcce.webp",
+      "imageHash": "e9b7651d63343bd1e41fb98ba4651a079312b1ecb4fa8a6a1a096a278826dcce",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T02:46:12.901Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
