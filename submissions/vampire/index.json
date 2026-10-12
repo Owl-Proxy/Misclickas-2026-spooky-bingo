@@ -3561,6 +3561,23 @@
           "at": "2026-10-12T13:19:57.813Z"
         }
       ]
+    },
+    {
+      "id": "c78ab3e9-ef5b-4022-894e-dadd674b7beb",
+      "teamId": "vampire",
+      "tileId": "the-general-s-war-spoils",
+      "choiceId": "bandos-tassets",
+      "quantity": 1,
+      "player": "Zulrussy",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-general-s-war-spoils/c78ab3e9-ef5b-4022-894e-dadd674b7beb-95335b4c06b3731ea7e1432aaef8a669154c9c75f2a3e6953df78dae86c7486e.webp",
+      "imageHash": "95335b4c06b3731ea7e1432aaef8a669154c9c75f2a3e6953df78dae86c7486e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T21:21:19.495Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
