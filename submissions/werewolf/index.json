@@ -3106,6 +3106,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "2e1ae26b-fcac-4ba3-9840-65279946ba03",
+      "teamId": "werewolf",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "fire-element-staff-crown",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "The original is in discord, had to screenshot weird because file size to big? Also posted the file size message in team discord as well. I was on iPad instead of phone when I got drop.",
+      "imagePath": "submissions/werewolf/a-clash-of-ice-and-fire/2e1ae26b-fcac-4ba3-9840-65279946ba03-0d5621663c083c0536ecc29840d0e0284a027335a8d71d978caec20452d78aaa.png",
+      "imageHash": "0d5621663c083c0536ecc29840d0e0284a027335a8d71d978caec20452d78aaa",
+      "imageType": "image/png",
+      "createdAt": "2026-10-12T12:33:29.949Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
