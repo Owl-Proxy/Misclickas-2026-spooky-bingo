@@ -3149,6 +3149,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "6c6e76b8-5860-43a6-b579-f05aa58ffb12",
+      "teamId": "werewolf",
+      "tileId": "the-purple-portal",
+      "choiceId": "dark-totem",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-purple-portal/6c6e76b8-5860-43a6-b579-f05aa58ffb12-31c6358bbad30ceb8e1a030fbb41afa311ef69adad7ba3f076a8cbc2b013b96a.webp",
+      "imageHash": "31c6358bbad30ceb8e1a030fbb41afa311ef69adad7ba3f076a8cbc2b013b96a",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T15:25:36.105Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
