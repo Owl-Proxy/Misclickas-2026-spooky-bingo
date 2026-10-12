@@ -3063,6 +3063,23 @@
           "at": "2026-10-11T22:47:03.400Z"
         }
       ]
+    },
+    {
+      "id": "c2c67c78-822e-4f92-ac1e-bea3a64977d5",
+      "teamId": "werewolf",
+      "tileId": "the-crystal-prison",
+      "choiceId": "enhanced-crystal-weapon-seed",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-crystal-prison/c2c67c78-822e-4f92-ac1e-bea3a64977d5-954c75438d724f4ec60727a838150d406d9ce292078537fd4d51472d5b922cad.webp",
+      "imageHash": "954c75438d724f4ec60727a838150d406d9ce292078537fd4d51472d5b922cad",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-12T00:49:07.570Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
