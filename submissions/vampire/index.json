@@ -3630,6 +3630,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "e09ed0e6-3a36-4b8e-8c01-8068b02bf95d",
+      "teamId": "vampire",
+      "tileId": "nightmare-s-cursed-core",
+      "choiceId": "harmonised-orb",
+      "quantity": 1,
+      "player": "Slim Stankn",
+      "notes": "HOLY HOOTERS",
+      "imagePath": "submissions/vampire/nightmare-s-cursed-core/e09ed0e6-3a36-4b8e-8c01-8068b02bf95d-40b2b607b3f819dd62fc88f9772efd082d3335367c12b5516970f00dd84c10c6.webp",
+      "imageHash": "40b2b607b3f819dd62fc88f9772efd082d3335367c12b5516970f00dd84c10c6",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T20:00:01.867Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
