@@ -3613,6 +3613,23 @@
           "at": "2026-10-13T00:59:04.197Z"
         }
       ]
+    },
+    {
+      "id": "88ff8833-6004-4f96-8cb9-767f927d61fb",
+      "teamId": "vampire",
+      "tileId": "the-headless-harvest",
+      "choiceId": "virtus-robe-bottom",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-headless-harvest/88ff8833-6004-4f96-8cb9-767f927d61fb-15f6d5e7c9e4a5c1a663e54a35bbc3d985d31680bdd4d4259c3d5d4803b53d8e.webp",
+      "imageHash": "15f6d5e7c9e4a5c1a663e54a35bbc3d985d31680bdd4d4259c3d5d4803b53d8e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T18:18:16.463Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
