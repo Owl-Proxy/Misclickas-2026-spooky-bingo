@@ -3193,6 +3193,23 @@
           "at": "2026-10-12T16:02:08.023Z"
         }
       ]
+    },
+    {
+      "id": "8214aa22-d351-40c0-8098-5e5a2be678e0",
+      "teamId": "werewolf",
+      "tileId": "the-voice-in-the-dark",
+      "choiceId": "siren-s-staff",
+      "quantity": 1,
+      "player": "GIM Craftie",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-voice-in-the-dark/8214aa22-d351-40c0-8098-5e5a2be678e0-d555dd3cb46a756843f967abdf2e774de7fdc235f6a82abb5fe19fcf315a5978.webp",
+      "imageHash": "d555dd3cb46a756843f967abdf2e774de7fdc235f6a82abb5fe19fcf315a5978",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T01:31:01.949Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
