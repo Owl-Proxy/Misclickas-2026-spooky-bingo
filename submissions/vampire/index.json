@@ -3587,6 +3587,23 @@
           "at": "2026-10-12T22:00:12.665Z"
         }
       ]
+    },
+    {
+      "id": "933e45db-f074-4026-95c2-38df40e73fa7",
+      "teamId": "vampire",
+      "tileId": "hive-of-horrors",
+      "choiceId": "dragon-chainbody",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/hive-of-horrors/933e45db-f074-4026-95c2-38df40e73fa7-e0a12d8463fe3fda8b2d6e2c0786118c71c049154b2749f0841b3599cf32cc80.webp",
+      "imageHash": "e0a12d8463fe3fda8b2d6e2c0786118c71c049154b2749f0841b3599cf32cc80",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T00:18:50.576Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
