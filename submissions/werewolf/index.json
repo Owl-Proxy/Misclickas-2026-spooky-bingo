@@ -3219,6 +3219,23 @@
           "at": "2026-10-13T01:39:07.473Z"
         }
       ]
+    },
+    {
+      "id": "df1429bb-b24a-4c5d-a06a-4734d568c873",
+      "teamId": "werewolf",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "fire-element-staff-crown",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "",
+      "imagePath": "submissions/werewolf/a-clash-of-ice-and-fire/df1429bb-b24a-4c5d-a06a-4734d568c873-027d05e2ea0e8060e54476649fef2f0f7828f516ddde93220fa6bb9e650d2cac.webp",
+      "imageHash": "027d05e2ea0e8060e54476649fef2f0f7828f516ddde93220fa6bb9e650d2cac",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T02:48:48.516Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
