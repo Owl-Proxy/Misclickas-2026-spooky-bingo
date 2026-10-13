@@ -3245,6 +3245,23 @@
           "at": "2026-10-13T03:43:49.742Z"
         }
       ]
+    },
+    {
+      "id": "548ab431-65a0-4bcc-8267-a27e43dd11e0",
+      "teamId": "werewolf",
+      "tileId": "a-clash-of-ice-and-fire",
+      "choiceId": "deadeye-prayer-scroll",
+      "quantity": 1,
+      "player": "P H A Z E D",
+      "notes": "",
+      "imagePath": "submissions/werewolf/a-clash-of-ice-and-fire/548ab431-65a0-4bcc-8267-a27e43dd11e0-027d05e2ea0e8060e54476649fef2f0f7828f516ddde93220fa6bb9e650d2cac.webp",
+      "imageHash": "027d05e2ea0e8060e54476649fef2f0f7828f516ddde93220fa6bb9e650d2cac",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-13T03:52:46.741Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
