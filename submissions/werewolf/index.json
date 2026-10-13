@@ -3279,6 +3279,23 @@
           "at": "2026-10-13T03:52:59.260Z"
         }
       ]
+    },
+    {
+      "id": "5b86bd01-2b82-4716-abb7-42388ebceb96",
+      "teamId": "werewolf",
+      "tileId": "the-exorcist",
+      "choiceId": "venator-shards",
+      "quantity": 1,
+      "player": "2mlL",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-exorcist/5b86bd01-2b82-4716-abb7-42388ebceb96-3aa31e3fa57ca36932fa130eb52dab7e8c3dd7058a068ec8ac71680721c83501.png",
+      "imageHash": "3aa31e3fa57ca36932fa130eb52dab7e8c3dd7058a068ec8ac71680721c83501",
+      "imageType": "image/png",
+      "createdAt": "2026-10-13T18:14:21.101Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
