@@ -3665,6 +3665,23 @@
           "at": "2026-10-13T20:27:44.297Z"
         }
       ]
+    },
+    {
+      "id": "35d43511-58dc-40a6-b87b-a5dc49ad28a6",
+      "teamId": "vampire",
+      "tileId": "nightmare-s-cursed-core",
+      "choiceId": "volatile-orb",
+      "quantity": 1,
+      "player": "alex4ever205",
+      "notes": "tile completed already but why not",
+      "imagePath": "submissions/vampire/nightmare-s-cursed-core/35d43511-58dc-40a6-b87b-a5dc49ad28a6-97e46ce47d14c96ca9be317a9239737a3561962979687949c6f0455a0e2b544d.png",
+      "imageHash": "97e46ce47d14c96ca9be317a9239737a3561962979687949c6f0455a0e2b544d",
+      "imageType": "image/png",
+      "createdAt": "2026-10-14T03:51:59.482Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
