@@ -3704,10 +3704,19 @@
       "imageHash": "97e46ce47d14c96ca9be317a9239737a3561962979687949c6f0455a0e2b544d",
       "imageType": "image/png",
       "createdAt": "2026-10-14T03:52:34.898Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "gzzz but tile already done :P",
+          "at": "2026-10-14T18:43:06.932Z"
+        }
+      ]
     }
   ]
 }
