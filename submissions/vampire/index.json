@@ -3760,6 +3760,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "ddba7a9e-5356-406b-93af-e331da56f837",
+      "teamId": "vampire",
+      "tileId": "the-red-labyrinth",
+      "choiceId": "crystal-armor-seeds",
+      "quantity": 1,
+      "player": "Skwala",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-red-labyrinth/ddba7a9e-5356-406b-93af-e331da56f837-078e0b5e02990897dffb232511eea84f15ccad4641bdc2b579e70c3206f3086c.webp",
+      "imageHash": "078e0b5e02990897dffb232511eea84f15ccad4641bdc2b579e70c3206f3086c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-14T23:24:02.431Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
