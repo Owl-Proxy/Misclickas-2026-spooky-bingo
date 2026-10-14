@@ -3682,6 +3682,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "3b49c0fe-9ba5-408c-abb7-b82357dece49",
+      "teamId": "vampire",
+      "tileId": "nightmare-s-cursed-core",
+      "choiceId": "eldritch-orb",
+      "quantity": 1,
+      "player": "alex4ever205",
+      "notes": "oops, accidentally picked volatile",
+      "imagePath": "submissions/vampire/nightmare-s-cursed-core/3b49c0fe-9ba5-408c-abb7-b82357dece49-97e46ce47d14c96ca9be317a9239737a3561962979687949c6f0455a0e2b544d.png",
+      "imageHash": "97e46ce47d14c96ca9be317a9239737a3561962979687949c6f0455a0e2b544d",
+      "imageType": "image/png",
+      "createdAt": "2026-10-14T03:52:34.898Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
