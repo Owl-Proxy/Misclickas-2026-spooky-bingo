@@ -3378,10 +3378,19 @@
       "imageHash": "a14cd5a26c2090d33b4ed4e5ae5547cfa4252d3a8e0f96191b36c3251ad6593e",
       "imageType": "image/webp",
       "createdAt": "2026-10-15T04:30:14.866Z",
-      "status": "pending",
-      "revision": 0,
+      "status": "rejected",
+      "revision": 1,
       "completesTile": false,
-      "reviews": []
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "rejected",
+          "reason": "not applicable to witching hour",
+          "at": "2026-10-15T14:46:17.045Z"
+        }
+      ]
     }
   ]
 }
