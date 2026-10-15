@@ -3322,6 +3322,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "8b31b54c-cb1f-48f8-afbd-a5183fb076a5",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "grave-robber--right-skull-half",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/8b31b54c-cb1f-48f8-afbd-a5183fb076a5-759b4cf294cdf578b2329681e7e705056f061450103b5475b40f2190d3146737.webp",
+      "imageHash": "759b4cf294cdf578b2329681e7e705056f061450103b5475b40f2190d3146737",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-15T04:16:52.785Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
