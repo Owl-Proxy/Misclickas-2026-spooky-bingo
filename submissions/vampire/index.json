@@ -3795,6 +3795,23 @@
           "at": "2026-10-14T23:41:53.961Z"
         }
       ]
+    },
+    {
+      "id": "856bc1bf-0e6b-4772-8f5e-f293110a5f04",
+      "teamId": "vampire",
+      "tileId": "the-fallen-seraph",
+      "choiceId": "aggy",
+      "quantity": 1,
+      "player": "Killa 1771",
+      "notes": "sorry for late submission :)",
+      "imagePath": "submissions/vampire/the-fallen-seraph/856bc1bf-0e6b-4772-8f5e-f293110a5f04-d31341d6fe3c70b7ca07966dbfea198238b53cd7f663f402bde98c75fcef467f.webp",
+      "imageHash": "d31341d6fe3c70b7ca07966dbfea198238b53cd7f663f402bde98c75fcef467f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-15T01:29:13.804Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
