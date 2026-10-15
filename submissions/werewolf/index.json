@@ -3391,6 +3391,23 @@
           "at": "2026-10-15T14:46:17.045Z"
         }
       ]
+    },
+    {
+      "id": "2f3f0302-7a37-43ea-94f5-7bfae476838c",
+      "teamId": "werewolf",
+      "tileId": "ghostbusters",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "ghostly hood on me, large penis with the ghostly pants robes at vetion",
+      "imagePath": "submissions/werewolf/ghostbusters/2f3f0302-7a37-43ea-94f5-7bfae476838c-54607be33294f2ef470cd8f76665284b80363e8cf268e28599a3aea202517ba3.webp",
+      "imageHash": "54607be33294f2ef470cd8f76665284b80363e8cf268e28599a3aea202517ba3",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-15T15:13:58.478Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
