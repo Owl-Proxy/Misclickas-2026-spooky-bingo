@@ -3486,6 +3486,23 @@
           "at": "2026-10-16T04:18:35.470Z"
         }
       ]
+    },
+    {
+      "id": "ef4d7225-6748-4501-aa93-76169e6b9e40",
+      "teamId": "werewolf",
+      "tileId": "the-general-s-war-spoils",
+      "choiceId": "bandos-tassets",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-general-s-war-spoils/ef4d7225-6748-4501-aa93-76169e6b9e40-1c7c9f69e73143a66de73135a97927267d75527cd4691742c998cd89eae58c91.webp",
+      "imageHash": "1c7c9f69e73143a66de73135a97927267d75527cd4691742c998cd89eae58c91",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T04:18:52.600Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
