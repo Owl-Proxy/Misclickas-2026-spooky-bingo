@@ -3460,6 +3460,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "7c56948a-5f70-4412-bb10-a7f84f72d1c2",
+      "teamId": "werewolf",
+      "tileId": "the-general-s-war-spoils",
+      "choiceId": "bandos-chestplate",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-general-s-war-spoils/7c56948a-5f70-4412-bb10-a7f84f72d1c2-1c7c9f69e73143a66de73135a97927267d75527cd4691742c998cd89eae58c91.webp",
+      "imageHash": "1c7c9f69e73143a66de73135a97927267d75527cd4691742c998cd89eae58c91",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T04:18:21.307Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
