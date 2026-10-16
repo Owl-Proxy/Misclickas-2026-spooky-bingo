@@ -3847,6 +3847,23 @@
           "at": "2026-10-15T01:46:07.587Z"
         }
       ]
+    },
+    {
+      "id": "8c0d3aff-38e2-4efc-8740-5fc37cb05355",
+      "teamId": "vampire",
+      "tileId": "the-pact-devil",
+      "choiceId": "oathplate-armour",
+      "quantity": 1,
+      "player": "TinyReece",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-pact-devil/8c0d3aff-38e2-4efc-8740-5fc37cb05355-ff438f296bb7df20043e205c930158e270754438000fd0f935e118051e3b0273.webp",
+      "imageHash": "ff438f296bb7df20043e205c930158e270754438000fd0f935e118051e3b0273",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T01:49:48.015Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
