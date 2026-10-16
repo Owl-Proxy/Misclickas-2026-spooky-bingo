@@ -3667,6 +3667,23 @@
           "at": "2026-10-16T19:16:35.189Z"
         }
       ]
+    },
+    {
+      "id": "6fe25e5c-649d-4e1e-b8cc-73e0ad9f25c9",
+      "teamId": "werewolf",
+      "tileId": "the-grotesque-guardians",
+      "choiceId": "granite-ring",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-grotesque-guardians/6fe25e5c-649d-4e1e-b8cc-73e0ad9f25c9-386525f8538905ea46b16fe59fb331b16a546e0f7040cab298ee6a39c66a9275.webp",
+      "imageHash": "386525f8538905ea46b16fe59fb331b16a546e0f7040cab298ee6a39c66a9275",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T21:00:49.238Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
