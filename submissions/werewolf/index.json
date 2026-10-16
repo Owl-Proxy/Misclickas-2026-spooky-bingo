@@ -3443,6 +3443,23 @@
           "at": "2026-10-16T02:13:14.418Z"
         }
       ]
+    },
+    {
+      "id": "a3d88284-e85b-4050-a858-a30bb5aa8def",
+      "teamId": "werewolf",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "vorkath-s-head",
+      "quantity": 1,
+      "player": "GIM Craftie",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-reanimated-wyvern/a3d88284-e85b-4050-a858-a30bb5aa8def-883fca9c860ac30336ab677eef9373a4b31fd5dea3a55c76cbb9ce2c1406bc2f.webp",
+      "imageHash": "883fca9c860ac30336ab677eef9373a4b31fd5dea3a55c76cbb9ce2c1406bc2f",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T03:29:51.966Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
