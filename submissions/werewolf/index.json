@@ -3521,6 +3521,23 @@
           "at": "2026-10-16T04:18:59.846Z"
         }
       ]
+    },
+    {
+      "id": "cd388288-e8cb-4ab8-bf92-43e208505de7",
+      "teamId": "werewolf",
+      "tileId": "the-blood-theatre",
+      "choiceId": "sanguinesti-staff",
+      "quantity": 1,
+      "player": "IAmGroupie",
+      "notes": "ALPHA",
+      "imagePath": "submissions/werewolf/the-blood-theatre/cd388288-e8cb-4ab8-bf92-43e208505de7-45c6983e06d59c83ea09e6fd307d491b3dd36b81d29daee4d7f34e2c89fe768b.webp",
+      "imageHash": "45c6983e06d59c83ea09e6fd307d491b3dd36b81d29daee4d7f34e2c89fe768b",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T04:49:00.375Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
