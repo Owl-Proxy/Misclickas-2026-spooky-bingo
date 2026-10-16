@@ -3625,6 +3625,23 @@
           "at": "2026-10-16T19:03:30.558Z"
         }
       ]
+    },
+    {
+      "id": "dcd2bd40-0c54-4eab-9549-9e5462bdcddc",
+      "teamId": "werewolf",
+      "tileId": "zombie-apocalypse",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Dmitaines",
+      "notes": "with Let me runn, 7ickle, IAmGroupie and Large Pen is",
+      "imagePath": "submissions/werewolf/zombie-apocalypse/dcd2bd40-0c54-4eab-9549-9e5462bdcddc-182e05ae5297658d8a0099591b5b1e51f2a15f5f4cf79d574f3ac1e47110b297.webp",
+      "imageHash": "182e05ae5297658d8a0099591b5b1e51f2a15f5f4cf79d574f3ac1e47110b297",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T19:04:06.641Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
