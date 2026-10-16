@@ -3547,6 +3547,23 @@
           "at": "2026-10-16T04:53:48.030Z"
         }
       ]
+    },
+    {
+      "id": "5b00629c-0786-48b3-ba01-3d882468db5f",
+      "teamId": "werewolf",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "draconic-visage",
+      "quantity": 1,
+      "player": "GIM Craftie",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-reanimated-wyvern/5b00629c-0786-48b3-ba01-3d882468db5f-6270f11bd44395c596d0158521fda61e11366cef04d3f6765af6124b9d2368a1.webp",
+      "imageHash": "6270f11bd44395c596d0158521fda61e11366cef04d3f6765af6124b9d2368a1",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T15:05:21.321Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
