@@ -3417,6 +3417,23 @@
           "at": "2026-10-15T15:14:06.747Z"
         }
       ]
+    },
+    {
+      "id": "24bc1082-456c-4105-8186-77b4b54e8d9b",
+      "teamId": "werewolf",
+      "tileId": "the-corpse-eater",
+      "choiceId": "elder-venator-fang",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-corpse-eater/24bc1082-456c-4105-8186-77b4b54e8d9b-ddf607781a3c7e1496c290be17ee1fd45a3f9056246ec71963c1f91d13bea8dd.webp",
+      "imageHash": "ddf607781a3c7e1496c290be17ee1fd45a3f9056246ec71963c1f91d13bea8dd",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T02:07:57.214Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
