@@ -3599,6 +3599,23 @@
           "at": "2026-10-16T15:45:48.534Z"
         }
       ]
+    },
+    {
+      "id": "b5be3596-5afa-4769-b24d-91886782ebf7",
+      "teamId": "werewolf",
+      "tileId": "zombie-apocalypse",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "Dmitaines, Iamgroupie, Large Pen is, and Let me runn came with for zombie themed pest control run",
+      "imagePath": "submissions/werewolf/zombie-apocalypse/b5be3596-5afa-4769-b24d-91886782ebf7-60fae7e418e0e4bf3225efd2e28891f659298fa7606622b58ffb60538852cea3.webp",
+      "imageHash": "60fae7e418e0e4bf3225efd2e28891f659298fa7606622b58ffb60538852cea3",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-16T19:03:18.237Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
