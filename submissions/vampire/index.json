@@ -3942,6 +3942,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "191e9cf6-95a9-421f-8474-ebae2bf6064d",
+      "teamId": "vampire",
+      "tileId": "the-corpse-eater",
+      "choiceId": "crimson-kisten",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-corpse-eater/191e9cf6-95a9-421f-8474-ebae2bf6064d-32cd5bc05de4feb389e5b7674908a8858bacc1ebe050978bf7854cd70332f881.webp",
+      "imageHash": "32cd5bc05de4feb389e5b7674908a8858bacc1ebe050978bf7854cd70332f881",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T04:15:59.579Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
