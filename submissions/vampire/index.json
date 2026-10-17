@@ -4016,10 +4016,19 @@
       "imageHash": "677a4fdaa9ad3dc38c5c03bc71ecccb39052033a7b90823bce55ff5d66c899b1",
       "imageType": "image/webp",
       "createdAt": "2026-10-17T16:37:53.069Z",
-      "status": "pending",
-      "revision": 0,
-      "completesTile": false,
-      "reviews": []
+      "status": "approved",
+      "revision": 1,
+      "completesTile": true,
+      "reviews": [
+        {
+          "reviewerId": "organiser",
+          "reviewer": "OwlProxy",
+          "from": "pending",
+          "to": "approved",
+          "reason": "killa's aranea boots are questionable ;)",
+          "at": "2026-10-17T17:47:32.008Z"
+        }
+      ]
     }
   ]
 }
