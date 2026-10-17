@@ -3977,6 +3977,23 @@
           "at": "2026-10-17T05:25:01.350Z"
         }
       ]
+    },
+    {
+      "id": "ce12671e-39c3-40aa-bed6-ea994cb63d85",
+      "teamId": "vampire",
+      "tileId": "dreams-of-ashihama",
+      "choiceId": "nightmare-staff",
+      "quantity": 1,
+      "player": "Alex4ever205",
+      "notes": "",
+      "imagePath": "submissions/vampire/dreams-of-ashihama/ce12671e-39c3-40aa-bed6-ea994cb63d85-ee7ae569757cfb7ef3145d45516198c554891d1f5fc397cf0f6c8c7ca06db015.png",
+      "imageHash": "ee7ae569757cfb7ef3145d45516198c554891d1f5fc397cf0f6c8c7ca06db015",
+      "imageType": "image/png",
+      "createdAt": "2026-10-17T14:57:40.139Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
