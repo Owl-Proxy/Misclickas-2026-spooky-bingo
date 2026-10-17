@@ -3745,6 +3745,23 @@
           "at": "2026-10-17T03:31:33.305Z"
         }
       ]
+    },
+    {
+      "id": "2ae1d6c8-7d48-4c38-9f90-164cf191caaa",
+      "teamId": "werewolf",
+      "tileId": "heart-of-the-abyss",
+      "choiceId": "abyssal-dagger",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/heart-of-the-abyss/2ae1d6c8-7d48-4c38-9f90-164cf191caaa-956a168770a82c174dd912d19375307e9d04342003f64c773b28ef21d342daf2.webp",
+      "imageHash": "956a168770a82c174dd912d19375307e9d04342003f64c773b28ef21d342daf2",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T13:19:10.139Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
