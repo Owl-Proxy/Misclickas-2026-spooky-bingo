@@ -3925,6 +3925,23 @@
           "at": "2026-10-17T03:56:45.235Z"
         }
       ]
+    },
+    {
+      "id": "783452a3-5fc3-4764-9864-7967dce3eb85",
+      "teamId": "vampire",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-corpse-eater--crimson-kisten",
+      "quantity": 1,
+      "player": "GIM Acura",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-witching-hour/783452a3-5fc3-4764-9864-7967dce3eb85-32cd5bc05de4feb389e5b7674908a8858bacc1ebe050978bf7854cd70332f881.webp",
+      "imageHash": "32cd5bc05de4feb389e5b7674908a8858bacc1ebe050978bf7854cd70332f881",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T04:15:15.134Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
