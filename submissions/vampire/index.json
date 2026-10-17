@@ -3899,6 +3899,23 @@
           "at": "2026-10-17T02:46:09.096Z"
         }
       ]
+    },
+    {
+      "id": "f78fb9ba-ddcf-4c2c-9a83-b318ea8d75fb",
+      "teamId": "vampire",
+      "tileId": "the-swamp-serpent",
+      "choiceId": "magic-fang",
+      "quantity": 1,
+      "player": "killa 1771",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-swamp-serpent/f78fb9ba-ddcf-4c2c-9a83-b318ea8d75fb-5ef230cd072f4db50e1ecc9d3c8744072307fbb5cd81ba734571f2ad8ace358e.webp",
+      "imageHash": "5ef230cd072f4db50e1ecc9d3c8744072307fbb5cd81ba734571f2ad8ace358e",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T03:47:51.288Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
