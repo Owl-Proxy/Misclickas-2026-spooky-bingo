@@ -3762,6 +3762,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "053bad05-dc18-4929-a57b-ec7f53b0bd53",
+      "teamId": "werewolf",
+      "tileId": "hounds-of-hell",
+      "choiceId": "primordial-crystal",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/hounds-of-hell/053bad05-dc18-4929-a57b-ec7f53b0bd53-232656319b9cbbf3e09cfd29f6eb26277e197a21e392130bd83600be1aeaba67.webp",
+      "imageHash": "232656319b9cbbf3e09cfd29f6eb26277e197a21e392130bd83600be1aeaba67",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T14:19:35.083Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
