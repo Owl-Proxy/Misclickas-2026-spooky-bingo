@@ -3719,6 +3719,23 @@
           "at": "2026-10-17T02:45:13.751Z"
         }
       ]
+    },
+    {
+      "id": "741dbc9a-611c-4cab-a030-113527fcdf9c",
+      "teamId": "werewolf",
+      "tileId": "the-drowned-crown",
+      "choiceId": "seers-ring",
+      "quantity": 1,
+      "player": "devil 324",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-drowned-crown/741dbc9a-611c-4cab-a030-113527fcdf9c-c45220c5f0518a188b2d03fda41a60061f86ac9b54fb88da5863d44fb06394dc.webp",
+      "imageHash": "c45220c5f0518a188b2d03fda41a60061f86ac9b54fb88da5863d44fb06394dc",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T03:14:12.706Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
