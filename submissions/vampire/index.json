@@ -4003,6 +4003,23 @@
           "at": "2026-10-17T15:17:57.613Z"
         }
       ]
+    },
+    {
+      "id": "36111683-fccb-40ae-adbc-d8a41fd58e68",
+      "teamId": "vampire",
+      "tileId": "zombie-apocalypse",
+      "choiceId": "activity-progress",
+      "quantity": 1,
+      "player": "Shanerz",
+      "notes": "",
+      "imagePath": "submissions/vampire/zombie-apocalypse/36111683-fccb-40ae-adbc-d8a41fd58e68-677a4fdaa9ad3dc38c5c03bc71ecccb39052033a7b90823bce55ff5d66c899b1.webp",
+      "imageHash": "677a4fdaa9ad3dc38c5c03bc71ecccb39052033a7b90823bce55ff5d66c899b1",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-17T16:37:53.069Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
