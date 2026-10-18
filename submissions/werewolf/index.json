@@ -3797,6 +3797,23 @@
           "at": "2026-10-17T14:27:19.779Z"
         }
       ]
+    },
+    {
+      "id": "4ac1755a-8146-4fc9-80be-e13b4be6885f",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-drowned-crown--archers-ring",
+      "quantity": 1,
+      "player": "Big Spinach",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/4ac1755a-8146-4fc9-80be-e13b4be6885f-dc13987a97f1f83b7763cb7cecbdfa4faee06de5a2aa2181d0cb8a808be86656.webp",
+      "imageHash": "dc13987a97f1f83b7763cb7cecbdfa4faee06de5a2aa2181d0cb8a808be86656",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-18T04:35:09.176Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
