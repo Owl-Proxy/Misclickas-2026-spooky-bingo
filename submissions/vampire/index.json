@@ -4055,6 +4055,23 @@
           "at": "2026-10-17T21:14:58.716Z"
         }
       ]
+    },
+    {
+      "id": "f2e5ebac-ba24-471f-afc6-7f7e264983de",
+      "teamId": "vampire",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "dragonbone-necklace",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-reanimated-wyvern/f2e5ebac-ba24-471f-afc6-7f7e264983de-7b1a68ed60d4f0f57ebaaed76e8bd6884a993232bb039c9799d420a2df345b7c.webp",
+      "imageHash": "7b1a68ed60d4f0f57ebaaed76e8bd6884a993232bb039c9799d420a2df345b7c",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-18T05:42:20.109Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
