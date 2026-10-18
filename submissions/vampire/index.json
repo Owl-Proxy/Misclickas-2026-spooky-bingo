@@ -4081,6 +4081,23 @@
           "at": "2026-10-18T05:45:42.223Z"
         }
       ]
+    },
+    {
+      "id": "bbb82287-b7b6-4255-9197-8818d9b92a7d",
+      "teamId": "vampire",
+      "tileId": "the-reanimated-wyvern",
+      "choiceId": "draconic-visage",
+      "quantity": 1,
+      "player": "GIM Cnasty",
+      "notes": "",
+      "imagePath": "submissions/vampire/the-reanimated-wyvern/bbb82287-b7b6-4255-9197-8818d9b92a7d-97b35ffdf28fc86d094390d13ab98aa26d8e07465fded20fdf6cf774994314de.webp",
+      "imageHash": "97b35ffdf28fc86d094390d13ab98aa26d8e07465fded20fdf6cf774994314de",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-18T07:05:39.914Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
