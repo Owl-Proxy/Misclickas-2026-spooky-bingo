@@ -3814,6 +3814,23 @@
       "revision": 0,
       "completesTile": false,
       "reviews": []
+    },
+    {
+      "id": "4d0d3ab4-6f7e-42f2-94d9-f9d400758f04",
+      "teamId": "werewolf",
+      "tileId": "the-witching-hour",
+      "choiceId": "the-six-brothers--barrows-pieces",
+      "quantity": 1,
+      "player": "7ickle",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-witching-hour/4d0d3ab4-6f7e-42f2-94d9-f9d400758f04-2939b76a9ce70ad139aded80521a45172462fb6858b55dec4811e9a975c431a1.webp",
+      "imageHash": "2939b76a9ce70ad139aded80521a45172462fb6858b55dec4811e9a975c431a1",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-18T05:26:10.652Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
