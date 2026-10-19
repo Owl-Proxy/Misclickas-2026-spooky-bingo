@@ -4107,6 +4107,23 @@
           "at": "2026-10-18T13:16:54.841Z"
         }
       ]
+    },
+    {
+      "id": "815351c5-98b4-4062-bd32-b7f6e47cbe54",
+      "teamId": "vampire",
+      "tileId": "dreams-of-ashihama",
+      "choiceId": "inquisitor-armor-piece",
+      "quantity": 1,
+      "player": "Tuckison",
+      "notes": "",
+      "imagePath": "submissions/vampire/dreams-of-ashihama/815351c5-98b4-4062-bd32-b7f6e47cbe54-10cfb98f8930575df9eba29f32b0674f5001a12180398b83eb6181b60a3be3f4.webp",
+      "imageHash": "10cfb98f8930575df9eba29f32b0674f5001a12180398b83eb6181b60a3be3f4",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-19T15:59:19.781Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
