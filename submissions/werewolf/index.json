@@ -3875,6 +3875,23 @@
           "at": "2026-10-19T14:02:10.224Z"
         }
       ]
+    },
+    {
+      "id": "d7badca6-0715-4336-a10d-3b08dd163f69",
+      "teamId": "werewolf",
+      "tileId": "the-buried-doom",
+      "choiceId": "avernic-treads",
+      "quantity": 1,
+      "player": "Large Pen is",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-buried-doom/d7badca6-0715-4336-a10d-3b08dd163f69-aea676b52e371efe50089e208c8b05a421e79939f16e261efa9567756e527afc.webp",
+      "imageHash": "aea676b52e371efe50089e208c8b05a421e79939f16e261efa9567756e527afc",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-19T17:19:23.530Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
