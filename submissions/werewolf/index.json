@@ -3901,6 +3901,23 @@
           "at": "2026-10-19T17:23:17.042Z"
         }
       ]
+    },
+    {
+      "id": "aefcecc7-bb1a-4bbf-af90-a1bb96383a62",
+      "teamId": "werewolf",
+      "tileId": "the-buried-doom",
+      "choiceId": "mokhaiotl-cloth",
+      "quantity": 1,
+      "player": "Owl Proxy",
+      "notes": "",
+      "imagePath": "submissions/werewolf/the-buried-doom/aefcecc7-bb1a-4bbf-af90-a1bb96383a62-0e17d970fad2029d8409278041b5a9522027cec7e45af8aed89f66217c529085.webp",
+      "imageHash": "0e17d970fad2029d8409278041b5a9522027cec7e45af8aed89f66217c529085",
+      "imageType": "image/webp",
+      "createdAt": "2026-10-20T00:53:11.898Z",
+      "status": "pending",
+      "revision": 0,
+      "completesTile": false,
+      "reviews": []
     }
   ]
 }
